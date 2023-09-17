@@ -1,0 +1,161 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,
+            amssymb,
+            amsfonts,
+            latexsym,
+            mathrsfs,
+            amsthm,
+            amstext,
+            bezier,
+            amscd}
+\usepackage[top=2cm,
+            bottom=2cm,
+            left=2.5cm,
+            right=2.5cm]
+            {geometry}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage[brazil]{babel}
+
+
+\title{
+    \textbf{
+    Anotações Definitivas
+    }
+    \break
+    Aprendendo VIM
+}
+\author{
+    Lucas Gouveia Belon
+    \\
+    lucasgouveiabelon@usp.br
+}
+
+\date{\vspace{15cm}São Paulo\\2023}
+
+\begin{document}
+\maketitle
+%\thispagestyle{empty}
+%\setcounter{page}{-1}
+\newpage
+%\thispagestyle{empty}
+\tableofcontents
+\newpage
+\section{Introdução}
+\subsection{Considerações Iniciais}
+
+Para aprender a usar o latex com vim não fica muito claro se é necessário saber antes vim ou tex.
+Então eu sugiro aprender vim antes.
+Eu mesmo estou aprendendo a mexer no vimtex para poder criar este documento, e não é tarefa exatamente muito fácil.
+O uso de uma IDE com certeza simplifica muito as coisas, mas não é sempre que temos máquinas potentes o suficiente para isso.
+
+O pacote de ferramentas que vem com o \LaTeX \hspace{0.1cm} é gigantesco em variedade e em peso.
+São alguns gigabytes de arquivos, muitas fontes, e diferentes compiladores.
+Até assusta, mas vamos com calma que chegamos lá.
+
+Este pequeno projeto é uma forma de eu me ambientar com o vimtex, e se ajudar alguém, é um ponto extra.
+Os textos que já tenho preparados foram preparados em inglês, mas sinto falta de textos em português, para um acesso mais fácil e para disponibilização para amigos e quem mais tenha interesse.
+
+Para exemplificar o VIM tenho uma variedade de arquivos, mas talvez valha a pena começar explicando suas partes componentes.
+Dessa forma, pode-se ter uma ideia de quais funcionalidades que a ferramenta tem a oferecer, e quais os atrativos para aprender a usar algo que possui uma curva de aprendizagem tão íngrime.
+
+
+\subsection{Componentes}
+\subsubsection{O Editor}
+O Vim é um programa com objetivo de se possibilitar a edição de textos via linha de comando.
+Portanto, em sua mais simples natureza, trata-se de uma espécie de bloco de notas.
+Mas acontece que esse bloco de notas nasceu nos anos 90, e se não morreu até agora, pelo menos deve ter tomado uns esteróides.
+
+
+O Vim funciona de forma diferente de outros editores de texto, possuindo modos de execução de comandos, inserção de textos, edição de linhas, de blocos, de caracteres, entre outros modos.
+Os modos principais são o modo normal, de inserção, e visual.
+
+\subsubsection{Modos de Operação}
+\begin{itemize}
+    \item \textbf{Modo Normal:}
+        Este modo se trata da disposição relaxada do vim.
+        Nele podemos alternar para outros modos, e também se trata do modo em que podemos nos movimentar com o cursor da forma mais eficiente.
+        Há quem diga que os comandos de movimentação do vim seja o aprendizado mais importante.
+ 
+
+        Também pode-se executar edições no próprio vim, mudando seu comportamento padrão, e adicionando funcionalidades malucas, que chega a fazer os olhos brilharem.
+
+    \item \textbf{Modo Visual:}
+        Neste, temos como selecionar pedaços e trechos de texto, tanto para edição, como para cópia, para se excluir, ou mesmo para servir de alvo numa determinada sequência de ações.
+        Existem na verdade 3 modos visuais.
+        O modo caractere, o modo linha e o modo bloco.
+        O primeiro seleciona trechos numa linha ou mais.
+        O segundo seleciona linhas inteiras.
+        O terceiro é ideal para selecionar em tabelas, ou em textos escritos de forma tabular, como é o caso de matrizes.
+
+
+    \item \textbf{Modo de Inserção:}
+        Se você não é programador, e sim um escritor de qualquer natureza, esse será o modo em que passará mais tempo.
+        Não há o que explicar, este modo insere texto no arquivo.
+        Este modo conta com maneiras de se evitar que se escreva errado, corrigindo enquanto se escreve, sugestões se palavras que já apareceram no texto anteriormente, e até mesmo pode realizar buscas em dicionários.
+
+\end{itemize}
+
+\subsubsection{Configurações}
+A força do VIM está em sua alta capacidade de configuração.
+Ele pode possuir configurações gerais, configurações que dependem do tipo de arquivo, configurações que dependem de você ativar.
+E como todo bom sistema de configuração, pode-se criar configurações em um único arquivo, ou em múltiplos.
+
+Por hora vamos focar no formato de arquivo de configuração única.
+
+\begin{itemize}
+    \item \textbf{.vimrc:}
+        Uma das opções para configuração é armazenar todas as alterações em relação ao editor padrão num arquivo chamado .vimrc.
+        Este arquivo será lido cada vez que o editor for aberto, e pode estar localizado em diferentes locais de sua máquina:
+        \subitem{/home/user/.vim/vimrc}: Um diretório oculto no \$HOME do usuário.
+        \subitem{/home/user/.vimrc}: Um arquivo no \$HOME do usuário.
+        % Abrir o VIMLEEREN para verificar quais são os locais percorridos na busca por arquivos de
+        % configuraçao do vim
+        \subitem{local3}: 
+
+        Ignorando tudo isso, basta saber que pode-se configurar o editor e levar suas configurações consigo para qualquer lugar.
+        Dessa forma, pode-se moldar o programa para funcionar da maneira que se queira, e caso encontre uma máquina desconfigurada, basta carregar seu arquivo.
+        Faça do VIM o \textbf{seu} editor de textos.
+
+        % DEU MERDA AQUI NO SÍMBOLO <>. ARRUMAR MAIS TARDE.
+    \item \textbf{O Comando ":set <options>":}
+        Às vezes você se encontrará usando o editor numa máquina desconfigurada, e provavelmente irá preferir deixar da forma que estiver.
+        Mas existem certas configurações que quando inexistentes, farão falta no fluxo de atividade.
+
+    \item \textbf{Plugins:}
+        Para muitas coisas que fazemos na vida, sabemos que alguém já fez, já fez melhor, e ainda deixou rastros de como repetir o feito de forma mais eficiente.
+        Esse é o caso de arquivos .vimrc que são disponibilizados livremente, mas existem também arquivos de configurações que extendem as funcionalidades do VIM para lugares não antes percorridos.
+
+        Esse é o caso dos plugins. Eles existem em várias formas, tamanhos, pesos, cores, com as mais diversas funcionalidades.
+        São de tal forma que existem plugins adicionados ao núcleo do vim, com funcionalidades do tipo busca de arquivos, edição sobre ssh, leitura e escrita de arquivos comprimidos, edição por rede, dentre outroso. 
+        Existem plugins para baixar e gerenciar plugins, e este deve ser o primeiro plugin a ser encontrado quando se deparar com a necessidade de adicionar ao seu vim, funcionalidades mais potentes.
+
+        Para concluir o pensamento, existem plugins que fazem com que seu humilde editor de textos se torne tão poderoso quanto um ambiente integrado de desenvolvimento, que é o que muitos programadores fazem.
+\end{itemize}
+
+\subsection{Casos De Uso}
+Creio que já ficou claro quais são os usos principais do VIM, mas ainda assim, devo citar alguns extras.
+A maneira que se utiliza o vim faz mudar a forma de pensamento, te deixando claramente mais metódico, e forçando a pensar antes de clicar enter.
+
+Aprender a usar uma ferramenta que funciona em seu poder máximo dentro da interface de linha de comando te forçará, obviamente, a se manter dentro da linha de comando, e te forçará a aprender mais sobre programação.
+Além de te forçar a refletir sobre os conceitos mais básicos que a operação de computadores exige, é possível que seja o ponto de inflexão para perder o receio de se manter em um ambiente outrora hostil.
+
+Por fim, eu estou escrevendo um arquivo em pdf, quase que diretamente, a partir de um editor de texto estilo bloco de notas. 
+Ele tem numeração de linha, sugestão de termo, e como se trata de \LaTeX, até mesmo pequenos trechos complexos, os chamados \textit{snippets}.
+
+Não se trata de algo feito para você programar.
+Não se trata de algo feito para edição de pdf.
+Apenas edição de texto. Mas com funcionalidades gigantescas.
+Gosto de dizer que o VIM é famoso forte e feio, muito feio. 
+Mas é integrável com outras ferramentas e extensível para obter outras funcionalidades.
+
+\subsection{Outros Tipos de VIM}
+\subsubsection{Neovim}
+\subsubsection{Astrovim}
+\subsubsection{Lazyvim}
+
+% Não perder o foco e não encher muita linguiça.
+% Vou mesclar o tutorial de quickguide com o uma explicação mais rigorosa. É literalmente escrever um livro, mas não posso ficar enrolando muito nas explicações. É sempre melhor ser direto ao ponto
+
+\end{document}
