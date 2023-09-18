@@ -134,6 +134,16 @@ Por hora vamos focar no formato de arquivo de configuração única.
         Para concluir o pensamento, existem plugins que fazem com que seu humilde editor de textos se torne tão poderoso quanto um ambiente integrado de desenvolvimento, que é o que muitos programadores fazem.
 \end{itemize}
 
+\subsubsection{Configurando Máquinas Alheias}
+Apesar de não ficar muito claro sem antes se possuir certa experiência, um editor de texto em máquinas remotas é algo extremamente necessário.
+Saber utilizar, de forma eficiente, e talvez mais importante, sem adição de grandes configurações, um editor, pode ser o que te difere de quem está desenvolvendo um programa, de quem está inserindo o programa numa cadeia de execução.
+
+Ser aquele que consegue controlar e configurar conexões relacionadas a segurança, à disponibilidade, e ser capaz de visualizar, buscar, filtrar e transformar dados em informação, é uma habilidade interessante para administradores de sistemas.
+Saber utilizar o VIM te dá esta capacidade. E saber utilizá-lo sem configurações adicionais te capacita a editar servidores. E no mundo em nuvem, esta deixa de ser um diferencial para se tornar um requisito básico.
+
+Além disso, por se tratar de um programa que existe por padrão em diversas máquinas unix e por ser extremamente leve e veloz no que se propõe, pode-se utilizar virtualmente máquinas com configurações que originalmente seriam impossíveis de se obter qualquer vantagem de desempenho.
+Estou falando de utilizar uma máquina velha para aprender a fazer coisas incríveis.
+Isso agrega valor, não pela máquina ser potente, mas pelo usuário ser capaz de extrair mais de um mesmo pedaço de metal.
 \subsection{Casos De Uso}
 Creio que já ficou claro quais são os usos principais do VIM, mas ainda assim, devo citar alguns extras.
 A maneira que se utiliza o vim faz mudar a forma de pensamento, te deixando claramente mais metódico, e forçando a pensar antes de clicar enter.
@@ -141,20 +151,53 @@ A maneira que se utiliza o vim faz mudar a forma de pensamento, te deixando clar
 Aprender a usar uma ferramenta que funciona em seu poder máximo dentro da interface de linha de comando te forçará, obviamente, a se manter dentro da linha de comando, e te forçará a aprender mais sobre programação.
 Além de te forçar a refletir sobre os conceitos mais básicos que a operação de computadores exige, é possível que seja o ponto de inflexão para perder o receio de se manter em um ambiente outrora hostil.
 
+Também vale salientar que é possível utilizar esta ferramenta em um emulador de terminal que funciona baseado em aplicativos.
+Certamente seu celular tem tal aplicativo em sua loja, e caso você tenha vontade de aprender a programar, esta pode se tornar sua ferramenta primária.
+
+Claro, começando de forma humilde, com dificuldades extras, mas falando com a experiência que tive, a atividade de aprender a programar pelo celular, escrevendo numa tela preta, me forçou a refletir muito mais antes de qualquer rajada de teclas que eu poderia dar.
+Por isso, acabei por pensar muito mais do que fazer, e fazendo o necessário por completo.
+Inserir-se em um contexto desafiador pode acabar desenvolvendo noções e habilidades inesperadas.
+
 Por fim, eu estou escrevendo um arquivo em pdf, quase que diretamente, a partir de um editor de texto estilo bloco de notas. 
 Ele tem numeração de linha, sugestão de termo, e como se trata de \LaTeX, até mesmo pequenos trechos complexos, os chamados \textit{snippets}.
 
 Não se trata de algo feito para você programar.
 Não se trata de algo feito para edição de pdf.
 Apenas edição de texto. Mas com funcionalidades gigantescas.
-Gosto de dizer que o VIM é famoso forte e feio, muito feio. 
+Gosto de dizer que o VIM é o famoso forte e feio, muito feio. 
 Mas é integrável com outras ferramentas e extensível para obter outras funcionalidades.
+Ele é extremamente feio, mas à medida que fica feio, fica forte.
+E você pode utilizá-lo para fazer a força por você.
 
 \subsection{Outros Tipos de VIM}
-\subsubsection{Neovim}
-\subsubsection{Astrovim}
-\subsubsection{Lazyvim}
+Existem programas desenvolvidos baseados no VIM "original", pré-configurados, com adição de plugins e layouts que, para adicionar ao vim, seriam necessários dias de configuração.
 
+Vendo isso como uma demanda, e tendo este como um problema próprio, seja pelo motivo que for, programadores criaram versões de VIM que os atendem de forma melhor.
+\subsubsection{Neovim}
+Surgindo como competidor direto, sendo desenvolvido por um número maior de desenvolvedores, e adicionando novas funcionalidades uma atrás da outra, temos o neovim.
+Sua proposta é ser um editor com maior capacidade de ser moldado.
+A primeira ação foi refatorar a base de código do VIM para manutenção, e extensão.
+Também adicionou linguagens de programação exteriores para criação de plugins, sendo muito mais amigável.
+\subsubsection{Astrovim}
+Como o neovim trouxe um novo patamar para a característica de extensibilidade, logo surgiram projetos que possuem configurações para programação e ferramentas auxiliares para desenvolvimento.
+Isto por padrão, ou seja, sem precisar cutucar configurações e ver como reage.
+\subsubsection{Lunarvim}
+O objetivo destas versões parecem estar se focando para se tornarem IDE's (Integrated Development Environment), para que programadores possam usar ferramentas que funcionam de forma mais responsiva, sem travamentos, sem adição de peso em suas máquinas, e sem perda de tempo desnecessária.
+É uma grande frente de desenvolvimento, devendo eu citar aqui, e você devendo explorar e verificar se assim o quiser.
+
+\subsection{Conclusão}
+Até então o texto desenvolve algumas noções gerais do que é, como funciona, e quais as variantes do editor de texto baseado em linha de comando.
+Claro que os pontos mais atrativos dessa ferramenta só são apreciáveis se você leitor possuir como atividade algo relacionado a escrita, desenvolvimento, configuração de máquinas e servidores.
+
+Caso não o tenha, é aqui que você deve perceber que este livro não te apetece nem engrandece.
+Mas caso contrário, então seremos amigos daqui pra frente, e irei te expor à informações caçadas e lapidadas de diversas fontes.
+Informações condensadas em uma espécie de guia, que antes da metade, te dará a capacidade de andar com as próprias pernas.
+Mas mais que isso, eu gostaria de ter um guia desta natureza, e portanto, é também um guia para mim.
+Venha comigo, por hora, eu serei seu guia.
+
+%ADICIONAR AQUI O COMEÇO DO TUTORIAL
+
+\section{Introdução Prática}
 % Não perder o foco e não encher muita linguiça.
 % Vou mesclar o tutorial de quickguide com o uma explicação mais rigorosa. É literalmente escrever um livro, mas não posso ficar enrolando muito nas explicações. É sempre melhor ser direto ao ponto
 
