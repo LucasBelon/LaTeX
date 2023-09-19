@@ -198,6 +198,49 @@ Venha comigo, por hora, eu serei seu guia.
 %ADICIONAR AQUI O COMEÇO DO TUTORIAL
 
 \section{Introdução Prática}
+\subsection{Salvar e Sair}
+Uma espécie de piada interna do vim diz: "Uma vez eu abri o vim, e nunca mais saí... Sério, me ajuda, como sai do vim?".
+Existe certa verdade nisso.
+Quando abrimos o vim pela primeira vez, nos deparamos com o modo normal, que foi explicado anteriormente.
+Ele é feito principalmente para execução de comandos e para movimentação no texto.
+Não para inserir, como fazemos quando abrimos um aplicativo qualquer.
+A depender da versão, não existe sequer o botão de backspace para apagar caracteres, nem funcionalidades baseadas em mouse.
+
+Para abrir o vim, no terminal, basta escrever \textbf{\textit{\$vim}}
+
+% Inserir imagem da tela inicial do vim
+% Arrumar um conteiner basicamente em branco para adicionar as configurações aos poucos do vim.
+
+Mas temos a vantagem de que, se você não clicou em nenhum botão, muito menos os botões \textbf{\textit{a; i; v ou r}}, para sair é simples.
+Aperte \textbf{\textit{":"}} para entrar no modo \textbf{\textit{"ex"}}. Em seguida, escreva \textbf{\textit{"quit"}} para sair.
+Se entrou em algum modo estranho, aperte \textbf{\textit{esc}} repetidamente até voltar para o modo normal.
+Caso tenha inserido algum texto, o programa irá reclamar que não foi especificado um nome de arquivo.
+Então deve-se fazer \textbf{\textit{:write (nome do arquivo)}} ou \textbf{\textit{:wq (nome do arquivo)}}.
+
+O vim aceita, e incentiva, abreviações, de forma que praticamente todos os comandos possuem a forma extensa e a forma abreviada para serem chamados.
+Além disso, existem teclas de atalho que realizam ações de certos comandos.
+Um detalhe a se perceber é que, teclar \textbf{\textit{"a"}} é diferente de teclar \textbf{\textit{"A"}}.
+O atalho da vez será o \textbf{\textit{"ZZ"}}, que salva e sai do arquivo.
+
+Uma parte das informações que estarão neste texto podem ser praticadas no \textbf{\textit{\$vimtutor}}, um tutorial interativo com explicações e exemplos para praticar.
+Recomanda-se testá-lo, mesmo que deixemos aqui as mesmas informações. A prática fará você criar intimidade com a ferramenta.
+
+\subsection{Movimentando-se}
+\subsubsection{No modo normal}
+Saber mudar de linha, de coluna, de parágrafo, de página, é essencial.
+Todas as movimentações avançadas são feitas no modo normal.
+O básico é mover-se um caractere por vez.
+A tecla \textbf{\textit{h}} move o cursor para a esquerda.
+A tecla \textbf{\textit{j}} move para baixo.
+A tecla \textbf{\textit{k}} move para a cima.
+A tecla \textbf{\textit{l}} move para a direita.
+% Como inserir o diagrama k
+%                        h+l
+%                         k
+% Aqui no LaTeX?
+\subsubsection{No modo visual}
+\subsubsection{No modo visual-linha}
+\subsubsection{No modo visual-bloco}
 % Não perder o foco e não encher muita linguiça.
 % Vou mesclar o tutorial de quickguide com o uma explicação mais rigorosa. É literalmente escrever um livro, mas não posso ficar enrolando muito nas explicações. É sempre melhor ser direto ao ponto
 
