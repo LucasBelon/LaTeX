@@ -31,8 +31,9 @@ Os comandos de formatação de texto obedecem a sintaxe:
     \textsl{Exemplo}
 \end{intemize}
 
-Verificar depois a diferença entre vimtex e vim-latex.
+**Verificar depois a diferença entre vimtex e vim-latex.
 
+% Usando comandos para mudar a fonte de trechos do texto.
 \section{\textsf{Fontes sobre \latex\ na internet.}}
 % \textsf Sans-seriff
 Um dos melhores lugares para encontrar conteúdo sobre LaTeX é no site CTAN:
@@ -42,7 +43,7 @@ Um dos melhores lugares para encontrar conteúdo sobre LaTeX é no site CTAN:
 
 
 
-Mudando a fonte e família durante longoa trechos:
+Mudando a fonte e família usando declarações.
 
 \section{\sffamily\LaTeX\ resources in the internet}
 
@@ -51,5 +52,34 @@ The best place for downloading LaTeX related software is CTAN.
 Its address is \ttfamily http://www.ctan.org\rmfamily.
 
 
+
+Comando         Declaração  Significado
+
+\textrm{...}    \rmfamily   roman family
+\textsf{...}    \sffamily   sans-serif family
+\texttt{...}    \ttfamily   tipewriter family
+\textbf{...}    \bfseries   bold-face
+\textmd{...}    \mdseries   medium
+\textit{...}    \itshape    italic shape
+\textsl{...}    \slshape    slanted shape
+\textsc{...}    \scshape    Small Caps Shape
+\textup{...}    \upshape    Upright Shape
+\textnormal{...}    \normalfont Default font
+
+
+Podemos usar chaves paea delimtar o espaço de ação
+de uma declaração:
+
+{\sffamily
+
+Text can be {\em emphasized}.
+
+Besides being {\itshape italic} words could be {\bfseries bold},
+
+{\slshape slanted} or typeset in {\scshape Small Caps}.
+
+Such commands can be {\itshape\bfseries nested}.}
+
+{\em See how {\em emphasizing} looks when nested.}
 
 \end{document}
