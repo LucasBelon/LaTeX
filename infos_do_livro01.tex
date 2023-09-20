@@ -67,7 +67,7 @@ Comando         Declaração  Significado
 \textnormal{...}    \normalfont Default font
 
 
-Podemos usar chaves paea delimtar o espaço de ação
+Podemos usar chaves paea delimtar o escopo de ação
 de uma declaração:
 
 {\sffamily
@@ -81,5 +81,57 @@ Besides being {\itshape italic} words could be {\bfseries bold},
 Such commands can be {\itshape\bfseries nested}.}
 
 {\em See how {\em emphasizing} looks when nested.}
+
+Alterações em tamanho de fonte são usadas em macros.
+Mas vamos aplicar no corpo do texto para exemplificar.
+
+\noindent \tiny we \scriptsize start 
+\footnotesize \small small
+\normalsize get
+\large big 
+\Large and
+\LARGE bigger,
+\huge huge and
+\Huge gigantic!
+
+O tamanho das fontes sendo alteradas são referentes à fonte padrão do documento.
+
+É possível criar ambientes (environments) para que trechos 
+sejam contemplados pelas alterações ditadas.
+Se trata de uma envoltória estilizada.
+
+\begin{huge}
+    \bfseries
+    Um pequeno exemplo
+
+\end{huge}
+
+\bigskip
+
+Este é outro exemplo ilustrativo.
+
+
+Criamos uma envoltória em que \huge foi aplicado.
+A declaração de negrito acaba delimitada pelo escopo.
+Posso aplicar alterações de fonte, família e tamanho com a mesma ferramenta?
+
+A linha vazia antes de \textbackslash end \{huge\} denota fim do parágrafo.
+Bigskip nos dá um espaço vertical.
+O espaço entre parágrafos é calculado a partir do tamanho 
+da fonte, por isso, é recomendável pular parágrafo antes
+de trocar o tamanho da fonte.
+
+Podemos criar comandos, exemplo com texto pré definido.
+Criar comandos pode simplificar sintaxe e servir para salvar
+pre-sets.
+
+\newcommand{\TUG}{TeX Users Group}
+
+\section{The \TUG}
+
+The \TUG\ is an organization for people who are interested in 
+
+\TeX\ or \LaTeX.
+
 
 \end{document}
