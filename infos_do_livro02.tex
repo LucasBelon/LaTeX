@@ -4,4 +4,35 @@
 Página 60 do livro.
 Vamos verificar um pouco do uso de pacotes.
 
+\usepackage{xspace}
+\section{The \TUG}
+
+The \TUG is an organization for people
+who are interested in \TeX or \LaTeX.
+
+Teoricamente a adição do pacote xspace consertaria o problema dos espaços.
+
+Vamos ver comandos com argumentos.
+
+\newcommand{\keyword}[1]{\textbf{#1}}
+
+O número entre colchetes é o número de argumentos.
+\#1 é o primeiro parâmetro. Poderia haver um \#2 e assim
+em diante.
+
+
+\keyword{Grouping} by curly braces limits the
+
+\keyword{scope} of \keyword{declarations}
+
+Exemplo 2:
+
+\newcommand{\keyword}[2][\bfseries]{{#1#2}}
+\begin{document}
+\keyword{Grouping} by curly braces limits the
+\keyword{scope} of \keyword[\itshape]{declarations}.
+
+Modo Genérico:
+% \newcommand{command}[arguments][optional]{definition}
+
 \end{document}
