@@ -35,4 +35,27 @@ Exemplo 2:
 Modo Genérico:
 % \newcommand{command}[arguments][optional]{definition}
 
+Existe um pacote chamado url para formatação de tipos para sites.
+
+Podemos definir caixas para limitar verticalmente o texto.
+Isso é particularmente útil no caso de procurarmos criar paragrafos semelhantes em tamanho.
+
+\parbox{3cm}{TUG is an acronym. It means \TeX\ Users Group.}
+
+Uso genérico do parbox \parbox[alignment]{width}{text}
+\begin{itemize}
+        \item Alinhamento: Argumento opcional para comprimento vertical.
+        t alinha para a linha superior da caixa.
+        b alinha para a linha inferior.
+        \item Largura: Largira cuja caixa irá tomar. Pode ser dado em cm, em mm ou em in.
+        \item Texto: Texto a ser adicionado dentro da caixa.
+        Para textos mais complicados veremos outros métodos.
+\end{itemize}
+
+text line
+\quad\parbox[b]{1.8cm}{this parbox is aligned at its bottom line}
+\quad\parbox{1.5cm}{center-aligned parbox}
+\quad\parbox[t]{2cm}{another parbox aligned at its top line}
+
+
 \end{document}
