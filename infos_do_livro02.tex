@@ -57,5 +57,21 @@ text line
 \quad\parbox{1.5cm}{center-aligned parbox}
 \quad\parbox[t]{2cm}{another parbox aligned at its top line}
 
+\fbox{\parbox{Default parbox within fbox}}
+
+Usando um ambiente chamado minipage para obter um efeito semelhante ao parbox:
+
+\begin{minipage}{3cm}
+    \hyphenation{acro-nym}
+
+    TUG is an acronym. It means \TeX\ Users Group. Largura de 3cm.
+
+\end{minipage}
+
+O comando para nota de rodapé é \footnote{Adicionei uma nota de rodapé}
+
+
+
+
 
 \end{document}
