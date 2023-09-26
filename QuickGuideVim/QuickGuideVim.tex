@@ -35,6 +35,7 @@
 \date{\vspace{2.2cm}São Paulo\\31/08/2020}
 
 \maketitle
+% TODO: Encontrar uma imagem para adicionar na capa.
 %\thispagestyle{empty}
 %\setcounter{page}{-1}
 \newpage
@@ -48,11 +49,12 @@ No entanto, é difícil aprender ambas as ferramentas.
 Por conta disso, vou reescrever meu pequeno manual e fazer uma extensão com o que aprendi até então.
 O uso de um editor específico com certeza simplifica muito as coisas, seja para edição de textos, seja para programação.
 Porém, não é sempre que temos máquinas potentes o suficiente para isso.
-O pacote de ferramentas que vem com o \LaTeX \hspace{0.5cm} é gigantesco em variedade e em peso.
+O pacote de ferramentas que vem com o \LaTeX\ é gigantesco em variedade e em peso.
 O pacote de ferramentas que acompanham qualquer outro software de edição de texto o são.
 São alguns gigabytes de arquivos, muitas fontes, e diferentes compiladores.
-Assutador, mas vamos com calma.
+Assustador, mas vamos com calma.
 Este pequeno projeto é uma forma de eu me ambientar com o vimtex, e se ajudar alguém, é um ponto extra.
+
 \subsection{Minha Motivação}
 Quando comecei a faculdade havia a matéria de introdução à computação.
 Nessa matéria sugeriu-se que se instalasse um linux para fazer os exercícios e entender melhor sobre computação e afins.
@@ -155,11 +157,59 @@ Mas muitas funcionalidades interessantes demoraram para serem colhidas e entendi
 \newpage
 
 \section{Introdução}
-Existem muitos capítulos a serem levados em consideração quando se trata de aprender a utilizar as funcionalidades avançadas de um editor de texto muito antigo.
-Para começar, existem modos, 
+Quando se trata de aprender a utilizar as funcionalidades avançadas de um editor de texto muito antigo precisamos avançar um pequeno trecho por vez.
+Para tecnologias antigas, existe na internet livremente todo tipo de dica, todo tipo de vídeo, e até mesmo todo tipo de texto.
+Mas um dos trabalhos deste documento é organizar para tornar mais orgânica a absorção.
+
+O vim possui um tutorial, acessível pela linha de comando.
+Basta escrever "\$ vimtutor" que o tutorial começa.
+% TODO: Dar um jeito de adicionar notação de linha de comando.
+Assim como quase tudo na vida, você primeiro lê, depois tenta tomar alguma ação.
+Pretendo seguir mais ou menos a mesma ordem do tutorial, mas com mais explicações.
+
+Uma espécie de piada que aparece em certos meios é sobre não se saber sair do vim.
+Podemos começar por aí.
+Podemos iniciar o vim com ou sem um nome de arquivo especificado.
+Digamos que entramos sem especificar.
+Assim que se abre o vim entra-se no modo "normal".
+Através de teclas de atalho podemos entrar em outros modos.
+Existem poucas formas de intercambiar entre modos, sendo geralmente mais simples voltar para o modo normal antes de seguir para um outro.
+Para voltar para o modo normal, pressione esc repetidamente, ou mesmo a combinação Ctrl+C, que irá desativar o modo atual.
+Se você não fez nenhuma alteração no texto que está na tela, basta apertar \textbf{"\$:"} para entrar no modo "ex".
+O modo ex serve para inserção de comandos.
+Inseriremos o comando "quit".
+% TODO: Criar um estilo para os comandos internos do vim
+
+É parte da cultura unix criar comandos como abreviações de nomes maiores, como cat que abrevia con\textbf{cat}enate.
+Você pode realizar o procedimento anterior usando apenas ":q".
+
+Novamente com o vim aberto, pode-se escolher salvar o arquivo, definindo o nome, com ":write [nome do arquivo]".
+Atenção. Os comandos diferenciam minúsculas de maiúsculas.
+Caso você esteja no modo normal, pode apertar "ZZ" para salvar e sair. Um atalho para ":wq".
+
 
 \subsection{Movimentação}
+No modo normal fazemos as movimentações de cursor mais avançadas.
+Dependendo da sua versão de vim, você pode usar as setas do teclado para se mover, e pode realizar essa movimentação mesmo dentro do modo de inserção de texto.
+Vamos ver o básico de movimentação:
+
+% Arranjar um jeito de deixar aquela imagem maneira aqui
+%%   ^
+%%   k
+%%<-h l->
+%%   j
+%%   v
 ...
+\subsection{Modo Visual}
+\subsubsection{Modo Visual Normal}
+...
+\subsubsection{Modo Visual Linha}
+...
+\subsubsection{Modo Visual Bloco}
+...
+\subsection{Trocando Caracteres (Replace Mode)}
+
+
 
 \subsection{Marks}
 ...
@@ -189,7 +239,7 @@ Para começar, existem modos,
 ...
 \newpage
 
-\section{Próximo passo?}
+\section{Usando o Manual}
 ...
 \newpage
 
