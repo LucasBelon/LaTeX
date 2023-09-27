@@ -1,48 +1,60 @@
 \documentclass[a4paper, 12pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath,
-            amssymb,
-            amsfonts,
-            latexsym,
-            mathrsfs,
-            amsthm,
-            amstext,
-            bezier,
-            amscd}
-\usepackage[top=2cm,
-            bottom=2cm,
-            left=2.5cm,
-            right=2.5cm]
-            {geometry}
-\usepackage{indentfirst}
-\usepackage{graphicx}
-\usepackage{xspace}
+
+%---------Pacotes Usados-----------------+
+\usepackage{amsmath,                    %|
+            amssymb,                    %|
+            amsfonts,                   %|
+            latexsym,                   %|
+            mathrsfs,                   %|
+            amsthm,                     %|
+            amstext,                    %|
+            bezier,                     %|
+            amscd}                      %|
+                                        %|
+\usepackage[top=2cm,                    %|
+            bottom=2cm,                 %|
+            left=2.5cm,                 %|
+            right=2.5cm]                %|
+            {geometry}                  %|
+                                        %|
+\usepackage[utf8]{inputenc}             %|
+                                        %|
+\usepackage{indentfirst}                %|
+                                        %|
+\usepackage{graphicx}                   %|
+%----------------------------------------+
 
 \begin{document}
 
-\title{
-    \textbf{
-    Anotações Definitivas
-    }
-    \break
-    Aprendendo a usar VIM
-}
-\author{
-    Lucas Gouveia Belon
-    \\
-    lucasgouveiabelon@usp.br
-}
+%---------Infos MakeTitle----------------+
+\title{                                 %|
+    \textbf{                            %|
+    Anotações Definitivas               %|
+    }                                   %|
+    \break                              %|
+    Aprendendo a usar VIM               %|
+}                                       %|
+                                        %|
+\author{                                %|
+    Lucas Gouveia Belon                 %|
+    \\                                  %|
+    lucasgouveiabelon@usp.br            %|   
+}                                       %|
+\date{\vspace{2.2cm}São Paulo\\2023}    %|
+                                        %|
+\maketitle                              %|
+\newpage                                %|
+%----------------------------------------+
 
-\date{\vspace{2.2cm}São Paulo\\31/08/2020}
+%---------Sumário------------------------+
+\tableofcontents                        %|
+\newpage                                %|
+%----------------------------------------+ 
 
-\maketitle
 % TODO: Encontrar uma imagem para adicionar na capa.
 %\thispagestyle{empty}
 %\setcounter{page}{-1}
-\newpage
 %\thispagestyle{empty}
-\tableofcontents
-\newpage
 
 \section{Motivação}
 Minha ideia original era aprender a utilizar o latex.
@@ -51,6 +63,7 @@ Por conta disso, vou reescrever meu pequeno manual e fazer uma extensão com o q
 O uso de um editor específico com certeza simplifica muito as coisas, seja para edição de textos, seja para programação.
 Porém, não é sempre que temos máquinas potentes o suficiente para isso.
 O pacote de ferramentas que vem com o \LaTeX\ é gigantesco em variedade e em peso.
+
 O pacote de ferramentas que acompanham qualquer outro software de edição de texto o são.
 São alguns gigabytes de arquivos, muitas fontes, e diferentes compiladores.
 Assustador, mas vamos com calma.
@@ -200,6 +213,12 @@ Vamos ver o básico de movimentação:
 %%<-h l->
 %%   j
 %%   v
+\subsubsection{Lógica Número-Ação}
+Em muitos casos podemos pedir que o vim interprete nossos comandos com um multiplicador.
+Isso significa que, ao invés de pressionar "l" para andar para a direita 10 vezes, podemos escrever 10l, e a mágica acontece.
+Essa lógica vai nos acompanhar, e inclusive vai ficar mais rebuscada à medida que começamos a misturar conhecimentos.
+
+% Continuar com...
 ...
 \subsection{Modo Visual}
 \subsubsection{Modo Visual Normal}
