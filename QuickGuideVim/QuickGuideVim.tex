@@ -213,14 +213,153 @@ Vamos ver o básico de movimentação:
 %%<-h l->
 %%   j
 %%   v
-\subsubsection{Lógica Número-Ação}
+\subsubsection{Lógica Número-Ação-Movimento}
 Em muitos casos podemos pedir que o vim interprete nossos comandos com um multiplicador.
-Isso significa que, ao invés de pressionar "l" para andar para a direita 10 vezes, podemos escrever 10l, e a mágica acontece.
+Isso significa que, ao invés de pressionar "l" para andar para a direita 10 vezes, podemos escrever "10l", e a mágica acontece.
 Essa lógica vai nos acompanhar, e inclusive vai ficar mais rebuscada à medida que começamos a misturar conhecimentos.
+Futuramente colocaremos a ação na brincadeira, completando assim o número-ação-movimento.
 
-% Continuar com...
-...
+Além de movimentação em relação aos caracteres, podemos nos movimentar em relação aos caracteres.
+Isso significa que podemos usar o equivalente a CTRL-direita ou CTRL-esquerda.
+Para pular palavras podemos pressionar "w". Para voltar, "e".
+Pressionar "w" pula para a primeira letra da próxima palavra.
+Para pular para a última letra da palavra mais próxima, "e".
+Usar estes comandos com letras maiúsculas irá ignorar pontuações, assim, apenas considerando espaços vazios.
+Geralmente existem diferenças maiores entre comandos de letras maiúsculas e minúsculas.
+
+Para voltar, "b", que pula para a primeira letra da palavra anterior.
+Para pular para a última letra da palavra anterior, "ge".
+Mais tarde vamos aprender que a tecla "g" é uma tecla separada para comandos sem muita lógica associada.
+Talvez seja isso mesmo, genérico, geral.
+
+Por fim, para simplificar: "w" vai pra próxima word. "b" faz um "backword".
+Sempre bom encontrar maneiras de lembrar das palavras chave, mnemônicos ajudam.
+
+Podemos pular também para o começo ou fim da linha de texto.
+Para pular para o primeiro caractere da linha, pressionamos "0".
+Para o último caractere, "\$".
+Quando desenvolvendo programas, existe a necessidade de se pular para o primeiro caractere não nulo.
+Para fazer essa ação, podemos usar o comando "\textbf{\^}".
+
+Já falamos de palavras, de caracteres, e fomos para começo e fim da linha.
+Podemos fazer o cursor viajar até um certo caractere.
+Para essa ação escrevemos "tx", que significa "até o caractere x".
+A mesma ação, mas para trás, é usar fx.
+E, novamente, para ficar mais fácil de lembrar, "unTil x".
+E para a ação reversa, "find x".
+
+O uso de T e F fica a seu cargo de compreender.
+Afinal de contas, nem tudo pode ser aprendido por ter sido ensinado.
+
+Novamente, existe a funcionalidade de pular entre uma ponta ou outra de um pedaço de texto que esteja dentro de parênteses, chaves ou colchetes.
+Quando se está programando, isso faz muito sentido, já que existem grandes trechos de códigos que podem estar enclausurados nestes caracteres.
+A ação é "\%".
+
+Voltando ao texto normal, podemos pular parágrafos.
+Estamos ficando bons em pular grandes trechos.
+Para pular, "\{" e "\}". Experimente.
+
+Sempre que fazemos um grande salto no vim deixamos um rastro na memória.
+Podemos abusar disso para pular de forma eficiente.
+Para voltar no histórico de pulos, "CTRL-O" para voltar.
+Para avançar usamos "CTRL-I".
+Futuramente podemos verificar como pular entre palavras específicas.
+Além disso, podemos pular entre palavras que não estão no mesmo arquivo aberto.
+
+Para finalizar.
+Podemos fazer mais dois tipos de salto, um para as pontas do arquivo, outro para um ponto qualquer.
+O primeiro é pular para o começo do arquivo.
+Usamos "gg".
+Para pular para o fim do arquivo, "G".
+E para pular para uma linha específica do arquivo, escrevemos ":número"
+
+\subsubsection{Focando no Cursor}
+Para lembrar, até agora estamos falando de funcionalidades que são factíveis no modo normal.
+
+Agora que sabemos mudar a posição do cursor, vamos focar em um detalhe que ajuda na visualização.
+Às vezes estamos escrevendo da direita pra esquerda, no sentido natural das coisas.
+E naturalmente o cursor vai descendo.
+Mas podemos mudar isso.
+
+Para fazer com que o cursor fique focado focado ao centro da tela "zz".
+Importante. Não é a mesma coisa que "ZZ", que salva e sai do programa.
+
+Para fazer com que o cursor fique focado na parte do topo da tela, "zt".
+Para que fique na parte debaixo da tela, "zb".
+
+\subsubsection{Movendo a tela}
+Podemos pular de outras formas. Pular por páginas.
+
+Para descer a tela apenas uma linha, "CTRL-e". Para subir "CTRL-y".
+Perceba que o comando para subir fica na mão esquerda, para descer, mão direita.
+
+Podemos descer a tela meia página, podemos usar "CTRL-d" e "CTRL-u".
+Para facilitar a memória, "d" é para "down" e "u" é para "up".
+
+Por fim, chega de meia página, vamos mexer uma página inteira.
+Use "CTRL-f" e "CTRL-b" para descer e subir.
+Último mnemônico: "f" é para "fall", cair.
+"b" é para "bring up", trazer para cima.
+
+Com isso, fechamos as movimentações.
+Dizem que as movimentações do vim são a habilidade de ouro que fazem com que quem edita e escreve textos evolua.
+
+Esses pulos, saltos, avanços, voltas, fazem com que quem precisa, principalmente, editar, consiga ter uma eficiência invejável.
+Além de que parece bruxaria.
+
+\subsubsection{Deletar, Copiar, Colar}
+Além de inserir, que provavelmente é a funcionalidade mais básica de um editor de textos, precisamos saber como apagar coisas.
+Algo que é importante de deixar claro é que, tudo o que apagamos dentro do vim acaba ficando salvo no clipboard.
+Isso significa que, se apagarmos uma linha, podemos usar o comando de colar, que a linha apagada irá voltar ao seu lugar.
+E também que, se apagarmos duas linhas, apenas a última vai ficar salva.
+
+Para deletar um único caractere "x". Funciona como o backspace, apagando o que o cursor ilumina. "X" irá apagar a letra anterior ao cursor.
+
+Existe um comando que obedece a já falada lógica Número-Ação-Movimento.
+A tecla "d" irá apagar a partir dessa lógica.
+Fica mais claro com exemplos: "dl" irá apagar um caractere para a direita.
+"dj" irá apagar a linha atual e a debaixo.
+"dd" simplesmente apaga a linha atual.
+"d\$" irá apagar da posição atual até o fim da linha.
+"D" faz o mesmo que "d\$".
+E podemos misturar com um número para repetir a mesma ação n vezes.
+
+Todas as movimentações de cursor são candidatas à composição dessas combinações.
+Deletar até o próximo sinal de +? "dt+" fará o serviço.
+E assim em diante.
+
+O mesmo é válido para o comando de cópia.
+"y", significa "yank", e não faz muito sentido para quem fala português. 
+Mas serve para copiar um certo pedaço de texto.
+Não se esqueça da lógica Número-Ação-Movimento, também serve para este comando.
+
+Por fim, para colar temos duas opções: Ou copiar imediatamente acima do cursor, ou um caractere atrás.
+Isso faz diferença quando estamos copiando uma linha, e acabamos por copiar o caractere de "nova linha".
+"P" copia no espaço imediatamente anterior ao cursor. "p" em cima do cursor.
+Caso ainda não tenha ficado claro, o comando para recortar é o mesmo do de apagar.
+
+
+
+
+\subsubsection{Substituir}
+
+\subsubsection{Inside, Around}
+	"dl"	delete character (alias: "x")		|dl|
+	"diw"	delete inner word			*diw*
+	"daw"	delete a word				*daw*
+	"diW"	delete inner WORD (see |WORD|)		*diW*
+	"daW"	delete a WORD (see |WORD|)		*daW*
+	"dd"	delete one line				|dd|
+	"dis"	delete inner sentence			*dis*
+	"das"	delete a sentence			*das*
+	"dib"	delete inner '(' ')' block		*dib*
+	"dab"	delete a '(' ')' block			*dab*
+	"dip"	delete inner paragraph			*dip*
+	"dap"	delete a paragraph			*dap*
+	"diB"	delete inner '{' '}' block		*diB*
+	"daB"	delete a '{' '}' block			*daB*
 \subsection{Modo Visual}
+
 \subsubsection{Modo Visual Normal}
 ...
 \subsubsection{Modo Visual Linha}
