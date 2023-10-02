@@ -192,8 +192,8 @@ Para voltar para o modo normal, pressione esc repetidamente, ou mesmo a combina�
 Se você não fez nenhuma alteração no texto que está na tela, basta apertar \textbf{"\$:"} para entrar no modo "ex".
 O modo ex serve para inserção de comandos.
 Inseriremos o comando "quit".
-% TODO: Criar um estilo para os comandos internos do vim
-
+% TODO estilo: Criar um estilo para os comandos internos do vim. Um background preto com fonte de cor branca e tudo em negrito, igual ao original
+ 
 É parte da cultura unix criar comandos como abreviações de nomes maiores, como cat que abrevia con\textbf{cat}enate.
 Você pode realizar o procedimento anterior usando apenas ":q".
 
@@ -201,6 +201,7 @@ Novamente com o vim aberto, pode-se escolher salvar o arquivo, definindo o nome,
 Atenção. Os comandos diferenciam minúsculas de maiúsculas.
 Caso você esteja no modo normal, pode apertar "ZZ" para salvar e sair. Um atalho para ":wq".
 
+%TODO resumo: Criar um resumo dos comandos abordados. Pode ser uma lista com os comandos abordados até então
 
 \subsection{Movimentação}
 No modo normal fazemos as movimentações de cursor mais avançadas.
@@ -219,9 +220,11 @@ Isso significa que, ao invés de pressionar "l" para andar para a direita 10 vez
 Essa lógica vai nos acompanhar, e inclusive vai ficar mais rebuscada à medida que começamos a misturar conhecimentos.
 Futuramente colocaremos a ação na brincadeira, completando assim o número-ação-movimento.
 
-Além de movimentação em relação aos caracteres, podemos nos movimentar em relação aos caracteres.
-Isso significa que podemos usar o equivalente a CTRL-direita ou CTRL-esquerda.
-Para pular palavras podemos pressionar "w". Para voltar, "e".
+% -------Movimentação por palavras -----------------
+
+Além de movimentação em relação aos caracteres, podemos nos movimentar em relação às palavras.
+Isso significa que podemos usar o equivalente a CTRL-direita ou CTRL-esquerda que temos em editores como o MS Word.
+Para pular palavras a frente temos duas opções.
 Pressionar "w" pula para a primeira letra da próxima palavra.
 Para pular para a última letra da palavra mais próxima, "e".
 Usar estes comandos com letras maiúsculas irá ignorar pontuações, assim, apenas considerando espaços vazios.
@@ -235,6 +238,7 @@ Talvez seja isso mesmo, genérico, geral.
 Por fim, para simplificar: "w" vai pra próxima word. "b" faz um "backword".
 Sempre bom encontrar maneiras de lembrar das palavras chave, mnemônicos ajudam.
 
+% -------Movimentação na linha  -----------------
 Podemos pular também para o começo ou fim da linha de texto.
 Para pular para o primeiro caractere da linha, pressionamos "0".
 Para o último caractere, "\$".
@@ -251,14 +255,17 @@ E para a ação reversa, "find x".
 O uso de T e F fica a seu cargo de compreender.
 Afinal de contas, nem tudo pode ser aprendido por ter sido ensinado.
 
+% -------Movimentação entre parênteses -----------------
 Novamente, existe a funcionalidade de pular entre uma ponta ou outra de um pedaço de texto que esteja dentro de parênteses, chaves ou colchetes.
 Quando se está programando, isso faz muito sentido, já que existem grandes trechos de códigos que podem estar enclausurados nestes caracteres.
 A ação é "\%".
 
+% -------Movimentação entre parágrafos -----------------
 Voltando ao texto normal, podemos pular parágrafos.
 Estamos ficando bons em pular grandes trechos.
 Para pular, "\{" e "\}". Experimente.
 
+% -------Movimentação pelo histórico de saltos -----------------
 Sempre que fazemos um grande salto no vim deixamos um rastro na memória.
 Podemos abusar disso para pular de forma eficiente.
 Para voltar no histórico de pulos, "CTRL-O" para voltar.
@@ -266,12 +273,35 @@ Para avançar usamos "CTRL-I".
 Futuramente podemos verificar como pular entre palavras específicas.
 Além disso, podemos pular entre palavras que não estão no mesmo arquivo aberto.
 
+% -------Movimentação para começo/fim do arquivo -----------------
 Para finalizar.
 Podemos fazer mais dois tipos de salto, um para as pontas do arquivo, outro para um ponto qualquer.
 O primeiro é pular para o começo do arquivo.
 Usamos "gg".
 Para pular para o fim do arquivo, "G".
 E para pular para uma linha específica do arquivo, escrevemos ":número"
+
+\begin{itemize}
+    \item Movimentação por caracteres:
+        \subitem h - Esquerda
+        \subitem j - Baixo
+        \subitem k - Cima
+        \subitem l - Direita
+    \item Movimentação na linha:
+        \subitem 0 - Cima
+        \subitem \$- Cima
+        %\subitem ^ - Cima
+        \subitem t - Cima
+        \subitem f - Cima
+
+\end{itemize}
+    
+% -------Movimentação por palavras -----------------
+% -------Movimentação na linha  -----------------
+% -------Movimentação entre parênteses -----------------
+% -------Movimentação entre parágrafos -----------------
+% -------Movimentação pelo histórico de saltos -----------------
+% -------Movimentação para começo/fim do arquivo -----------------
 
 \subsubsection{Focando no Cursor}
 Para lembrar, até agora estamos falando de funcionalidades que são factíveis no modo normal.
