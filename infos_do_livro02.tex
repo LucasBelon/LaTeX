@@ -67,6 +67,56 @@ Usando um ambiente chamado minipage para obter um efeito semelhante ao parbox:
 
 \end{minipage}
 
+O comando hyphenation serve para, manualmente, indicar qual parte da palavra pode ser separada quando encontrado o fim do espaço de escrita.
+
+Podemos usar o pacote hyphenat para aumentar as possibilidades.
+Podemos prevenir hiphenização com
+\usepackage[none]{hyphenat}
+E permitir hiphenização de texto da fonte typewriter com
+\usepackage[htt]{hyphenat}
+
+Para pequenos trechos, podemos inibir a hyphenação com \nohyphens{pequeno trecho de texto}
+
+O pacote microtype mexe no espaçamento para obter o efeito de texto justificado.
+No exemplo dado, mexeria no microtype para tentar eliminar a necessidade de hiphens.
+
+Vamos quebrar linhas manualmente, usando de exemplo um poema do Allan Poe.
+
+\emph{Annabel Lee} \\[3mm]
+It was many and many years ago, \\
+In a kingdom by the sea. \\
+That a maiden there lived whom you may know \\
+By the name of Annabel Lee
+
+O comando que possui o mesmo efeito de \\
+é o comando \newline.
+
+O comando que indica que deve ser adicionada uma nova linha,
+mas mantendo a justificação do texto \linebreak, pode causar
+alongamento demasiado na distância entre palavras.
+Por isso, é raramente usado.
+
+Podemos usar \\[3mm] para adicionar espaçamento vertical.
+\\*[5mm] faz o mesmo, mas previne a quebra de página antes da
+próxima linha de texto.
+
+\linebreak[number] pode ser usado para influenciar a quebra de linha de forma sutil ou evidente.
+Se number for zero, a quebra de linha é permitida, 1 significa que é desejada, 2 e 3 marcam outras requisições de insistência, e 4 irá forcar a quebra de linha.
+Esta última é a opção padrão se não for especificado número.
+
+Prevenindo quebras de linha.
+\nolinebreak Faz o serviço.
+Possui opções assim como o linebreak, sendo as requisições 
+se tornando mais insistentes de 0 (recomenda não quebrar)
+à 4 (proíbe de quebrar).
+
+O comando \mbox[texto] desabilita a hyphenaçâo \textbf{e} a 
+a quebra de linha do texto.
+
+Quando duas palavras devem permanecer unidas na mesma linha utilizamos o símbolo \~.
+Exemplo:
+Dr. ~Watson previne que Dr. apareça sozinho no fim de uma linha
+
 O comando para nota de rodapé é \footnote{Adicionei uma nota de rodapé}
 
 
