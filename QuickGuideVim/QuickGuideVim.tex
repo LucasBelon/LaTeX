@@ -16,7 +16,8 @@
             left=2.5cm,                 %|
             right=2.5cm]                %|
             {geometry}                  %|
-                                        %|
+\usepackage{xcolor}                     %|
+\usepackage{soul}                       %|
 \usepackage[utf8]{inputenc}             %|
                                         %|
 \usepackage{indentfirst}                %|
@@ -38,7 +39,7 @@
 \author{                                %|
     Lucas Gouveia Belon                 %|
     \\                                  %|
-    lucasgouveiabelon@usp.br            %|   
+    lucasgouveiabelon@gmail.com         %|   
 }                                       %|
 \date{\vspace{2.2cm}São Paulo\\2023}    %|
                                         %|
@@ -57,7 +58,7 @@
 %\thispagestyle{empty}
 
 \section{Motivação}
-Minha ideia original era aprender a utilizar o latex.
+Minha ideia original era aprender a utilizar o \LaTeX.
 No entanto, é difícil aprender ambas as ferramentas.
 Por conta disso, vou reescrever meu pequeno manual e fazer uma extensão com o que aprendi até então.
 O uso de um editor específico com certeza simplifica muito as coisas, seja para edição de textos, seja para programação.
@@ -71,11 +72,11 @@ Este pequeno projeto é uma forma de eu me ambientar com o vimtex, e se ajudar a
 
 \subsection{Minha Motivação}
 Quando comecei a faculdade havia a matéria de introdução à computação.
-Nessa matéria sugeriu-se que se instalasse um linux para fazer os exercícios e entender melhor sobre computação e afins.
+Nessa matéria sugeriu-se que se instalasse um Linux para fazer os exercícios e entender melhor sobre computação e afins.
 De fato funcionou.
 Comecei a aprender, e procurar, e aos poucos fui criando uma trilha de aprendizado.
 Nessa trilha me encontrei com o terminal, ou prompt de comando, ou shell.
-No linux, é a forma mais eficiente de se executar uma tarefa.
+No Linux, é a forma mais eficiente de se executar uma tarefa.
 Mesmo que muitas vezes não seja exatamente fácil, é possível salvar em um arquivo de script uma sequência de ações para que seja difícil uma única vez.
 Isso me encantou.
 
@@ -85,7 +86,7 @@ Existem diferentes tipos de programas, e todos possuem essa natureza estranha, a
 E para finalizar, todas as distribuições Linux conseguem rodar ao menos a linha de comando e um editor de textos.
 E o VIM é um editor e tanto.
 
-\subsection{Movitação Para Você}
+\subsection{Motivação Para Você}
 Se você não dispõe de uma máquina potente, e precisa começar com programação, talvez seja um caminho muito mais difícil o que te espera.
 Mas é no caminho mais difícil que temos a evolução mais acentuada.
 Aprendi a programar em 2 linguagens de programação, das 3 que conheço, no celular.
@@ -96,8 +97,12 @@ Além disso, fazer exercícios de programação mantém a mente afiada, e exige 
 Com o básico bem estabelecido se chega realmente muito longe.
 
 Se você possui um computador fraco, pode ser que instalar uma distribuição Linux alivie o peso.
-Perde-se muitos aplicativos nativos do Windows, e muitas vezes suas tarefas dependem específicamente do Microsoft Office, ou do AutoCad, ou da suíte Adobe.
+Perde-se muitos aplicativos nativos do Windows, e muitas vezes suas tarefas dependem especificamente do Microsoft Office, ou do AutoCad, ou da suíte Adobe.
 Mas também existe a possibilidade de se utilizar programas alternativos.
+Existe também uma vantagem didática:
+Não existe muita coisa no que prestar atenção para distrair se você está sempre utilizando o mínimo do mínimo.
+E mesmo evoluindo na ferramenta, aprende-se compondo conhecimentos anteriores. 
+Dessa forma, quem aprende a mexer no vim acaba procurando pelos componentes de qualquer editor, para futura instalação e configuração.
 
 Falando de ir além do básico, configurações em servidores são geralmente realizados sem interface gráfica.
 Se trata de utilizar um computador distante, especializado em alguma tarefa.
@@ -113,7 +118,7 @@ Outros componentes simplesmente não fazem sentido juntos dessa forma.
 Pela versatilidade, e capacidade de se ter numa única ferramenta diversas configurações, decidi me dedicar a aprender.
 
 \subsubsection{Editor de Texto}
-O editor de texto é a parte núcleo, que quase todo servidor linux possui.
+O editor de texto é a parte núcleo, que quase todo servidor Linux possui.
 Tem-se as funcionalidades básicas: Leitura; Escrita; Busca; Substituição.
 E é aí que começa a ficar divertido.
 Existe o que se chama de syntax highlighting, a capacidade de exibir o texto com cores diferentes baseado na sintaxe, no sentido lógico usado.
@@ -131,7 +136,7 @@ E pode-se invocar um terminal para continuar executando comandos do lado de fora
 
 \subsubsection{Configurações}
 Arquivos de configuração fazem loucuras.
-Existem templates de configuração que transformam e aproximam o vim de editores especializados para usos específicos.
+Existem templates de configuração, que nada mais são que pré configurações que transformam e aproximam o vim de editores especializados para usos específicos.
 Existem configurações que facilitam o uso, e outras que são impossíveis de se desacostumar.
 Nos arquivos de configuração, tornam-se persistentes as alterações que também podem ser feitas com o editor aberto.
 
@@ -144,7 +149,7 @@ No extremo, chega-se a um ponto em que alguém que também seja conhecido do vim
 Para diversos usos, o vim é uma ferramenta tosca.
 Não que seja impossível realizar qualquer tarefa com o básico do básico.
 Mas se trata de uma ferramenta que começou com funcionalidades limitadas.
-E programadores externos ao desenvolvimento possuiam formas de adicionar formas mais fáceis de se fazer uma tarefa.
+E programadores externos ao desenvolvimento da ferramenta possuem formas de adicionar maneiras mais fáceis de se fazer uma tarefa.
 Pensaram novas utilidades nunca antes pensadas, e extensões que se conectam com outros programas.
 
 Talvez seja nos plugins que o vim deixa de ser uma ferramenta ruim para ser sincero.
@@ -166,7 +171,7 @@ Assim como não adianta querer fazer manobras de skate com uma tábua.
 Se você chegou até aqui e aturou minha enrolação, então não tem motivo para não ir até o final.
 Tentarei ser o mais prático possível.
 Planejo fazer de tal forma que você possa abandonar o livro pela metade e se virar muito bem.
-Mas muitas funcionalidades interessantes demoraram para serem colhidas e entendidas por esse cérebro de geléia que está escrevendo. Então, vamos lá.
+Mas muitas funcionalidades interessantes demoraram para serem colhidas e entendidas por esse cérebro de geleia que está escrevendo. Então, vamos lá.
 
 \newpage
 
@@ -193,6 +198,14 @@ Se você não fez nenhuma alteração no texto que está na tela, basta apertar 
 O modo ex serve para inserção de comandos.
 Inseriremos o comando "quit".
 % TODO estilo: Criar um estilo para os comandos internos do vim. Um background preto com fonte de cor branca e tudo em negrito, igual ao original
+% TODO novo: Transformar esse conjunto de alterações num comando só. Fuçando no livro acho que já tenho como saber fazer.
+
+\sethlcolor{black}
+\textbf{
+\textcolor{white}{
+    \hl{Testando}
+}}
+
  
 É parte da cultura unix criar comandos como abreviações de nomes maiores, como cat que abrevia con\textbf{cat}enate.
 Você pode realizar o procedimento anterior usando apenas ":q".
@@ -281,28 +294,41 @@ Usamos "gg".
 Para pular para o fim do arquivo, "G".
 E para pular para uma linha específica do arquivo, escrevemos ":número"
 
+% -------Resumo dos comandos de movimentação de caracteres -----------------
+Resumo:
+
 \begin{itemize}
     \item Movimentação por caracteres:
-        \subitem h - Esquerda
-        \subitem j - Baixo
-        \subitem k - Cima
-        \subitem l - Direita
+        \subitem h - Esquerda.
+        \subitem j - Baixo.
+        \subitem k - Cima.
+        \subitem l - Direita.
+    \item Movimentação por palavras:
+        \subitem w  - Avança para o começo da próxima palavra.
+        \subitem b  - Retrocede para o começo da palavra atual.
+        \subitem e  - Avança para o fim da próxima palavra.
+        \subitem ge - Retrocede para o fim da palavra atual.\\
+        Obs: O uso de W, B, E, gE ignora pontuação levando em consideração apenas espaços em branco.
     \item Movimentação na linha:
-        \subitem 0 - Cima
-        \subitem \$- Cima
-        %\subitem ^ - Cima
-        \subitem t - Cima
-        \subitem f - Cima
-
+        \subitem 0 - Começo absoluto da linha
+        \subitem \$- Fim absoluto da linha
+        %\subitem ^ - Começo não nulo da linha
+        \subitem t - Avanço até certo caractere
+        \subitem f - Retrocesso até certo caractere
+    \item Movimentação entre parênteses, colchetes e chaves:
+        \subitem \% - Pular entre começo e fim, priorizando o começo.
+    \item Movimentação entre parágrafos:
+        \subitem \} - Avança para o fim do parágrafo atual.
+        \subitem \{ - Retrocede para o começo do parágrafo anterior.
+    \item Movimentação pelo histórico de saltos:
+        \subitem CTRL I - Avança para a posição no histórico de saltos.
+        \subitem CTRL O - Retrocede para a posição no histórico de saltos.
+    \item Movimentação para primeira/última/alguma linha do arquivo:
+        \subitem G - Avança para o fim do arquivo.
+        \subitem gg - Retrocede para o começo do arquivo.
+        \subitem :12 - Salto para linha 12 do arquivo.
 \end{itemize}
     
-% -------Movimentação por palavras -----------------
-% -------Movimentação na linha  -----------------
-% -------Movimentação entre parênteses -----------------
-% -------Movimentação entre parágrafos -----------------
-% -------Movimentação pelo histórico de saltos -----------------
-% -------Movimentação para começo/fim do arquivo -----------------
-
 \subsubsection{Focando no Cursor}
 Para lembrar, até agora estamos falando de funcionalidades que são factíveis no modo normal.
 
@@ -316,6 +342,14 @@ Importante. Não é a mesma coisa que "ZZ", que salva e sai do programa.
 
 Para fazer com que o cursor fique focado na parte do topo da tela, "zt".
 Para que fique na parte debaixo da tela, "zb".
+
+% -------Resumo Focando no Cursor -----------------
+Resumo:
+\begin{itemize}
+    \item zz - Move a tela fazendo com que o cursor centralize. 
+    \item zt - Move a tela fazendo com que o cursor se apresente no topo da tela.
+    \item zb - Move a tela fazendo com que o cursor se apresente na parte baixa da tela.
+\end{itemize}
 
 \subsubsection{Movendo a tela}
 Podemos pular de outras formas. Pular por páginas.
@@ -337,15 +371,27 @@ Dizem que as movimentações do vim são a habilidade de ouro que fazem com que 
 Esses pulos, saltos, avanços, voltas, fazem com que quem precisa, principalmente, editar, consiga ter uma eficiência invejável.
 Além de que parece bruxaria.
 
+% -------Resumo dos comandos apresentados -----------------
+Resumo:
+\begin{itemize}
+    \item CTRL e - Desce a tela uma linha. Se necessário, desce o cursor uma linha.
+    \item CTRL y - Sobe a tela uma linha. Se necessário, sobe o cursor uma linha.
+    \item CTRL d - Desce a tela meia página. Tenta manter o cursor na mesma posição relativa.
+    \item CTRL u - Sobe a tela meia página. Tenta manter o cursor na mesma posição relativa.
+    \item CTRL f - Desce a tela uma página. Tenta manter o cursor na mesma posição relativa.
+    \item CTRL b - Sobe a tela uma página. Tenta manter o cursor na mesma posição relativa.
+\end{itemize}
+
 \subsubsection{Deletar, Copiar, Colar}
 Além de inserir, que provavelmente é a funcionalidade mais básica de um editor de textos, precisamos saber como apagar coisas.
 Algo que é importante de deixar claro é que, tudo o que apagamos dentro do vim acaba ficando salvo no clipboard.
 Isso significa que, se apagarmos uma linha, podemos usar o comando de colar, que a linha apagada irá voltar ao seu lugar.
-E também que, se apagarmos duas linhas, apenas a última vai ficar salva.
+E também que, se apagarmos duas linhas com dois comandos diferentes, apenas a última vai ficar salva neste "slot" de memória.
 
-Para deletar um único caractere "x". Funciona como o backspace, apagando o que o cursor ilumina. "X" irá apagar a letra anterior ao cursor.
+Para deletar um único caractere, pressione "x". Funciona como o delete, apagando o que o cursor ilumina, sempre a frente da linha.
+"X" irá apagar a letra anterior ao cursor, tendo o efeito do backspace, sempre regredindo a linha.
 
-Existe um comando que obedece a já falada lógica Número-Ação-Movimento.
+Estes comandos obedecem a já falada lógica Número-Ação-Movimento.
 A tecla "d" irá apagar a partir dessa lógica.
 Fica mais claro com exemplos: "dl" irá apagar um caractere para a direita.
 "dj" irá apagar a linha atual e a debaixo.
@@ -362,16 +408,22 @@ O mesmo é válido para o comando de cópia.
 "y", significa "yank", e não faz muito sentido para quem fala português. 
 Mas serve para copiar um certo pedaço de texto.
 Não se esqueça da lógica Número-Ação-Movimento, também serve para este comando.
+"yy" irá copiar a linha atual, e o comando "Y" tem o mesmo efeito de "yy".
 
 Por fim, para colar temos duas opções: Ou copiar imediatamente acima do cursor, ou um caractere atrás.
 Isso faz diferença quando estamos copiando uma linha, e acabamos por copiar o caractere de "nova linha".
 "P" copia no espaço imediatamente anterior ao cursor. "p" em cima do cursor.
 Caso ainda não tenha ficado claro, o comando para recortar é o mesmo do de apagar.
 
-
-
+Como pode ser que você queira apagar um trecho de texto para imediatamente inserir algo em seu lugar,
+Pode-se usar o comando "c", que possui funcionalidade semelhante ao "d", no entanto, após ser executado, troca para o modo de inserção. Todo o anterior é válido, c\$, c0, cj, ck, e assim em diante.
 
 \subsubsection{Substituir}
+Caso seus erros sejam pequenos, e você queira substituir apenas um caractere sem sair do modo normal, o comando "r" irá te inserir no modo Replace durante uma única pressionada.
+Este comando permite trocar o caractere que estiver debaixo do cursor.
+
+Para trocar sequências de caracteres, e assim, se manter no modo Replace por mais tempo, utilize o comando "R".
+Dessa forma, será preciso pressionar esc ou CTRL c para voltar ao modo normal.
 
 \subsubsection{Inside, Around}
 	"dl"	delete character (alias: "x")		|dl|
@@ -382,52 +434,71 @@ Caso ainda não tenha ficado claro, o comando para recortar é o mesmo do de apa
 	"dd"	delete one line				|dd|
 	"dis"	delete inner sentence			*dis*
 	"das"	delete a sentence			*das*
-	"dib"	delete inner '(' ')' block		*dib*
+	"dib"	delete inner '(' ')' block		*dib* É realmente somente dentro de parênteses
 	"dab"	delete a '(' ')' block			*dab*
 	"dip"	delete inner paragraph			*dip*
 	"dap"	delete a paragraph			*dap*
 	"diB"	delete inner '{' '}' block		*diB*
 	"daB"	delete a '{' '}' block			*daB*
+
+% -------Resumo dos comandos apresentados -----------------
+Resumo:
+\begin{itemize}
+    \item x/X - Deleta o caractere debaixo/antes do cursor.
+    \item d/D - Deleta de acordo com movimento/até o fim da linha.
+    \item y/Y - Copia de acordo com o movimento/a linha atual.
+    \item p/P - Cola a partir do cursor/um caractere antes do cursor
+    \item c/C - Deleta de acordo com movimento/até o fim da linha e entra em modo de inserção.
+    \item r/R - Substitui um caractere/uma cadeia de caracteres.
+\end{itemize}
+
 \subsection{Modo Visual}
 
 \subsubsection{Modo Visual Normal}
 ...
+
 \subsubsection{Modo Visual Linha}
 ...
+
 \subsubsection{Modo Visual Bloco}
 ...
-\subsection{Trocando Caracteres (Replace Mode)}
-
-
 
 \subsection{Marks}
 ...
 
 \newpage
 \section{Recursos avançados}
+\subsection{Busca no arquivo}
+\subsection{Substituição no arquivo}
 ...
 \subsection{Registers}
 ...
+\subsection{MultiFile}
+\subsubsection{bufdo}
 
 \subsection{MultiWindows}
+\subsubsection{save view}
+
+\subsection{MultiTabs}
+\subsubsection{save session}
 ...
 
-\subsection{Sessions}
-...
+\subsection{quickfix com grep}
+\subsection{Dicas miscelâneas}
+
 \newpage
-
 \section{Settings}
 ...
-\newpage
 
+\newpage
 \section{Plugins Built-in}
 ...
-\newpage
 
+\newpage
 \section{Escolhendo e gerenciando Plugins}
 ...
-\newpage
 
+\newpage
 \section{Usando o Manual}
 ...
 \newpage
