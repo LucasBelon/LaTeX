@@ -28,10 +28,10 @@
 \begin{document}
 
 %---------Infos MakeTitle----------------+
-\title{                                 %|
+\title{%                                %|
     \textbf{                            %|
     Anotações Definitivas               %|
-    }                                   %|
+    }%                                  %|
     \break                              %|
     Aprendendo a usar VIM               %|
 }                                       %|
@@ -39,7 +39,7 @@
 \author{                                %|
     Lucas Gouveia Belon                 %|
     \\                                  %|
-    lucasgouveiabelon@gmail.com         %|   
+    lucasgouveiabelon@gmail.com         %|
 }                                       %|
 \date{\vspace{2.2cm}São Paulo\\2023}    %|
                                         %|
@@ -50,7 +50,16 @@
 %---------Sumário------------------------+
 \tableofcontents                        %|
 \newpage                                %|
-%----------------------------------------+ 
+%----------------------------------------+
+
+
+%---------Estilos Próprios---------------+
+\newcommand{\TUG}{\textsc{TeX Users Group}}
+\newcommand{\vimcommand}[1]{%
+    \sethlcolor{black}%
+    \textbf{\textcolor{white}{\hl{#1}}}%
+}
+%----------------------------------------+
 
 % TODO: Encontrar uma imagem para adicionar na capa.
 %\thispagestyle{empty}
@@ -80,7 +89,8 @@ No Linux, é a forma mais eficiente de se executar uma tarefa.
 Mesmo que muitas vezes não seja exatamente fácil, é possível salvar em um arquivo de script uma sequência de ações para que seja difícil uma única vez.
 Isso me encantou.
 
-Não bastasse isso, eu curso engenharia, e existem contas para se fazer, procedimentos de cálculo, aproximações e avaliações que podem ser facilitadas com computadores.
+Não bastasse isso, eu curso engenharia, e existem contas para se fazer,
+procedimentos de cálculo, aproximações e avaliações que podem ser facilitadas com computadores.
 Existem diferentes tipos de programas, e todos possuem essa natureza estranha, a existência dentro de computadores.
 
 E para finalizar, todas as distribuições Linux conseguem rodar ao menos a linha de comando e um editor de textos.
@@ -101,7 +111,7 @@ Perde-se muitos aplicativos nativos do Windows, e muitas vezes suas tarefas depe
 Mas também existe a possibilidade de se utilizar programas alternativos.
 Existe também uma vantagem didática:
 Não existe muita coisa no que prestar atenção para distrair se você está sempre utilizando o mínimo do mínimo.
-E mesmo evoluindo na ferramenta, aprende-se compondo conhecimentos anteriores. 
+E mesmo evoluindo na ferramenta, aprende-se compondo conhecimentos anteriores.
 Dessa forma, quem aprende a mexer no vim acaba procurando pelos componentes de qualquer editor, para futura instalação e configuração.
 
 Falando de ir além do básico, configurações em servidores são geralmente realizados sem interface gráfica.
@@ -121,42 +131,52 @@ Pela versatilidade, e capacidade de se ter numa única ferramenta diversas confi
 O editor de texto é a parte núcleo, que quase todo servidor Linux possui.
 Tem-se as funcionalidades básicas: Leitura; Escrita; Busca; Substituição.
 E é aí que começa a ficar divertido.
-Existe o que se chama de syntax highlighting, a capacidade de exibir o texto com cores diferentes baseado na sintaxe, no sentido lógico usado.
+Existe o que se chama de syntax highlighting, a capacidade de exibir o texto
+com cores diferentes baseado na sintaxe, no sentido lógico usado.
 
-Além disso, existem formas de se escrever, formas de se pensar, formas de se mover o cursor pelo texto, que só fazem sentido dentro do vim.
-Acontece que essa forma de se pensar é benéfica de tal forma que editores de código especializados permitem integrar essa forma de se mover.
+Além disso, existem formas de se escrever, formas de se pensar, formas de se
+mover o cursor pelo texto, que só fazem sentido dentro do vim.
+Acontece que essa forma de se pensar é benéfica de tal forma que
+editores de código especializados permitem integrar essa forma de se mover.
 
 Temos também a gravação de macros, que são sequências de ações que podem ser tomadas e repetidas dentro de um texto.
 Temos abreviações, que te impedem de escrever a mesma palavra errado e errado novamente, bastando configurar.
 Também pode-se adicionar pequenos trechos de texto que são recorrentes no que se desenvolve.
 
-Pode-se editar arquivos remotamente, pode-se utilizar abas, e divisões de janela para visualizar mais de um arquivo ao mesmo tempo.
+Pode-se editar arquivos remotamente, pode-se utilizar abas,
+e divisões de janela para visualizar mais de um arquivo ao mesmo tempo.
 E pode-se invocar um terminal para continuar executando comandos do lado de fora, enquanto anota-se do lado de dentro.
 É muita versatilidade.
 
 \subsubsection{Configurações}
 Arquivos de configuração fazem loucuras.
-Existem templates de configuração, que nada mais são que pré configurações que transformam e aproximam o vim de editores especializados para usos específicos.
+Existem templates de configuração, que nada mais são que pré configurações
+que transformam e aproximam o vim de editores especializados para usos específicos.
 Existem configurações que facilitam o uso, e outras que são impossíveis de se desacostumar.
 Nos arquivos de configuração, tornam-se persistentes as alterações que também podem ser feitas com o editor aberto.
 
 As configurações permitem alterar atalhos, e existe uma infinidade deles.
 Permitem salvar macros, abreviações, mudar esquemas de cores, aparência e ergonomia do uso.
 Basicamente, os arquivos de configuração fazem com que o editor fique com a sua cara.
-No extremo, chega-se a um ponto em que alguém que também seja conhecido do vim não consiga usar o seu vim. Nos arquivos de configuração também é onde se deixam plugins ativos.
+No extremo, chega-se a um ponto em que alguém que também seja conhecido do vim não consiga usar o seu vim.
+Nos arquivos de configuração também é onde se deixam plugins ativos.
 
 \subsubsection{Plugins}
 Para diversos usos, o vim é uma ferramenta tosca.
 Não que seja impossível realizar qualquer tarefa com o básico do básico.
 Mas se trata de uma ferramenta que começou com funcionalidades limitadas.
-E programadores externos ao desenvolvimento da ferramenta possuem formas de adicionar maneiras mais fáceis de se fazer uma tarefa.
+E programadores externos ao desenvolvimento da ferramenta possuem formas de
+adicionar maneiras mais fáceis de se fazer uma tarefa.
 Pensaram novas utilidades nunca antes pensadas, e extensões que se conectam com outros programas.
 
 Talvez seja nos plugins que o vim deixa de ser uma ferramenta ruim para ser sincero.
-Vê-se muitos vídeos, tantos vídeos, e blogs, e sites, sobre plugins que fazem isso e aquilo, que faz parecer que a única função do vim é agregar todos os plugins num único ponto de encontro.
+Vê-se muitos vídeos, tantos vídeos, e blogs, e sites, sobre plugins que fazem isso e aquilo,
+que faz parecer que a única função do vim é agregar todos os plugins num único ponto de encontro.
 
 Mas não é bem assim. Existem muitas ferramentas já integradas, e hoje em dia não é tão ruim assim.
-Vamos avançar a maior parte do livro sem plugins.
+Vamos avançar a maior parte do livro sem eles.
+Fazer dessa forma talvez mostre quais são os plugins que são essenciais pra você,
+ao invés de instalar algo que faz o que já tem embutido, mas de um jeito mais bonitinho.
 
 \subsection{Configurando Máquinas Remotas}
 Servidores de dados, de e-mail, servidores web e o mundo na nuvem.
@@ -171,18 +191,20 @@ Assim como não adianta querer fazer manobras de skate com uma tábua.
 Se você chegou até aqui e aturou minha enrolação, então não tem motivo para não ir até o final.
 Tentarei ser o mais prático possível.
 Planejo fazer de tal forma que você possa abandonar o livro pela metade e se virar muito bem.
-Mas muitas funcionalidades interessantes demoraram para serem colhidas e entendidas por esse cérebro de geleia que está escrevendo. Então, vamos lá.
+Mas muitas funcionalidades interessantes demoraram para serem colhidas e entendidas por esse cérebro
+de geleia que está escrevendo. Então, vamos lá.
 
 \newpage
 
 \section{Introdução}
-Quando se trata de aprender a utilizar as funcionalidades avançadas de um editor de texto muito antigo precisamos avançar um pequeno trecho por vez.
-Para tecnologias antigas, existe na internet livremente todo tipo de dica, todo tipo de vídeo, e até mesmo todo tipo de texto.
+Quando se trata de aprender a utilizar as funcionalidades avançadas de um editor de texto muito
+antigo precisamos avançar um pequeno trecho por vez.
+Para tecnologias antigas, existe na internet livremente todo tipo de dica,
+todo tipo de vídeo, e até mesmo todo tipo de texto.
 Mas um dos trabalhos deste documento é organizar para tornar mais orgânica a absorção.
 
 O vim possui um tutorial, acessível pela linha de comando.
-Basta escrever "\$ vimtutor" que o tutorial começa.
-% TODO: Dar um jeito de adicionar notação de linha de comando.
+Basta escrever \vimcommand{\$ vimtutor} que o tutorial começa.
 Assim como quase tudo na vida, você primeiro lê, depois tenta tomar alguma ação.
 Pretendo seguir mais ou menos a mesma ordem do tutorial, mas com mais explicações.
 
@@ -190,37 +212,34 @@ Uma espécie de piada que aparece em certos meios é sobre não se saber sair do
 Podemos começar por aí.
 Podemos iniciar o vim com ou sem um nome de arquivo especificado.
 Digamos que entramos sem especificar.
-Assim que se abre o vim entra-se no modo "normal".
+Assim que se abre o vim entra-se no modo \emph{normal}.
 Através de teclas de atalho podemos entrar em outros modos.
-Existem poucas formas de intercambiar entre modos, sendo geralmente mais simples voltar para o modo normal antes de seguir para um outro.
-Para voltar para o modo normal, pressione esc repetidamente, ou mesmo a combinação Ctrl+C, que irá desativar o modo atual.
-Se você não fez nenhuma alteração no texto que está na tela, basta apertar \textbf{"\$:"} para entrar no modo "ex".
+Existem poucas formas de intercambiar entre modos, sendo geralmente mais simples voltar
+para o modo normal antes de seguir para um outro.
+Para voltar para o modo normal, pressione \vimcommand{esc} repetidamente,
+ou mesmo a combinação \vimcommand{Ctrl-C}, que irá desativar o modo atual.
+Se você não fez nenhuma alteração no texto que está na tela, basta apertar \vimcommand{:} para entrar no modo \emph{ex}.
 O modo ex serve para inserção de comandos.
-Inseriremos o comando "quit".
-% TODO estilo: Criar um estilo para os comandos internos do vim. Um background preto com fonte de cor branca e tudo em negrito, igual ao original
-% TODO novo: Transformar esse conjunto de alterações num comando só. Fuçando no livro acho que já tenho como saber fazer.
+Inseriremos o comando \vimcommand{:quit}.
 
-\sethlcolor{black}
-\textbf{
-\textcolor{white}{
-    \hl{Testando}
-}}
+É parte da cultura Unix criar comandos como abreviações de nomes maiores,
+como cat que abrevia con\textbf{cat}enate.
+Você pode realizar o procedimento anterior usando apenas \vimcommand{:q}.
 
- 
-É parte da cultura unix criar comandos como abreviações de nomes maiores, como cat que abrevia con\textbf{cat}enate.
-Você pode realizar o procedimento anterior usando apenas ":q".
-
-Novamente com o vim aberto, pode-se escolher salvar o arquivo, definindo o nome, com ":write [nome do arquivo]".
+Novamente com o vim aberto, pode-se escolher salvar o arquivo, definindo o nome, com \vimcommand{:write [nome do arquivo]}.
 Atenção. Os comandos diferenciam minúsculas de maiúsculas.
-Caso você esteja no modo normal, pode apertar "ZZ" para salvar e sair. Um atalho para ":wq".
-
-%TODO resumo: Criar um resumo dos comandos abordados. Pode ser uma lista com os comandos abordados até então
+Caso você esteja no modo normal, pode apertar \vimcommand{ZZ} para salvar e sair. Um atalho para \vimcommand{:wq}.
 
 \subsection{Movimentação}
 No modo normal fazemos as movimentações de cursor mais avançadas.
 Dependendo da sua versão de vim, você pode usar as setas do teclado para se mover, e pode realizar essa movimentação mesmo dentro do modo de inserção de texto.
 Vamos ver o básico de movimentação:
-
+\begin{itemize}
+    \item \vimcommand{h} - Move para a esquerda.
+    \item \vimcommand{j} - Move para baixo.
+    \item \vimcommand{k} - Move para cima.
+    \item \vimcommand{l} - Move para a direita.
+\end{itemize}
 % Arranjar um jeito de deixar aquela imagem maneira aqui
 %%   ^
 %%   k
@@ -229,7 +248,8 @@ Vamos ver o básico de movimentação:
 %%   v
 \subsubsection{Lógica Número-Ação-Movimento}
 Em muitos casos podemos pedir que o vim interprete nossos comandos com um multiplicador.
-Isso significa que, ao invés de pressionar "l" para andar para a direita 10 vezes, podemos escrever "10l", e a mágica acontece.
+Isso significa que, ao invés de pressionar \vimcommand{l} para andar para a direita 10 vezes,
+podemos escrever \vimcommand{10l}, e a mágica acontece.
 Essa lógica vai nos acompanhar, e inclusive vai ficar mais rebuscada à medida que começamos a misturar conhecimentos.
 Futuramente colocaremos a ação na brincadeira, completando assim o número-ação-movimento.
 
@@ -238,51 +258,57 @@ Futuramente colocaremos a ação na brincadeira, completando assim o número-aç
 Além de movimentação em relação aos caracteres, podemos nos movimentar em relação às palavras.
 Isso significa que podemos usar o equivalente a CTRL-direita ou CTRL-esquerda que temos em editores como o MS Word.
 Para pular palavras a frente temos duas opções.
-Pressionar "w" pula para a primeira letra da próxima palavra.
-Para pular para a última letra da palavra mais próxima, "e".
+Pressionar \vimcommand{w} pula para a primeira letra da próxima palavra.
+Para pular para a última letra da palavra mais próxima, \vimcommand{e}.
 Usar estes comandos com letras maiúsculas irá ignorar pontuações, assim, apenas considerando espaços vazios.
 Geralmente existem diferenças maiores entre comandos de letras maiúsculas e minúsculas.
 
-Para voltar, "b", que pula para a primeira letra da palavra anterior.
-Para pular para a última letra da palavra anterior, "ge".
-Mais tarde vamos aprender que a tecla "g" é uma tecla separada para comandos sem muita lógica associada.
+Para voltar, \vimcommand{b}, que pula para a primeira letra da palavra anterior.
+Para pular para a última letra da palavra anterior, \vimcommand{ge}.
+Mais tarde vamos aprender que a tecla \vimcommand{g} é uma tecla separada para comandos sem muita lógica associada.
 Talvez seja isso mesmo, genérico, geral.
 
-Por fim, para simplificar: "w" vai pra próxima word. "b" faz um "backword".
+Por fim, para simplificar: \vimcommand{w} vai pra próxima word. \vimcommand{b} faz um "backword".
 Sempre bom encontrar maneiras de lembrar das palavras chave, mnemônicos ajudam.
 
 % -------Movimentação na linha  -----------------
+
 Podemos pular também para o começo ou fim da linha de texto.
-Para pular para o primeiro caractere da linha, pressionamos "0".
-Para o último caractere, "\$".
+Para pular para o primeiro caractere da linha, pressionamos \vimcommand{0}.
+Para o último caractere, \vimcommand{\$}.
 Quando desenvolvendo programas, existe a necessidade de se pular para o primeiro caractere não nulo.
-Para fazer essa ação, podemos usar o comando "\textbf{\^}".
+Para fazer essa ação, podemos usar o comando \vimcommand{\^}.
 
 Já falamos de palavras, de caracteres, e fomos para começo e fim da linha.
 Podemos fazer o cursor viajar até um certo caractere.
-Para essa ação escrevemos "tx", que significa "até o caractere x".
-A mesma ação, mas para trás, é usar fx.
-E, novamente, para ficar mais fácil de lembrar, "unTil x".
-E para a ação reversa, "find x".
+Para essa ação escrevemos \vimcommand{t\_}, que significa "até o caractere \_".
+A mesma ação, mas para trás, é usar \vimcommand{f\_}.
+E, novamente, para ficar mais fácil de lembrar, "unTil \_".
+E para a ação reversa, "find \_".
 
 O uso de T e F fica a seu cargo de compreender.
-Afinal de contas, nem tudo pode ser aprendido por ter sido ensinado.
+Afinal de contas, não é porque não ensinei que você não vai aprender.
 
 % -------Movimentação entre parênteses -----------------
-Novamente, existe a funcionalidade de pular entre uma ponta ou outra de um pedaço de texto que esteja dentro de parênteses, chaves ou colchetes.
-Quando se está programando, isso faz muito sentido, já que existem grandes trechos de códigos que podem estar enclausurados nestes caracteres.
-A ação é "\%".
+
+Novamente, existe a funcionalidade de pular entre uma ponta ou outra de um pedaço de
+texto que esteja dentro de parênteses, chaves ou colchetes.
+Quando se está programando, isso faz muito sentido, já que existem grandes trechos de
+códigos que podem estar enclausurados nestes caracteres.
+A ação é \vimcommand{\%}.
 
 % -------Movimentação entre parágrafos -----------------
+
 Voltando ao texto normal, podemos pular parágrafos.
 Estamos ficando bons em pular grandes trechos.
-Para pular, "\{" e "\}". Experimente.
+Para pular, \vimcommand{\{} e \vimcommand{\}}. Experimente.
 
 % -------Movimentação pelo histórico de saltos -----------------
+
 Sempre que fazemos um grande salto no vim deixamos um rastro na memória.
 Podemos abusar disso para pular de forma eficiente.
-Para voltar no histórico de pulos, "CTRL-O" para voltar.
-Para avançar usamos "CTRL-I".
+Para voltar no histórico de pulos, \vimcommand{CTRL-O} para voltar.
+Para avançar usamos \vimcommand{CTRL-I}.
 Futuramente podemos verificar como pular entre palavras específicas.
 Além disso, podemos pular entre palavras que não estão no mesmo arquivo aberto.
 
@@ -290,43 +316,56 @@ Além disso, podemos pular entre palavras que não estão no mesmo arquivo abert
 Para finalizar.
 Podemos fazer mais dois tipos de salto, um para as pontas do arquivo, outro para um ponto qualquer.
 O primeiro é pular para o começo do arquivo.
-Usamos "gg".
-Para pular para o fim do arquivo, "G".
-E para pular para uma linha específica do arquivo, escrevemos ":número"
+Usamos \vimcommand{gg}.
+Para pular para o fim do arquivo, \vimcommand{G}.
+E para pular para uma linha específica do arquivo, escrevemos \vimcommand{:n\'{u}mero}.
 
 % -------Resumo dos comandos de movimentação de caracteres -----------------
 Resumo:
-
 \begin{itemize}
     \item Movimentação por caracteres:
-        \subitem h - Esquerda.
-        \subitem j - Baixo.
-        \subitem k - Cima.
-        \subitem l - Direita.
+
+        \subitem \vimcommand{h} - Esquerda.
+        \subitem \vimcommand{j} - Baixo.
+        \subitem \vimcommand{k} - Cima.
+        \subitem \vimcommand{l} - Direita.
+
     \item Movimentação por palavras:
-        \subitem w  - Avança para o começo da próxima palavra.
-        \subitem b  - Retrocede para o começo da palavra atual.
-        \subitem e  - Avança para o fim da próxima palavra.
-        \subitem ge - Retrocede para o fim da palavra atual.\\
-        Obs: O uso de W, B, E, gE ignora pontuação levando em consideração apenas espaços em branco.
+
+        \subitem \vimcommand{w}  - Avança para o começo da próxima palavra.
+        \subitem \vimcommand{b}  - Retrocede para o começo da palavra atual.
+        \subitem \vimcommand{e} - Avança para o fim da próxima palavra.
+        \subitem \vimcommand{ge} - Retrocede para o fim da palavra atual.\\
+        Obs: O uso de \vimcommand{W, B, E, gE} ignora pontuação levando em consideração apenas espaços em branco.
+
     \item Movimentação na linha:
-        \subitem 0 - Começo absoluto da linha
-        \subitem \$- Fim absoluto da linha
-        %\subitem ^ - Começo não nulo da linha
-        \subitem t - Avanço até certo caractere
-        \subitem f - Retrocesso até certo caractere
+
+        \subitem \vimcommand{0} - Começo absoluto da linha
+        \subitem \vimcommand{\$} - Fim absoluto da linha
+        \subitem \vimcommand{\^} - Começo não nulo da linha
+        \subitem \vimcommand{t} - Avanço até certo caractere
+        \subitem \vimcommand{f} - Retrocesso até certo caractere
+
     \item Movimentação entre parênteses, colchetes e chaves:
-        \subitem \% - Pular entre começo e fim, priorizando o começo.
+
+        \subitem \vimcommand{\%} - Pular entre começo e fim, priorizando o começo.
+
     \item Movimentação entre parágrafos:
-        \subitem \} - Avança para o fim do parágrafo atual.
-        \subitem \{ - Retrocede para o começo do parágrafo anterior.
+
+        \subitem \vimcommand{\}} - Avança para o fim do parágrafo atual.
+        \subitem \vimcommand{\{} - Retrocede para o começo do parágrafo anterior.
+
     \item Movimentação pelo histórico de saltos:
-        \subitem CTRL I - Avança para a posição no histórico de saltos.
-        \subitem CTRL O - Retrocede para a posição no histórico de saltos.
+
+        \subitem \vimcommand{CTRL-I} - Avança para a posição no histórico de saltos.
+        \subitem \vimcommand{CTRL-O} - Retrocede para a posição no histórico de saltos.
+
     \item Movimentação para primeira/última/alguma linha do arquivo:
-        \subitem G - Avança para o fim do arquivo.
-        \subitem gg - Retrocede para o começo do arquivo.
-        \subitem :12 - Salto para linha 12 do arquivo.
+
+        \subitem \vimcommand{G} - Avança para o fim do arquivo.
+        \subitem \vimcommand{gg} - Retrocede para o começo do arquivo.
+        \subitem \vimcommand{:12} - Salto para linha 12 do arquivo.
+
 \end{itemize}
     
 \subsubsection{Focando no Cursor}
@@ -337,33 +376,36 @@ Agora que sabemos mudar a posição do cursor, vamos focar em um detalhe que aju
 E naturalmente o cursor vai descendo.
 Mas podemos mudar isso.
 
-Para fazer com que o cursor fique focado focado ao centro da tela "zz".
-Importante. Não é a mesma coisa que "ZZ", que salva e sai do programa.
+Para fazer com que o cursor fique focado focado ao centro da tela \vimcommand{zz}.
+Importante. Não é a mesma coisa que \vimcommand{ZZ}, que salva e sai do programa.
 
-Para fazer com que o cursor fique focado na parte do topo da tela, "zt".
-Para que fique na parte debaixo da tela, "zb".
+Para fazer com que o cursor fique focado na parte do topo da tela, \vimcommand{zt}.
+Para que fique na parte debaixo da tela, \vimcommand{zb}.
 
 % -------Resumo Focando no Cursor -----------------
 Resumo:
 \begin{itemize}
-    \item zz - Move a tela fazendo com que o cursor centralize. 
-    \item zt - Move a tela fazendo com que o cursor se apresente no topo da tela.
-    \item zb - Move a tela fazendo com que o cursor se apresente na parte baixa da tela.
+    \item \vimcommand{zz} - Move a tela fazendo com que o cursor centralize.
+    \item \vimcommand{zt} - Move a tela fazendo com que o cursor se apresente no topo da tela.
+    \item \vimcommand{zb} - Move a tela fazendo com que o cursor se apresente na parte baixa da tela.
 \end{itemize}
 
 \subsubsection{Movendo a tela}
 Podemos pular de outras formas. Pular por páginas.
 
-Para descer a tela apenas uma linha, "CTRL-e". Para subir "CTRL-y".
+Para descer a tela apenas uma linha, \vimcommand{CTRL-e}. Para subir \vimcommand{CTRL-y}.
 Perceba que o comando para subir fica na mão esquerda, para descer, mão direita.
 
-Podemos descer a tela meia página, podemos usar "CTRL-d" e "CTRL-u".
+Podemos descer a tela meia página, podemos usar \vimcommand{CTRL-d} e \vimcommand{CTRL-u}.
 Para facilitar a memória, "d" é para "down" e "u" é para "up".
 
 Por fim, chega de meia página, vamos mexer uma página inteira.
-Use "CTRL-f" e "CTRL-b" para descer e subir.
+Use \vimcommand{CTRL-f} e \vimcommand{CTRL-b} para descer e subir.
 Último mnemônico: "f" é para "fall", cair.
 "b" é para "bring up", trazer para cima.
+Caso nenhum mnemônico tenha te servido,
+na mão esquerda estão as teclas que fazem a tela descer,
+enquanto na direita estão as que fazem a tela subir.
 
 Com isso, fechamos as movimentações.
 Dizem que as movimentações do vim são a habilidade de ouro que fazem com que quem edita e escreve textos evolua.
@@ -371,15 +413,52 @@ Dizem que as movimentações do vim são a habilidade de ouro que fazem com que 
 Esses pulos, saltos, avanços, voltas, fazem com que quem precisa, principalmente, editar, consiga ter uma eficiência invejável.
 Além de que parece bruxaria.
 
-% -------Resumo dos comandos apresentados -----------------
+% -------Resumo dos comandos que movem a tela -----------------
 Resumo:
 \begin{itemize}
-    \item CTRL e - Desce a tela uma linha. Se necessário, desce o cursor uma linha.
-    \item CTRL y - Sobe a tela uma linha. Se necessário, sobe o cursor uma linha.
-    \item CTRL d - Desce a tela meia página. Tenta manter o cursor na mesma posição relativa.
-    \item CTRL u - Sobe a tela meia página. Tenta manter o cursor na mesma posição relativa.
-    \item CTRL f - Desce a tela uma página. Tenta manter o cursor na mesma posição relativa.
-    \item CTRL b - Sobe a tela uma página. Tenta manter o cursor na mesma posição relativa.
+    \item \vimcommand{CTRL-e} - Desce a tela uma linha. Se necessário, desce o cursor uma linha.
+    \item \vimcommand{CTRL-y} - Sobe a tela uma linha. Se necessário, sobe o cursor uma linha.
+    \item \vimcommand{CTRL-d} - Desce a tela meia página. Tenta manter o cursor na mesma posição relativa.
+    \item \vimcommand{CTRL-u} - Sobe a tela meia página. Tenta manter o cursor na mesma posição relativa.
+    \item \vimcommand{CTRL-f} - Desce a tela uma página. Tenta manter o cursor na mesma posição relativa.
+    \item \vimcommand{CTRL-b} - Sobe a tela uma página. Tenta manter o cursor na mesma posição relativa.
+\end{itemize}
+
+\subsection{Editando Texto}
+
+\subsubsection{Inserir}
+Inserir é provavelmente a coisa que você mais irá querer fazer.
+O modo de inserção se assemelha muito aos aplicativos de bloco de notas mais comuns.
+Para podermos entrar, finalmente, no modo que nos permite escrever texto dentro de nossos
+arquivos e documentos, existem três formas.
+
+Podemos inserir imediatamente acima do cursor utilizando \vimcommand{i}.
+Utilizar o comando \vimcommand{I} te jogará para o começo não nulo da linha antes,
+e também te colocará em modo de inserção.
+Imagine como uma abreviação para \vimcommand{\^}\vimcommand{i}.
+
+Para inserir imediatamente a frente do cursor, utilizamos \vimcommand{a}.
+O comando \vimcommand{A} irá te jogar para o fim da linha e então será iniciado o modo de inserção.
+Neste caso, pense como uma abreviação para \vimcommand{\$a}
+
+Não bastasse podermos inserir em pontos da linha atual, podemos criar uma nova linha abaixo e inserir com \vimcommand{o}.
+Se quisermos criar uma nova linha acima utilizamos \vimcommand{O}.
+
+Existem casos em que escrevemos linhas parecidas, em que muito da linha anterior pode ser aproveitado para a linha atual.
+Nesses casos podemos, quando dentro do modo de inserção, utilizar \vimcommand{CTRL-y} para copiar o que estiver escrito
+na linha acima. Para copiar conteúdo, mas da linha debaixo, usamos \vimcommand{CTRL-e}.
+
+% -------Resumo dos comandos para entrar no modo de inserção -----------------
+Resumo:
+\begin{itemize}
+    \item \vimcommand{i} - Inicia o modo de inserção logo acima do cursor.
+    \item \vimcommand{I} - Inicia o modo de inserção no começo não nulo da linha.
+    \item \vimcommand{a} - Inicia o modo de inserção a frente do cursor.
+    \item \vimcommand{a} - Inicia o modo de inserção no fim da linha.
+    \item \vimcommand{o} - Cria uma nova linha abaixo e inicia o modo de inserção.
+    \item \vimcommand{O} - Cria uma nova linha acima e inicia o modo de inserção.
+    \item \vimcommand{CTRL-y} - Copia conteúdo, caractere a caractere, da linha acima do cursor.
+    \item \vimcommand{CTRL-e} - Copia conteúdo, caractere a caractere, da linha abaixo do cursor.
 \end{itemize}
 
 \subsubsection{Deletar, Copiar, Colar}
@@ -388,69 +467,106 @@ Algo que é importante de deixar claro é que, tudo o que apagamos dentro do vim
 Isso significa que, se apagarmos uma linha, podemos usar o comando de colar, que a linha apagada irá voltar ao seu lugar.
 E também que, se apagarmos duas linhas com dois comandos diferentes, apenas a última vai ficar salva neste "slot" de memória.
 
-Para deletar um único caractere, pressione "x". Funciona como o delete, apagando o que o cursor ilumina, sempre a frente da linha.
-"X" irá apagar a letra anterior ao cursor, tendo o efeito do backspace, sempre regredindo a linha.
+Para deletar um único caractere, pressione \vimcommand{x}.
+Funciona como o delete, apagando o que o cursor ilumina, sempre a frente da linha.
+\vimcommand{X} irá apagar a letra anterior ao cursor, tendo o efeito do backspace, sempre regredindo a linha.
 
 Estes comandos obedecem a já falada lógica Número-Ação-Movimento.
-A tecla "d" irá apagar a partir dessa lógica.
-Fica mais claro com exemplos: "dl" irá apagar um caractere para a direita.
-"dj" irá apagar a linha atual e a debaixo.
-"dd" simplesmente apaga a linha atual.
-"d\$" irá apagar da posição atual até o fim da linha.
-"D" faz o mesmo que "d\$".
+A tecla \vimcommand{d} irá apagar a partir dessa lógica.
+Fica mais claro com exemplos: \vimcommand{dl} irá apagar um caractere para a direita.
+\vimcommand{dj} irá apagar a linha atual e a debaixo.
+\vimcommand{dd} simplesmente apaga a linha atual.
+\vimcommand{d\$} irá apagar da posição atual até o fim da linha.
+\vimcommand{D} faz o mesmo que \vimcommand{d\$}.
 E podemos misturar com um número para repetir a mesma ação n vezes.
 
 Todas as movimentações de cursor são candidatas à composição dessas combinações.
-Deletar até o próximo sinal de +? "dt+" fará o serviço.
+Deletar até o próximo sinal de +? \vimcommand{dt+} fará o serviço.
 E assim em diante.
 
 O mesmo é válido para o comando de cópia.
-"y", significa "yank", e não faz muito sentido para quem fala português. 
+\vimcommand{y}, significa "yank", e não faz muito sentido para quem fala português.
 Mas serve para copiar um certo pedaço de texto.
 Não se esqueça da lógica Número-Ação-Movimento, também serve para este comando.
-"yy" irá copiar a linha atual, e o comando "Y" tem o mesmo efeito de "yy".
+\vimcommand{yy} irá copiar a linha atual, e o comando \vimcommand{Y} tem o mesmo efeito de \vimcommand{yy}.
 
 Por fim, para colar temos duas opções: Ou copiar imediatamente acima do cursor, ou um caractere atrás.
-Isso faz diferença quando estamos copiando uma linha, e acabamos por copiar o caractere de "nova linha".
-"P" copia no espaço imediatamente anterior ao cursor. "p" em cima do cursor.
-Caso ainda não tenha ficado claro, o comando para recortar é o mesmo do de apagar.
+Isso faz diferença quando estamos copiando uma linha, e acabamos por copiar o caractere de nova linha.
+\vimcommand{P} copia no espaço imediatamente anterior ao cursor. \vimcommand{p} em cima do cursor.
+Caso ainda não tenha ficado claro, o comando para recortar é o mesmo de apagar.
 
 Como pode ser que você queira apagar um trecho de texto para imediatamente inserir algo em seu lugar,
-Pode-se usar o comando "c", que possui funcionalidade semelhante ao "d", no entanto, após ser executado, troca para o modo de inserção. Todo o anterior é válido, c\$, c0, cj, ck, e assim em diante.
+Pode-se usar o comando \vimcommand{c}, que possui funcionalidade semelhante ao \vimcommand{d},
+no entanto, após ser executado, troca para o modo de inserção.
+Todo o anterior é válido, \vimcommand{c\$}, \vimcommand{c0}, \vimcommand{cj}, \vimcommand{ck}, e assim em diante.
 
 \subsubsection{Substituir}
-Caso seus erros sejam pequenos, e você queira substituir apenas um caractere sem sair do modo normal, o comando "r" irá te inserir no modo Replace durante uma única pressionada.
+Caso seus erros sejam pequenos, e você queira substituir apenas um caractere sem sair do modo normal,
+o comando \vimcommand{r} irá te inserir no modo Replace durante uma única pressionada.
 Este comando permite trocar o caractere que estiver debaixo do cursor.
 
-Para trocar sequências de caracteres, e assim, se manter no modo Replace por mais tempo, utilize o comando "R".
-Dessa forma, será preciso pressionar esc ou CTRL c para voltar ao modo normal.
+Para trocar sequências de caracteres, e assim, se manter no modo Replace por mais tempo, utilize o comando \vimcommand{R}.
+Dessa forma, será preciso pressionar \vimcommand{esc} ou \vimcommand{CTRL-c} para voltar ao modo normal.
 
-\subsubsection{Inside, Around}
-	"dl"	delete character (alias: "x")		|dl|
-	"diw"	delete inner word			*diw*
-	"daw"	delete a word				*daw*
-	"diW"	delete inner WORD (see |WORD|)		*diW*
-	"daW"	delete a WORD (see |WORD|)		*daW*
-	"dd"	delete one line				|dd|
-	"dis"	delete inner sentence			*dis*
-	"das"	delete a sentence			*das*
-	"dib"	delete inner '(' ')' block		*dib* É realmente somente dentro de parênteses
-	"dab"	delete a '(' ')' block			*dab*
-	"dip"	delete inner paragraph			*dip*
-	"dap"	delete a paragraph			*dap*
-	"diB"	delete inner '{' '}' block		*diB*
-	"daB"	delete a '{' '}' block			*daB*
-
-% -------Resumo dos comandos apresentados -----------------
+% -------Resumo Copiar, Colar, Substituir -----------------
 Resumo:
 \begin{itemize}
-    \item x/X - Deleta o caractere debaixo/antes do cursor.
-    \item d/D - Deleta de acordo com movimento/até o fim da linha.
-    \item y/Y - Copia de acordo com o movimento/a linha atual.
-    \item p/P - Cola a partir do cursor/um caractere antes do cursor
-    \item c/C - Deleta de acordo com movimento/até o fim da linha e entra em modo de inserção.
-    \item r/R - Substitui um caractere/uma cadeia de caracteres.
+    \item \vimcommand{x/X} - Deleta o caractere debaixo/antes do cursor.
+    \item \vimcommand{d/D} - Deleta de acordo com movimento/até o fim da linha.
+    \item \vimcommand{y/Y} - Copia de acordo com o movimento/a linha atual.
+    \item \vimcommand{p/P} - Cola a partir do cursor/um caractere antes do cursor
+    \item \vimcommand{c/C} - Deleta de acordo com movimento/até o fim da linha e entra em modo de inserção.
+    \item \vimcommand{r/R} - Substitui um caractere/uma cadeia de caracteres.
 \end{itemize}
+
+\subsubsection{Inside, Around}
+Existem sequências avançadas, que lidam com o que é chamado de "objeto texto".
+Um objeto texto pode ser um caractere, uma palavra, uma sentença, um paragrafo ou um bloco.
+Vamos usar o comando "delete" para nossos exemplos, mas a lógica e a mecânica se aplicam também
+para \vimcommand{y} e \vimcommand{c}.
+
+Para deletar "abacate", mas preservar as aspas, podemos usar \vimcommand{diw},
+que significa \textit{delete inner word}. Deletar a palavra interior.
+As aspas servem como elementos de delimitação, o mesmo ocorreria com (banana).
+No caso de deletar "caju", inclusive as aspas, podemos usar \vimcommand{daw},
+que significa \textit{delete around word}. Deletar ao redor da palavra
+
+Caso tenhamos uma frase, que se finaliza no ponto final,
+e seja nosso desejo apagá-la, usamos \vimcommand{dis}.
+Essa ação irá apagar a frase até o ponto final.
+Nota-se que é importante o espaço em branco após o ponto entre uma frase e outra.
+Sem ele, o vim não identifica corretamente a frase/sentença.
+Para apagar o espaço em branco inclusive, \vimcommand{das}. 
+
+Para apagar todo um parágrafo podemos usar \vimcommand{dip},
+para manter o espaço abaixo do parágrafo.
+Se quisermos apagar o espaço inclusive \vimcommand{dap}.
+
+Existem dois tipos de bloco que o vim identifica imediatamente.
+O bloco delimitado por parênteses pode ser deletado por \vimcommand{dib} ou \vimcommand{dab}.
+Para o bloco delimitado por chaves podemos usar \vimcommand{diB} ou \vimcommand{daB}.
+
+E caso queiramos apagar algo entre aspas simples? Nesse caso fazemos o seguinte:
+\vimcommand{di\'} ou \vimcommand{da\'}.
+É um tanto intuitivo, mas estou praticamente escrevendo \textit{delete inside "}.
+Essa lógica funciona para quaisquer outros delimitadores
+
+% -------Resumo Sequências Avançadas -----------------
+Resumo:
+\begin{itemize}
+    \item \vimcommand{diw} - Deleta uma palavra
+    \item \vimcommand{daw} - Deleta uma palavra, e seus arredores.
+    \item \vimcommand{dis} - Deleta uma sentença/frase.
+    \item \vimcommand{das} - Deleta uma sentença/frase e seus arredores.
+    \item \vimcommand{dap} - Deleta um parágrafo.
+    \item \vimcommand{dib} - Deleta um bloco delimitado por parênteses.
+    \item \vimcommand{dab} - Deleta um bloco delimitado por parênteses e seus arredores.
+    \item \vimcommand{diB} - Deleta um bloco delimitado por chaves.
+    \item \vimcommand{daB} - Deleta um bloco delimitado por chaves e seus arredores.
+    \item \vimcommand{di"} - Deleta um bloco delimitado por aspas duplas.
+    \item \vimcommand{da"} - Deleta um bloco delimitado por aspas duplas e seus arredores.
+\end{itemize}
+
 
 \subsection{Modo Visual}
 
