@@ -156,7 +156,61 @@ Se não, ele será ignorado
 (vou ter que ficar conferindo? Meio ruim isso aí).
 Posso estilizar o comando também.
 
-Continua no próximo documento. Página 60 do livro.
+
+Vamos verificar um pouco do uso de pacotes.
+
+\section{The \TUG}
+
+The \TUG is an organization for people
+who are interested in \TeX or \LaTeX.
+
+Teoricamente a adição do pacote xspace consertaria o problema dos espaços.
+
+Vamos ver comandos com argumentos.
+
+\newcommand{\keyword}[1]{\textbf{#1}}
+
+O número entre colchetes é o número de argumentos.
+\#1 é o primeiro parâmetro. Poderia haver um \#2 e assim
+em diante.
+
+
+\keyword{Grouping} by curly braces limits the
+
+\keyword{scope} of \keyword{declarations}
+
+Exemplo 2:
+
+\renewcommand{\keyword}[2][\bfseries]{{#1#2}}
+\keyword{Grouping} by curly braces limits the
+\keyword{scope} of \keyword[\itshape]{declarations}.
+
+Modo Genérico:
+% \newcommand{command}[arguments][optional]{definition}
+
+Existe um pacote chamado url para formatação de tipos para sites.
+
+Podemos definir caixas para limitar verticalmente o texto.
+Isso é particularmente útil no caso de procurarmos criar paragrafos semelhantes em tamanho.
+
+\parbox{3cm}{TUG is an acronym. It means \TeX\ Users Group.}
+
+Uso genérico do parbox \parbox[alignment]{width}{text}
+\begin{itemize}
+        \item Alinhamento: Argumento opcional para comprimento vertical.
+        t alinha para a linha superior da caixa.
+        b alinha para a linha inferior.
+        \item Largura: Largira cuja caixa irá tomar. Pode ser dado em cm, em mm ou em in.
+        \item Texto: Texto a ser adicionado dentro da caixa.
+        Para textos mais complicados veremos outros métodos.
+\end{itemize}
+
+text line
+\quad\parbox[b]{1.8cm}{this parbox is aligned at its bottom line}
+\quad\parbox{1.5cm}{center-aligned parbox}
+\quad\parbox[t]{2cm}{another parbox aligned at its top line}
+
+\fbox{\parbox{Default parbox within fbox}}
 
 
 \end{document}
