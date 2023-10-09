@@ -569,17 +569,42 @@ Resumo:
 
 
 \subsection{Modo Visual}
+O modo visual te permite realizar uma ação que poderia muito bem ser executada com o mouse.
+Caso seu vim esteja configurado para habilitar o mouse, ao segurar e arrastar para selecionar o texto, ele automaticamente irá trocar para o modo visual.
+Então, sem muito mistério, uma das funcionalidades do modo visual é a seleção de pedaços de texto. Mas não para por aí.
+
+Existem muitas ações que podem ser tomadas a partir de um texto selecionado. Você pode \textbf{visualmente} selecionar um texto antes de apagar.
+Pode copiar um trecho específico.
+Pode combinar comandos para utilizar esse trecho selecionado como um output.
+E pode definir um escopo em que se pode realizar buscas.
 
 \subsubsection{Modo Visual Normal}
-...
+No modo visual normal, você pode realizar as operações já especificadas.
+Esse modo seleciona caracteres.
+Para entrar neste, basta pressionar \vimcommand{v}, minúsculo.
+Mova o cursor e você verá a seleção se mover também.
+E caso você precise selecionar com o cursor mudando para a outra ponta, use o comando \vimcommand{o}.
 
 \subsubsection{Modo Visual Linha}
-...
+Neste, a seleção muda de lógica.
+É muito eficiente para a seleção de trechos maiores.
 
 \subsubsection{Modo Visual Bloco}
-...
+A última variação do modo visual seleciona baseado em colunas.
+Seu foco é a alteração de texto tabelado.
+Também é interessante para a seleção vertical no geral, como em blocos de código que estão indentados.
 
 \subsection{Marks}
+Esse tópico se confunde com outro, referente ao modelo de memória que o vim usa para armazenar diferentes tipos de dados.
+Sempre que você realiza um salto, você deixa um rastro.
+Mas e se você quiser armazenar uma posição para onde você pode voltar?
+
+Futuramente vamos poder explorar a edição de múltiplos arquivos.
+Imagine o potencial de deixar uma pequena marca em uma parte específica de um arquivo,
+então digitar uma sequência de teclas, e o editor simplesmente te deixar onde você pode continuar o trabalho.
+São saltos avançados.
+
+No entanto, os slots de memória disponíveis o tópico 
 ...
 
 \newpage
