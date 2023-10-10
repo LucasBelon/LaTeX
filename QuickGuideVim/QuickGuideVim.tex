@@ -567,6 +567,34 @@ Resumo:
     \item \vimcommand{da"} - Deleta um bloco delimitado por aspas duplas e seus arredores.
 \end{itemize}
 
+\subsection{Undo, Redo}
+É óbvio que a capacidade de desfazer alterações estaria presente por aqui também.
+Para desfazer... \vimcommand{u} quando estiver no modo normal.
+Para refazer... \vimcommand{CTRL-r} no modo normal.
+
+No entanto, existe um tópico avançado que eu, particularmente, ainda não explorei, que é a árvore de mudanças que o vim guarda.
+É possível navegar por versões alternativas, que surgem a partir de diferentes undo\'s e redo\'s.
+No entanto, nem tudo que se pode aprender eu posso ensinar.
+Se parece mágica e brilha aos seus olhos, corra atrás.
+Te mostrarei como navegar pelo manual mais tarde, e você poderá aprofundar qualquer tópico.
+
+Se a sua curiosidade é tanta que você deseja parar imediatamente a leitura para buscar, procure por \textit{"undo tree"}.
+
+\subsection{Comandos miscelâneos}
+Enquanto ainda estamos falando sobre editar o texto, vamos para algo que não se relaciona muito bem com outros tópicos.
+Podemos alterar a indentação e alternar entre maiúsculas e minúsculas sem entrar no modo de inserção.
+E também podemos juntar linhas que estão atualmente separadas.
+
+Para alterar a indentação de uma linha, \vimcommand{$<$}.
+Talvez seja necessário utilizar o mesmo comando duas vezes, ou apertar espaço logo após o comando.
+Este faz a indentação recuar.
+Para avançar \vimcommand{$>$}
+
+Para alternar entre minúsculas e maiúsculas dentro do texto, posicione o cursor no alvo
+e \vimcommand{\^}, famoso circunflexo. 
+
+Para juntar linhas, do inglês, \textit{join}, \vimcommand{J} maiúsculo.
+Não tem muito mais o que dizer, apenas o que se testar e experimentar.
 
 \subsection{Modo Visual}
 O modo visual te permite realizar uma ação que poderia muito bem ser executada com o mouse.
@@ -588,11 +616,18 @@ E caso você precise selecionar com o cursor mudando para a outra ponta, use o c
 \subsubsection{Modo Visual Linha}
 Neste, a seleção muda de lógica.
 É muito eficiente para a seleção de trechos maiores.
+Parágrafos, trechos de centenas de linhas, basta selecionar e então realizar sua ação.
+
+Destrua, reconstrua, altere ou defina um escopo para aplicar suas mudanças.
+Para entrar neste modo, \vimcommand{V}, maiúsculo.
 
 \subsubsection{Modo Visual Bloco}
 A última variação do modo visual seleciona baseado em colunas.
 Seu foco é a alteração de texto tabelado.
 Também é interessante para a seleção vertical no geral, como em blocos de código que estão indentados.
+
+Tudo o mais também é válido, seja salvar, recortar, ou usar como escopo para ações.
+Para entrar neste modo, \vimcommand{CTRL-v}.
 
 \subsection{Marks}
 Esse tópico se confunde com outro, referente ao modelo de memória que o vim usa para armazenar diferentes tipos de dados.
@@ -604,8 +639,20 @@ Imagine o potencial de deixar uma pequena marca em uma parte específica de um a
 então digitar uma sequência de teclas, e o editor simplesmente te deixar onde você pode continuar o trabalho.
 São saltos avançados.
 
-No entanto, os slots de memória disponíveis o tópico 
-...
+Para definir uma marca, utilize o comando \vimcommand{:ma [caractere]}, e uma marca será definida na posição do cursor.
+Para ir até a marca existem duas maneiras.
+A primeira é utilizando o caractere crase \vimcommand{\`}\vimcommand{a}.
+A segunda é utilizando aspas simples. \vimcommand{'}\vimcommand{a}.
+
+O vim define marcas para todo tipo de coisa, seja qual foi sua última alteração de texto,
+qual foi a última vez que entrou no modo de edição,
+e até mesmo qual foi o último trecho que foi selecionado dentro do modo visual.
+
+Como existem muitos detalhes, e não é tudo que é interessante, fica como atividade para o leitor explorar no manual mais tarde.
+Mas para completar a explicação, existem marcas salvas nos caracteres a-z, 
+que são salvas referentes ao arquivo atual, e marcas salvas nos caracteres A-Z,
+que salvam também o nome e caminho do arquivo.
+Alguns caracteres são de uso automático, então ele provavelmente será sobrescrito, mas para saber quais são, leia o manual.
 
 \newpage
 \section{Recursos avançados}
