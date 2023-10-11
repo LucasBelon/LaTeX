@@ -118,6 +118,12 @@ Falando de ir além do básico, configurações em servidores são geralmente re
 Se trata de utilizar um computador distante, especializado em alguma tarefa.
 E como eu disse antes, pode ser que pareça difícil, mas basta ser difícil uma única vez.
 
+Uma única recomandação que me parece razoável, é a seguinte: Se você pretende escrever muito no computador, então vale a pena
+aprender a digitar da forma correta.
+Isso evita lesões por esforço repetitivo, aumenta a velocidade de digitação,
+e, com isso, aproxima a velocidade de escrever com a velocidade de pensar.
+Digitar enquanto se pensa torna o escrever uma expressão do pensar.
+
 \subsection{Componentes}
 O VIM possui pedaços.
 E por ele começar tão simples que é uma ótima ferramenta para se evoluir.
@@ -656,28 +662,80 @@ Alguns caracteres são de uso automático, então ele provavelmente será sobres
 
 \newpage
 \section{Recursos avançados}
+A maior parte do básico está feito.
+Vocẽ sabe escrever, sabe apagar, sabe trocar palavras de lugar, copiando e colando.
+Já aprendeu a pular dentro de um arquivo, fazendo já parecer bruxaria. Mas até agora
+estamos no reino iluminado, em que um iniciante observar e entender o que está acontecendo.
+Eu diria que a partir vamos mexer com magia negra, que se faltar atenção, acontecerão coisas num piscar de olhos
+que não terão uma explicação razoável.
+Por isso, a partir daqui, teste tudo, crie você mesmo experimentos
+
+Vamos começar falando sobre como procurar e substituir termos num arquivo e
+como podemos substituir múltiplos termos de uma só vez.
+Na sequência, veremos o que são os registros, e para onde vão os trechos de código que apagamos.
+
+Então vamos começar a usar múltiplos arquivos e executar ações neles.
+Organizar janelas para obter uma boa visualização, além de montar e manter um layout eficiente.
+
 \subsection{Busca no arquivo}
+Buscar dentro do arquivo é relativamente simples.
+Basta usar o comando \vimcommand{/} e pesquisar o que você deseja procurar.
+Se for encontrado o termo, seu cursor será jogado para cima dele.
+Outras ocorrências da busca ficarão destacadas, e não sumirão até se executar o comando
+\vimcommand{:nohlsearch}, ou a versão reduzida \vimcommand{:noh}. 
+Na régua inferior podem aparecer informações importantes do tipo, "Sua busca chegou ao fim do arquivo, recomeçando do começo",
+vale a pena ficar de olho.
+
+% CONTINUA AQUI ----------------------------------------------------------------------------------------------------------
+
+Procurando novamente a última busca com \vimcommand{//}.
+Procurando de tràs para frente com \vimcommand{?}.
+Procurando por ocorrências da palavra sobre o qual cursor descansa com \vimcommand{*} e \vimcommand{#}.
+
+Apesar de podermos pesquisar termos simples, podemos utilizar expressões regulares para encontrar padrões que se casam com nossas especificações.
+Este é um texto sobre vim, não sobre REGEX, então, se quiser, vá atrás por conta.
+
+...
 \subsection{Substituição no arquivo}
+Geralmente
 ...
 \subsection{Registers}
 ...
 \subsection{MultiFile}
-\subsubsection{bufdo}
-
-\subsection{MultiWindows}
-\subsubsection{save view}
-
-\subsection{MultiTabs}
-\subsubsection{save session}
 ...
-
+\subsection{O que é um buffer}
+...
+\subsubsection{bufdo}
+...
+\subsection{MultiWindows}
+Como abrir múltiplas janelas
+Como mover múltiplas janelas
+Como redimensionar as múltiplas janelas
+Como fechar janelas, e apagar o buffer.
+...
+\subsubsection{save view}
+Ser curto na explicação.
+...
+\subsection{MultiTabs}
+Como criar, como navegar, como mover
+abrindo o terminal dentro do vim. Como desativar o terminal e ver inputs antigos
+...
+\subsubsection{save session}
+Como criar, porquê nem sempre é uma boa ideia, e como podemos usar para abrir um projeto
+...
 \subsection{quickfix com grep}
-\subsection{Dicas miscelâneas}
-
+...
 \newpage
 \section{Settings}
 ...
-
+\subsection{Onde estão minhas configurações}
+...
+\subsection{Abreviações}
+...
+\subsection{Salvando Macros}
+...
+\subsection{Olhando um arquivo vimrc pré-pronto}
+...
 \newpage
 \section{Plugins Built-in}
 ...
