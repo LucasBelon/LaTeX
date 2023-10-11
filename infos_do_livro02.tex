@@ -108,8 +108,30 @@ Basicamente, backslash, acento, letra alvo entre chaves.
 Mais de uma letra pode ser o alvo ao mesmo tempo.
 
 No windows, se utf8 não funcionar, tentar latin1
+Talvez mudar o compilador para LuaLaTeX ou XeLaTeX ajude a solucionar
+problemas de fonte e de idioma.
+Mudar apenas se houverem problemas irresolvíveis no LaTeX normal.
 
 Continuar na página 81. vamos ver como controlar a justificação do texto.
 Estamos pra terminar esse pedaço do livro. O primeiro terço chegará ao fim.
+
+% O texto será jogado para a esquerda, e não haverá hiphenização.
+\parbox{3cm}{\raggedright
+    TUG is an acronym. It means \TeX\ user's group.
+}
+% Eu usava outro comando para enviar uma linha para a esquerda ou direita.
+% Verificar o Kit Belon para Física B.
+Se quiséssemos que o texto todo seja justificado à esquerda, poderíamos
+adicionar \raggedright no preâmbulo. 
+Testar depois.
+Justificar à esquerda também é possível.
+
+Centralizando um trecho de texto
+{\centering
+\huge\bfseries Cejtered Text \\
+
+    }
+
+
 
 \end{document}
