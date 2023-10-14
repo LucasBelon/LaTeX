@@ -16,8 +16,11 @@
             left=2.5cm,                 %|
             right=2.5cm]                %|
             {geometry}                  %|
+                                        %|
 \usepackage{xcolor}                     %|
+                                        %|
 \usepackage{soul}                       %|
+                                        %|
 \usepackage[utf8]{inputenc}             %|
                                         %|
 \usepackage{indentfirst}                %|
@@ -201,7 +204,6 @@ Mas muitas funcionalidades interessantes demoraram para serem colhidas e entendi
 de geleia que está escrevendo. Então, vamos lá.
 
 \newpage
-
 \section{Introdução}
 Quando se trata de aprender a utilizar as funcionalidades avançadas de um editor de texto muito
 antigo precisamos avançar um pequeno trecho por vez.
@@ -449,7 +451,6 @@ Neste caso, pense como uma abreviação para \vimcommand{\$a}
 
 Não bastasse podermos inserir em pontos da linha atual, podemos criar uma nova linha abaixo e inserir com \vimcommand{o}.
 Se quisermos criar uma nova linha acima utilizamos \vimcommand{O}.
-
 Existem casos em que escrevemos linhas parecidas, em que muito da linha anterior pode ser aproveitado para a linha atual.
 Nesses casos podemos, quando dentro do modo de inserção, utilizar \vimcommand{CTRL-y} para copiar o que estiver escrito
 na linha acima. Para copiar conteúdo, mas da linha debaixo, usamos \vimcommand{CTRL-e}.
@@ -505,6 +506,25 @@ Como pode ser que você queira apagar um trecho de texto para imediatamente inse
 Pode-se usar o comando \vimcommand{c}, que possui funcionalidade semelhante ao \vimcommand{d},
 no entanto, após ser executado, troca para o modo de inserção.
 Todo o anterior é válido, \vimcommand{c\$}, \vimcommand{c0}, \vimcommand{cj}, \vimcommand{ck}, e assim em diante.
+
+% -------Resumo Deletar, Copiar, Colar -----------------
+Resumo:
+\begin{itemize}
+    \item \vimcommand{x} - Deleta o caractere sob o cursor.
+    \item \vimcommand{X} - Deleta o caractere imediatamente anterior ao cursor.
+    \item \vimcommand{dd} - Deleta a linha atual.
+    \item \vimcommand{d\$} - Deleta do caractere atual ao fim da linha.
+    \item \vimcommand{D} - Deleta do caractere atual ao fim da linha.
+    \item \vimcommand{dt+} - Deleta do caractere atual até o caractere +.
+    \item \vimcommand{yy} - Copia a linha atual.
+    \item \vimcommand{y\$} - Copia do caractere atual até o fim da linha.
+    \item \vimcommand{p} - Cola sob o cursor.
+    \item \vimcommand{P} - Cola na posição imediatamente anterior ao cursor.
+    \item \vimcommand{cc} - Deleta a linha atual e entra no modo de inserção.
+    \item \vimcommand{c\$} - Deleta do caractere atual até o fim da linha e entra no modo de inserção.
+    \item \vimcommand{ct+} - Deleta do caractere atual até o caractere + e entra em modo de inserção.
+\end{itemize}
+
 
 \subsubsection{Substituir}
 Caso seus erros sejam pequenos, e você queira substituir apenas um caractere sem sair do modo normal,
@@ -654,6 +674,8 @@ O vim define marcas para todo tipo de coisa, seja qual foi sua última alteraç�
 qual foi a última vez que entrou no modo de edição,
 e até mesmo qual foi o último trecho que foi selecionado dentro do modo visual.
 
+Para verificar quais os marks definidos, use \vimcommand{:marks}. Perceba quais são os caracteres utilizados para armazená-los.
+
 Como existem muitos detalhes, e não é tudo que é interessante, fica como atividade para o leitor explorar no manual mais tarde.
 Mas para completar a explicação, existem marcas salvas nos caracteres a-z, 
 que são salvas referentes ao arquivo atual, e marcas salvas nos caracteres A-Z,
@@ -663,7 +685,7 @@ Alguns caracteres são de uso automático, então ele provavelmente será sobres
 \newpage
 \section{Recursos avançados}
 A maior parte do básico está feito.
-Vocẽ sabe escrever, sabe apagar, sabe trocar palavras de lugar, copiando e colando.
+Você sabe escrever, sabe apagar, sabe trocar palavras de lugar, copiando e colando.
 Já aprendeu a pular dentro de um arquivo, fazendo já parecer bruxaria. Mas até agora
 estamos no reino iluminado, em que um iniciante observar e entender o que está acontecendo.
 Eu diria que a partir vamos mexer com magia negra, que se faltar atenção, acontecerão coisas num piscar de olhos
@@ -683,29 +705,92 @@ Basta usar o comando \vimcommand{/} e pesquisar o que você deseja procurar.
 Se for encontrado o termo, seu cursor será jogado para cima dele.
 Outras ocorrências da busca ficarão destacadas, e não sumirão até se executar o comando
 \vimcommand{:nohlsearch}, ou a versão reduzida \vimcommand{:noh}. 
+
+Para avançar entre os termos encontrados na busca, use o comando \vimcommand{n} para avançar para frente.
+Para retroceder, buscando termos anteriores, use \vimcommand{N}.
 Na régua inferior podem aparecer informações importantes do tipo, "Sua busca chegou ao fim do arquivo, recomeçando do começo",
 vale a pena ficar de olho.
 
-% CONTINUA AQUI ----------------------------------------------------------------------------------------------------------
+Podemos realizar buscas no sentido inverso do arquivo com \vimcommand{?}, que terá os mesmos impactos que a busca normal.
+Caso você queira buscar um termo que esteja sob o cursor, pode-se utilizar \vimcommand{\#},
+que o mesmo efeito de se utilizar a busca com \vimcommand{/} ocorrerá. 
+Para se buscar o termo sob o cursor, mas no sentido inverso, vale o comando \vimcommand{*}.
 
-Procurando novamente a última busca com \vimcommand{//}.
-Procurando de tràs para frente com \vimcommand{?}.
-Procurando por ocorrências da palavra sobre o qual cursor descansa com \vimcommand{*} e \vimcommand{#}.
+Se você realizou uma busca e deseja repetí-la, \vimcommand{//}, e o mesmo vale para \vimcommand{??}.
 
 Apesar de podermos pesquisar termos simples, podemos utilizar expressões regulares para encontrar padrões que se casam com nossas especificações.
 Este é um texto sobre vim, não sobre REGEX, então, se quiser, vá atrás por conta.
 
-...
 \subsection{Substituição no arquivo}
-Geralmente
-...
+Quando estamos programando temos o costume de usar vastamente palavras chave.
+A repetição de palavras chave é muito grande, seja para nomear variáveis, seja para nomear funções,
+ou mesmo uma informação escrita à força, ou \textit{hardcoded}.
+Você pode realizar a substituição de diversas formas diferentes.
+Como você já sabe realizar a busca, basta encontrar e substituir uma a uma.
+Mas se você deseja fazer de uma forma automática, que abrange de uma ocorrência, a múltiplas delas, então esse comando é pra você.
+
+Para realizar uma substituição de uma ocorrência, na linha atual, pode-se usar:\\
+\vimcommand{:s/ocorr/subst}.
+Perceba que você precisa estar com o cursor na linha alvo da substituição.
+Se sua substituição tem como alvo todas as ocorrências de \textit{ocorr}, então,
+com o cursor posicionado na linha alvo, \vimcommand{:s/ocorr/{subst}/g} dirá ao comando que
+você deseja aplicar as substituições globalmente, alterando todas as ocorrências.
+
+Para trabalhar com um escopo definido de linhas, existem duas formas: A primeira,
+definir em quais linhas do arquivo a substituição ocorrerá.
+Nesse formato fazemos \\
+\vimcommand{:4,12s/ocorr/subst},
+podendo aplicar na primeira ocorrência, ou em todas elas adicionando \vimcommand{g} ao final.
+Neste exemplo, o escopo será da linha 4 à linha 12.
+
+Uma outra forma de definir o escopo é selecionar com o modo visual o trecho
+que sofrerá alteração.
+Temos um pouco mais de flexibilidade neste caso, podendo selecionar pedaços de linha,
+linhas inteiras,
+blocos de texto\ldots\
+E então, basta aplicar o comando.
+
+Se quisermos que o escopo seja o arquivo inteiro, em todas as ocorrências, usamos \vimcommand{:\%s/ocorr/subst/g}.
+O termo \% simboliza o próprio arquivo no vim, seja seu nome, seja seu texto como este caso.
+
+Para terminarmos sobre substuições, para que sejamos perguntados se queremos ou não substituir o termo de ocorrência:
+\vimcommand{:\%s/ocorr/subst/gc}, o termo \vimcommand{c} adicionado é quem faz o serviço.
+
+\subsection{Folds}
+Existem casos em que você tem um parágrafo que deseja colapsar, ou seja, deixá-lo numa única linha para poder visualizar o restante.
+Isso é útil para verificar a consistência do formato geral do texto, e para poder, por exemplo, verificar se todos os assuntos foram abrangidos.
+
+Pessoalmente, acho raro utilizar, e difícil de configurar.
+Mas caso você esbarre numa sequência de teclas estranhas, então melhor saber desfazer essas alterações.
+
+A lista de teclas de ação são:
+\begin{itemize}
+    \item \vimcommand{zc} - Fechar uma dobradura.
+    \item \vimcommand{zo} - Abrir uma dobradura.
+    \item \vimcommand{zM} - Fechar todas as dobraduras.
+    \item \vimcommand{zR} - Abrir todas as dobraduras.
+    \item \vimcommand{za} - Abrir ou Fechar dobraduras.
+\end{itemize}
+
+Agora, se você fechou uma dobradura de texto, então sabe abrir.
+Existem muitos métodos para identificar uma possível dobradura que faça sentido.
+Existem os métodos: \textit{indent}, \textit{diff}, \textit{syntax}, \textit{expr}, \textit{manual} e \textit{marker}
+
+Uma rápida explicação sobre o modo manual.
+Você seleciona uma quantidade de texto, com o modo visual, e usa o comando \vimcommand{:fold}.
+Então você habilitou o trecho do texto a ser dobrável.
+Eu considero uma forma trabalhosa, mas extremamente versátil.
+
 \subsection{Registers}
-...
-\subsection{MultiFile}
+Os registros do vim são os slots de memória de elementos salvos e deletados. Nestes
+
+\subsection{Macros}
 ...
 \subsection{O que é um buffer}
 ...
 \subsubsection{bufdo}
+...
+\subsection{MultiFile}
 ...
 \subsection{MultiWindows}
 Como abrir múltiplas janelas
