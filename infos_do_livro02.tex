@@ -128,10 +128,80 @@ Justificar à esquerda também é possível.
 
 Centralizando um trecho de texto
 {\centering
-\huge\bfseries Cejtered Text \\
+\huge\bfseries Centered Text \\
+\Large \normalfont written by me \\
+\normalsize \today \\
+}
 
-    }
+
+\noindent This is the beginning of a poem
+by Edgar Allan Poe:
+\begin{center}
+    \emph{Annabel Lee}
+\end{center}
+\begin{center}
+    It was many and many a year ago,\\
+    In a kingdom by the sea,\\
+    That a maiden there lived whom you may know\\
+    By the name of Annabel Lee
+\end{center}
+
+The complete poem can be read on
+\url{http://www.online-literature.com/poe/576/}.
+
+Para alinhar à esquerda
+\begin{flushleft}
+Alinhado à esquerda não justificado
+\end{flushleft}
+{\raggedright
+Mesmo efeito, não justificado
+}
+
+Para alinhar à direita:
+\begin{flushright}
+    Alinhado à direita
+\end{flushright}
+{\raggedleft
+Mesmo efeito, não justificado
+}
+
+Exemplo de citação:
+
+Niels Bohr said: ``An expert is a person who has made
+all the mistakes that can be made in a very narrow field.''
+
+Albert Einstein said:
+
+\begin{quote}
+    Anyone who has never made a mistake has never tried anything new.
+\end{quote}
+Errors are inevitable. So, let's be brave trying something new.
 
 
+Exemplo de citação longa:
+
+The authors of the CTAN team listed ten good reasons
+for using \TeX. Among them are:
+\begin{quotation}
+ \TeX\ has the best output. What you end with,
+the symbols on the page, is as useable, and beautiful,
+as a non-professional can produce.
+ \TeX\ knows typesetting. As those plain text samples
+show, \TeX's has more sophisticated typographical algorithms
+such as those for making paragraphs and for hyphenating.
+ \TeX\ is fast. On today's machines \TeX\ is very fast.
+ It is easy on memory and disk space, too.
+ \TeX\ is stable. It is in wide use, with a long history.
+ It has been tested by millions of users, on demanding input.
+ It will never eat your document. Never.
+\end{quotation}
+The original text can be found on
+\url{ http://www.ctan.org/what_is_tex.html}.
+
+Adicionar o pacote parskip irá adicionar um espaço entre os parágrafos.
+Existem duas formas de se distinguir parágrafos.
+Uma, a padrão, é indentar o começo de cada parágrafo.
+A segunda é adicionando um espaço vertical entre parágrafos.
+pode ser útil no caso de colunas estreitas, em que a indentação seria custosa ou anti-estilística.
 
 \end{document}
