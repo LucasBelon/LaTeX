@@ -184,6 +184,9 @@ Verifique com o comando \vimcommand{:registers} suas macros de teste.
 
 Caso não tenha ficado claro, como as macros são armazenadas em um registro, podemos colá-las com \vimcommand{"aP}.
 Isso será útil.
+Caso pretenda alterar a macro, você pode colá-la, e alterá-la, e então voltar a salvar no slot.
+Não é a maneira mais simples e elegante de se fazer isso, mas é uma forma.
+O importante é perceber a complexidade e as aplicabilidades que macros possuem.
 
 Quando falarmos de arquivos de configuração, o famoso vimrc, poderemos simplesmente colar nossa macro lá.
 Dessa forma, teremos nossas macros sempre disponíveis, e poderemos criar macros cada vez mais elaboradas.
@@ -205,28 +208,204 @@ Quando você salva, ele escreve as alterações no arquivo original.
 E o mais importante, ninguém disse que não poderiam haver mais de um buffer.
 Ou seja, vamos começar a abrir e editar mais de um arquivo por vez!
 
-% CONTINUA AQUI --------------------------------------------------------------------------
 \subsection{Operando Com Múltiplos Arquivos}
-Abrindo múltiplos arquivos pela linha de comando: vim arquivo1.txt arquivo2.tex arquivo3.c
-badd
-bdelete
-bnext
-bprevious
-blast
+Quando iniciamos o vim, podemos abrí-lo com um arquivo, como em \vimcommand{\$vim arquivo01.txt}.
+Mas nada nos impede de abrir múltiplos, como em \vimcommand{\$vim arquivo01.txt arquivo02.txt}.
+Quando abrimos dessa forma, imediatamente nos deparamos com o arquivo01.txt, mostrado em tela cheia,
+sem indicações de que de fato abrimos o tal arquivo02.txt.
+Para listar a pilha do buffer, usamos o comando \vimcommand{:ls}.
+Perceba que eu disse pilha do buffer, e não lista de arquivos.
+Não necessariamente iremos abrir arquivos, logo logo abriremos uma instância de terminal, e uma janela de navegação.
 
-\subsubsection{bufdo, Rodando Comandos Em Múltiplos Arquivos}
-Podemos realizar substituições em conjuntos de arquivos, rodar macros, realizar
-buscas.
-\ldots
+Para adicionar um novo buffer, mesmo que vazio, basta escrever \newline
+\vimcommand{:badd nome\_do\_arquivo}.
+Também temos o formato \vimcommand{:edit nome\_do\_arquivo}.
+Não é muito clara a diferença entre eles, então fica a seu critério consultar o manual: \vimcommand{:help edit} e \vimcommand{:help badd}.
+E para deletar temos duas formas: A primeira é escrever \vimcommand{:bdelete nome\_do\_arquivo}, mas
+é uma forma problemática, já que requer lembrar o nome do arquivo.
+Eu recomendo utilizar \vimcommand{:ls} e em seguida, pela numeração do buffer escolher qual será deletado:
+\vimcommand{:bd 3} por exemplo.
+
+Para saber o significado de cada um dos símbolos que acompanham a numeração dos buffers, veja o manual.
+Também haverá uma explicação sobre o manual mais ao final do documento.
+
+Antes de podermos transitar, saiba que, por padrão, o vim não te deixa sair de um buffer com modificações feitas.
+Ele pede que você salve as alterações.
+Por enquanto, para poder transitar sem necessidade de salvar, utilize o comando \vimcommand{:set hidden} para
+que seja ignorado o estado do arquivo.
+Futuramente iremos adicionar esse comando em nosso arquivo de configuração.
+
+Agora que podemos adicionar e remover, vamos transitar entre os buffers, afinal de contas, é isso que interessa.
+\vimcommand{:bnext} irá mudar para o próximo buffer da pilha.
+\vimcommand{:bprevious} irá mudar para o buffer anterior da pilha.
+\vimcommand{:bfirst} irá mudar para o primeiro buffer da pilha.
+\vimcommand{:blast} irá mudar para o último buffer da pilha.
+E pra finalizar, para pular para um buffer de número qualquer \vimcommand{:buffer \#}.
+
+Todos esses comandos possuem formas simplificadas, exceto badd:
+\begin{itemize}
+    \item \vimcommand{:edit} - Para adicionar um buffer à pilha;
+    \item \vimcommand{:badd} - Para adicionar um buffer à pilha;
+    \item \vimcommand{:bd} - Para deletar um buffer da pilha;
+    \item \vimcommand{:bn} - Para ir ao próximo buffer;
+    \item \vimcommand{:bp} - Para ir ao buffer anterior;
+    \item \vimcommand{:bf} - Para ir ao primeiro buffer;
+    \item \vimcommand{:bl} - Para ir ao último buffer;
+    \item \vimcommand{:b \#} - Para ir aoo buffer número \#;
+\end{itemize}
+
+Para abrir arquivos que estão inseridos dentro de pastas, ou que estão em pastas superiores,
+depende-se de sintaxe de shell para caminhos relativos e absolutos, que eu suponho que você saiba.
+Atenção, se você tentar abrir uma pasta acabará abrindo o navegador sem querer.
+Teremos explicações sobre ele futuramente.
+
+Existe um comando que abre todos os buffers numa janela, e isso entra no tópico a seguir.
+Portanto, vou deixar aqui citado, e a explicação sobre como manipular fica no capítulo seguinte.
+Para abrir todos os buffers na janela de uma só vez: \vimcommand{:ball}.
+
+Apenas para citação: Existe um comando chamado bufdo, que executará uma ação em todos os buffers.
+Com ele é possível rodar comandos, macros, substituições e afins.
+No entanto, a sintaxe é complexa, então vou deixar a cargo do leitor ir atrás de descobrir
+se essas funcionalidades o são úteis.
+
 \subsection{MultiWindows}
-Como abrir múltiplas janelas
-Como mover múltiplas janelas
-Como redimensionar as múltiplas janelas
-Como fechar janelas, e apagar o buffer.
-...
+Por hora conseguimos editar múltiplos arquivos.
+A explicação sobre buffers serem como um espaço de memória, e sobre sua organização em pilhas
+foi importante para sabermos como verificar quais arquivos estão carregados no vim.
+Agora podemos dar passos significativos adiante.
+Eu diria que esta é minha funcionalidade favorita desse editor.
+
+Um detalhe importante que não citei antes por fazer diferença somente agora:
+Existe uma diferença entre fechar com \vimcommand{:q} e deletar o buffer da pilha com \vimcommand{:bd}.
+A diferença é que, com o comando \vimcommand{:q}, estamos fechando a janela em que o buffer se encontra,
+mas se olharmos a lista de buffers com \vimcommand{:ls}, veremos que ele ainda está na pilha, e que,
+portanto, pode ser novamente acessado.
+Com \vimcommand{bd} estamos descaregando da memória o arquivo, garantindo que as gravações foram ou feitas ou descartadas,
+e liberando memória do editor.
+
+\subsubsection{Abrindo E Fechando}
+Existem diversos comandos para abrir janelas.
+Os dois primeiros, mais simples, são o \vimcommand{:new arquivo} que irá fazer com que a tela
+se divida em duas horizontalmente, abrindo o novo buffer acima.
+Já com o comando \vimcommand{:vertical new arquivo} o mesmo ocorre, mas verticalmente, e abrindo a nova janela à esquerda.
+
+Outro conjunto, que faz mais jus ao nome das \textit{splitted Windows}, são os comandos \vimcommand{:split nome\_do\_arquivo} e 
+\vimcommand{:vertical split nome\_do\_arquivo}.
+Eles farão exatamente a mesma coisa que \vimcommand{:new} e \vimcommand{:vertical new}.
+
+Caso você já tenha carregado no editor a janela que deseja abrir, pode-se usar o comando
+\vimcommand{:sbuffer}, ou \vimcommand{:vertical sbuffer}.
+A vantagem de usar esse comando é a possibilidade de usar o comando \vimcommand{:ls}
+para poder abrir a partir do número do buffer.
+
+Ficar limitado a sempre abrir à esquerda ou acima é complicado,
+Mas temos a possibilidade de alterar qual será o local onde a nova janela irá nascer.
+
+Como existem comandos para abrir verticalmente e horizontalmente, os comandos que definem
+se a janela irá surgir acima/abaixo, na direita/esquerda, são colapsados.
+E para complicar ainda mais, podemos por exemplo abrir logo à direita da janela atual, ou
+abrir na extrema direita da tela.
+E o mesmo para especificação vertical.
+
+Para abrir algo logo abaixo ou à direita, use o comando \vimcommand{belowright}.
+Perceba que, se usarmos o \vimcommand{split}, então ele irá mandar para baixo por conta do \vimcommand{below}.
+Se usarmos o \vimcommand{vsplit}, irá abrir à direita, por conta do \vimcommand{right}.
+Temos também os comandos \vimcommand{aboveleft},\vimcommand{botright}, e \vimcommand{topleft};
+Com isso temos 8 combinações:
+
+\begin{itemize}
+    \item \vimcommand{:topleft split} - Abrir no topo da tela horizontalmente;
+    \item \vimcommand{:botright split} - Abrir na base da tela horizontalmente;
+    \item \vimcommand{:topleft vsplit} - Abrir no extremo esquerdo da tela verticalmente;
+    \item \vimcommand{:botright vsplit} - Abrir no extremo direito da tela verticalmente;
+    \item \vimcommand{:aboveleft split} - Abrir imediatamente acima da janela horizontalmente;
+    \item \vimcommand{:belowright split} - Abrir imediatamente abaixo da janela horizontalmente;
+    \item \vimcommand{:aboveleft vsplit} - Abrir imediatamente à esquerda da janela horizontalmente;
+    \item \vimcommand{:belowright vsplit} - Abrir imediatamente à direita da janela horizontalmente;
+\end{itemize}
+
+Essas combinações realmente são muito ruins de se entender, principalmente por conta das indicações de direção
+serem colapsadas em um único argumento.
+Lembre-se, se o comando abre verticalmente, só importa esquerda e direita.
+Se ele abre horizontalmente, só importa cima e baixo.
+
+\subsubsection{Alternando Entre Janelas E Movendo}
+A forma mais simples de se mover entre janelas é usando \vimcommand{CTRL-w CTRL-w}, ou só \vimcommand{CTRL-w w}.
+Eu prefiro a primeira forma pela mão já estar com o dedo no lugar.
+Só com esse comando já podemos alternar legal entre as janelas. 
+A lógica desse comando é alternar na ordem natural da escrita, que é, do topo para baixo, e da esquerda para a direita.
+
+Mas claro que não vamos ficar limitados a esses movimentos simples.
+O comando \vimcommand{CTRL-w} habilita a movimentação.
+Dessa forma, para ir para a janela da esquerda, basta usar \vimcommand{CTRL-w l} para ir para a janela da direita.
+Usando os comandos de movimentação \textit{hjkl} você se move para onde quiser.
+Assim combinamos conhecimentos prévios:
+\begin{itemize}
+    \item \vimcommand{CTRL-w h} - Troca para a janela da esquerda;
+    \item \vimcommand{CTRL-w l} - Troca para a janela da direita;
+    \item \vimcommand{CTRL-w j} - Troca para a janela debaixo;
+    \item \vimcommand{CTRL-w k} - Troca para a janela acima;
+    \item \vimcommand{CTRL-w t} - Troca para a janela superior (top);
+    \item \vimcommand{CTRL-w b} - Troca para a janela inferior (bottom);
+\end{itemize}
+
+\subsubsection{Redimensionando E Criando Um Layout}
+Caso tenhamos aberto nossas janelas em uma disposição não muito agradável,
+temos a opção de mover a janela para um dos cantos da tela.
+Não temos como mover a janela com um controle muito bom, mas é melhor que nada.
+Para mover a janela atual temos:
+
+\begin{itemize}
+    \item \vimcommand{CTRL-w H} - Envia a janela atual para o canto esquerdo da tela;
+    \item \vimcommand{CTRL-w L} - Envia a janela atual para o canto direito da tela;
+    \item \vimcommand{CTRL-w J} - Envia a janela atual para o canto inferior da tela;
+    \item \vimcommand{CTRL-w K} - Envia a janela atual para o canto superior da tela;
+    \item \vimcommand{CTRL-w x} - Troca a janela atual de posição com seu vizinho mais próximo;
+\end{itemize}
+
+Podemos, por fim, redimensionar nossas janelas, seja com comandos, seja com atalhos.
+Com comandos temos:
+
+\begin{itemize}
+    \item \vimcommand{CTRL-w -} - Diminui verticalmente o tamanho da janela atual;
+    \item \vimcommand{CTRL-w +} - Aumenta verticalmente o tamanho da janela atual;
+    \item \vimcommand{CTRL-w $<$} - Diminui horizontalmente o tamanho da janela atual;
+    \item \vimcommand{CTRL-w $>$} - Aumenta horizontalmente o tamanho da janela atual;
+    \item \vimcommand{CTRL-w $|$ } - Aumenta verticalmente a janela atual ao máximo possível;
+    \item \vimcommand{CTRL-w \_ } - Aumenta horizontalmente a janela atual ao máximo possível (underscore);
+\end{itemize}
+
+No caso de redimensionar as janelas, é muito mais fácil editar algum atalho mais simples para a tarefa.
+Eu particularmente deixo isso configurado, mas é bom saber qual o padrão, e saber mexer mesmo que não
+seja na \textbf{sua} configuração.
+É muito mais fácil alterar tamanho pedindo para redimensionar várias linhas ou colunas de uma vez.
+Com atalhos conseguimos apenas uma linha ou uma coluna, ou os tamanhos máximos.
+Os comandos abaixo estão escritos com o número 1, mas poderiam ser 5, 15, 55, o que o for razoável pra você.
+
+Os comandos para alterar o tamanho das janelas são:
+\begin{itemize}
+    \item \vimcommand{:resize +1} - Aumenta verticalmente o tamanho da janela atual;
+    \item \vimcommand{:resize -1} - Diminui verticalmente o tamanho da janela atual;
+    \item \vimcommand{:vertical resize +1} - Aumenta horizontalmente o tamanho da janela atual;
+    \item \vimcommand{:vertical resize -1} - Diminui horizontalmente o tamanho da janela atual;
+    \item \vimcommand{:resize 35} - Torna o tamanho horizontal da janela como 35 linhas;
+    \item \vimcommand{:vertical resize 35} - Torna o tamanho vertical da janela como 35 colunas;
+\end{itemize}
+
+Lembre-se, tamanho vertical refere-se à quantidade de colunas. Tamanho normal refere-se à quantidade de linhas.
+Acabamos de encerrar o que há pra se saber sobre layout de janelas.
+Ainda nesse assunto vamos ver como criar abas, mas antes tem uma ou duas coisas interessantes para se ver.
+
 \subsubsection{Save View}
-Ser curto na explicação.
-...
+Existem sessions e views como tentativas de salvar as configurações e layouts atuais.
+Pessoalmente, nunca consegui utilizar direito as views, então vou deixar o manual aqui para você procurar:
+\vimcommand{:help mkview}
+
+% CONTINUA AQUI -----------------------------------------------------------------------------------------------
+\subsubsection{Netrw}
+Navegando entre arquivos.
+\subsubsection{Terminal}
+Executando comandos do shell.
 \subsection{MultiTabs}
 Como criar, como navegar, como mover, abrindo o terminal dentro do vim.
 Como desativar o terminal e ver inputs antigos.
