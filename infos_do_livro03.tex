@@ -1,0 +1,85 @@
+\documentclass{a4paper, 12pts}{book}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{blindtext}
+\begin{document}
+
+Começamos o capitulo 3, sobre design de página.
+Espera-se aprender:
+\begin{itemize}
+    \item Ajuste de margens;
+    \item Mudança no espaçamento das linhas;
+    \item Seccionar o documento;
+    \item Criação de sumário;
+    \item Design de cabeçalhos e rodapés;
+    \item Controles de quebra de página;
+    \item Definir notas de rodapé e modificar sua aparência.
+\end{itemize}
+
+\chapter{Exploring the page layout}
+In this chapter we will study the layout of pages.
+
+\section{Some filler text}
+\blindtext
+\section{A lot more filler text}
+More dummy text will follow.
+\subsection{Plenty of filler text}
+\blindtext[10]
+
+O pacote blindtext é usado para obter texto de preenchimento.
+O pacote Babel altera o idioma desre texto filler.
+
+O comando \emph{chapter} irá sempre começar uma nova página.
+Para gerar texto filler, existe o pacote ipsum, que gera o famoso loremipsum.
+
+O comando \emph{section} é similar, e já vimos sobre ele. Ele não começa uma nova página. Será que existe o comando \emph{chapter} para o tipo article?
+
+Como livros são textos com páginas à esquerda e à direita, as margens ganham o seguinte significado:
+
+\begin{itemize}
+    \item A margem direita é a margem externa, já que capítulos começam na página direita.
+    \item A margem esquerda é a margem interna, sempre maior por causa da colagem das folhas.
+    \item A margem inferior contém a numeração de páginas.
+    \item A margem superior possui um espaçamento maior em páginas de início de capítulo.
+\end{itemize}
+
+Para definir as margens fora do padrão \LaTeX\ utiliza-se o pacote \emph{geometry}.
+
+% \usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=1cm]{geometry}
+
+O pacote \emph{geometry} nasceu por conta de, nos primeiros dias do \LaTeX\, realizar-se a diagramação à mão.
+Muitas vezes o tamanho margem esquerda + margem direita + comprimento do texto 
+simplesmente não era compatível com o tamanho da página.
+
+O \emph{geometry} compreende o formato chave-valor para seus parâmetros.
+Se você utilizá-lo sem argumentos, pode executá-lo com \backslash geometry\{lista de argumentos\}.
+Imagine a necessidade de se alterar a geometria a cada página.
+
+Hora de listar o poder do geometry:
+\begin{itemize}
+    \item \emph{textwidth} Delimita a largura que o texto ocupará na página, por exemplo \emph{textwidth=140mm};
+    \item \emph{textheight} Delimita a altura que o texto ocupará na página, por exemplo \emph{textheight=180mm} ;
+    \item \emph{lines} Outra forma de delimitar a altura do texto, por exemplo \emph{lines=25} ;
+    \item \emph{includehead} Faz com que o cabeçalho seja incorporado como área de texto. A opção padrão é \emph{false} ;
+    \item \emph{includefoot} Faz com que o rodapé seja incorporado como área de texto. A opção padrão é \emph{false} ;
+    \item \emph{left ou right} Delimita o tamanho da margem, por exemplo \emph{left=3cm}. Usa-se no caso de documentos de uma página por folha;
+    \item \emph{inner ou outer} Delimita o tamanho da margem interna ou externa, por exemplo \emph{inner=2cm}. Usa-se para documentos de duas páginas por folha;
+    \item \emph{top, bottom} Especifica o tamanho das margens verticais como em \emph{top=25mm};
+    \item \emph{twosides} Força o documento a adotar página esquerda e direita. Nas páginas verso os valores das margens esquerda e direita serão invertidos;
+    \item \emph{bindingoffset} Separa um espaço para a união de folhas. Será aplicado à margem interna;
+\end{itemize}
+
+Para se alterar a geometria do documento, mesmo já tendo definido no preâmbulo,
+usar o comando \backslash newgeometry\{argument list\},
+e para retornar à geometria definida inicialmente \backslash restoregeometry.
+
+Para encontrar documentação por tópicos, caso nem o nome se saiba:
+\url{http://texcatalogue.sarovar.org/bytopic.html}
+
+O livro sugere pesquisar sobre a documentação do pacote typearea, que utiliza a abordagem de delimitar a geometria
+de forma mais semelhante com os padrões tipográficos (design de página).
+Esse pacote é explicado no manual KOMA-Script.
+
+
+
+\end{document}
