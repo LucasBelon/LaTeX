@@ -396,22 +396,77 @@ Lembre-se, tamanho vertical refere-se à quantidade de colunas. Tamanho normal r
 Acabamos de encerrar o que há pra se saber sobre layout de janelas.
 Ainda nesse assunto vamos ver como criar abas, mas antes tem uma ou duas coisas interessantes para se ver.
 
+
+% CONTINUA AQUI -----------------------------------------------------------------------------------------------
+\subsection{MultiTabs}
+Como criar, como navegar, como mover, abrindo o terminal dentro do vim.
+Como desativar o terminal e ver inputs antigos.
+...
 \subsubsection{Save View}
 Existem sessions e views como tentativas de salvar as configurações e layouts atuais.
 Pessoalmente, nunca consegui utilizar direito as views, então vou deixar o manual aqui para você procurar:
 \vimcommand{:help mkview}
 
-% CONTINUA AQUI -----------------------------------------------------------------------------------------------
 \subsubsection{Netrw}
-Navegando entre arquivos.
+Existe dentro do vim um navegador.
+Num sistema com interface gráfica você certamente tem a capacidade de abrir um
+explorador de arquivos, para navegar entre as diversas pastas que você não organiza.
+Pois bem. O vim também tem algo parecido.
+
+O navegador NETRW nasceu como um plugin, mas atualmente está integrado ao vim.
+E ainda bem que está.
+Existem diversas formas de abrir o editor.
+Pode-se usar o comando no terminal \vimcommand{\$ vim [pasta]} ou 
+mesmo \vimcommand{\$ vim .}, e você estará no navegador de arquivos.
+Mas e se você estiver dentro do vim, com seus arquivos já abertos?
+
+Você pode usar o comando \vimcommand{:Explore} para carregar no buffer o explorador.
+No entanto, agora que sabemos como funciona o sistema de janelas, podemos usar
+\vimcommand{:Vexplore} para assim adicionar uma janela para navegação.
+
+A partir da janela de navegação podemos usar \vimcommand{XXXXX} para abrir o arquivo
+em uma janela vertical, o comando \vimcommand{XXXX} para abrir uma janela horizontal,
+ou mesmo usar \vimcommand{t} para abrir o arquivo em uma nova aba.
+Simplesmente dar enter carregará o arquivo na janela do próprio navegador.
+
+Existem funcionalidades diversas, como modo de exibição, tipo de acesso,
+e outras coisas que eu não aprendi a usar.
+O manual sobre o NETRW é extenso, e existem truques muito interessantes
+que podem trazer um conforto sem igual à edição de textos por linha de comando,
+seja código fonte para programadores, seja para a criação de manuais.
+
 \subsubsection{Terminal}
-Executando comandos do shell.
-\subsection{MultiTabs}
-Como criar, como navegar, como mover, abrindo o terminal dentro do vim.
-Como desativar o terminal e ver inputs antigos.
-...
+Óbviamente, não poderia faltar.
+Quando estamos programando, certamente iremos querer mexer aqui e acolá no terminal.
+Vamos querer invocar o interpretador do código, compilar, ou mesmo rodar um comando simples.
+A lógica de nova janela segue sendo válida.
+Para abrir uma janela de terminal na horizontal \vimcommand{:terminal}.
+Para abrir na vertical \vimcommand{:vertical terminal}.
+
+Quando estamos utilizando terminais reais (no linux usamos o CTRL ALT F\#)
+não temos a funcionalidade de histórico.
+Abrindo o terminal a partir do vim, podemos torná-lo uma janela de texto qualquer,
+nos permitindo navegar pelos comando já executados, e output's que ficaram para trás.
+Para obter esse efeito \vimcommand{CTRL-w N}, com N maiúsculo.
+
 \subsubsection{Save Session}
-Como criar, porquê nem sempre é uma boa ideia, e como podemos usar para abrir um projeto
+Caso você acabe com diversas abas, um layout elaborado de janelas com diversos arquivos,
+enquanto trabalha num projeto relativamente grande, existe uma ferramenta muito útil.
+
+O vim te permite salvar o layout geral da seção.
+No fundo, ele re-executa todos os comandos necessários para abrir as janelas,
+na ordem e disposição que estavam da última vez.
+
+Acontece que, para conseguir esse armazenamento, acabamos com um arquivo relativamente grande,
+mesmo para o layout mais simples.
+Esse arquivo de layout, com extensão .vim, utiliza caminhos relativos,
+o que significa que se você mudá-lo de lugar, simplesmente seus arquivos não serão carregados.
+
+O comando mágico para criar esse arquivo que salva o layout é \vimcommand{:mksession Session.vim}.
+Para carregar o layout existem duas formas.
+No momento de abrir o vim pode-se usar \vimcommand{\$ vim -S Session.vim}, ou dentro do próprio vim
+podemos usar \vimcommand{:source Session.vim}.
+O nome e a extensão não são realmente obrigatórios, mas manter um padrão é interessante.
 ...
 \subsection{Quickfix Com Grep}
 ...
@@ -427,11 +482,6 @@ Como criar, porquê nem sempre é uma boa ideia, e como podemos usar para abrir 
 ...
 \subsection{Olhando um arquivo vimrc pré-pronto}
 ...
-
-\newpage
-\section{Plugins Built-in}
-...
-
 \newpage
 \section{Escolhendo e gerenciando Plugins}
 ...
@@ -448,5 +498,14 @@ Como criar, porquê nem sempre é uma boa ideia, e como podemos usar para abrir 
 \ldots
 \subsection{Criando um layout semelhante à uma IDE (meu @i) com o vim padrão}
 \ldots
+\subsection{Usando ctags para saltos acrobáticos dentro de um projeto de programação}
+\ldots
 
+% Anotações finais: Adicionar qual página de manual cada uma das partes deve ler.
+% Seria interessante também se eu mesmo pegar pra ler cada uma das páginas do manual,
+% tanto pra aprender um pouco mais, quanto pra corrigir e adicionar novos usos
+% que podem ser interessantes. Eita projetinho doido.
+% TODO: Não corrigir texto. Formatar e verificar estilo. Aprender na prática o LaTeX
+% era o objetivo inicial, então termine logo o objetivo para poder fazer outras coisas
+% que podem ser igualmente ou mais interessantes do que escrever manuéis.
 \end{document}
