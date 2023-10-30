@@ -45,7 +45,7 @@ Como livros são textos com páginas à esquerda e à direita, as margens ganham
 
 Para definir as margens fora do padrão \LaTeX\ utiliza-se o pacote \emph{geometry}.
 
-% \usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=1cm]{geometry}
+\backslash usepackage\[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=1cm\]\{geometry\}
 
 O pacote \emph{geometry} nasceu por conta de, nos primeiros dias do \LaTeX\, realizar-se a diagramação à mão.
 Muitas vezes o tamanho margem esquerda + margem direita + comprimento do texto 
@@ -56,6 +56,17 @@ Se você utilizá-lo sem argumentos, pode executá-lo com \backslash geometry\{l
 Imagine a necessidade de se alterar a geometria a cada página.
 
 Hora de listar o poder do geometry:
+
+Pra começar, as opções do papel:
+\begin{itemize}
+    \item \emph{paper=name} - letterpaper, executivepaper, legalpaper, a0paper, \ldots ,a6paper, b0paper, \ldots ,b6paper;
+    \item \emph{paperwidth} - paperwidth=10in;
+    \item \emph{paperheight} - paperheight=7in;
+    \item \emph{papersize=\{width, height\}} - papersize=\{7in,10in\};
+    \item \emph{landscape} - ;
+    \item \emph{portrait} - modo padrão;
+\end{itemize}
+
 \begin{itemize}
     \item \emph{textwidth} Delimita a largura que o texto ocupará na página, por exemplo \emph{textwidth=140mm};
     \item \emph{textheight} Delimita a altura que o texto ocupará na página, por exemplo \emph{textheight=180mm} ;
@@ -79,6 +90,50 @@ Para encontrar documentação por tópicos, caso nem o nome se saiba:
 O livro sugere pesquisar sobre a documentação do pacote typearea, que utiliza a abordagem de delimitar a geometria
 de forma mais semelhante com os padrões tipográficos (design de página).
 Esse pacote é explicado no manual KOMA-Script.
+
+Alterando o espaçamento das linhas:
+Usa-se o pacote setspace que possui as seguintes opções:
+\begin{itemize}
+    \item \backslash usepackage[onehalfspacing]\{setspace\}
+    \item \backslash usepackage[singlespacing]\{setspace\}- Opção padrão.
+    \item \backslash usepackage[doublespacing]\{setspace\}
+\end{itemize}
+
+Normalmente definimos o espaçamento ebtre linhas para todo o documento.
+Mas caso seja necessário, pode-se usar o ambiente spacing para alterar um trecho do texto.
+
+\begin{spacing}{2.4}
+    Este texto está esticado em uma razão de 2.4
+\end{spacing}
+
+Alguns pacotes não possuem documentação separada de seus arquivos fonte.
+Esse é o caso de setspace.
+Rodar depois o comando kpsewich setspace.sty
+Ele irá mostrar onde está o arquivo do pacote.
+
+Essa ferramenta pertence ã biblioteca kpathsea, focada em caminhos de arquivos.
+
+Criando um documento com duas colunas e orientação paisagem:
+
+\backslash documentclass[a4paper, 12pt, landscape, twocolumn]\{book\}
+
+Verificar pelo comando \backslash twocolumn[Opening text]
+e pelo pacote multicols
+
+As classes base do LaTeX são book, article, report, slides, e letter.
+Existe uma classe de documento melhor que letter, scrlttr2. Slides é velho e ruim, usar beamer ou powerdot.
+
+
+Vamos verificar as opções de documentclass:
+\begin{itemize}
+    \item a4paper, b2paper, letterpaper, legalpaper, executivepaper.
+    \item 10pt, 11pt ou 12pt. 
+    \item landscape.
+    \item onecolumn ou twocolumn.
+    \item oneside ou twoside. Não se usa twoside com slides e letter.
+    \item 
+    \item 
+\end{itemize}
 
 
 
