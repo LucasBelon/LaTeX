@@ -139,6 +139,46 @@ Vamos verificar as opções de documentclass:
     \item leqno. Para fórmulas numeradas, coloca o número à esquerda.
 \end{itemize}
 
+Existe um negócio que eu realmente não tenho certeza do que é, mas chama KOMA-Script.
+Ele permite usar classes com maior flexibilidade, com mais opções e recursos.
+No entanto, também parece que é uma outra coleção de coisas para aprender.
+
+Pacotes que permitem uso de fontes arbitrárias:
+extarticle, extbook, extreport, extletter.
+
+Chegou a hora de verificar o sumário, ou table of contents (toc).
+
+{\comment
+
+\documentclass[a4paper,12pt]{book}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm,
+bottom=3cm, bindingoffset=1cm]{geometry}
+\begin{document}
+\tableofcontents % Aqui está o comando estrela da vez
+\chapter{Exploring the page layout}
+In this chapter we will study the layout of pages.
+\section{Some filler text}
+\blindtext
+\section{A lot more filler text}
+More dummy text will follow.
+\subsection{Plenty of filler text}
+\blindtext[10]
+\end{document}
+}
+
+À vezes é preciso compilar duas vezes para obter o sumário corretamente.
+A primeira rodada de compilação irá criar um arquivo .toc,
+e uma segunda rodada é necessária para ler o arquivo.
+
+O comando \backslash tableofcontents responde aos comandos que definem títulos e subtítulos:
+\backslash chapter, \backslash section \backslash subsection \backslash subsubsection.
+
+
+
+
+
 
 
 \end{document}
