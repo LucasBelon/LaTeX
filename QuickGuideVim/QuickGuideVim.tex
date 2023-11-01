@@ -473,25 +473,40 @@ Página do manual: \vimcommand{:h terminal}.
 
 \subsubsection{Save Session}
 Caso você acabe com diversas abas, um layout elaborado de janelas com diversos arquivos,
-enquanto trabalha num projeto relativamente grande, existe uma ferramenta muito útil.
+enquanto trabalha num projeto relativamente grande, existe uma ferramenta muito útil para evitar
+retrabalhos.
 
 O vim te permite salvar o layout geral da seção.
 No fundo, ele re-executa todos os comandos necessários para abrir as janelas,
 na ordem e disposição que estavam da última vez.
+Trata-se de um um arquivo em texto plano, ou seja, é possível abrí-lo com seu editor de textos favorito.
 
 Acontece que, para conseguir esse armazenamento, acabamos com um arquivo relativamente grande,
 mesmo para o layout mais simples.
-Esse arquivo de layout, com extensão .vim, utiliza caminhos relativos,
+Esse arquivo de layout, com extensão .vim, utiliza caminhos absolutos,
 o que significa que se você mudá-lo de lugar, simplesmente seus arquivos não serão carregados.
+No entanto, mudar toda uma pasta de projetos pode acabar funcionando
 
 O comando mágico para criar esse arquivo que salva o layout é \vimcommand{:mksession Session.vim}.
 Para carregar o layout existem duas formas.
 No momento de abrir o vim pode-se usar \vimcommand{\$ vim -S Session.vim}, ou dentro do próprio vim
 podemos usar \vimcommand{:source Session.vim}.
 O nome e a extensão não são realmente obrigatórios, mas manter um padrão é interessante.
+
+Para encontrar os assuntos no manual, utilize o comando \vimcommand{:h session}.
+Neste trecho de manual também é possível encontrar informações sobre views.
+
 \subsection{Quickfix}
 Muitas vezes existem pequenas janelas que nos ajudam a nos localizar, a ler um pequeno trecho, e a nos locomover.
 As janelas quickfix são uma variação das janelas preview.
+
+Se você compilar um programa usando os compiladores que o vim possui integração, ou mesmo se possui um servidor de linguagem,
+um lsp, é possível que uma janela de quickfix seja acessível usando algo como \vimcommand{:LspDocumentDiagnostics}.
+
+Como essa funcionalidade nasceu a partir de obter os erros que compiladores apontam, o comando base é \vimcommand{:c\#}, ou seja,
+c alguma coisa.
+
+% CONTINUAR LENDO EM VIMGREP. ENTÃO, PESQUISAR SOBRE COPEN E OUTROS COMANDOS PARA SALTAR ENTRE TERMOS.
 
 Para ler o manual: \vimcommand{:h preview} e \vimcommand{:h quickfix}.
 
