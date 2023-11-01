@@ -399,9 +399,29 @@ Ainda nesse assunto vamos ver como criar abas, mas antes tem uma ou duas coisas 
 
 % CONTINUA AQUI -----------------------------------------------------------------------------------------------
 \subsection{MultiTabs}
-Como criar, como navegar, como mover, abrindo o terminal dentro do vim.
-Como desativar o terminal e ver inputs antigos.
-...
+Para quem entendeu a natureza de um buffer, e como as janelas servem apenas para mostrar os buffers
+de maneira mais flexível, vai entender imediatamente as tabs (abas).
+Assim como janelas organizam uma visualização de buffers, tabs organizam uma visualização de janelas.
+
+Para criar uma nova aba, digamos uma aba com uma cópia do buffer atual, usamos o comando \vimcommand{:tabnew \%}.
+Caso você tenha uma quantidade de abas abertas, e tiver o mouse ativado, você pode navegar clicando.
+Também pode navegar por comando como \vimcommand{:tabNext}.
+
+\begin{itemize}
+    \item \vimcommand{:tabNew} - Cria uma nova aba;
+    \item \vimcommand{:tabprevious} - Move para a aba anterior;
+    \item \vimcommand{:tabnext} - Move para a próxima aba;
+    \item \vimcommand{:tabClose} - Fecha a aba atual. Não é o mesmo que deletar o buffer;
+    \item \vimcommand{:tabmove +1} - Move a aba atual mais à direita na ordem das abas;
+    \item \vimcommand{:tabmove -1} - Move a aba atual mais à esquerda na ordem das abas;
+    \item \vimcommand{:tabfirst} - Move para primeira aba.
+    \item \vimcommand{:tablast} - Move para a última aba.
+\end{itemize}
+
+Para mais informações, leia o manual com \vimcommand{:h tabpage}.
+Usar abas é interessante para mover-se rapidamente entre arquivos que você sabe que utilizará.
+Utilizar atalhos com estes comandos é uma grande vantagem.
+
 \subsubsection{Save View}
 Existem sessions e views como tentativas de salvar as configurações e layouts atuais.
 Pessoalmente, nunca consegui utilizar direito as views, então vou deixar o manual aqui para você procurar:
@@ -449,6 +469,8 @@ Abrindo o terminal a partir do vim, podemos torná-lo uma janela de texto qualqu
 nos permitindo navegar pelos comando já executados, e output's que ficaram para trás.
 Para obter esse efeito \vimcommand{CTRL-w N}, com N maiúsculo.
 
+Página do manual: \vimcommand{:h terminal}.
+
 \subsubsection{Save Session}
 Caso você acabe com diversas abas, um layout elaborado de janelas com diversos arquivos,
 enquanto trabalha num projeto relativamente grande, existe uma ferramenta muito útil.
@@ -467,7 +489,6 @@ Para carregar o layout existem duas formas.
 No momento de abrir o vim pode-se usar \vimcommand{\$ vim -S Session.vim}, ou dentro do próprio vim
 podemos usar \vimcommand{:source Session.vim}.
 O nome e a extensão não são realmente obrigatórios, mas manter um padrão é interessante.
-...
 \subsection{Quickfix Com Grep}
 ...
 
