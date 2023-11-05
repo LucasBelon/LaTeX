@@ -399,9 +399,29 @@ Ainda nesse assunto vamos ver como criar abas, mas antes tem uma ou duas coisas 
 
 % CONTINUA AQUI -----------------------------------------------------------------------------------------------
 \subsection{MultiTabs}
-Como criar, como navegar, como mover, abrindo o terminal dentro do vim.
-Como desativar o terminal e ver inputs antigos.
-...
+Para quem entendeu a natureza de um buffer, e como as janelas servem apenas para mostrar os buffers
+de maneira mais flexível, vai entender imediatamente as tabs (abas).
+Assim como janelas organizam uma visualização de buffers, tabs organizam uma visualização de janelas.
+
+Para criar uma nova aba, digamos uma aba com uma cópia do buffer atual, usamos o comando \vimcommand{:tabnew \%}.
+Caso você tenha uma quantidade de abas abertas, e tiver o mouse ativado, você pode navegar clicando.
+Também pode navegar por comando como \vimcommand{:tabNext}.
+
+\begin{itemize}
+    \item \vimcommand{:tabNew} - Cria uma nova aba;
+    \item \vimcommand{:tabprevious} - Move para a aba anterior;
+    \item \vimcommand{:tabnext} - Move para a próxima aba;
+    \item \vimcommand{:tabClose} - Fecha a aba atual. Não é o mesmo que deletar o buffer;
+    \item \vimcommand{:tabmove +1} - Move a aba atual mais à direita na ordem das abas;
+    \item \vimcommand{:tabmove -1} - Move a aba atual mais à esquerda na ordem das abas;
+    \item \vimcommand{:tabfirst} - Move para primeira aba.
+    \item \vimcommand{:tablast} - Move para a última aba.
+\end{itemize}
+
+Para mais informações, leia o manual com \vimcommand{:h tabpage}.
+Usar abas é interessante para mover-se rapidamente entre arquivos que você sabe que utilizará.
+Utilizar atalhos com estes comandos é uma grande vantagem.
+
 \subsubsection{Save View}
 Existem sessions e views como tentativas de salvar as configurações e layouts atuais.
 Pessoalmente, nunca consegui utilizar direito as views, então vou deixar o manual aqui para você procurar:
@@ -449,27 +469,46 @@ Abrindo o terminal a partir do vim, podemos torná-lo uma janela de texto qualqu
 nos permitindo navegar pelos comando já executados, e output's que ficaram para trás.
 Para obter esse efeito \vimcommand{CTRL-w N}, com N maiúsculo.
 
+Página do manual: \vimcommand{:h terminal}.
+
 \subsubsection{Save Session}
 Caso você acabe com diversas abas, um layout elaborado de janelas com diversos arquivos,
-enquanto trabalha num projeto relativamente grande, existe uma ferramenta muito útil.
+enquanto trabalha num projeto relativamente grande, existe uma ferramenta muito útil para evitar
+retrabalhos.
 
 O vim te permite salvar o layout geral da seção.
 No fundo, ele re-executa todos os comandos necessários para abrir as janelas,
 na ordem e disposição que estavam da última vez.
+Trata-se de um um arquivo em texto plano, ou seja, é possível abrí-lo com seu editor de textos favorito.
 
 Acontece que, para conseguir esse armazenamento, acabamos com um arquivo relativamente grande,
 mesmo para o layout mais simples.
-Esse arquivo de layout, com extensão .vim, utiliza caminhos relativos,
+Esse arquivo de layout, com extensão .vim, utiliza caminhos absolutos,
 o que significa que se você mudá-lo de lugar, simplesmente seus arquivos não serão carregados.
+No entanto, mudar toda uma pasta de projetos pode acabar funcionando
 
 O comando mágico para criar esse arquivo que salva o layout é \vimcommand{:mksession Session.vim}.
 Para carregar o layout existem duas formas.
 No momento de abrir o vim pode-se usar \vimcommand{\$ vim -S Session.vim}, ou dentro do próprio vim
 podemos usar \vimcommand{:source Session.vim}.
 O nome e a extensão não são realmente obrigatórios, mas manter um padrão é interessante.
-...
-\subsection{Quickfix Com Grep}
-...
+
+Para encontrar os assuntos no manual, utilize o comando \vimcommand{:h session}.
+Neste trecho de manual também é possível encontrar informações sobre views.
+
+\subsection{Quickfix}
+Muitas vezes existem pequenas janelas que nos ajudam a nos localizar, a ler um pequeno trecho, e a nos locomover.
+As janelas quickfix são uma variação das janelas preview.
+
+Se você compilar um programa usando os compiladores que o vim possui integração, ou mesmo se possui um servidor de linguagem,
+um lsp, é possível que uma janela de quickfix seja acessível usando algo como \vimcommand{:LspDocumentDiagnostics}.
+
+Como essa funcionalidade nasceu a partir de obter os erros que compiladores apontam, o comando base é \vimcommand{:c\#}, ou seja,
+c alguma coisa.
+
+% CONTINUAR LENDO EM VIMGREP. ENTÃO, PESQUISAR SOBRE COPEN E OUTROS COMANDOS PARA SALTAR ENTRE TERMOS.
+
+Para ler o manual: \vimcommand{:h preview} e \vimcommand{:h quickfix}.
 
 \newpage
 \section{Settings}
