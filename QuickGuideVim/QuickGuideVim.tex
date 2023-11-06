@@ -499,6 +499,8 @@ Neste trecho de manual também é possível encontrar informações sobre views.
 \subsection{Quickfix}
 Muitas vezes existem pequenas janelas que nos ajudam a nos localizar, a ler um pequeno trecho, e a nos locomover.
 As janelas quickfix são uma variação das janelas preview.
+De certa forma, elas nos permitem realizar busca e locomoção através de vários arquivos.
+A grande vantagem é não precisar saber qual o arquivo, apenas qual o termo que queremos encontrar.
 
 Se você compilar um programa usando os compiladores que o vim possui integração, ou mesmo se possui um servidor de linguagem,
 um lsp, é possível que uma janela de quickfix seja acessível usando algo como \vimcommand{:LspDocumentDiagnostics}.
@@ -506,9 +508,42 @@ um lsp, é possível que uma janela de quickfix seja acessível usando algo como
 Como essa funcionalidade nasceu a partir de obter os erros que compiladores apontam, o comando base é \vimcommand{:c\#}, ou seja,
 c alguma coisa.
 
-% CONTINUAR LENDO EM VIMGREP. ENTÃO, PESQUISAR SOBRE COPEN E OUTROS COMANDOS PARA SALTAR ENTRE TERMOS.
+Para, por exemplo, pesquisar sobre a função \vimkeys{add} que pode estar em qualquer
+arquivo do código fonte escrito em C, fazemos o seguinte: \vimcommand{:vimgrep "add" **/*.c}.
+O que fizemos foi procurar o termo "add" em qualquer subdiretório (**), em arquivos com um nome qualquer (*)
+que terminem em ".c".
+É razoável evitar buscas em diretorios muito profundos, já que o vim não consegue interromper a busca.
+A forma abreviada do comando \vimcommand{:vimgrep} é \vimcommand{:vim}.
+Caso o programa "grep" esteja disponível em seu ambiente, \vimcommand{:grep} pode fazer o serviço.
 
-Para ler o manual: \vimcommand{:h preview} e \vimcommand{:h quickfix}.
+Com a busca, desde que algum termo tenha sido encontrado, acabamos de gerar uma lista do quickfix.
+Para visualizar essa lista usamos \vimcommand{:copen}.
+Se repousarmos nosso cursor em alguma linha e pressionarmos enter colocaremos na janela principal o arquivo referenciado
+já com o cursor em cima do termo procurado.
+
+Digamos que não queremos ficar pulando de janela, apenas pular para o próximo termo encontrado na busca: \vimcommand{:cnext}.
+Uma alternativa é usar apenas \vimcommand{:cn}. 
+Para pular para o termo anterior, \vimcommand{:cprevious}.
+E por fim, para fechar a janela do quickfix, \vimcommand{:cclose}.
+
+O padrão de busca por termo aceita REGEX, e a especificação por diretório aceita a sintaxe de comandos do shell.
+Um pequeno exemplo seria: \vimcommand{:vim /echo/ **\{sh,rb\}}.
+Esse comando procura pela palavra echo em qualquer arquivo .sh ou .rb.
+
+Para finalizar o uso básico, você pode tomar acções sobre os termos encontrados na lista com \vimcommand{:cdo}.
+Funciona assim como podemos fazer com tabs ou buffers.
+
+Para ler o manual: \vimcommand{:h preview}, \vimcommand{:h quickfix}, \vimcommand{:h vimgrep} e \vimcommand{:h grep}.
+Esta é uma das funcionalidades que aprendi enquanto escrevia este documento.
+Caso você se interesse apenas por escrever textos a lista quickfix pode não ser muito mágica.
+Para quem programa, usando funções, repetindo termos em todos os lugares, em diversos arquivos,
+é uma funcionalidade muito interessante.
+
+A quickfix list é global para a seção do vim, o que significa que ele irá substituir a janela que estiver aberta.
+A location list é local à janela aberta, o que significa que você pode ter múltiplas location lists, mas apenas uma quickfix list.
+Os comandos são semelhantes aos vistos anteriormente: \vimcommand{:lopen} \vimcommand{:lclose} \vimcommand{:lnext} \vimcommand{:lprevious}.
+
+Para o manual: \vimcommand{:h lvimgrep} \vimcommand{:h lgrep} e \vimcommand{:h location}.
 
 \newpage
 \section{Settings}
