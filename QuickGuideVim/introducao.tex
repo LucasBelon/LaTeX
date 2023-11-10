@@ -32,6 +32,42 @@ Novamente com o vim aberto, pode-se escolher salvar o arquivo, definindo o nome,
 Atenção. Os comandos diferenciam minúsculas de maiúsculas.
 Caso você esteja no modo normal, pode apertar \vimcommand{ZZ} para salvar e sair. Um atalho para \vimcommand{:wq}.
 
+\subsection{Um pouco de qualidade de vida}
+O vim cru não é exatamente muito legal.
+Mas podemos melhorar usando umas poucas configurações logo de cara.
+A primeira é quebrar o modo de compatibilidade com o antigo VI, usando o comando \vimcommand{:set nocompatible},
+ou de forma abreviada \vimcommand{:set nocp}.
+Dessa forma, você terá informações extras na última linha da janela, que farão falta se não estiverem habilitadas.
+
+A próxima melhoria em qualidade de vida é adicionar números de linha com o comando \vimcommand{:set number}, ou \vimcommand{:set nu}.
+Como dependemos da contagem de linhas para alguns movimentos e alguns comandos, tê-la à vista é interessante.
+
+Outra configuração interessante é \vimcommand{:set ruler}.
+Ela mostra no canto inferior direito informações sobre a posição do cursor.
+
+Usando \vimcommand{:set laststatus=2} você irá criar uma barra permanente que indicará o nome do arquivo,
+se ele está salvo, e as informações que ruler trouxe.
+
+Usando \vimcommand{:set wildmenu}, você poderá ter seus comandos completados ao pressionar \vimkeys{$<$TAB$>$}.
+Outra maneira de verificar quais as opções disponíveis é utilizar \vimkeys{$<$CTRL D$>$}
+
+A última configuração serve para visualizarmos os comandos executados, úteis para macros.
+Usando \vimcommand{:set showcmd} à direita, aparecerão, de vez em quando,
+as teclas pressionadas. Será útil apenas mais adiante, mas ajuda na qualidade de vida.
+
+Abra o vim com \vimcommand{\$ vi ~/.vimrc} e escreva cada um desses comandos.
+Usar o vim padrão sem eles é terrível.
+
+Os comandeos são:
+\begin{itemize}
+    \item set nocompatible
+    \item set number
+    \item set ruler
+    \item set laststatus=2
+    \item set showcmd
+    \item set wildmenu
+\end{itemize}
+
 \subsection{Movimentação}
 No modo normal fazemos as movimentações de cursor mais avançadas.
 Dependendo da sua versão de vim, você pode usar as setas do teclado para se mover, e pode realizar essa movimentação mesmo dentro do modo de inserção de texto.
