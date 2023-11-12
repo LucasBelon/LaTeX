@@ -27,8 +27,8 @@ Existem diferentes tipos de programas, e todos possuem essa mesma natureza estra
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.08]{motivacao/laptop-desk-notebook-computer.jpg}
-\label{motivacao_001}
+\includegraphics[scale=0.05]{motivacao/laptop-desk-notebook-computer.jpg}
+%\label{motivacao_001}
 \caption{Computadores são ferramentas.}
 \end{figure}
 
@@ -48,7 +48,7 @@ Com o básico bem estabelecido se chega realmente muito longe.
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{motivacao/Linha_De_Comando.jpg}
-\label{motivacao_002}
+%\label{motivacao_002}
 \caption{Praticamente todas as máquinas possuem uma interface de linha de comando.}
 \end{figure}
 
@@ -74,6 +74,7 @@ Digitar enquanto se pensa torna o escrever uma expressão do pensar.
 O VIM possui pedaços.
 E por ele começar tão simples que é uma ótima ferramenta para se evoluir.
 Começamos com quase nada, e adicionamos camadas.
+Essa construção modular também é o que nos dá a alta capacidade de personalizar.
 
 Outros programas de edição possuem os componentes que podem ser adicionados ao nosso editor favorito.
 Outros componentes simplesmente não fazem sentido juntos dessa forma.
@@ -90,8 +91,8 @@ Geralmente, a versão padrão do vim que já vem instalada nas distribuições l
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=1.0]{motivacao/VimTiny.jpg}
-\label{motivacao_003}
+\includegraphics[scale=0.9]{motivacao/VimTiny.jpg}
+%\label{motivacao_003}
 \caption{O VIM tiny é uma versão de vim simplificada, sem alguns recursos.}
 \end{figure}
 
@@ -100,18 +101,28 @@ mover o cursor pelo texto, que só fazem sentido dentro do vim.
 Acontece que essa forma de se pensar é benéfica de tal forma que
 editores de código especializados permitem integrar essa forma de se mover.
 
-Temos também a gravação de macros, que são sequências de ações que podem ser tomadas e repetidas dentro de um texto.
-Temos abreviações, que te impedem de escrever a mesma palavra errado e errado novamente, bastando configurar.
+Temos também a gravação de macros, que são sequências de ações que podem ser
+tomadas e repetidas dentro de um texto.
+Temos abreviações, que te impedem de escrever a mesma palavra errado e errado novamente,
+bastando configurar.
 Também pode-se adicionar pequenos trechos de texto que são recorrentes no que se desenvolve.
 
 Pode-se editar arquivos remotamente, pode-se utilizar abas,
 e divisões de janela para visualizar mais de um arquivo ao mesmo tempo.
-E pode-se invocar um terminal para continuar executando comandos do lado de fora, enquanto anota-se do lado de dentro.
+E pode-se invocar um terminal para continuar executando comandos do lado de fora,
+enquanto anota-se do lado de dentro.
 É muita versatilidade.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.7]{motivacao/Versatilidade_Do_Vim.jpg}
+%\label{motivacao_004}
+\caption{O VIM completo possui todo tipo de funcionalidade.}
+\end{figure}
 
 \subsubsection{Configurações}
 Arquivos de configuração fazem loucuras.
-Existem templates de configuração, que nada mais são que pré configurações
+Existem templates de configuração, pré configurações
 que transformam e aproximam o vim de editores especializados para usos específicos.
 Existem configurações que facilitam o uso, e outras que são impossíveis de se desacostumar.
 Nos arquivos de configuração, tornam-se persistentes as alterações que também podem ser feitas com o editor aberto.
@@ -121,6 +132,13 @@ Permitem salvar macros, abreviações, mudar esquemas de cores, aparência e erg
 Basicamente, os arquivos de configuração fazem com que o editor fique com a sua cara.
 No extremo, chega-se a um ponto em que alguém que também seja conhecido do vim não consiga usar o seu vim.
 Nos arquivos de configuração também é onde se deixam plugins ativos.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.7]{motivacao/Arquivo_De_Configuracao.jpg}
+%\label{motivacao_005}
+\caption{Arquivo de Configurações do autor.}
+\end{figure}
 
 \subsubsection{Plugins}
 Para diversos usos, o vim é uma ferramenta tosca.
@@ -139,15 +157,32 @@ Vamos avançar a maior parte do livro sem eles.
 Fazer dessa forma talvez mostre quais são os plugins que são essenciais pra você,
 ao invés de instalar algo que faz o que já tem embutido, mas de um jeito mais bonitinho.
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.73]{motivacao/Plugin_Exemplo.jpg}
+%\label{motivacao_006}
+\caption{Plugins do Autor.}
+\end{figure}
+
 \subsection{Configurando Máquinas Remotas}
 Servidores de dados, de e-mail, servidores web e o mundo na nuvem.
 Todos são parte da mesma família de tecnologias.
 Aprender uma ferramenta irá te ajudar a entender a próxima, e conseguir aprender mais rápido é motivador.
 
-Essas máquinas remotas podem ser tão simples quanto um computador de 10 anos atrás, como podem ser super computadores, e ainda assim, são máquinas especializadas.
-Não adianta querer jogar nessas máquinas.
-Assim como não adianta querer fazer manobras de skate com uma tábua.
+Essas máquinas remotas podem ser tão simples quanto um computador de 10 anos atrás,
+como podem ser super computadores, e ainda assim, não são para propósito geral, são máquinas especializadas.
+Não adianta querer jogar nessas máquinas, assim como não adianta querer fazer manobras de skate com uma tábua.
 É parecido, mas se trata de outra coisa.
+
+Quando você aprende vim, o suficiente para navegar e fazer todo tipo de coisa doida,
+acaba tendo mais domínio e liberdade para fuçar com servidores, ou mesmo com máquinas virtuais.
+Veja bem. As próximas imagens serão todas prints de uma máquina virtual linux sem interface gráfica.
+Acessarei via ssh, e testaremos juntos os comandos que vou ensinando aos poucos.
+Em outras palavras, não vou estar mexendo na minha máquina propriamente dita.
+
+Vamos evitar as configurações o máximo possível, exceto as já comentadas, para sermos capazes de usar
+apenas o que já está instalado por padrão.
+Mais tarde iremos configurar o NOSSO vim.
 
 Se você chegou até aqui e aturou minha enrolação, então não tem motivo para não ir até o final.
 Tentarei ser o mais prático possível.
