@@ -6,10 +6,10 @@ todo tipo de vídeo, e até mesmo todo tipo de texto em pdf.
 Mas um dos trabalhos deste documento é organizar para tornar mais orgânica a absorção.
 
 O vim possui um tutorial, acessível pela linha de comando.
-Basta escrever \vimcommand{\$ vimtutor} que o tutorial começa.
+Basta escrever no seu prompt \vimcommand{\$ vimtutor} que o tutorial começa.
 Assim como quase tudo na vida, você primeiro lê, depois tenta tomar alguma ação.
 Pretendo seguir mais ou menos a mesma ordem do tutorial, mas com mais explicações.
-Em alguns trechos, teremos apenas a explicação, e experimentar fica com você.
+Em alguns trechos teremos apenas a explicação e experimentar fica com você.
 
 Para rodar o vimtutor, é preciso a versão do vim completa.
 Portanto, o primeiro passo é instalar usando seu gerenciador de pacotes,
@@ -25,14 +25,14 @@ ou pesquisando na internet a forma de instalação para o seu sistema operaciona
 Uma espécie de piada que aparece em certos meios é sobre não se saber sair do vim.
 Podemos começar por aí.
 Podemos iniciar o vim com ou sem um nome de arquivo especificado.
-Digamos que entramos sem especificar.
+Digamos que entramos sem especificar usando o comando \vimcommand{\$ vi}.
 Assim que se abre o vim entra-se no modo \emph{normal}.
 Através de teclas de atalho podemos entrar em outros modos.
 Existem poucas formas de intercambiar entre modos, sendo geralmente mais simples voltar
 para o modo normal antes de seguir para um outro.
 Para voltar para o modo normal, pressione \vimcommand{esc} repetidamente,
-ou mesmo a combinação \vimcommand{Ctrl-C}, que irá desativar o modo atual.
-Se você não fez nenhuma alteração no texto que está na tela,
+ou mesmo a combinação \vimcommand{Ctrl-C} para desativar o modo atual.
+Se você não fez nenhuma alteração no texto que está na tela
 basta apertar \vimcommand{:} para entrar no modo \emph{ex}.
 O modo ex serve para inserção de comandos.
 Inseriremos o comando \vimcommand{:quit}.
@@ -46,7 +46,7 @@ Inseriremos o comando \vimcommand{:quit}.
 
 É parte da cultura Unix criar comandos como abreviações de nomes maiores,
 como cat que abrevia con\textbf{cat}enate.
-Você pode realizar o procedimento anterior usando apenas \vimcommand{:q}.
+Você pode sair usando apenas \vimcommand{:q}.
 
 Novamente com o vim aberto, pode-se escolher salvar o arquivo, definindo o nome, com \vimcommand{:write [nome do arquivo]}.
 Atenção. Os comandos diferenciam minúsculas de maiúsculas.
@@ -69,11 +69,14 @@ Usando \vimcommand{:set laststatus=2} você irá criar uma barra permanente que 
 se ele está salvo, e as informações que ruler trouxe.
 
 Usando \vimcommand{:set wildmenu}, você poderá ter seus comandos completados ao pressionar \vimkeys{$<$TAB$>$}.
-Outra maneira de verificar quais as opções disponíveis é utilizar \vimkeys{$<$CTRL D$>$}
+Outra maneira de verificar quais as opções disponíveis é utilizar \vimkeys{$<$CTRL D$>$}.
+Caso você esteja procurando entre muitas opções e não tem paciência para ficar pressionando tab,
+\vimkeys{$<$CTRL D$>$} pode salvar tempo.
 
 A última configuração serve para visualizarmos os comandos executados, úteis para macros.
-Usando \vimcommand{:set showcmd} à direita, aparecerão, de vez em quando,
-as teclas pressionadas. Será útil apenas mais adiante, mas ajuda na qualidade de vida.
+Essa opção só está disponível no vim completo, mas como eu não sei qual vim você irá utilizar...
+Usando \vimcommand{:set showcmd} aparecerão à direita as teclas pressionadas.
+Será útil apenas mais adiante, mas ajuda na qualidade de vida.
 
 Abra o vim com \vimcommand{\$ vi ~/.vimrc} e escreva cada um desses comandos.
 Usar o vim padrão sem eles é terrível.
@@ -97,7 +100,10 @@ Os comandeos são:
 
 \subsection{Movimentação}
 No modo normal fazemos as movimentações de cursor mais avançadas.
-Dependendo da sua versão de vim, você pode usar as setas do teclado para se mover, e pode realizar essa movimentação mesmo dentro do modo de inserção de texto.
+Dependendo da sua versão de vim, você pode usar as setas do teclado para se mover,
+e pode realizar essa movimentação mesmo dentro do modo de inserção de texto.
+Neste trecho do tutorial existe muito mais o que fazer do que mostrar,
+então abra o seu vim e comece a testar.
 
 Vamos ver o básico de movimentação:
 \begin{itemize}
@@ -502,7 +508,7 @@ E caso você precise selecionar com o cursor mudando para a outra ponta, use o c
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.8]{introducao/modo_visual.jpg}
+\includegraphics[scale=0.5]{introducao/modo_visual.jpg}
 %\label{introducao_005}
 \caption{Modo visual em ação.}
 \end{figure}
@@ -514,7 +520,7 @@ Parágrafos, trechos de centenas de linhas, basta selecionar e então realizar s
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.8]{introducao/modo_visual_linha.jpg}
+\includegraphics[scale=0.5]{introducao/modo_visual_linha.jpg}
 %\label{introducao_006}
 \caption{Modo visual-linha em ação.}
 \end{figure}
@@ -532,7 +538,7 @@ Para entrar neste modo, \vimcommand{CTRL-v}.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.8]{introducao/modo_visual_bloco.jpg}
+\includegraphics[scale=0.5]{introducao/modo_visual_bloco.jpg}
 %\label{introducao_007}
 \caption{Modo visual-bloco em ação.}
 \end{figure}

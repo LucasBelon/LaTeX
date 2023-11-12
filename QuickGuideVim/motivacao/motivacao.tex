@@ -1,7 +1,7 @@
 \section{Motivação}
 Minha ideia original era aprender a utilizar o \LaTeX.
-No entanto, é difícil a formatar um texto sem um texto pronto.
-Por conta disso, vou reescrever meu pequeno manual sobre VIM e fazer uma extensão com o que aprendi até então.
+No entanto, é difícil aprender a formatar um texto sem um texto pronto.
+Por conta disso, vou reescrever meu pequeno manual sobre VIM e fazer uma extensão com o que aprendi no meio tempo até agora.
 O uso de um editor específico com certeza simplifica muito as coisas, seja para edição de textos, seja para programação.
 Porém, não é sempre que temos máquinas potentes o suficiente para isso.
 
@@ -9,6 +9,8 @@ O pacote de ferramentas que vem com o \LaTeX\ é gigantesco em variedade e em pe
 O pacote de ferramentas que acompanham qualquer outro software de edição de texto o são.
 São alguns gigabytes de arquivos, muitas fontes, e diferentes compiladores.
 Assustador, mas vamos com calma.
+Como usuário de vim, e aprendendo a usar o \LaTeX\, encontrei o pacote vimtex, um plugin que ajuda a
+navegar e escrever nesse tipo de projeto.
 Este pequeno projeto é uma forma de eu me ambientar com o vimtex, e se ajudar alguém, é um ponto extra.
 
 \subsection{Minha Motivação}
@@ -17,7 +19,7 @@ Nessa matéria sugeriu-se que se instalasse um Linux para fazer os exercícios e
 De fato funcionou.
 Comecei a aprender, e procurar, e aos poucos fui criando uma trilha de aprendizado.
 Nessa trilha me encontrei com o terminal, ou prompt de comando, ou shell.
-No Linux, é a forma mais eficiente de se executar uma tarefa.
+No Linux, é geralmente a forma mais eficiente de se executar uma tarefa.
 Mesmo que muitas vezes não seja exatamente fácil, é possível salvar em um arquivo de script uma sequência de ações para que seja difícil uma única vez.
 Isso me encantou.
 
@@ -25,9 +27,9 @@ Não bastasse isso, eu curso engenharia, e existem contas para se fazer,
 procedimentos de cálculo, aproximações e avaliações que podem ser facilitadas com computadores.
 Existem diferentes tipos de programas, e todos possuem essa mesma natureza estranha, todos existem dentro de computadores.
 
-\begin{figure}[!h]
+\begin{figure}[!htb]
 \centering
-\includegraphics[scale=0.05]{motivacao/laptop-desk-notebook-computer.jpg}
+\includegraphics[scale=0.6]{motivacao/laptop-desk-notebook-computer.jpg}
 %\label{motivacao_001}
 \caption{Computadores são ferramentas.}
 \end{figure}
@@ -41,7 +43,7 @@ Mas é no caminho mais difícil que temos a evolução mais acentuada.
 Aprendi a programar em 2 linguagens de programação, das 3 que conheço, no celular.
 
 Me bastou ter um aplicativo de emulação de terminal.
-Tendo no terminal um editor e um compilador, aprendi C, uma das linguagens mais velhas que se tem por aí.
+Tendo o terminal, um editor e um compilador, aprendi C, uma das linguagens mais velhas que se tem por aí.
 Além disso, fazer exercícios de programação mantém a mente afiada, e exige criatividade.
 Com o básico bem estabelecido se chega realmente muito longe.
 
@@ -53,18 +55,22 @@ Com o básico bem estabelecido se chega realmente muito longe.
 \end{figure}
 
 Se você possui um computador fraco, pode ser que instalar uma distribuição Linux alivie o peso.
+Muitas distribuições Linux são pensadas para máquinas menos potentes, usando menos ram, precisando de menos processador, e assim em diante.
 Perde-se muitos aplicativos nativos do Windows, e muitas vezes suas tarefas dependem especificamente do Microsoft Office, ou do AutoCad, ou da suíte Adobe.
 Mas também existe a possibilidade de se utilizar programas alternativos.
+Estamos numa época em que, lentamente, o Linux está se tornando uma opção viável como sistema para desktop, e não apenas para servidores.
 Existe também uma vantagem didática:
 Não existe muita coisa no que prestar atenção para distrair se você está sempre utilizando o mínimo do mínimo.
 E mesmo evoluindo na ferramenta, aprende-se compondo conhecimentos anteriores.
-Dessa forma, quem aprende a mexer no vim acaba procurando pelos componentes de qualquer editor, para futura instalação e configuração.
+Dessa forma, quem aprende a mexer no vim acaba entendendo quais componentes precisa para o fluxo de trabalho.
+Portanto, quem sabe quais componentes compõem um editor avançado acaba entendendo melhor como usar cada pedaço de ferramenta.
+E sempre vale a máxima: Domine suas ferramentas.
 
 Falando de ir além do básico, configurações em servidores são geralmente realizados sem interface gráfica.
 Se trata de utilizar um computador distante, especializado em alguma tarefa.
 E como eu disse antes, pode ser que pareça difícil, mas basta ser difícil uma única vez.
 
-Uma única recomandação que me parece razoável, é a seguinte: Se você pretende escrever muito no computador, então vale a pena
+Uma única recomendação que me parece razoável: Se você pretende escrever muito no computador, então vale a pena
 aprender a digitar da forma correta.
 Isso evita lesões por esforço repetitivo, aumenta a velocidade de digitação,
 e, com isso, aproxima a velocidade de escrever com a velocidade de pensar.
@@ -73,7 +79,7 @@ Digitar enquanto se pensa torna o escrever uma expressão do pensar.
 \subsection{Componentes}
 O VIM possui pedaços.
 E por ele começar tão simples que é uma ótima ferramenta para se evoluir.
-Começamos com quase nada, e adicionamos camadas.
+Começamos com quase nada, e adicionamos módulos.
 Essa construção modular também é o que nos dá a alta capacidade de personalizar.
 
 Outros programas de edição possuem os componentes que podem ser adicionados ao nosso editor favorito.
@@ -99,12 +105,14 @@ Geralmente, a versão padrão do vim que já vem instalada nas distribuições l
 Além disso, existem formas de se escrever, formas de se pensar, formas de se
 mover o cursor pelo texto, que só fazem sentido dentro do vim.
 Acontece que essa forma de se pensar é benéfica de tal forma que
-editores de código especializados permitem integrar essa forma de se mover.
+editores de código especializados permitem integrar essa forma de se mover através de plugins.
 
 Temos também a gravação de macros, que são sequências de ações que podem ser
 tomadas e repetidas dentro de um texto.
-Temos abreviações, que te impedem de escrever a mesma palavra errado e errado novamente,
-bastando configurar.
+Cá entre nós, macros são extremamente potentes para edições repetitivas de texto,
+sendo comparável à magia negra.
+Temos abreviações, que te impedem de cometer o mesmo erro gramatical em sequência,
+bastando configurar ou baixar algum dicionário já pré-definido.
 Também pode-se adicionar pequenos trechos de texto que são recorrentes no que se desenvolve.
 
 Pode-se editar arquivos remotamente, pode-se utilizar abas,
@@ -122,10 +130,10 @@ enquanto anota-se do lado de dentro.
 
 \subsubsection{Configurações}
 Arquivos de configuração fazem loucuras.
-Existem templates de configuração, pré configurações
-que transformam e aproximam o vim de editores especializados para usos específicos.
-Existem configurações que facilitam o uso, e outras que são impossíveis de se desacostumar.
-Nos arquivos de configuração, tornam-se persistentes as alterações que também podem ser feitas com o editor aberto.
+Existem templates de configuração, pré configurações que transformam
+e aproximam o vim de editores especializados para usos específicos.
+Existem configurações que facilitam o uso, e outras que são praticamente obrigatórias.
+Nos arquivos de configuração tornam-se persistentes as alterações que também podem ser feitas com o editor aberto.
 
 As configurações permitem alterar atalhos, e existe uma infinidade deles.
 Permitem salvar macros, abreviações, mudar esquemas de cores, aparência e ergonomia do uso.
@@ -142,20 +150,23 @@ Nos arquivos de configuração também é onde se deixam plugins ativos.
 
 \subsubsection{Plugins}
 Para diversos usos, o vim é uma ferramenta tosca.
-Não que seja impossível realizar qualquer tarefa com o básico do básico.
-Mas se trata de uma ferramenta que começou com funcionalidades limitadas.
-E programadores externos ao desenvolvimento da ferramenta possuem formas de
-adicionar maneiras mais fáceis de se fazer uma tarefa.
-Pensaram novas utilidades nunca antes pensadas, e extensões que se conectam com outros programas.
+Não que seja impossível realizar qualquer tarefa com o básico do básico,
+mas se trata de uma ferramenta que começou com funcionalidades limitadas.
+Programadores externos ao desenvolvimento da ferramenta em si desenvolvem plugins,
+que são módulos especializados a realizar algum tipo de tarefa, ou alterar a natureza
+de interação com o editor.
+Pensaram novas utilidades que não existiam dentro do vim, extensões que se conectam com outros programas,
+e até mesmo atualizações de métodos antigos e defasados.
 
 Talvez seja nos plugins que o vim deixa de ser uma ferramenta ruim para ser sincero.
 Vê-se muitos vídeos, tantos vídeos, e blogs, e sites, sobre plugins que fazem isso e aquilo,
 que faz parecer que a única função do vim é agregar todos os plugins num único ponto de encontro.
-
-Mas não é bem assim. Existem muitas ferramentas já integradas, e hoje em dia não é tão ruim assim.
+Mas não é bem assim.
+Existem muitas ferramentas já integradas, os plugins-builtin.
 Vamos avançar a maior parte do livro sem eles.
 Fazer dessa forma talvez mostre quais são os plugins que são essenciais pra você,
-ao invés de instalar algo que faz o que já tem embutido, mas de um jeito mais bonitinho.
+ao invés de instalar um plugin que imita uma funcionalidade já existente.
+Vamos tentar nos manter leves.
 
 \begin{figure}[!ht]
 \centering
@@ -167,6 +178,7 @@ ao invés de instalar algo que faz o que já tem embutido, mas de um jeito mais 
 \subsection{Configurando Máquinas Remotas}
 Servidores de dados, de e-mail, servidores web e o mundo na nuvem.
 Todos são parte da mesma família de tecnologias.
+São computadores que rodam fora de casa, na internet, permitindo usar serviços que não estão instalados localmente.
 Aprender uma ferramenta irá te ajudar a entender a próxima, e conseguir aprender mais rápido é motivador.
 
 Essas máquinas remotas podem ser tão simples quanto um computador de 10 anos atrás,
