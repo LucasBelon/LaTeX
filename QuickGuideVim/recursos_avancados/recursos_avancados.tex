@@ -285,7 +285,7 @@ Futuramente iremos adicionar esse comando em nosso arquivo de configuração.
 %\label{Rec_Avan_011}
 \caption{Erro por não haver habilitado o modo hidden.}
 \end{figure}
-% -------------------CONTINUA AQUI--------------------
+% TODO:----------CONTINUA AQUI--------------------
 
 Agora que podemos adicionar e remover, vamos transitar entre os buffers, afinal de contas, é isso que interessa.
 \vimcommand{:bnext} irá mudar para o próximo buffer da pilha.
@@ -448,8 +448,6 @@ Lembre-se, tamanho vertical refere-se à quantidade de colunas. Tamanho normal r
 Acabamos de encerrar o que há pra se saber sobre layout de janelas.
 Ainda nesse assunto vamos ver como criar abas, mas antes tem uma ou duas coisas interessantes para se ver.
 
-
-% CONTINUA AQUI -----------------------------------------------------------------------------------------------
 \subsection{MultiTabs}
 Para quem entendeu a natureza de um buffer, e como as janelas servem apenas para mostrar os buffers
 de maneira mais flexível, vai entender imediatamente as tabs (abas).
@@ -514,6 +512,14 @@ Vamos querer invocar o interpretador do código, compilar, ou mesmo rodar um com
 A lógica de nova janela segue sendo válida.
 Para abrir uma janela de terminal na horizontal \vimcommand{:terminal}.
 Para abrir na vertical \vimcommand{:vertical terminal}.
+
+No caso do vim.tiny não temos uma janela de terminal aberta dentro do vim.
+Ao invés disso, apenas invocamos um shell, somos jogados em tela cheia para ele,
+e quando pressionamos \vimcommand{\$ exit} voltamos ao vim padrão.
+Para invocar o shell \vimcommand{:shell}.
+Ele não possui a facilidade que o terminal possui, e é possível mimetizar esse comportamento
+deixando o vim em background usando \vimkeys{$<$CTRL-Z$>$}, para depois reativá-lo com
+\vimcommand{\$ fg}.
 
 Quando estamos utilizando terminais reais (no linux usamos o CTRL ALT F\#)
 não temos a funcionalidade de histórico.
