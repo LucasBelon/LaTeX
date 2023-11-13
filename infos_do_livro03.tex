@@ -175,6 +175,26 @@ e uma segunda rodada é necessária para ler o arquivo.
 O comando \backslash tableofcontents responde aos comandos que definem títulos e subtítulos:
 \backslash chapter, \backslash section \backslash subsection \backslash subsubsection.
 
+Podemos diminuir o tamanho do título do capítulo no sumário com a 
+seguinte sintaxe:
+% \chapter[nome sumario]{Nome capitulo}
+
+As "camadas" de níveis que as bases geralmente aceitam são:
+\begin{itemize}
+    \item part
+    \item chapter
+    \item section
+    \item subsection
+    \item subsubsection
+    \item paragraph
+    \item subparagraph
+\end{itemize}
+
+Todos os comandos que seccionam o texto possuem a forma
+com asterisco, como \backslash section*, que afeta a exibição
+da numeração e faz a seção não aparecer no sumário.
+
+
 
 
 
