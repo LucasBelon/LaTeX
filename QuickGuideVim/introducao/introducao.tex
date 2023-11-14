@@ -460,35 +460,6 @@ Resumo:
     \item \vimcommand{da"} - Deleta um bloco delimitado por aspas duplas e seus arredores.
 \end{itemize}
 
-\subsection{Undo, Redo}
-É óbvio que a capacidade de desfazer alterações estaria presente por aqui também.
-Para desfazer... \vimcommand{u} quando estiver no modo normal.
-Para refazer... \vimcommand{CTRL-r} no modo normal.
-
-No entanto, existe um tópico avançado que eu, particularmente, ainda não explorei, que é a árvore de mudanças que o vim guarda.
-É possível navegar por versões alternativas, que surgem a partir de diferentes undo\'s e redo\'s.
-No entanto, nem tudo que se pode aprender eu posso ensinar.
-Se parece mágica e brilha aos seus olhos, corra atrás.
-Te mostrarei como navegar pelo manual mais tarde, e você poderá aprofundar qualquer tópico.
-
-Se a sua curiosidade é tanta que você deseja parar imediatamente a leitura para buscar, procure por \textit{"undo tree"}.
-
-\subsection{Comandos Miscelâneos}
-Enquanto ainda estamos falando sobre editar o texto, vamos para algo que não se relaciona muito bem com outros tópicos.
-Podemos alterar a indentação e alternar entre maiúsculas e minúsculas sem entrar no modo de inserção.
-E também podemos juntar linhas que estão atualmente separadas.
-
-Para alterar a indentação de uma linha, \vimcommand{$<$}.
-Talvez seja necessário utilizar o mesmo comando duas vezes, ou apertar espaço logo após o comando.
-Este faz a indentação recuar.
-Para avançar \vimcommand{$>$}
-
-Para alternar entre minúsculas e maiúsculas dentro do texto, posicione o cursor no alvo
-e \vimcommand{\~}, famoso til. 
-
-Para juntar linhas, do inglês, \textit{join}, \vimcommand{J} maiúsculo.
-Não tem muito mais o que dizer, apenas o que se testar e experimentar.
-
 \subsection{Modo Visual}
 O modo visual te permite realizar uma ação que poderia muito bem ser executada com o mouse.
 Caso seu vim esteja configurado para habilitar o mouse, ao segurar e arrastar para selecionar o texto, ele automaticamente irá trocar para o modo visual.
@@ -542,6 +513,72 @@ Para entrar neste modo, \vimcommand{CTRL-v}.
 %\label{introducao_007}
 \caption{Modo visual-bloco em ação.}
 \end{figure}
+
+\subsection{Undo, Redo}
+É óbvio que a capacidade de desfazer alterações estaria presente por aqui também.
+Para desfazer... \vimcommand{u} quando estiver no modo normal.
+Para refazer... \vimcommand{CTRL-r} no modo normal.
+
+No entanto, existe um tópico avançado que eu, particularmente, ainda não explorei, que é a árvore de mudanças que o vim guarda.
+É possível navegar por versões alternativas, que surgem a partir de diferentes undo\'s e redo\'s.
+No entanto, nem tudo que se pode aprender eu posso ensinar.
+Se parece mágica e brilha aos seus olhos, corra atrás.
+Te mostrarei como navegar pelo manual mais tarde, e você poderá aprofundar qualquer tópico.
+
+Se a sua curiosidade é tanta que você deseja parar imediatamente a leitura para buscar, procure por \textit{"undo tree"}.
+
+\subsection{Comandos Miscelâneos}
+Enquanto ainda estamos falando sobre editar o texto, vamos para algo que não se relaciona muito bem com outros tópicos.
+Podemos alterar a indentação e alternar entre maiúsculas e minúsculas sem entrar no modo de inserção.
+E também podemos juntar linhas que estão atualmente separadas.
+
+Para alterar a indentação de uma linha, \vimcommand{$<$}.
+Talvez seja necessário utilizar o mesmo comando duas vezes, ou apertar espaço logo após o comando.
+Este faz a indentação recuar.
+Para avançar \vimcommand{$>$}
+
+Para alternar entre minúsculas e maiúsculas dentro do texto, posicione o cursor no alvo
+e \vimcommand{\~}, famoso til. 
+
+Para juntar linhas, do inglês, \textit{join}, \vimcommand{J} maiúsculo.
+Não tem muito mais o que dizer, apenas o que se testar e experimentar.
+
+O rei dos comandos miscelâneos com certeza é a tecla \vimcommand{g}.
+Para começar, quando uma linha fica comprida demais, e acontece o que se chama de wrap,
+a linha começa a ser representada por um cojunto de linhas.
+Mas o instinto é ainda assim, descer uma coluna, e dá errado usando apenas j e k.
+Com \vimcommand{gj} e \vimcommand{gk} você pode descer uma linha no layout da linha.
+Em outras palavras, \vimcommand{gj} e \vimcommand{gk} ignoram a contagem de linhas.
+
+Para ir para o último caractere, usando a mesma lógica, temos \vimcommand{g0} e v\vimcommand{g\$}.
+Mas vamos avançando. Aprendemos que podemos mudar a capitalização das letras, ou seja,
+deixar maiúscula ou minúscula, pressionando \vimcommand{~}.
+Bom, este é um comando como \vimcommand{x}, que não segue a lógica número-ação-movimento.
+Usando \vimcommand{gu} para tornar minúscula, e \vimcommand{gU} para tornar maiúscula,
+obtém-se esse super-poder.
+
+Mas se o que você estiver procurando seja inverter a capitalização, ao invés de
+deixar num estado definido, então usando \vimcommand{g~} você irá obter este
+efeito, podendo inverter a capitalização de uma palavra, uma linha ou um
+arquivo inteiro.
+
+Quando selecionamos um trecho de texto, assim como com movimentações, deixamos um histórico para trás.
+Para reselecionar no modo visual um trecho \vimcommand{gv} é seu cara.
+Não espere eu te dizer o que alguns comandos fazem. Teste eles um por um.
+
+Existe um comando meio duvidoso, que certamente trata-se do vim dando o melhor
+de si, para executar alguma tarefa. Com \vimcommand{gq} você formata o texto num formato
+semelhante à prosa. Não é recomendável utilizar para programas.
+Talvez mais importante é não usar \vimcommand{gQ}, pois você entrará no modo \emph{ex} e jamais conseguirá sair.
+
+Você já aprendeu que \vimcommand{J} junta linhas.
+No entanto, ele preserva um espaço para indicar que os blocos de texto eram provenientes de linhas distintas.
+Por isso, para eliminar esse espaço, \vimcommand{gJ} existe.
+Não me pergunte o que ele faz.
+
+Para terminar a miríade de comandos miscelâneos,
+temos um comando para aplicar a última substituição realizada no documento inteiro.
+Estamos falando do \vimcommand{g\&}, mais um dos comandos que não são bem parte da família de ninguém.
 
 \subsection{Marks}
 Esse tópico se confunde com outro, referente ao modelo de memória que o vim usa para armazenar diferentes tipos de dados.
