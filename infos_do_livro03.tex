@@ -194,6 +194,23 @@ Todos os comandos que seccionam o texto possuem a forma
 com asterisco, como \backslash section*, que afeta a exibição
 da numeração e faz a seção não aparecer no sumário.
 
+Customizando cabeçalho com pacote fancyhdr (fancy header)
+
+\textbf{
+
+    \backslash usepackage\{fancyhdr\}\\
+    \backslash fancyhdr\{\} \\
+    \backslash fancyhead[LE]\{\backslash leftmark\} \\
+    \backslash fancyhead[RO]\{\backslash nouppercase\{\backslash rightmark\}\} \\
+    \backslash fancyfoot[LE,RO]\{\backslash thepage\} \\
+    \backslash pagestyle\{fancy\} \\
+
+}
+
+Deve srr aplicado no preambilo.
+
+\fancyhdr limpa os estilos do cabecalho e rodapé.
+
 
 
 
