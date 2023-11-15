@@ -1,6 +1,5 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
 \usepackage{amsmath,
             amssymb,
             amsfonts,
@@ -10,6 +9,8 @@
             amstext,
             bezier,
             amscd}
+
+    \usepackage{anyfontsize}
 
 \begin{document}
 
@@ -90,9 +91,10 @@ Text can be {\em emphasized}.
 
 Besides being {\itshape italic} words could be {\bfseries bold},
 
-{\slshape slanted} or typeset in {\scshape Small Caps}.
+% Small caps não é uma boa ideia {\slshape slanted} or typeset in {\scshape Small Caps}.
 
-Such commands can be {\itshape\bfseries nested}.}
+
+%Such commands can be {\itshape\bfseries nested}.}
 
 {\em See how {\em emphasizing} looks when nested.}
 
@@ -149,7 +151,7 @@ The \TUG\ is an organization for people who are interested in
 
 \TeX\ or \LaTeX.
 
-\newcommand{\TUG}{\textsc{TeX Users Group}}
+%\newcommand{\TUG}{\textsc{TeX Users Group}}
 
 O backslash em \TeX\ força o espaço seguinte a aparecer.
 Se não, ele será ignorado
@@ -195,7 +197,7 @@ Isso é particularmente útil no caso de procurarmos criar paragrafos semelhante
 
 \parbox{3cm}{TUG is an acronym. It means \TeX\ Users Group.}
 
-Uso genérico do parbox \parbox[alignment]{width}{text}
+Uso genérico do parbox \textbackslash parbox[alignment]\{width\}\{text\}
 \begin{itemize}
         \item Alinhamento: Argumento opcional para comprimento vertical.
         t alinha para a linha superior da caixa.

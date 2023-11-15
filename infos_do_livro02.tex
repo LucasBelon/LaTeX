@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{xspace}
+\frenchspacing
 \begin{document}
 
 
@@ -16,11 +17,11 @@ O comando hyphenation serve para, manualmente, indicar qual parte da palavra pod
 
 Podemos usar o pacote hyphenat para aumentar as possibilidades.
 Podemos prevenir hiphenização com
-\usepackage[none]{hyphenat}
+\textbackslash usepackage[none]\{hyphenat\}
 E permitir hiphenização de texto da fonte typewriter com
-\usepackage[htt]{hyphenat}
+\textbackslash usepackage[htt]\{hyphenat\}
 
-Para pequenos trechos, podemos inibir a hyphenação com \nohyphens{pequeno trecho de texto}
+Para pequenos trechos, podemos inibir a hyphenação com \textbackslash nohyphens\{pequeno trecho de texto\}
 
 O pacote microtype mexe no espaçamento para obter o efeito de texto justificado.
 No exemplo dado, mexeria no microtype para tentar eliminar a necessidade de hiphens.
@@ -45,7 +46,7 @@ Podemos usar \\[3mm] para adicionar espaçamento vertical.
 \\*[5mm] faz o mesmo, mas previne a quebra de página antes da
 próxima linha de texto.
 
-\linebreak[number] pode ser usado para influenciar a quebra de linha de forma sutil ou evidente.
+\textbackslash linebreak[number] pode ser usado para influenciar a quebra de linha de forma sutil ou evidente.
 Se number for zero, a quebra de linha é permitida, 1 significa que é desejada, 2 e 3 marcam outras requisições de insistência, e 4 irá forcar a quebra de linha.
 Esta última é a opção padrão se não for especificado número.
 
@@ -97,8 +98,8 @@ usar \@ indica ao LaTeX que o ponto se situa no fim de uma frase.
 Para inserir reticências, use \ldots.
 
 Pode-se alterar o espaçamento do texto adicionando ao preambulo:
-\frenchspacing
-O padrão é \nofrenchspacing
+\textbackslash frenchspacing
+O padrão é \textbackslash ofrenchspacing
 
 Vou deixar anotado qual a forma de se forçar acentos (já precisei uma vez).
 
@@ -147,7 +148,7 @@ by Edgar Allan Poe:
 \end{center}
 
 The complete poem can be read on
-\url{http://www.online-literature.com/poe/576/}.
+\textbackslash url\{http://www.online-literature.com/poe/576/\}.
 
 Para alinhar à esquerda
 \begin{flushleft}
@@ -196,7 +197,7 @@ such as those for making paragraphs and for hyphenating.
  It will never eat your document. Never.
 \end{quotation}
 The original text can be found on
-\url{ http://www.ctan.org/what_is_tex.html}.
+\textbackslash url\{http://www.ctan.org/what\_is\_tex.html\}.
 
 Adicionar o pacote parskip irá adicionar um espaço entre os parágrafos.
 Existem duas formas de se distinguir parágrafos.

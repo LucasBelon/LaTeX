@@ -1,7 +1,8 @@
-\documentclass{a4paper, 12pts}{book}
+\documentclass[a4paper, 12pts]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{blindtext}
+\usepackage[onehalfspacing]{setspace}
 \begin{document}
 
 Começamos o capitulo 3, sobre design de página.
@@ -45,14 +46,15 @@ Como livros são textos com páginas à esquerda e à direita, as margens ganham
 
 Para definir as margens fora do padrão \LaTeX\ utiliza-se o pacote \emph{geometry}.
 
-\backslash usepackage\[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=1cm\]\{geometry\}
+\textbackslash usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=1cm]\{geometry\}
 
 O pacote \emph{geometry} nasceu por conta de, nos primeiros dias do \LaTeX\, realizar-se a diagramação à mão.
 Muitas vezes o tamanho margem esquerda + margem direita + comprimento do texto 
 simplesmente não era compatível com o tamanho da página.
 
 O \emph{geometry} compreende o formato chave-valor para seus parâmetros.
-Se você utilizá-lo sem argumentos, pode executá-lo com \backslash geometry\{lista de argumentos\}.
+Se você utilizá-lo sem argumentos, pode executá-lo com \\
+\textbackslash geometry\{lista de argumentos\}.
 Imagine a necessidade de se alterar a geometria a cada página.
 
 Hora de listar o poder do geometry:
@@ -81,11 +83,11 @@ Pra começar, as opções do papel:
 \end{itemize}
 
 Para se alterar a geometria do documento, mesmo já tendo definido no preâmbulo,
-usar o comando \backslash newgeometry\{argument list\},
-e para retornar à geometria definida inicialmente \backslash restoregeometry.
+usar o comando \textbackslash newgeometry\{argument list\},
+e para retornar à geometria definida inicialmente \textbackslash restoregeometry.
 
 Para encontrar documentação por tópicos, caso nem o nome se saiba:
-\url{http://texcatalogue.sarovar.org/bytopic.html}
+\textbackslash url\{http://texcatalogue.sarovar.org/bytopic.html\}
 
 O livro sugere pesquisar sobre a documentação do pacote typearea, que utiliza a abordagem de delimitar a geometria
 de forma mais semelhante com os padrões tipográficos (design de página).
@@ -94,12 +96,12 @@ Esse pacote é explicado no manual KOMA-Script.
 Alterando o espaçamento das linhas:
 Usa-se o pacote setspace que possui as seguintes opções:
 \begin{itemize}
-    \item \backslash usepackage[onehalfspacing]\{setspace\}
-    \item \backslash usepackage[singlespacing]\{setspace\}- Opção padrão.
-    \item \backslash usepackage[doublespacing]\{setspace\}
+    \item \textbackslash usepackage[onehalfspacing]\{setspace\}
+    \item \textbackslash usepackage[singlespacing]\{setspace\}- Opção padrão.
+    \item \textbackslash usepackage[doublespacing]\{setspace\}
 \end{itemize}
 
-Normalmente definimos o espaçamento ebtre linhas para todo o documento.
+Normalmente definimos o espaçamento entre linhas para todo o documento.
 Mas caso seja necessário, pode-se usar o ambiente spacing para alterar um trecho do texto.
 
 \begin{spacing}{2.4}
@@ -115,9 +117,9 @@ Essa ferramenta pertence ã biblioteca kpathsea, focada em caminhos de arquivos.
 
 Criando um documento com duas colunas e orientação paisagem:
 
-\backslash documentclass[a4paper, 12pt, landscape, twocolumn]\{book\}
+\textbackslash documentclass[a4paper, 12pt, landscape, twocolumn]\{book\}
 
-Verificar pelo comando \backslash twocolumn[Opening text]
+Verificar pelo comando \textbackslash twocolumn[Opening text]
 e pelo pacote multicols
 
 As classes base do LaTeX são book, article, report, slides, e letter.
@@ -148,32 +150,30 @@ extarticle, extbook, extreport, extletter.
 
 Chegou a hora de verificar o sumário, ou table of contents (toc).
 
-{\comment
-
-\documentclass[a4paper,12pt]{book}
-\usepackage[english]{babel}
-\usepackage{blindtext}
-\usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm,
-bottom=3cm, bindingoffset=1cm]{geometry}
-\begin{document}
-\tableofcontents % Aqui está o comando estrela da vez
-\chapter{Exploring the page layout}
-In this chapter we will study the layout of pages.
-\section{Some filler text}
-\blindtext
-\section{A lot more filler text}
-More dummy text will follow.
-\subsection{Plenty of filler text}
-\blindtext[10]
-\end{document}
-}
+% \documentclass[a4paper,12pt]{book}
+% \usepackage[english]{babel}
+% \usepackage{blindtext}
+% \usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm,
+% bottom=3cm, bindingoffset=1cm]{geometry}
+% \begin{document}
+% \tableofcontents % Aqui está o comando estrela da vez
+% \chapter{Exploring the page layout}
+% In this chapter we will study the layout of pages.
+% \section{Some filler text}
+% \blindtext
+% \section{A lot more filler text}
+% More dummy text will follow.
+% \subsection{Plenty of filler text}
+% \blindtext[10]
+% \end{document}
+% }
 
 À vezes é preciso compilar duas vezes para obter o sumário corretamente.
 A primeira rodada de compilação irá criar um arquivo .toc,
 e uma segunda rodada é necessária para ler o arquivo.
 
-O comando \backslash tableofcontents responde aos comandos que definem títulos e subtítulos:
-\backslash chapter, \backslash section \backslash subsection \backslash subsubsection.
+O comando \textbackslash tableofcontents responde aos comandos que definem títulos e subtítulos:
+\textbackslash chapter, \textbackslash section \textbackslash subsection \textbackslash subsubsection.
 
 Podemos diminuir o tamanho do título do capítulo no sumário com a 
 seguinte sintaxe:
@@ -191,25 +191,23 @@ As "camadas" de níveis que as bases geralmente aceitam são:
 \end{itemize}
 
 Todos os comandos que seccionam o texto possuem a forma
-com asterisco, como \backslash section*, que afeta a exibição
+com asterisco, como \textbackslash section*, que afeta a exibição
 da numeração e faz a seção não aparecer no sumário.
 
 Customizando cabeçalho com pacote fancyhdr (fancy header)
 
 \textbf{
-
-    \backslash usepackage\{fancyhdr\}\\
-    \backslash fancyhdr\{\} \\
-    \backslash fancyhead[LE]\{\backslash leftmark\} \\
-    \backslash fancyhead[RO]\{\backslash nouppercase\{\backslash rightmark\}\} \\
-    \backslash fancyfoot[LE,RO]\{\backslash thepage\} \\
-    \backslash pagestyle\{fancy\} \\
-
+    \textbackslash usepackage\{fancyhdr\}\\
+    \textbackslash fancyhdr\{\} \\
+    \textbackslash fancyhead[LE]\{\textbackslash leftmark\} \\
+    \textbackslash fancyhead[RO]\{\textbackslash nouppercase\{\textbackslash rightmark\}\} \\
+    \textbackslash fancyfoot[LE,RO]\{\textbackslash thepage\} \\
+    \textbackslash pagestyle\{fancy\} 
 }
 
-Deve srr aplicado no preambilo.
+Deve ser aplicado no preambulo.
 
-\fancyhdr limpa os estilos do cabecalho e rodapé.
+\textbackslash fancyhdr limpa os estilos do cabecalho e rodapé.
 
 
 
