@@ -1,4 +1,4 @@
-\section{Introdução}
+\chapter{Introdução}
 Quando se trata de aprender a utilizar as funcionalidades avançadas de um editor de texto muito
 antigo é preciso avançar um pequeno trecho por vez.
 Para tecnologias antigas, existe na internet livremente todo tipo de dica,
@@ -15,12 +15,7 @@ Para rodar o vimtutor, é preciso a versão do vim completa.
 Portanto, o primeiro passo é instalar usando seu gerenciador de pacotes,
 ou pesquisando na internet a forma de instalação para o seu sistema operacional.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.90]{introducao/vimtutor_enter_screen.jpg}
-%\label{introducao_001}
-\caption{O vimtutor é um bom ponto de partida.}
-\end{figure}
+\insertfigure{scale=0.90}{introducao/vimtutor_enter_screen.jpg}{O vimtutor é um bom ponto de partida.}
 
 Uma espécie de piada que aparece em certos meios é sobre não se saber sair do vim.
 Podemos começar por aí.
@@ -37,12 +32,7 @@ basta apertar \vimcommand{:} para entrar no modo \emph{ex}.
 O modo ex serve para inserção de comandos.
 Inseriremos o comando \vimcommand{:quit}.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.9]{introducao/comando_quit.jpg}
-%\label{introducao_002}
-\caption{Podemos sair do vim se quisermos.}
-\end{figure}
+\insertfigure{scale=0.9}{introducao/comando_quit.jpg}{Podemos sair do vim se quisermos.}
 
 É parte da cultura Unix criar comandos como abreviações de nomes maiores,
 como cat que abrevia con\textbf{cat}enate.
@@ -52,7 +42,7 @@ Novamente com o vim aberto, pode-se escolher salvar o arquivo, definindo o nome,
 Atenção. Os comandos diferenciam minúsculas de maiúsculas.
 Caso você esteja no modo normal, pode apertar \vimcommand{ZZ} para salvar e sair. Um atalho para \vimcommand{:wq}.
 
-\subsection{Um pouco de qualidade de vida}
+\section{Um pouco de qualidade de vida}
 O vim cru não é exatamente muito legal.
 Mas podemos melhorar usando umas poucas configurações logo de cara.
 A primeira é quebrar o modo de compatibilidade com o antigo VI, usando o comando \vimcommand{:set nocompatible},
@@ -91,14 +81,9 @@ Os comandeos são:
     \item set laststatus=2
 \end{itemize}
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=1.5]{introducao/vimrc_minimo.jpg}
-%\label{introducao_003}
-\caption{Crie este arquivo pelo seu próprio bem.}
-\end{figure}
+\insertfigure{scale=1.5}{introducao/vimrc_minimo.jpg}{Crie este arquivo pelo seu próprio bem.}
 
-\subsection{Movimentação}
+\section{Movimentação}
 No modo normal fazemos as movimentações de cursor mais avançadas.
 Dependendo da sua versão de vim, você pode usar as setas do teclado para se mover,
 e pode realizar essa movimentação mesmo dentro do modo de inserção de texto.
@@ -113,15 +98,10 @@ Vamos ver o básico de movimentação:
     \item \vimcommand{l} - Move para a direita.
 \end{itemize}
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.8]{introducao/movim_minimo.jpg}
-%\label{introducao_004}
-\caption{Movimentação básica.}
-\end{figure}
+\insertfigure{scale=0.8}{introducao/movim_minimo.jpg}{Movimentação básica.}
 
 
-\subsubsection{Lógica Número-Ação-Movimento}
+\subsection{Lógica Número-Ação-Movimento}
 Em muitos casos podemos pedir que o vim interprete nossos comandos com um multiplicador.
 Isso significa que, ao invés de pressionar \vimcommand{l} para andar para a direita 10 vezes,
 podemos escrever \vimcommand{10l}, e a mágica acontece.
@@ -243,7 +223,7 @@ Resumo:
 
 \end{itemize}
     
-\subsubsection{Focando no Cursor}
+\subsection{Focando no Cursor}
 Para lembrar, até agora estamos falando de funcionalidades que são factíveis no modo normal.
 
 Agora que sabemos mudar a posição do cursor, vamos focar em um detalhe que ajuda na visualização.
@@ -265,7 +245,7 @@ Resumo:
     \item \vimcommand{zb} - Move a tela fazendo com que o cursor se apresente na parte baixa da tela.
 \end{itemize}
 
-\subsubsection{Movendo a Tela}
+\subsection{Movendo a Tela}
 Podemos pular de outras formas. Pular por páginas.
 
 Para descer a tela apenas uma linha, \vimcommand{CTRL-e}. Para subir \vimcommand{CTRL-y}.
@@ -299,9 +279,9 @@ Resumo:
     \item \vimcommand{CTRL-b} - Sobe a tela uma página. Tenta manter o cursor na mesma posição relativa.
 \end{itemize}
 
-\subsection{Editando Texto}
+\section{Editando Texto}
 
-\subsubsection{Inserir}
+\subsection{Inserir}
 Inserir é provavelmente a coisa que você mais irá querer fazer.
 O modo de inserção se assemelha muito aos aplicativos de bloco de notas mais comuns.
 Para podermos entrar, finalmente, no modo que nos permite escrever texto dentro de nossos
@@ -335,7 +315,7 @@ Resumo:
     \item \vimcommand{CTRL-e} - Copia conteúdo, caractere a caractere, da linha abaixo do cursor.
 \end{itemize}
 
-\subsubsection{Deletar, Copiar, Colar}
+\subsection{Deletar, Copiar, Colar}
 Além de inserir, que provavelmente é a funcionalidade mais básica de um editor de textos, precisamos saber como apagar coisas.
 Algo que é importante de deixar claro é que, tudo o que apagamos dentro do vim acaba ficando salvo no clipboard.
 Isso significa que, se apagarmos uma linha, podemos usar o comando de colar, que a linha apagada irá voltar ao seu lugar.
@@ -393,7 +373,7 @@ Resumo:
 \end{itemize}
 
 
-\subsubsection{Substituir}
+\subsection{Substituir}
 Caso seus erros sejam pequenos, e você queira substituir apenas um caractere sem sair do modo normal,
 o comando \vimcommand{r} irá te inserir no modo Replace durante uma única pressionada.
 Este comando permite trocar o caractere que estiver debaixo do cursor.
@@ -412,7 +392,7 @@ Resumo:
     \item \vimcommand{r/R} - Substitui um caractere/uma cadeia de caracteres.
 \end{itemize}
 
-\subsubsection{Inside, Around}
+\subsection{Inside, Around}
 Existem sequências avançadas, que lidam com o que é chamado de "objeto texto".
 Um objeto texto pode ser um caractere, uma palavra, uma sentença, um paragrafo ou um bloco.
 Vamos usar o comando "delete" para nossos exemplos, mas a lógica e a mecânica se aplicam também
@@ -456,11 +436,11 @@ Resumo:
     \item \vimcommand{dab} - Deleta um bloco delimitado por parênteses e seus arredores.
     \item \vimcommand{diB} - Deleta um bloco delimitado por chaves.
     \item \vimcommand{daB} - Deleta um bloco delimitado por chaves e seus arredores.
-    \item \vimcommand{di"} - Deleta um bloco delimitado por aspas duplas.
-    \item \vimcommand{da"} - Deleta um bloco delimitado por aspas duplas e seus arredores.
+    \item \vimcommand{di''} - Deleta um bloco delimitado por aspas duplas.
+    \item \vimcommand{da''} - Deleta um bloco delimitado por aspas duplas e seus arredores.
 \end{itemize}
 
-\subsection{Modo Visual}
+\section{Modo Visual}
 O modo visual te permite realizar uma ação que poderia muito bem ser executada com o mouse.
 Caso seu vim esteja configurado para habilitar o mouse, ao segurar e arrastar para selecionar o texto, ele automaticamente irá trocar para o modo visual.
 Então, sem muito mistério, uma das funcionalidades do modo visual é a seleção de pedaços de texto. Mas não para por aí.
@@ -470,36 +450,26 @@ Pode copiar um trecho específico.
 Pode combinar comandos para utilizar esse trecho selecionado como um output.
 E pode definir um escopo em que se pode realizar buscas.
 
-\subsubsection{Modo Visual Normal}
+\subsection{Modo Visual Normal}
 No modo visual normal, você pode realizar as operações já especificadas.
 Esse modo seleciona caracteres.
 Para entrar neste, basta pressionar \vimcommand{v}, minúsculo.
 Mova o cursor e você verá a seleção se mover também.
 E caso você precise selecionar com o cursor mudando para a outra ponta, use o comando \vimcommand{o}.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.5]{introducao/modo_visual.jpg}
-%\label{introducao_005}
-\caption{Modo visual em ação.}
-\end{figure}
+\insertfigure{scale=0.5}{introducao/modo_visual.jpg}{Modo visual em ação.}
 
-\subsubsection{Modo Visual Linha}
+\subsection{Modo Visual Linha}
 Neste, a seleção muda de lógica.
 É muito eficiente para a seleção de trechos maiores.
 Parágrafos, trechos de centenas de linhas, basta selecionar e então realizar sua ação.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.5]{introducao/modo_visual_linha.jpg}
-%\label{introducao_006}
-\caption{Modo visual-linha em ação.}
-\end{figure}
+\insertfigure{scale=0.5}{introducao/modo_visual_linha.jpg}{Modo visual-linha em ação.}
 
 Destrua, reconstrua, altere ou defina um escopo para aplicar suas mudanças.
 Para entrar neste modo, \vimcommand{V}, maiúsculo.
 
-\subsubsection{Modo Visual Bloco}
+\subsection{Modo Visual Bloco}
 A última variação do modo visual seleciona baseado em colunas.
 Seu foco é a alteração de texto tabelado.
 Também é interessante para a seleção vertical no geral, como em blocos de código que estão indentados.
@@ -507,14 +477,9 @@ Também é interessante para a seleção vertical no geral, como em blocos de c�
 Tudo o mais também é válido, seja salvar, recortar, ou usar como escopo para ações.
 Para entrar neste modo, \vimcommand{CTRL-v}.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.5]{introducao/modo_visual_bloco.jpg}
-%\label{introducao_007}
-\caption{Modo visual-bloco em ação.}
-\end{figure}
+\insertfigure{scale=0.5}{introducao/modo_visual_bloco.jpg}{Modo visual-bloco em ação.}
 
-\subsection{Undo, Redo}
+\section{Undo, Redo}
 É óbvio que a capacidade de desfazer alterações estaria presente por aqui também.
 Para desfazer... \vimcommand{u} quando estiver no modo normal.
 Para refazer... \vimcommand{CTRL-r} no modo normal.
@@ -527,7 +492,7 @@ Te mostrarei como navegar pelo manual mais tarde, e você poderá aprofundar qua
 
 Se a sua curiosidade é tanta que você deseja parar imediatamente a leitura para buscar, procure por \textit{"undo tree"}.
 
-\subsection{Comandos Miscelâneos}
+\section{Comandos Miscelâneos}
 Enquanto ainda estamos falando sobre editar o texto, vamos para algo que não se relaciona muito bem com outros tópicos.
 Podemos alterar a indentação e alternar entre maiúsculas e minúsculas sem entrar no modo de inserção.
 E também podemos juntar linhas que estão atualmente separadas.
@@ -580,7 +545,7 @@ Para terminar a miríade de comandos miscelâneos,
 temos um comando para aplicar a última substituição realizada no documento inteiro.
 Estamos falando do \vimcommand{g\&}, mais um dos comandos que não são bem parte da família de ninguém.
 
-\subsection{Marks}
+\section{Marks}
 Esse tópico se confunde com outro, referente ao modelo de memória que o vim usa para armazenar diferentes tipos de dados.
 Sempre que você realiza um salto, você deixa um rastro.
 Mas e se você quiser armazenar uma posição para onde você pode voltar?
@@ -607,11 +572,6 @@ que são salvas referentes ao arquivo atual, e marcas salvas nos caracteres A-Z,
 que salvam também o nome e caminho do arquivo.
 Alguns caracteres são de uso automático, então ele provavelmente será sobrescrito, mas para saber quais são, leia o manual.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.8]{introducao/marks_exemplo.jpg}
-%\label{introducao_008}
-\caption{Lista de marks.}
-\end{figure}
+\insertfigure{scale=0.8}{introducao/marks_exemplo.jpg}{Lista de marks.}
 
 \newpage

@@ -1,4 +1,5 @@
-\section{Motivação}
+\chapter{Motivação}
+\thispagestyle{fancy}
 Minha ideia original era aprender a utilizar o \LaTeX.
 No entanto, é difícil aprender a formatar um texto sem um texto pronto.
 Por conta disso, vou reescrever meu pequeno manual sobre VIM e fazer uma extensão com o que aprendi no meio tempo até agora.
@@ -13,7 +14,7 @@ Como usuário de vim, e aprendendo a usar o \LaTeX\, encontrei o pacote vimtex, 
 navegar e escrever nesse tipo de projeto.
 Este pequeno projeto é uma forma de eu me ambientar com o vimtex, e se ajudar alguém, é um ponto extra.
 
-\subsection{Minha Motivação}
+\section{Minha Motivação}
 Quando comecei a faculdade havia a matéria de introdução à computação.
 Nessa matéria sugeriu-se que se instalasse um Linux para fazer os exercícios e entender melhor sobre computação e afins.
 De fato funcionou.
@@ -27,17 +28,12 @@ Não bastasse isso, eu curso engenharia, e existem contas para se fazer,
 procedimentos de cálculo, aproximações e avaliações que podem ser facilitadas com computadores.
 Existem diferentes tipos de programas, e todos possuem essa mesma natureza estranha, todos existem dentro de computadores.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[scale=0.6]{motivacao/laptop-desk-notebook-computer.jpg}
-%\label{motivacao_001}
-\caption{Computadores são ferramentas.}
-\end{figure}
+\insertfigure{scale=0.6}{motivacao/laptop-desk-notebook-computer.jpg}{Computadores são ferramentas.}
 
 E para finalizar, todas as distribuições Linux conseguem rodar ao menos a linha de comando e um editor de textos.
 E o VIM é um editor e tanto.
 
-\subsection{Motivação Para Você}
+\section{Motivação Para Você}
 Se você não dispõe de uma máquina potente, e precisa começar com programação, talvez seja um caminho muito mais difícil o que te espera.
 Mas é no caminho mais difícil que temos a evolução mais acentuada.
 Aprendi a programar em 2 linguagens de programação, das 3 que conheço, no celular.
@@ -47,12 +43,7 @@ Tendo o terminal, um editor e um compilador, aprendi C, uma das linguagens mais 
 Além disso, fazer exercícios de programação mantém a mente afiada, e exige criatividade.
 Com o básico bem estabelecido se chega realmente muito longe.
 
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.4]{motivacao/Linha_De_Comando.jpg}
-%\label{motivacao_002}
-\caption{Praticamente todas as máquinas possuem uma interface de linha de comando.}
-\end{figure}
+\insertfigure{scale=0.4}{motivacao/Linha_De_Comando.jpg}{Praticamente todas as máquinas possuem uma interface de linha de comando.}
 
 Se você possui um computador fraco, pode ser que instalar uma distribuição Linux alivie o peso.
 Muitas distribuições Linux são pensadas para máquinas menos potentes, usando menos ram, precisando de menos processador, e assim em diante.
@@ -76,7 +67,7 @@ Isso evita lesões por esforço repetitivo, aumenta a velocidade de digitação,
 e, com isso, aproxima a velocidade de escrever com a velocidade de pensar.
 Digitar enquanto se pensa torna o escrever uma expressão do pensar.
 
-\subsection{Componentes}
+\section{Componentes}
 O VIM possui pedaços.
 E por ele começar tão simples que é uma ótima ferramenta para se evoluir.
 Começamos com quase nada, e adicionamos módulos.
@@ -86,7 +77,7 @@ Outros programas de edição possuem os componentes que podem ser adicionados ao
 Outros componentes simplesmente não fazem sentido juntos dessa forma.
 Pela versatilidade, e capacidade de se ter numa única ferramenta diversas configurações, decidi me dedicar a aprender.
 
-\subsubsection{Editor de Texto}
+\subsection{Editor de Texto}
 O editor de texto é a parte núcleo, que quase todo servidor Linux possui.
 Tem-se as funcionalidades básicas: Leitura; Escrita; Busca; Substituição.
 E é aí que começa a ficar divertido.
@@ -95,12 +86,7 @@ com cores diferentes baseado na sintaxe, no sentido lógico usado.
 Essa última característica só está presente caso você instale a versão completa do vim.
 Geralmente, a versão padrão do vim que já vem instalada nas distribuições linux é o vim-tiny.
 
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.9]{motivacao/VimTiny.jpg}
-%\label{motivacao_003}
-\caption{O VIM tiny é uma versão de vim simplificada, sem alguns recursos.}
-\end{figure}
+\insertfigure{scale=0.9}{motivacao/VimTiny.jpg}{O VIM tiny é uma versão de vim simplificada, sem alguns recursos.}
 
 Além disso, existem formas de se escrever, formas de se pensar, formas de se
 mover o cursor pelo texto, que só fazem sentido dentro do vim.
@@ -121,14 +107,9 @@ E pode-se invocar um terminal para continuar executando comandos do lado de fora
 enquanto anota-se do lado de dentro.
 É muita versatilidade.
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[scale=0.7]{motivacao/Versatilidade_Do_Vim.jpg}
-%\label{motivacao_004}
-\caption{O VIM completo possui todo tipo de funcionalidade.}
-\end{figure}
+\insertfigure{scale=0.65}{motivacao/Versatilidade_Do_Vim.jpg}{O VIM completo possui todo tipo de funcionalidade.}
 
-\subsubsection{Configurações}
+\subsection{Configurações}
 Arquivos de configuração fazem loucuras.
 Existem templates de configuração, pré configurações que transformam
 e aproximam o vim de editores especializados para usos específicos.
@@ -141,14 +122,9 @@ Basicamente, os arquivos de configuração fazem com que o editor fique com a su
 No extremo, chega-se a um ponto em que alguém que também seja conhecido do vim não consiga usar o seu vim.
 Nos arquivos de configuração também é onde se deixam plugins ativos.
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[scale=0.7]{motivacao/Arquivo_De_Configuracao.jpg}
-%\label{motivacao_005}
-\caption{Arquivo de Configurações do autor.}
-\end{figure}
+\insertfigure{scale=0.7}{motivacao/Arquivo_De_Configuracao.jpg}{Arquivo de Configurações do autor.}
 
-\subsubsection{Plugins}
+\subsection{Plugins}
 Para diversos usos, o vim é uma ferramenta tosca.
 Não que seja impossível realizar qualquer tarefa com o básico do básico,
 mas se trata de uma ferramenta que começou com funcionalidades limitadas.
@@ -168,14 +144,9 @@ Fazer dessa forma talvez mostre quais são os plugins que são essenciais pra vo
 ao invés de instalar um plugin que imita uma funcionalidade já existente.
 Vamos tentar nos manter leves.
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[scale=0.73]{motivacao/Plugin_Exemplo.jpg}
-%\label{motivacao_006}
-\caption{Plugins do Autor.}
-\end{figure}
+\insertfigure{scale=0.72}{motivacao/Plugin_Exemplo.jpg}{Plugins do Autor.}
 
-\subsection{Configurando Máquinas Remotas}
+\section{Configurando Máquinas Remotas}
 Servidores de dados, de e-mail, servidores web e o mundo na nuvem.
 Todos são parte da mesma família de tecnologias.
 São computadores que rodam fora de casa, na internet, permitindo usar serviços que não estão instalados localmente.

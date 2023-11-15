@@ -24,5 +24,21 @@
 \usepackage{indentfirst}                %|
                                         %|
 \usepackage{graphicx}                   %|
-%----------------------------------------+
 
+\usepackage[portuguese]{babel}
+
+% Embelezando o cabeçalho e o rodapé    %|
+\usepackage{fancyhdr}                   %|
+\pagestyle{fancy}                       %|
+\setlength{\headheight}{16pt}           %|
+\addtolength{\topmargin}{-4pt}          %|
+\fancyhf{}                              %|
+\fancyhead[L]{\nouppercase{\leftmark}}  %|
+\fancyhead[R]{\nouppercase{\rightmark}} %|
+\fancyfoot[C]{\thepage}                 %|
+\pagestyle{fancy}                       %|
+
+% Configurando fbox para usar de moldura%|
+% para imagens.
+\setlength{\fboxrule}{1.2pt}
+%----------------------------------------+

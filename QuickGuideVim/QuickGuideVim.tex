@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper,12pt,oneside]{book}
 
 \input{./preambulo.tex}
 
@@ -9,7 +9,7 @@
 \input{./sumario.tex}
 
 
-%---------Estilos Próprios---------------+
+%---------Comandos Próprios---------------+
 \newcommand{\vimcommand}[1]{%
     \sethlcolor{black}%
     \textbf{\textcolor{white}{\hl{#1}}}%
@@ -18,6 +18,14 @@
     \sethlcolor{black}%
     \textbf{\textcolor{red}{\hl{#1}}}%
 }
+\newcommand{\insertfigure}[3]{
+\begin{figure}[!htb]
+\centering
+\fbox{\includegraphics[#1]{#2}}
+\caption{#3}
+\end{figure}
+}
+
 %----------------------------------------+
 
 % TODO: Encontrar uma imagem para adicionar na capa.
@@ -36,33 +44,37 @@
 \include{recursos_avancados/recursos_avancados.tex}
 
 % Quarto Capítulo
-\section{Settings}
+\chapter{Settings}
+
+
+\section{Onde Estão Minhas Configurações}
 ...
-\subsection{Onde Estão Minhas Configurações}
+\section{Abreviações}
 ...
-\subsection{Abreviações}
+\section{Salvando Macros}
 ...
-\subsection{Salvando Macros}
-...
-\subsection{Olhando um arquivo vimrc pré-pronto}
+\section{Olhando um arquivo vimrc pré-pronto}
 ...
 \newpage
-\section{Escolhendo e gerenciando Plugins}
+% Quinto Capítulo
+\chapter{Escolhendo e gerenciando Plugins}
 ...
 
 \newpage
-\section{Usando o Manual}
+% Sexto Capítulo
+\chapter{Usando o Manual}
 ...
 
 \newpage
-\section{Usos diversos}
-\subsection{PairProgramming com tmux}
+% Sétimo Capítulo
+\chapter{Usos diversos}
+\section{PairProgramming com tmux}
 \ldots
-\subsection{Usando ssh-keys para editar arquivos remotos usando o meu vim}
+\section{Usando ssh-keys para editar arquivos remotos usando o meu vim}
 \ldots
-\subsection{Criando um layout semelhante à uma IDE (meu @i) com o vim padrão}
+\section{Criando um layout semelhante à uma IDE (meu @i) com o vim padrão}
 \ldots
-\subsection{Usando ctags para saltos acrobáticos dentro de um projeto de programação}
+\section{Usando ctags para saltos acrobáticos dentro de um projeto de programação}
 \ldots
 
 % TODO:Anotações finais: Adicionar qual página de manual cada uma das partes deve ler.
