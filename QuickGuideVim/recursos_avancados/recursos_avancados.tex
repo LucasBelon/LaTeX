@@ -1,31 +1,32 @@
 \chapter{Recursos avançados}
-A maior parte do básico está feito.
-Você sabe escrever, sabe apagar, sabe trocar palavras de lugar, copiando e colando.
-Já aprendeu a pular dentro de um arquivo, fazendo parecer bruxaria.
-Mas até agora estamos no reino iluminado, em que um iniciante observar e entender o que está acontecendo.
-Eu diria que a partir vamos mexer com magia negra, que se faltar atenção, acontecerão coisas num piscar de olhos,
-e que não terão uma explicação razoável.
-Por isso, a partir daqui, teste tudo, crie você mesmo experimentos.
+A maior parte do básico está feito.  Você sabe escrever, sabe apagar, sabe
+trocar palavras de lugar, copiando e colando.  Já aprendeu a pular dentro
+de um arquivo, fazendo parecer bruxaria.  Mas até agora estamos no reino
+iluminado, em que se um iniciante observar pode conseguir entender o que
+está acontecendo.  Eu diria que a partir de agora vamos mexer com magia
+negra, pois se faltar atenção, nada será absorvido.  Por isso, a partir
+daqui, teste tudo e crie você mesmo experimentos.
 
-Vamos começar falando sobre como procurar e substituir termos num arquivo e
-como podemos substituir múltiplos termos de uma só vez.
-Na sequência, veremos o que são os registros, e para onde vão os trechos de código que apagamos.
+Vamos começar falando sobre como procurar e substituir termos e palavras
+chave num arquivo e como podemos substituir estes.  Na sequência veremos o
+que são os registros e para onde vão os trechos que apagamos.
 
-Então vamos começar a usar múltiplos arquivos e executar ações neles.
-Organizar janelas para obter uma boa visualização, além de montar e manter um layout eficiente.
+Na sequência começaremos a usar múltiplos arquivos e executar ações neles.
+Iremos organizar janelas para obter uma boa visualização, além de montar e
+manter um layout eficiente.
 
 \section{Busca No Arquivo}
 Buscar dentro do arquivo é relativamente simples.
-Basta usar o comando \vimcommand{/} e pesquisar o que você deseja procurar.
+Basta usar o comando \vimcommand{/} e pesquisar o que você deseja encontrar.
 Se for encontrado o termo, seu cursor será jogado para cima dele.
 Se você estiver usando o vim completo, ao habilitar a opção \vimcommand{:set hlsearch},
 suas buscas serão destacadas do texto com uma cor de fundo diferente.
 Para que o destaque desapareça, é preciso rodar um comando,
 \vimcommand{:nohlsearch}, ou a versão reduzida \vimcommand{:noh}. 
 
-Para avançar entre os termos encontrados na busca, use o comando \vimcommand{n} para avançar para frente.
+Para avançar entre os termos encontrados na busca, use o comando \vimcommand{n} para avançar.
 Para retroceder, buscando termos anteriores, use \vimcommand{N}.
-Na régua inferior podem aparecer informações importantes do tipo, "Sua busca chegou ao fim do arquivo, recomeçando do começo",
+Na régua inferior podem aparecer informações importantes do tipo, "Sua busca chegou ao fim do arquivo, recomeçando",
 vale a pena ficar de olho.
 
 \insertfigure{scale=0.70}{recursos_avancados/Busca_No_Arquivo.jpg}{Mecanismo de busca com HighlightSearch.}
@@ -33,17 +34,17 @@ vale a pena ficar de olho.
 Podemos realizar buscas no sentido inverso do arquivo com \vimcommand{?}, que terá os mesmos impactos que a busca normal.
 Caso você queira buscar um termo que esteja sob o cursor, pode-se utilizar \vimcommand{\#},
 que o mesmo efeito de se utilizar a busca com \vimcommand{/} ocorrerá. 
-Para se buscar o termo sob o cursor, mas no sentido inverso, vale o comando \vimcommand{*}.
+Para se buscar o termo sob o cursor, mas no sentido inverso, vale o comando \vimcommand{*}\ .
 
 Se você realizou uma busca e deseja repetí-la, \vimcommand{//}, e o mesmo vale para \vimcommand{??}.
 
-O mecanismo de busca funciona normalmente no vim padrão, mas sem esse destaque.
-Isso pode tornar deixar difícil realizar uma busca válida, já que você pode perceber com antecedência
+O mecanismo de busca funciona normalmente no vim tiny, mas sem esse destaque.
+Isso pode tornar difícil realizar uma busca válida, já que você pode nãoperceber com antecedência
 que está escrevendo errado no campo de busca.
 
 \insertfigure{scale=0.70}{recursos_avancados/Busca_No_Arquivo_vimtiny.jpg}{No vimtiny temos a mesma potência, mas não a mesma elegância.}
 
-Apesar de podermos pesquisar termos simples, podemos utilizar expressões regulares para encontrar padrões que se casam com nossas especificações.
+Apesar de podermos pesquisar termos simples, podemos também utilizar expressões regulares para encontrar padrões que se casam com nossas especificações.
 Este é um texto sobre vim, não sobre REGEX, então, se quiser, vá atrás por conta.
 
 \section{Substituição No Arquivo}
@@ -52,9 +53,9 @@ A repetição de palavras chave é muito grande, seja para nomear variáveis, se
 ou mesmo uma informação escrita à força, ou \textit{hardcoded}.
 Você pode realizar a substituição de diversas formas diferentes.
 Como você já sabe realizar a busca, basta encontrar e substituir uma a uma.
-Mas se você deseja fazer de uma forma automática, que abrange de uma ocorrência, a múltiplas delas, então esse comando é pra você.
+Mas, se você deseja fazer de uma forma automática, que abrange de uma ocorrência, a múltiplas delas, então esse comando é pra você.
 
-Para realizar uma substituição de uma ocorrência, na linha atual, pode-se usar:\\
+Para realizar a substituição de uma ocorrência, na linha atual, pode-se usar:
 \vimcommand{:s/ocorr/subst}.
 
 \insertfigure{scale=1.20}{recursos_avancados/Substituicao_simples.jpg}{Quase todo editor de texto possui a função substituir.}
@@ -81,7 +82,7 @@ blocos de texto\ldots\
 E então, basta aplicar o comando.
 
 Se quisermos que o escopo seja o arquivo inteiro, em todas as ocorrências, usamos \vimcommand{:\%s/ocorr/subst/g}.
-O termo \% simboliza o próprio arquivo no vim, seja seu nome, seja seu texto como este caso.
+O termo \% simboliza o próprio arquivo no vim.
 
 \insertfigure{scale=1.20}{recursos_avancados/Substituicao_global.jpg}{A substituição global é muito poderosa, tome cuidado.}
 
@@ -93,26 +94,27 @@ Para terminarmos sobre substuições, para que sejamos perguntados se queremos o
 \section{Folds}
 Existem casos em que você tem um parágrafo que deseja colapsar, ou seja, deixá-lo numa única linha para poder visualizar o restante.
 Esta é mais uma funcionalidade que só existe no vim completo.
-Isso é útil para verificar a consistência do formato geral do texto, e para poder, por exemplo, verificar se todos os assuntos foram abrangidos.
+É útil para verificar a consistência do formato geral do texto, e para poder, por exemplo, verificar se todos os assuntos foram abrangidos.
 
 Pessoalmente, acho raro utilizar, e difícil de configurar.
 Mas caso você esbarre numa sequência de teclas estranhas, então melhor saber desfazer essas alterações.
 
 A lista de teclas de ação são:
 \begin{itemize}
-    \item \vimcommand{zc} - Fechar uma dobradura.
-    \item \vimcommand{zo} - Abrir uma dobradura.
-    \item \vimcommand{zM} - Fechar todas as dobraduras.
-    \item \vimcommand{zR} - Abrir todas as dobraduras.
-    \item \vimcommand{za} - Abrir ou Fechar dobraduras.
+    \item \vimcommand{zc} - Fechar uma dobra.
+    \item \vimcommand{zo} - Abrir uma dobra.
+    \item \vimcommand{zM} - Fechar todas as dobras.
+    \item \vimcommand{zR} - Abrir todas as dobras.
+    \item \vimcommand{za} - Abrir ou Fechar dobras.
 \end{itemize}
 
-Agora, se você fechou uma dobradura de texto, então sabe abrir.
-Existem muitos métodos para identificar uma possível dobradura que faça sentido.
+Se você fechou uma dobra de texto, então poderá abrir.
+Existem muitos métodos para identificar uma possível dobra que faça sentido.
 Existem os métodos: \textit{indent}, \textit{diff}, \textit{syntax}, \textit{expr}, \textit{manual} e \textit{marker}
 
 Uma rápida explicação sobre o modo manual.
-Você seleciona uma quantidade de texto, com o modo visual, e usa o comando \vimcommand{:fold}.
+Utiliza-se o \vimcommand{:set foldmethod=manual}, para ativar o método.
+Seleciona-se uma quantidade de texto com o modo visual, e se usa o comando \vimcommand{:fold}.
 Então você habilitou o trecho do texto a ser dobrável.
 Eu considero uma forma trabalhosa, mas extremamente versátil.
 
@@ -160,7 +162,7 @@ pedimos que retorne para o começo da linha \vimcommand{0}, que delete um caract
 e delete um caractere novamente \vimcommand{x}, e então descemos uma linha \vimcommand{j},
 para enfim, encerrarmos a gravação \vimcommand{q}.
 
-Difícil acompanhar por texto, mas super simples de executar.
+Difícil acompanhar apenas lendo, mas super simples de executar.
 E talvez o mais importante, simples de replicar.
 Para repetir esse conjunto de ações, selecione o número de repetições e use \vimcommand{$@$a}.
 Essa macro deleta o primeiro e último caractere de uma linha e então pula para a linha seguinte.
@@ -169,6 +171,7 @@ Se a respostas for "à mão", então você está perdendo tempo e desperdiçando
 
 Para gravar macros, podemos utilizar dois tipos de operação.
 Podemos sobrescrever um registro, que é o que fizemos no exemplo, mas podemos também adicionar novos comandos.
+Basta pedir que seja gravada a macro num slot maiúsculo.
 Ao usar \vimcommand{qAdiwjq}, estamos adicionando um "delete inner word" e um descer linha à macro salva no registro a.
 Verifique com o comando \vimcommand{:registers} suas macros de teste.
 
@@ -186,11 +189,11 @@ O ponto negativo é gastar os slots, mas são muitos, e você pode simplesmente 
 futuramente, ou mesmo sobrescrever com um vazio.
 
 \section{O Que É Um Buffer}
-Quando programamos e precisamos reservar uma quantidade de memória do computador, declaramos um buffer.
+Quando programamos e precisamos reservar uma quantidade de memória do computador declaramos um buffer.
 Basicamente, se trata de uma quantidade de memória reservada para operação.
 Abrir arquivos é uma operação que requer um buffer, já que realizar alterações pequenas diretamente em arquivo
 não é a melhor das ideias.
-A estratégia é trazer para memória, alterar o trecho, e devolver as alterações.
+A estratégia é trazer para memória, alterar o trecho, e devolver as alterações para o armazenamento.
 
 Quando você abre um arquivo, o vim cria um buffer.
 Esse buffer representa seu arquivo.
@@ -240,7 +243,7 @@ E pra finalizar, para pular para um buffer de número qualquer \vimcommand{:buff
 
 Todos esses comandos possuem formas simplificadas, exceto badd:
 \begin{itemize}
-    \item \vimcommand{:edit} - Para adicionar um buffer à pilha;
+    \item \vimcommand{:e} - Para adicionar um buffer à pilha;
     \item \vimcommand{:badd} - Para adicionar um buffer à pilha;
     \item \vimcommand{:bd} - Para deletar um buffer da pilha;
     \item \vimcommand{:bn} - Para ir ao próximo buffer;
@@ -262,7 +265,7 @@ Para abrir todos os buffers na janela de uma só vez: \vimcommand{:ball}.
 \insertfigure{scale=0.80}{recursos_avancados/ball_ls.jpg}{Vários buffers carregados.}
 
 Apenas para citação: Existe um comando chamado bufdo, que executará uma ação em todos os buffers.
-Com ele é possível rodar comandos, macros, substituições e afins.
+Com ele é possível rodar comandos, substituições e afins.
 No entanto, a sintaxe é complexa, então vou deixar a cargo do leitor ir atrás de descobrir
 se essas funcionalidades o são úteis.
 
@@ -280,10 +283,10 @@ Existe uma diferença entre fechar com \vimcommand{:q} e deletar o buffer da pil
 A diferença é que, com o comando \vimcommand{:q}, estamos fechando a janela em que o buffer se encontra,
 mas se olharmos a lista de buffers com \vimcommand{:ls}, veremos que ele ainda está na pilha, e que,
 portanto, pode ser novamente acessado.
-Com \vimcommand{bd} estamos descaregando da memória o arquivo, garantindo que as gravações foram ou feitas ou descartadas,
+Com \vimcommand{:bd} estamos descaregando da memória o arquivo, garantindo que as gravações foram ou feitas ou descartadas,
 e liberando memória do editor.
 
-\subsection{Abrindo E Fechando}
+\subsection{Invocando janelas}
 Existem diversos comandos para abrir janelas.
 Os dois primeiros, mais simples, são o \vimcommand{:new arquivo} que irá fazer com que a tela
 se divida em duas horizontalmente, abrindo o novo buffer acima.
@@ -327,8 +330,8 @@ Com isso temos 8 combinações:
     \item \vimcommand{:botright vsplit} - Abrir no extremo direito da tela verticalmente;
     \item \vimcommand{:aboveleft split} - Abrir imediatamente acima da janela horizontalmente;
     \item \vimcommand{:belowright split} - Abrir imediatamente abaixo da janela horizontalmente;
-    \item \vimcommand{:aboveleft vsplit} - Abrir imediatamente à esquerda da janela horizontalmente;
-    \item \vimcommand{:belowright vsplit} - Abrir imediatamente à direita da janela horizontalmente;
+    \item \vimcommand{:aboveleft vsplit} - Abrir imediatamente à esquerda da janela verticalmente;
+    \item \vimcommand{:belowright vsplit} - Abrir imediatamente à direita da janela verticalmente;
 \end{itemize}
 
 \insertfigure{scale=0.80}{recursos_avancados/belowright_split.jpg}{Abrindo um buffer abaixo.}
@@ -342,7 +345,7 @@ Se ele abre horizontalmente, só importa cima e baixo.
 
 \subsection{Alternando Entre Janelas E Movendo}
 A forma mais simples de se mover entre janelas é usando \vimcommand{CTRL w CTRL w}, ou só \vimcommand{CTRL w w}.
-Eu prefiro a primeira forma pela mão já estar com o dedo no lugar.
+Eu prefiro a primeira forma por já estar com o dedo no lugar.
 Só com esse comando já podemos alternar legal entre as janelas. 
 A lógica desse comando é alternar na ordem natural da escrita, que é, do topo para baixo, e da esquerda para a direita.
 
@@ -405,7 +408,6 @@ Os comandos para alterar o tamanho das janelas são:
 
 Lembre-se, tamanho vertical refere-se à quantidade de colunas. Tamanho normal refere-se à quantidade de linhas.
 Acabamos de encerrar o que há pra se saber sobre layout de janelas.
-Ainda nesse assunto vamos ver como criar abas, mas antes tem uma ou duas coisas interessantes para se ver.
 
 \insertfigure{scale=0.80}{recursos_avancados/resize.jpg}{Você pode manipular as dimensões das janelas à vontade.}
 
@@ -419,18 +421,18 @@ Caso você tenha uma quantidade de abas abertas, e tiver o mouse ativado, você 
 Também pode navegar por comando como \vimcommand{:tabNext}.
 
 Caso você tenha uma quantidade de arquivos que deseja abrir, cada um em uma aba, na inicialização do vim,
-pode-=se usar \vimcommand{\$ vim -p arquivo1.txt arquivo2.py arquivo3.cpp}
+pode-se usar \vimcommand{\$ vim -p arquivo1.txt arquivo2.py arquivo3.cpp}
 
 Resumindo os comandos temos:
 \begin{itemize}
     \item \vimcommand{:tabNew} - Cria uma nova aba;
-    \item \vimcommand{:tabprevious} - Move para a aba anterior;
-    \item \vimcommand{:tabnext} - Move para a próxima aba;
     \item \vimcommand{:tabClose} - Fecha a aba atual. Não é o mesmo que deletar o buffer;
-    \item \vimcommand{:tabmove +1} - Move a aba atual mais à direita na ordem das abas;
-    \item \vimcommand{gt} - Move a aba atual mais à direita na ordem das abas;
+    \item \vimcommand{:tabprevious} - Move para a aba anterior;
+    \item \vimcommand{gT} - Move para a aba anterior;
     \item \vimcommand{:tabmove -1} - Move a aba atual mais à esquerda na ordem das abas;
-    \item \vimcommand{gT} - Move a aba atual mais à esquerda na ordem das abas;
+    \item \vimcommand{:tabnext} - Move para a próxima aba;
+    \item \vimcommand{gt} - Move para a próxima aba;
+    \item \vimcommand{:tabmove +1} - Move a aba atual mais à direita na ordem das abas;
     \item \vimcommand{:tabfirst} - Move para primeira aba.
     \item \vimcommand{:tablast} - Move para a última aba.
 \end{itemize}
@@ -440,6 +442,7 @@ Resumindo os comandos temos:
 Para mais informações, leia o manual com \vimcommand{:h tabpage}.
 Usar abas é interessante para mover-se rapidamente entre arquivos que você sabe que utilizará.
 Utilizar atalhos com estes comandos é uma grande vantagem.
+Vreremos como configurar no vimrc.
 
 \section{Save View}
 Existem sessions e views como tentativas de salvar as configurações e layouts atuais.
@@ -469,7 +472,7 @@ No entanto, agora que sabemos como funciona o sistema de janelas, podemos usar
 
 A partir da janela de navegação podemos usar \vimkeys{$<$F1$>$} para abrir o menu
 em uma janela horizontal. Lá você pode navegar até quickmap, onde estão as teclas de atalho mais básicas.
-Pressionar enter em cima donome de um arquivo fará com que este seja carregado na janela atual.
+Pressionar enter em cima do nome de um arquivo fará com que este seja carregado na janela atual.
 Usar \vimcommand{t} irá abrir o arquivo em uma nova aba.
 Com \vimcommand{v} abriremos em uma aba vertical.
 Ainda podemos deletar arquivos, criar pastas, e fazer o que comumente é possível num gerenciador de arquivos.
@@ -484,7 +487,14 @@ seja código fonte para programadores, seja para a criação de manuais.
 Óbviamente, não poderia faltar.
 Quando estamos programando, certamente iremos querer mexer aqui e acolá no terminal.
 Vamos querer invocar o interpretador do código, compilar, ou mesmo rodar um comando simples.
-A lógica de nova janela segue sendo válida.
+A primeira opção é usar o que se chama de \emph{comando externo}.
+
+Para rodar um comando na shell que você está usando usa-se \vimcommand{:!
+[comando]}. Então se quisermos rodar o interpretador python para nosso
+arquivo podemos fazer \vimcommand{:!python3 script.py} e tcharam, comando
+executado.
+
+Na outra opção, a lógica de nova janela segue sendo válida.
 Para abrir uma janela de terminal na horizontal \vimcommand{:terminal}.
 Para abrir na vertical \vimcommand{:vertical terminal}.
 
@@ -520,7 +530,7 @@ Acontece que, para conseguir esse armazenamento, acabamos com um arquivo relativ
 mesmo para o layout mais simples.
 Esse arquivo de layout, com extensão .vim, utiliza caminhos absolutos,
 o que significa que se você mudá-lo de lugar, simplesmente seus arquivos não serão carregados.
-No entanto, mudar toda uma pasta de projetos pode acabar funcionando
+No entanto, iremos ver uma função que é capaz de solucionar este problema.
 
 O comando mágico para criar esse arquivo que salva o layout é \vimcommand{:mksession Session.vim}.
 Para carregar o layout existem duas formas.
@@ -532,7 +542,7 @@ Para encontrar os assuntos no manual, utilize o comando \vimcommand{:h session}.
 Neste trecho de manual também é possível encontrar informações sobre views.
 
 \section{Quickfix}
-Muitas vezes existem pequenas janelas que nos ajudam a nos localizar, a ler um pequeno trecho, e a nos locomover.
+O quickfix é uma janela com itens selecionados que nos ajudam a nos localizar, a ler um pequeno trecho, e a nos locomover.
 As janelas quickfix são uma variação das janelas preview.
 De certa forma, elas nos permitem realizar busca e locomoção através de vários arquivos.
 A grande vantagem é não precisar saber qual o arquivo, apenas qual o termo que queremos encontrar.
@@ -544,30 +554,28 @@ Como essa funcionalidade nasceu a partir de obter os erros que compiladores apon
 c alguma coisa.
 
 Para, por exemplo, pesquisar sobre a função \vimkeys{add} que pode estar em qualquer
-arquivo do código fonte escrito em C, fazemos o seguinte: \vimcommand{:vimgrep ''add'' **/*.c}.
+arquivo do código fonte escrito em C, fazemos o seguinte: \vimcommand{:vimgrep ''Hello'' **.\{sh py,c\}}.
 O que fizemos foi procurar o termo "add" em qualquer subdiretório (**), em arquivos com um nome qualquer (*)
 que terminem em ".c".
 É razoável evitar buscas em diretorios muito profundos, já que o vim não consegue interromper a busca.
+O padrão de busca por termo aceita REGEX, e a especificação por diretório aceita a sintaxe de comandos do shell.
 A forma abreviada do comando \vimcommand{:vimgrep} é \vimcommand{:vim}.
 Caso o programa "grep" esteja disponível em seu ambiente, \vimcommand{:grep} pode fazer o serviço.
 
 \insertfigure{scale=0.80}{recursos_avancados/quickfixGenerate.jpg}{Gerando um quickfix.}
 
-Com a busca, desde que algum termo tenha sido encontrado, acabamos de gerar uma lista do quickfix.
+Com a busca executada e desde que algum termo tenha sido encontrado, acabamos gerando uma lista quickfix.
 Para visualizar essa lista usamos \vimcommand{:copen}.
-Se repousarmos nosso cursor em alguma linha e pressionarmos enter colocaremos na janela principal o arquivo referenciado
-já com o cursor em cima do termo procurado.
+Se repousarmos nosso cursor em alguma linha da lista e pressionarmos enter,
+seremos lançados para o arquivo, já com o cursor sobre o termo.
 
 \insertfigure{scale=0.80}{recursos_avancados/quickfixLista.jpg}{Visualizando o quickfix.}
 
 Digamos que não queremos ficar pulando de janela, apenas pular para o próximo termo encontrado na busca: \vimcommand{:cnext}.
 Uma alternativa é usar apenas \vimcommand{:cn}. 
+E é uma boa ideia atribuir um atalho para este comando.
 Para pular para o termo anterior, \vimcommand{:cprevious}.
 E por fim, para fechar a janela do quickfix, \vimcommand{:cclose}.
-
-O padrão de busca por termo aceita REGEX, e a especificação por diretório aceita a sintaxe de comandos do shell.
-Um pequeno exemplo seria: \vimcommand{:vim /echo/ **\{sh,rb\}}.
-Esse comando procura pela palavra echo em qualquer arquivo .sh ou .rb.
 
 Para finalizar o uso básico, você pode tomar ações sobre os termos encontrados na lista com \vimcommand{:cdo}.
 Funciona assim como podemos fazer com tabs ou buffers.
