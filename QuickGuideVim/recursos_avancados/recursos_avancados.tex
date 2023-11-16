@@ -341,23 +341,23 @@ Se ele abre horizontalmente, só importa cima e baixo.
 \insertfigure{scale=0.80}{recursos_avancados/aboveleft_vertical_sbuffer.jpg}{Efeito de aboveleft vertical sbuffer 4.}
 
 \subsection{Alternando Entre Janelas E Movendo}
-A forma mais simples de se mover entre janelas é usando \vimcommand{CTRL-w CTRL-w}, ou só \vimcommand{CTRL-w w}.
+A forma mais simples de se mover entre janelas é usando \vimcommand{CTRL w CTRL w}, ou só \vimcommand{CTRL w w}.
 Eu prefiro a primeira forma pela mão já estar com o dedo no lugar.
 Só com esse comando já podemos alternar legal entre as janelas. 
 A lógica desse comando é alternar na ordem natural da escrita, que é, do topo para baixo, e da esquerda para a direita.
 
 Mas claro que não vamos ficar limitados a esses movimentos simples.
-O comando \vimcommand{CTRL-w} habilita a movimentação.
-Dessa forma, para ir para a janela da esquerda, basta usar \vimcommand{CTRL-w l} para ir para a janela da direita.
+O comando \vimcommand{CTRL w} habilita a movimentação.
+Dessa forma, para ir para a janela da esquerda, basta usar \vimcommand{CTRL w l} para ir para a janela da direita.
 Usando os comandos de movimentação \textit{hjkl} você se move para onde quiser.
 Assim combinamos conhecimentos prévios:
 \begin{itemize}
-    \item \vimcommand{CTRL-w h} - Troca para a janela da esquerda;
-    \item \vimcommand{CTRL-w l} - Troca para a janela da direita;
-    \item \vimcommand{CTRL-w j} - Troca para a janela debaixo;
-    \item \vimcommand{CTRL-w k} - Troca para a janela acima;
-    \item \vimcommand{CTRL-w t} - Troca para a janela superior (top);
-    \item \vimcommand{CTRL-w b} - Troca para a janela inferior (bottom);
+    \item \vimcommand{CTRL w h} - Troca para a janela da esquerda;
+    \item \vimcommand{CTRL w l} - Troca para a janela da direita;
+    \item \vimcommand{CTRL w j} - Troca para a janela debaixo;
+    \item \vimcommand{CTRL w k} - Troca para a janela acima;
+    \item \vimcommand{CTRL w t} - Troca para a janela superior (top);
+    \item \vimcommand{CTRL w b} - Troca para a janela inferior (bottom);
 \end{itemize}
 
 \subsection{Redimensionando E Criando Um Layout}
@@ -367,23 +367,23 @@ Não temos como mover a janela com um controle muito bom, mas é melhor que nada
 Para mover a janela atual temos:
 
 \begin{itemize}
-    \item \vimcommand{CTRL-w H} - Envia a janela atual para o canto esquerdo da tela;
-    \item \vimcommand{CTRL-w L} - Envia a janela atual para o canto direito da tela;
-    \item \vimcommand{CTRL-w J} - Envia a janela atual para o canto inferior da tela;
-    \item \vimcommand{CTRL-w K} - Envia a janela atual para o canto superior da tela;
-    \item \vimcommand{CTRL-w x} - Troca a janela atual de posição com seu vizinho mais próximo;
+    \item \vimcommand{CTRL w H} - Envia a janela atual para o canto esquerdo da tela;
+    \item \vimcommand{CTRL w L} - Envia a janela atual para o canto direito da tela;
+    \item \vimcommand{CTRL w J} - Envia a janela atual para o canto inferior da tela;
+    \item \vimcommand{CTRL w K} - Envia a janela atual para o canto superior da tela;
+    \item \vimcommand{CTRL w x} - Troca a janela atual de posição com seu vizinho mais próximo;
 \end{itemize}
 
 Podemos, por fim, redimensionar nossas janelas, seja com comandos, seja com atalhos.
 Com comandos temos:
 
 \begin{itemize}
-    \item \vimcommand{CTRL-w -} - Diminui verticalmente o tamanho da janela atual;
-    \item \vimcommand{CTRL-w +} - Aumenta verticalmente o tamanho da janela atual;
-    \item \vimcommand{CTRL-w $<$} - Diminui horizontalmente o tamanho da janela atual;
-    \item \vimcommand{CTRL-w $>$} - Aumenta horizontalmente o tamanho da janela atual;
-    \item \vimcommand{CTRL-w $|$ } - Aumenta verticalmente a janela atual ao máximo possível;
-    \item \vimcommand{CTRL-w \_ } - Aumenta horizontalmente a janela atual ao máximo possível (underscore);
+    \item \vimcommand{CTRL w -} - Diminui verticalmente o tamanho da janela atual;
+    \item \vimcommand{CTRL w +} - Aumenta verticalmente o tamanho da janela atual;
+    \item \vimcommand{CTRL w $<$} - Diminui horizontalmente o tamanho da janela atual;
+    \item \vimcommand{CTRL w $>$} - Aumenta horizontalmente o tamanho da janela atual;
+    \item \vimcommand{CTRL w $|$ } - Aumenta verticalmente a janela atual ao máximo possível;
+    \item \vimcommand{CTRL w \_ } - Aumenta horizontalmente a janela atual ao máximo possível (underscore);
 \end{itemize}
 
 No caso de redimensionar as janelas, é muito mais fácil editar algum atalho mais simples para a tarefa.
@@ -428,7 +428,9 @@ Resumindo os comandos temos:
     \item \vimcommand{:tabnext} - Move para a próxima aba;
     \item \vimcommand{:tabClose} - Fecha a aba atual. Não é o mesmo que deletar o buffer;
     \item \vimcommand{:tabmove +1} - Move a aba atual mais à direita na ordem das abas;
+    \item \vimcommand{gt} - Move a aba atual mais à direita na ordem das abas;
     \item \vimcommand{:tabmove -1} - Move a aba atual mais à esquerda na ordem das abas;
+    \item \vimcommand{gT} - Move a aba atual mais à esquerda na ordem das abas;
     \item \vimcommand{:tabfirst} - Move para primeira aba.
     \item \vimcommand{:tablast} - Move para a última aba.
 \end{itemize}
@@ -491,16 +493,16 @@ Ao invés disso, apenas invocamos um shell, somos jogados em tela cheia para ele
 e quando pressionamos \vimcommand{\$ exit} voltamos ao vim padrão.
 Para invocar o shell \vimcommand{:shell}.
 Ele não possui a facilidade que o terminal possui, e é possível mimetizar esse comportamento
-deixando o vim em background usando \vimkeys{$<$CTRL-Z$>$}, para depois reativá-lo com
+deixando o vim em background usando \vimkeys{$<$CTRL Z$>$}, para depois reativá-lo com
 \vimcommand{\$ fg}.
 
-\insertfigure{scale=0.80}{recursos_avancados/terminal.jpg}{Terminal aberto dentrl do vim.}
+\insertfigure{scale=0.80}{recursos_avancados/terminal.jpg}{Terminal aberto dentro do vim.}
 
 Quando estamos utilizando terminais reais (no linux usamos o CTRL ALT F\#)
 não temos a funcionalidade de histórico.
 Abrindo o terminal a partir do vim, podemos torná-lo uma janela de texto qualquer,
 nos permitindo navegar pelos comando já executados, e output's que ficaram para trás.
-Para obter esse efeito \vimcommand{CTRL-w N}, com N maiúsculo.
+Para obter esse efeito \vimcommand{CTRL w N}, com N maiúsculo.
 
 Página do manual: \vimcommand{:h terminal}.
 
