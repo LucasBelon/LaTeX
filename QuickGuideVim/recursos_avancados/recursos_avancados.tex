@@ -55,7 +55,7 @@ Você pode realizar a substituição de diversas formas diferentes.
 Como você já sabe realizar a busca, basta encontrar e substituir uma a uma.
 Mas, se você deseja fazer de uma forma automática, que abrange de uma ocorrência, a múltiplas delas, então esse comando é pra você.
 
-Para realizar a substituição de uma ocorrência, na linha atual, pode-se usar:
+Para realizar a substituição de uma ocorrência, na linha atual, pode-se usar:\\
 \vimcommand{:s/ocorr/subst}.
 
 \insertfigure{scale=1.20}{recursos_avancados/Substituicao_simples.jpg}{Quase todo editor de texto possui a função substituir.}
@@ -110,10 +110,10 @@ A lista de teclas de ação são:
 
 Se você fechou uma dobra de texto, então poderá abrir.
 Existem muitos métodos para identificar uma possível dobra que faça sentido.
-Existem os métodos: \textit{indent}, \textit{diff}, \textit{syntax}, \textit{expr}, \textit{manual} e \textit{marker}
+Existem os métodos: \textit{indent}, \textit{diff}, \textit{syntax}, \textit{expr}, \textit{manual} e \textit{marker}.
 
 Uma rápida explicação sobre o modo manual.
-Utiliza-se o \vimcommand{:set foldmethod=manual}, para ativar o método.
+Utiliza-se \vimcommand{:set foldmethod=manual}, para ativar o método.
 Seleciona-se uma quantidade de texto com o modo visual, e se usa o comando \vimcommand{:fold}.
 Então você habilitou o trecho do texto a ser dobrável.
 Eu considero uma forma trabalhosa, mas extremamente versátil.
@@ -492,14 +492,14 @@ A primeira opção é usar o que se chama de \emph{comando externo}.
 Para rodar um comando na shell que você está usando usa-se \vimcommand{:!
 [comando]}. Então se quisermos rodar o interpretador python para nosso
 arquivo podemos fazer \vimcommand{:!python3 script.py} e tcharam, comando
-executado.
+executado. Esta é uma funcionalidade que o vim.tiny também possui.
 
 Na outra opção, a lógica de nova janela segue sendo válida.
 Para abrir uma janela de terminal na horizontal \vimcommand{:terminal}.
 Para abrir na vertical \vimcommand{:vertical terminal}.
 
 No caso do vim.tiny não temos uma janela de terminal aberta dentro do vim.
-Ao invés disso, apenas invocamos um shell, somos jogados em tela cheia para ele,
+Ao invés disso, podemos apenas invocar um shell. Somos jogados em tela cheia para ele,
 e quando pressionamos \vimcommand{\$ exit} voltamos ao vim padrão.
 Para invocar o shell \vimcommand{:shell}.
 Ele não possui a facilidade que o terminal possui, e é possível mimetizar esse comportamento
@@ -553,9 +553,9 @@ um lsp, é possível que uma janela de quickfix seja acessível usando algo como
 Como essa funcionalidade nasceu a partir de obter os erros que compiladores apontam, o comando base é \vimcommand{:c\#}, ou seja,
 c alguma coisa.
 
-Para, por exemplo, pesquisar sobre a função \vimkeys{add} que pode estar em qualquer
-arquivo do código fonte escrito em C, fazemos o seguinte: \vimcommand{:vimgrep ''Hello'' **.\{sh py,c\}}.
-O que fizemos foi procurar o termo "add" em qualquer subdiretório (**), em arquivos com um nome qualquer (*)
+Para, por exemplo, pesquisar sobre o termo \vimkeys{Hello} que pode estar em qualquer
+arquivo do código fonte escrito em C, fazemos o seguinte: \vimcommand{:vimgrep ''Hello'' **.\{sh,py,c\}}.
+O que fizemos foi procurar o termo "Hello" em qualquer subdiretório (**), em arquivos com um nome qualquer (*)
 que terminem em ".c".
 É razoável evitar buscas em diretorios muito profundos, já que o vim não consegue interromper a busca.
 O padrão de busca por termo aceita REGEX, e a especificação por diretório aceita a sintaxe de comandos do shell.
@@ -586,7 +586,7 @@ Caso você se interesse apenas por escrever textos a lista quickfix pode não se
 Para quem programa, usando funções, repetindo termos em todos os lugares, em diversos arquivos,
 é uma funcionalidade muito interessante.
 
-A quickfix list é global para a seção do vim, o que significa que ele irá substituir a janela que estiver aberta.
+A quickfix list é global para a sessão do vim, o que significa que ele irá substituir a janela que estiver aberta.
 A location list é local à janela aberta, o que significa que você pode ter múltiplas location lists, mas apenas uma quickfix list.
 Os comandos são semelhantes aos vistos anteriormente: \vimcommand{:lopen} \vimcommand{:lclose} \vimcommand{:lnext} \vimcommand{:lprevious}.
 
