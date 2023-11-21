@@ -1,3 +1,4 @@
+% TODO: Adicionar imagens. Vai ser trabalhoso
 \chapter{Settings}
 Apesar de termos criado um arquivo de configuração mínimo,
 e termos a capacidade de nos manter com um único arquivo para tudo, não é a melhor das ideias.
@@ -9,48 +10,170 @@ com o momento de ser carregado, e podemos criar diversos arquivos para que cada
 um seja responsável por um aspecto das alterações que fizermos.
 
 Alguns plugins precisam definir como lidar com a alteração de cor baseada na sintaxe,
-para termos temas, palavras chave sempre com um certo padrão, e estruturas de texto
-concisas em sua apresentação.
-
-E certas configurações podem acabar por tornar nosso editor lento caso sejam implementadas
-de qualquer forma. Basicamente, não queremos que um conjunto de configurações que são otimizadas
-para escrever texto seja usada quando estamos editando código.
+para adequar um tema para este arquvo, destacar palavras chave sempre com um certo padrão,
+e estruturas de texto concisas em sua apresentação.
+E certas configurações podem acabar por tornar nosso editor lento caso sejam implementadas de qualquer forma.
+Basicamente, não queremos que um conjunto de configurações que são otimizadas para escrever texto seja usada 
+quando estamos editando código.
 Manter-se leve também significa manter o programa rodando com boa velocidade e tempo de resposta baixo.
 
+\section{Onde Estão Minhas Configurações}
+O vim percorre o computador atrás de arquivos de configuração.
+Ele o faz em uma determinada ordem, a variar também pelo tipo de arquivo.
+O vim que estou rodando se trata do vim 8.2, então alguns nomes podem ser diferentes,
+além de poder não existirem certos diretórios, apesar de aparecerem como incluídos como adiante.
+Podemos ver pela saída de \vimcommand{:echo \&runtimepath}, a partir de um vim com poucas configurações,
+quais os diretórios procurados por arquivos de configuração.
 \begin{itemize}
-	\item /home/lucas/.vim
-	\item /home/lucas/.vim/bundle/Vundle.vim
-	\item /home/lucas/.vim/bundle/vim-lsp-settings
-	\item /home/lucas/.vim/bundle/vim-lsp
-	\item /home/lucas/.vim/bundle/asyncomplete.vim
-	\item /home/lucas/.vim/bundle/asyncomplete-lsp.vim
-	\item /home/lucas/.vim/bundle/vim-vsnip
-	\item /home/lucas/.vim/bundle/vim-vsnip-integ
-	\item /home/lucas/.vim/bundle/friendly-snippets
-	\item /home/lucas/.vim/bundle/vimtex
-	\item /home/lucas/.vim/bundle/vim-spell-pt-br
+	\item /home/xubu/.vim
+	\item /var/lib/vim/addons
+	\item /etc/vim
 	\item /usr/share/vim/vimfiles
-	\item /usr/share/vim/vim90
+	\item /usr/share/vim/vim82
 	\item /usr/share/vim/vimfiles/after
-	\item /home/lucas/.vim/after
-	\item /home/lucas/.vim/bundle/Vundle.vim
-	\item /home/lucas/.vim/bundle/Vundle.vim/after
-	\item /home/lucas/.vim/bundle/vim-lsp-settings/after
-	\item /home/lucas/.vim/bundle/vim-lsp/after
-	\item /home/lucas/.vim/bundle/asyncomplete.vim/after
-	\item /home/lucas/.vim/bundle/asyncomplete-lsp.vim/after
-	\item /home/lucas/.vim/bundle/vim-vsnip/after
-	\item /home/lucas/.vim/bundle/vim-vsnip-integ/after
-	\item /home/lucas/.vim/bundle/friendly-snippets/after
-	\item /home/lucas/.vim/bundle/vimtex/after
-	\item /home/lucas/.vim/bundle/vim-spell-pt-br/after
+	\item /etc/vim/after
+	\item /var/lib/vim/addons/after
+	\item /home/xubu/.vim/after
 \end{itemize}
 
+Verificando o arquivo \vimkeys{/etc/vim/vimrc} encontramos um arquivo que possuem algumas
+recomendações de alterações a serem feitas.
+Podemos ver neste arquivo a possibiliade de reverter o modo de compatibilidade com \vimcommand{set nocompatible}.
+Ele nos mostra a possibilidade de ligar o \emph{syntax highlighting}, se este puder ser ativado.
+Algumas outras opções encontradas são, por exemplo, garantir que o background será sempre de tema escuro,
+a opção de abrir o arquivo na mesma posição que da última vez aberto.
+Logo abaixo destas, vemos as seguintes opções:
+\begin{itemize}
+	\item \vimcommand{set showcmd}
+	\item \vimcommand{set hidden}
+	\item \vimcommand{set autowrite}
+	\item \vimcommand{set showmatch}
+	\item \vimcommand{set ignorecase}
+	\item \vimcommand{set smartcase}
+	\item \vimcommand{set incsearch}
+	\item \vimcommand{set mouse=a}
+\end{itemize}
 
-\section{Onde Estão Minhas Configurações}
+As duas primeiras opções nós já vimos.
+A opção autowrite executa um salvamento automático quando muda-se de buffer,
+ou quando se executa um compilador.
+Showmatch grifa a busca.
+Ignorecase adiciona maiúsculas na busca caso apenas minúsculas forem buscadas,
+oferecendo uma busca mais abrangente.
+Smartcase desfaz ignorecase caso você utilize maiúsculas e minúsculas em sua busca.
+E incsearch realiza a busca a cada inserção de letra, incrementando os resultados à medida que se digita.
+
+Verificando o arquivo \vimkeys{/usr/share/vim/vim82} vemos uma quantidade grande de arquivos de configuração.
+Não é mandatório ler todos os arquivos, mas alguns podem chamar a atenção.
+Dois conjuntos de arquivos interessantes são, o conjunto dentro do diretório \vimkeys{doc}, que compreende
+alguns dos arquivos que são acessados quando pressionamos \vimcommand{:help}.
+O outro conjunto interessante reside em \vimkeys{ftplugin}.
+Trata-se dos arquivos que configuram o vim de acordo com determinados tipos de arquivos.
+
 \section{Abreviações}
-\section{Salvando Macros}
-\section{Olhando um arquivo vimrc pré-pronto}
-Adicionar aqui questões do omnicomplete.
-\newpage
+Abreviações funcionam da seguinte forma.
+Você digita uma sequência de texto, e se a sequência de texto bater com alguma abreviação definida, ocorre uma substituição.
+Podemos utilizar essa substituição para impedir que escrevamos palavras de forma incorreta, ou podemos definir uma sequência de texto
+para disparar outra sequência de texto.
+Pense nisso como a capacidade de criar um template.
 
+Essa funcionalidade existe em muitos editores de código, e são chamados snippets.
+Trechos de código que são úteis de se poder repetir de forma simplificada.
+Criar um arquivo de abreviações que de fato de atenda leva tempo, por isso esperei que conhecêssemos uma forma
+de salvar nossas configurações num arquivo.
+Agora faz sentido, sem trabalho sendo jogado fora.
+
+Em modo normal, \vimcommand{:abbreviate agua água} irá fazer com que, quando você digitar agua, sua palavra seja imediatamente substituida.
+Quando usamos essa funcionalidade no vimrc, geralmente prefere-se utilizar \vimcommand{iabbrev agua água}
+para que a abreviação se limite ao modo de inserção.
+Temos também o \vimcommand{cabbrev} para modo de comando (ou modo normal), e \vimcommand{!abbrev} para ambos.
+
+Sinceramente, existem formas infinitas de se brincar com essa funcionalidade.
+Por conta disso, vou apenas deixar recomandações:
+\begin{itemize}
+	\item Pesquisar por "abbreviate vim files github".
+	\item Procurar pelo plugin abolish, do desenvolvedor tpope.
+	\item Pesquisar por formas interessantes de se usar abreviações. Em certos sites existem tutoriais incríveis
+\end{itemize}
+
+\section{Salvando Macros}
+Falamos de macros, e dissemos que elas poderiam ser salvas em um arquivo de configuração.
+Pois falamos do arquivo, e agora basta aprender a sintaxe para inserir corretamente e salvar nossas complexas e poderosas macros.
+
+Abra seu arquivo vimrc, seja ele \vimkeys{~/.vim/vimrc} ou \vimkeys{~/.vimrc}, e insira o seguinte:
+\vimcommand{let @A=''}.
+Dentro das aspas cole através do registro o que sua macro tiver.
+Ou seja, utilize, nesse caso \vimcommand{$"$aP}.
+
+Caso você não tenha criatividade e queira ideias, vou compartilhar as minhas.
+Eu mantenho uma macro para abrir, à esquerda,
+o navegador de arquivos, e na parte inferior direita, uma instância do terminal.
+Para trocar o estilo do contador de linhas, eu mantenho uma macro que salva o comando
+\vimcommand{:set relativenumber!}, para que o comando seja executado com apenas duas teclas.
+No meio tempo que aprendi a programar em C, usava muito o template padrão do arquivo main.
+Por conta disso, gravei uma macro que escreve o template padrão.
+Hoje percebo que salvar como abreviação teria sido mais efetivo.
+
+\section{Olhando um arquivo vimrc pré-pronto}
+Um arquivo vimrc é um arquivo que precisa ser alimentado, e mantido.
+Isso significa reescrever do zero de vez em quando.
+Dicas importantes é deixar anotado o que cada comando faz.
+Fazendo dessa forma você evita de se esquecer o motivo de um comando estar onde está.
+
+Eu possuo dois tipos de vimrc.
+Um que irá funcionar mais ou menos bem com o vim.tiny, e outro que inclui plugins.
+Já deixei claro que nem sempre poderemos utilizar plugins.
+Mas no caso de estarmos em nosso computador pessoal, com liberdade para instalar qualquer arquivo,
+de qualquer fonte, então apoio completamente essas configurações.
+Vamos verificar o que existe no meu vimrc sem plugins.
+
+A primeira parte força o vim à procurar pelo próprio arquivo.
+Uma medida de segurança.
+Em seguida adiciono o processamento baseado em syntaxe.
+Faço com que o vim seja capaz de lidar com arquivos de configuração por tipo de arquivo.
+E adiciono a possibilidade de plugins sobrescreverem essas configurações.
+
+A depender da versão de vim podemos ativar o uso do mouse.
+Além disso, existem versões que permitem que um registro do vim interaja com o clipboard do sistema.
+
+Em sequência, ativo a barra inferior do vim como vimos no capítulo sobre qualidade de vida.
+Além de ativar, faço uma pequena estilização.
+
+Então adiciono uma configuração para garantir que a tecla backspace irá se comportar como o esperado.
+Adiciono a opção number, nocompatible, ignorecase, smarcase, showmatch, hlsearch e incsearch.
+
+Permito que linhas sejam dobradas, limitando o número de níveis que a dobra pode ter.
+Também mantenho alguns comandos inativos.
+Manter comandos inativos pode ser útil para caso você não seja bom de memória.
+É melhor o ter no arquivo, desativado, do que ficar pesquisando por aí.
+
+Altero a quantidade de comandos que são salvos na memória do vim, para que eu possa entrar no modo comando e pressionar cima até encontrar um comando interessante.
+Em seguida aciono o showcmd e o wildmenu para ter qualidade de vida.
+
+A opção lazyredraw faz com que o vim ganhe um pouco de performance caso exista algo tentando alterar o layout muitas vezes por segundo.
+A opção noerrorbells inibe o som que o vim faz quando avançamos ao fim da linha, entre outras ações.
+O sim é realmente muito chato.
+
+Na sequência temos as opções que alteram o caractere tab.
+Hoje prefiro que plugins, ou o próprio vim, cuide disso de acordo com cada arquivo.
+Portanto, mantenho apenas smartindent ativo.
+
+% TODO: VERIFICAR UMA CONFIGURAÇÃO COM BACKUPDIR E UNDODIR QUE SEJA VÁLIDA.
+Na sequência, desativo arquivos swap, que são criados, mas raramente apagados, gerando uma bagunça nos diretórios.
+Sleeciono uma pasta para serem armazenados arquivos de backup e arquivos que salvam as ações de desfazer do vim.
+
+Então adiciono todos os subdiretórios ao caminho de busca do vim.
+Essa opção faz com que eu tenha algumas sugestões mais interessantes quando teclo tab.
+Além disso, permito que o plugin built-in do vim se ative.
+Ele também funciona sugerindo palavras já utilizadas nos arquivos dos buffers ativos, e outros arquivos.
+
+Por fim, matenho algumas configurações desativadas.
+Perceba que todas as opções possuem uma breve explicação, mesmo as desativadas.
+A partir de então começo a modificar os atalhos do vim para o meu gosto.
+
+
+Adiciono à variável \vimkeys{path} todos os subdiretórios.
+Essa adição pode tornar o vim lento, mas traz uma melhoria no autocomplete.
+Ele irá também adicionar certos arquivos ao completamento por \vimkeys{$<$TAB$>$} no modo comando.
+
+\newpage
