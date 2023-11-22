@@ -616,8 +616,13 @@ Arquivos tag criam um índice do qual o vim pode fazer uso para se locomover.
 Existem plugins que gerenciam a criação e atualização das tags,
 mas para um primeiro momento é mais interessante fazer as coisas manualmente.
 
-Para utilizar esses saltos é necessária a criacão desse arquivo,
-especificando a estrutura de projeto,
-e a subsequente atualização desses arquivos.
+Muitas vezes o programa que cria tags é instalado juntamente ao vim pelo gerenciador de pacotes.
+Caso não esteha disponível, use seu gerenciador para instalar o ctags.
+Para utilizar esses saltos é necessária a criacão de um  arquivo índice,
+este terá como função especificar a estrutura de projeto,
+e onde as palavras chave se encontram.
+
+Para utilizar, vá até a raiz do seu projeto, e use o comando \vimcommand{\$ ctags -R *}.
+Esse comando buscou todos os arquivos recursivamente em todos os subdiretórios.
 
 \newpage
