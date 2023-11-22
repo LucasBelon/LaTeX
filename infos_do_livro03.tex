@@ -209,5 +209,47 @@ Deve ser aplicado no preambulo.
 
 \textbackslash fancyhdr limpa os estilos do cabecalho e rodapé.
 
+leftmark e rightmark trazem informações sobre o capítulo e seção atuais.
+LE se refere ao ladp esquerdo de páginas pares. Left Even.
+Por padrão são utilizadas letras maiúsculas, por isso
+é adicionado o nouppercase.
+s funcionalidades do fancyhdr são parte de um estilo de página chamafo fancy.
+Portanto, é preciso declarar o estilo de página vomo pagestyle fancy.
+
+O LaTeX padrão possui quatro estilos de página.
+\begin{itemize}
+    \item empty
+    \item plain
+    \item headings
+    \item myheadings
+\end{itemize}
+
+Para definir o estilo de uma página específica thispagestyle pode ser usado.
+
+O cabeçalho e rodapé podem ser divididos cada um em 3 partes.
+left, center, right (l, c, r).
+Os comandos para editar essas áreas são:
+\textbackslash lhead \textbackslash chead \textbackslash rhead 
+\textbackslash lfoot \textbackslash lfoot \textbackslash lfoot 
+
+Cada um desses comandos requer um argumento (um texto) que será adicionado
+na localização referida, como por exemplo thepage ou rightmark.
+
+Alternativamente podemos utilizar \textbackslash fancyhead[code]\{text\} e
+\textbackslash fancyfoot[code]\{text\}.
+Em code, podemos ter a combinação das lerras:
+L(eft) R(ight) C(enter) O(dd) E(ven) H(ead) F(oot)
+
+Podemos adicionar linhas decorativas tanto no cabeçalho como no rodapé com
+\textback renewcommand\{\\headrulewidth\}{width}
+\textback renewcommand\{\\footrulewidth\}{width}
+
+Com renewcommand estamos sobrescrevendo o valor que o objeto headrulewidth possui.
+É semelhante à newcommand.
+Aparentemente vamos utilizar bastante de agora em diante.
+
+Quando usamos chapter*, não é produzido cabeçalho.
+Por isso, vamos usar markright\{right head\} e markboth\{left head \}\{right head\}
+
 
 \end{document}
