@@ -58,9 +58,15 @@ Mas, se você deseja fazer de uma forma automática, que abrange de uma ocorrên
 Para realizar a substituição de uma ocorrência, na linha atual, pode-se usar:\\
 \vimcommand{:s/ocorr/subst}.
 
-\insertfigure{scale=1.20}{recursos_avancados/Substituicao_simples.jpg}{Quase todo editor de texto possui a função substituir.}
-
-\insertfigure{scale=1.20}{recursos_avancados/Substituicao_simples_realizada.jpg}{A substituição só ocorre na linha do cursor.}
+\begin{figure}
+\begin{center}
+	\fbox{
+	\includegraphics[scale=0.9]{recursos_avancados/Substituicao_simples.jpg}
+	\includegraphics[scale=0.9]{recursos_avancados/Substituicao_simples_realizada.jpg}
+	}
+\caption{A substituição só ocorre na linha do cursor.}
+\end{center}
+\end{figure}
 
 Perceba que você precisa estar com o cursor na linha alvo da substituição.
 Se sua substituição tem como alvo todas as ocorrências de \textit{ocorr}, então,
@@ -229,10 +235,15 @@ Ele pede que você salve as alterações.
 Por enquanto, para poder transitar sem necessidade de salvar, utilize o comando \vimcommand{:set hidden} para
 que seja ignorado o estado do arquivo.
 Futuramente iremos adicionar esse comando em nosso arquivo de configuração.
-
-\insertfigure{scale=0.80}{recursos_avancados/bn_setHidden.jpg}{Tentando pular para o próximo buffer com alterações não salvas.}
-
-\insertfigure{scale=0.80}{recursos_avancados/bn_error.jpg}{Erro por não haver habilitado o modo hidden.}
+\begin{figure}
+\begin{center}
+	\fbox{
+	\includegraphics[height=5.4cm]{recursos_avancados/bn_setHidden.jpg}
+	\includegraphics[height=5.4cm]{recursos_avancados/bn_error.jpg}
+	}
+\caption{Erro por não haver habilitado o modo hidden.}
+\end{center}
+\end{figure}
 
 Agora que podemos adicionar e remover, vamos transitar entre os buffers, afinal de contas, é isso que interessa.
 \vimcommand{:bnext} irá mudar para o próximo buffer da pilha.
@@ -242,16 +253,18 @@ Agora que podemos adicionar e remover, vamos transitar entre os buffers, afinal 
 E pra finalizar, para pular para um buffer de número qualquer \vimcommand{:buffer \#}.
 
 Todos esses comandos possuem formas simplificadas, exceto badd:
+\begin{multicols}{2}
 \begin{itemize}
-    \item \vimcommand{:e} - Para adicionar um buffer à pilha;
-    \item \vimcommand{:badd} - Para adicionar um buffer à pilha;
-    \item \vimcommand{:bd} - Para deletar um buffer da pilha;
-    \item \vimcommand{:bn} - Para ir ao próximo buffer;
-    \item \vimcommand{:bp} - Para ir ao buffer anterior;
-    \item \vimcommand{:bf} - Para ir ao primeiro buffer;
-    \item \vimcommand{:bl} - Para ir ao último buffer;
-    \item \vimcommand{:b \#} - Para ir aoo buffer número \#;
+    \item \vimcommand{:e} - Adicionar um buffer à pilha;
+    \item \vimcommand{:badd} - Adicionar um buffer à pilha;
+    \item \vimcommand{:bd} - Deletar um buffer da pilha;
+    \item \vimcommand{:bn} - Ir ao próximo buffer;
+    \item \vimcommand{:bp} - Ir ao buffer anterior;
+    \item \vimcommand{:bf} - Ir ao primeiro buffer;
+    \item \vimcommand{:bl} - Ir ao último buffer;
+    \item \vimcommand{:b \#} - Ir ao buffer número \#;
 \end{itemize}
+\end{multicols}
 
 Para abrir arquivos que estão inseridos dentro de pastas, ou que estão em pastas superiores,
 depende-se de sintaxe de shell para caminhos relativos e absolutos, que eu suponho que você saiba.
@@ -264,6 +277,7 @@ Para abrir todos os buffers na janela de uma só vez: \vimcommand{:ball}.
 
 \insertfigure{scale=0.80}{recursos_avancados/ball_ls.jpg}{Vários buffers carregados.}
 
+\vspace{1cm}
 Apenas para citação: Existe um comando chamado bufdo, que executará uma ação em todos os buffers.
 Com ele é possível rodar comandos, substituições e afins.
 No entanto, a sintaxe é complexa, então vou deixar a cargo do leitor ir atrás de descobrir
@@ -322,6 +336,7 @@ Perceba que, se usarmos o \vimcommand{split}, então ele irá mandar para baixo 
 Se usarmos o \vimcommand{vsplit}, irá abrir à direita, por conta do \vimcommand{right}.
 Temos também os comandos \vimcommand{aboveleft},\vimcommand{botright}, e \vimcommand{topleft};
 Com isso temos 8 combinações:
+\vspace{1cm}
 
 \begin{itemize}
     \item \vimcommand{:topleft split} - Abrir no topo da tela horizontalmente;

@@ -24,7 +24,8 @@ O vim que estou rodando se trata do vim 8.2, então alguns nomes podem ser difer
 além de poder não existirem certos diretórios, apesar de aparecerem como incluídos como adiante.
 Podemos ver pela saída de \vimcommand{:echo \&runtimepath}, a partir de um vim com poucas configurações,
 quais os diretórios procurados por arquivos de configuração.
-\begin{itemize}
+\begin{multicols}{2}
+\begin{enumerate}
 	\item /home/xubu/.vim
 	\item /var/lib/vim/addons
 	\item /etc/vim
@@ -34,7 +35,8 @@ quais os diretórios procurados por arquivos de configuração.
 	\item /etc/vim/after
 	\item /var/lib/vim/addons/after
 	\item /home/xubu/.vim/after
-\end{itemize}
+\end{enumerate}
+\end{multicols}
 
 Verificando o arquivo \vimkeys{/etc/vim/vimrc} encontramos um arquivo que possuem algumas
 recomendações de alterações a serem feitas.
@@ -43,6 +45,7 @@ Ele nos mostra a possibilidade de ligar o \emph{syntax highlighting}, se este pu
 Algumas outras opções encontradas são, por exemplo, garantir que o background será sempre de tema escuro,
 a opção de abrir o arquivo na mesma posição que da última vez aberto.
 Logo abaixo destas, vemos as seguintes opções:
+\begin{multicols}{3}
 \begin{itemize}
 	\item \vimcommand{set showcmd}
 	\item \vimcommand{set hidden}
@@ -53,6 +56,7 @@ Logo abaixo destas, vemos as seguintes opções:
 	\item \vimcommand{set incsearch}
 	\item \vimcommand{set mouse=a}
 \end{itemize}
+\end{multicols}
 
 As duas primeiras opções nós já vimos.
 A opção autowrite executa um salvamento automático quando muda-se de buffer,

@@ -72,14 +72,17 @@ Abra o vim com \vimcommand{\$ vi ~/.vimrc} e escreva cada um desses comandos.
 Usar o vim padrão sem eles é terrível.
 
 Os comandos são:
-\begin{itemize}
-    \item set nocompatible
-    \item set ruler
-    \item set number
-    \item set showcmd
-    \item set wildmenu
-    \item set laststatus=2
-\end{itemize}
+
+\begin{multicols}{2}
+\begin{enumerate}
+	\item set nocompatible
+	\item set ruler
+	\item set number
+	\item set showcmd
+	\item set wildmenu
+	\item set laststatus=2
+\end{enumerate}
+\end{multicols}
 
 \insertfigure{scale=1.5}{introducao/vimrc_minimo.jpg}{Crie este arquivo pelo seu próprio bem.}
 
@@ -91,12 +94,14 @@ Neste trecho do tutorial existe muito mais o que fazer do que mostrar,
 então abra o seu vim e comece a testar.
 
 Vamos ver o básico de movimentação:
+\begin{multicols}{2}
 \begin{itemize}
     \item \vimcommand{h} - Move para a esquerda.
     \item \vimcommand{j} - Move para baixo.
     \item \vimcommand{k} - Move para cima.
     \item \vimcommand{l} - Move para a direita.
 \end{itemize}
+\end{multicols}
 
 \insertfigure{scale=0.8}{introducao/movim_minimo.jpg}{Movimentação básica.}
 
@@ -180,10 +185,12 @@ Resumo:
 \begin{itemize}
     \item Movimentação por caracteres:
 
+	\begin{multicols}{2}
 	\subitem \vimcommand{h} - Esquerda.
 	\subitem \vimcommand{j} - Baixo.
 	\subitem \vimcommand{k} - Cima.
 	\subitem \vimcommand{l} - Direita.
+	\end{multicols}
 
     \item Movimentação por palavras:
 
@@ -195,11 +202,13 @@ Resumo:
 
     \item Movimentação na linha:
 
+	\begin{multicols}{2}
 	\subitem \vimcommand{0} - Começo absoluto da linha
 	\subitem \vimcommand{\$} - Fim absoluto da linha
 	\subitem \vimcommand{\^} - Começo não nulo da linha
 	\subitem \vimcommand{t} - Avanço até certo caractere
 	\subitem \vimcommand{f} - Retrocesso até certo caractere
+\end{multicols}
 
     \item Movimentação entre parênteses, colchetes e chaves:
 
