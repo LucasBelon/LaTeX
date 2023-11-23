@@ -611,18 +611,34 @@ Para o manual: \vimcommand{:h lvimgrep} \vimcommand{:h lgrep} e \vimcommand{:h l
 \section{Usando arquivos de tag para saltar pelos arquivos}
 O contexto da programação acaba gerando ferramentas interessantes para programadores.
 Digamos que existe uma função a qual você ddseja inspecionar.
-Certamente iria querer ver sua declaração, ou sua implementação.
+Certamente iria querer ver sua declaração, sua implementação, ou sua ordem de chamadas.
 Arquivos tag criam um índice do qual o vim pode fazer uso para se locomover.
 Existem plugins que gerenciam a criação e atualização das tags,
 mas para um primeiro momento é mais interessante fazer as coisas manualmente.
 
 Muitas vezes o programa que cria tags é instalado juntamente ao vim pelo gerenciador de pacotes.
-Caso não esteha disponível, use seu gerenciador para instalar o ctags.
+Caso não esteja disponível, use seu gerenciador para instalar o ctags.
 Para utilizar esses saltos é necessária a criacão de um  arquivo índice,
 este terá como função especificar a estrutura de projeto,
 e onde as palavras chave se encontram.
 
 Para utilizar, vá até a raiz do seu projeto, e use o comando \vimcommand{\$ ctags -R *}.
 Esse comando buscou todos os arquivos recursivamente em todos os subdiretórios.
+O tal índice será salvo num arquivo em texto plano. Se quiser, inspecione-o.
+Não se recomenda utilizar buscas recursivas em um diretório muito profundo.
+
+Abra seu vim normalmente, de preferência em um arquivo de programção.
+Em seguida, posicione o cursor em uma função que está sendo chamada,
+para finalmente pressionar \vimcommand{CTRL ]}.
+Supostamente você será jogado para a declaração da função.
+
+Digamos que você saiba o nome da função, mas não lembra em qual arquivo ela se encontra.
+Você pode usar o comando \vimcommand{:tag funcao_muito_louca}.
+
+Obviamente, o programa ctags criou uma lista de tags.
+Veja como elas são carregadas no vim com o comando \vimcommand{:tags}.
+
+Para fazer o caminho inverso, o comando \vimcommand{CTRL t}.
+
 
 \newpage

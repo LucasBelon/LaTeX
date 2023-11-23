@@ -25,6 +25,7 @@
 *.pdf
 *.jpg
 *.png
+*tags*
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
