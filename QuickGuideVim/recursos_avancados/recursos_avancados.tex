@@ -632,13 +632,24 @@ Em seguida, posicione o cursor em uma função que está sendo chamada,
 para finalmente pressionar \vimcommand{CTRL ]}.
 Supostamente você será jogado para a declaração da função.
 
-Digamos que você saiba o nome da função, mas não lembra em qual arquivo ela se encontra.
-Você pode usar o comando \vimcommand{:tag funcao_muito_louca}.
-
-Obviamente, o programa ctags criou uma lista de tags.
-Veja como elas são carregadas no vim com o comando \vimcommand{:tags}.
-
 Para fazer o caminho inverso, o comando \vimcommand{CTRL t}.
 
+Digamos que você saiba o nome da função, mas não lembra em qual arquivo ela se encontra.
+Você pode usar o comando \vimcommand{:tag funcao\_muito\_louca}.
+
+Caso ocorram problemas com o comando \vimcommand{CTRL ]},
+por ser o comando \vimkeys{Escape} do prompt de telnet,
+você pode alterar a tecla remapeando.
+Aprenderemos a remapear futuramente.
+
+O programa ctags criou uma lista de tags.
+Veja como elas são carregadas no vim com o comando \vimcommand{:tags}.
+O sinal \vimkeys{$>$} indica qual a tag ativa.
+Usar o comando \vimcommand{CTRL t} ou \vimcommand{:pop} irá usar essa posição.
+
+Arquivos tag são realmente muito interessantes para programadores.
+Existem alguns plugins que gerenciam os arquivos, sendo capazes de gerar e gerir,
+à medida que arquivos são alterados e salvos no projeto.
+Quando falarmos sobre plugins iremos procurar algum que faça essa função.
 
 \newpage

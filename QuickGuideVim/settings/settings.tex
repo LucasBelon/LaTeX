@@ -131,6 +131,8 @@ Mas no caso de estarmos em nosso computador pessoal, com liberdade para instalar
 de qualquer fonte, então apoio completamente essas configurações.
 Vamos verificar o que existe no meu vimrc sem plugins.
 
+\subsection{Configurações set}
+
 A primeira parte força o vim à procurar pelo próprio arquivo.
 Uma medida de segurança.
 Em seguida adiciono o processamento baseado em syntaxe.
@@ -171,13 +173,58 @@ Essa opção faz com que eu tenha algumas sugestões mais interessantes quando t
 Além disso, permito que o plugin built-in do vim se ative.
 Ele também funciona sugerindo palavras já utilizadas nos arquivos dos buffers ativos, e outros arquivos.
 
-Por fim, matenho algumas configurações desativadas.
+Matenho algumas configurações desativadas.
 Perceba que todas as opções possuem uma breve explicação, mesmo as desativadas.
 A partir de então começo a modificar os atalhos do vim para o meu gosto.
-
 
 Adiciono à variável \vimkeys{path} todos os subdiretórios.
 Essa adição pode tornar o vim lento, mas traz uma melhoria no autocomplete.
 Ele irá também adicionar certos arquivos ao completamento por \vimkeys{$<$TAB$>$} no modo comando.
+
+Por fim, altero o esquema de cores para um esquema que é comum em qualquer vim.
+Não é exatamente o tema mais bonito, mas dos que estão pré-instalados, é o que mais me agrada.
+Pesquise por aí sobre temas, existem muitos, e certamente um vai te agradar mais do que o default.
+
+
+\subsection{Criando e substituindo atalhos}
+Existem atalhos que funcionam no modo normal, no modo de inserção, e no modo normal, ou modo de \emph{comando}.
+Há como tentar mapear uma tecla, mas não o fazer se já houver algum mapeamento feito.
+E há como mapear combinações de teclas para praticamente qualquer coisa.
+
+Em meu vimrc eu apenas remapeio um básico de funções, para facilitar meus movimentos,
+para redimensionar as janelas, e para lidar com busca e as famosas folds.
+
+Meu primeiro mapeamento \vimcommand{nnoremap $<$space$>$ za} me permite
+abrir e fechar uma dobra qualquer.
+Basicamente é útil quando acontece uma dobra por acidente, para eu não precisar me preocupar com
+qual era o comando para fechar.
+Na sequência o comando para tirar o grifado que a busca deixa nas palavras.
+
+Quando eu abro múltiplas janelas e quero ser capaz de redimensioná-las, não fico usando comandos.
+Deixo quatro atalhos para alterar, em uma unidade por vez, cada uma das dimensões da janela.
+Diria que ter algum mapeamento para estas funções seja quase obrigatório.
+
+Ao final, mapeamentos para navegar por abas.
+Como existem muitos comandos úteis para mexer com tabs, eu deixo muitos
+atalhos configurados.
+
+\subsection{Macros Salvas}
+Macros são o tal assunto.
+Se elas são tão potentes, então eu quero ter essa potência disponível em arquivo.
+
+Minha primeira macro é para número relativo, que é útil para tomar ações com a lógica número-ação-movimento.
+Eu mantenho salvo em "R" por ser mais fácil de se lembrar.
+
+A próxima macro, eu crio um layout.
+Acho importante salvar esse layout por ele poder ser útil a qualquer momento, para qualquer tipo de arquivo e atividade.
+
+A próxima macro abre um terminal e substitui sua linha para um único caractere, para que o shell
+não mostre informações de caminho que podem ser inúteis.
+
+Minhas últimas macros são um resquício de quando estava aprendendo a programar.
+A primeira para criar um arquivo index.html, e outro para criar um template de C.
+
+Minhas macros não são nada emocionantes, mas são parte da minha memória muscular.
+Sou capaz de mexer tranquilamente sem elas, mas é um conforto que eu me permito na minha máquina.
 
 \newpage
