@@ -1,5 +1,43 @@
 \chapter{Escolhendo e gerenciando Plugins}
-\ldots
-\section{O Caso do desenvolvedor de software}
-\newpage
+Um gerenciador de plugins não é necessário, já que o vim possui uma forma de adicioná-los manualmente.
+No entanto, já estamos utilizando um vim completo, com modificações, com atualizações,
+além de que não faz sentido esforçar-se para fazer algo que um programa faz por você.
 
+Temos plugins que gerenciam plugins.
+É um meta-plugin, que irá tirar de você a responsabilidade por manter os plugins atualizados,
+as pastas organizadas, e eventualmente irá disponibilizar um arquivo para verificar quais foram
+as mudanças entre uma atualização ou outra.
+\section{O Caso do desenvolvedor de software}
+Hoje em dia, para desenvolvimento temos sugestões geradas por inteligência artificial,
+auxílio de compiladores mais inteligentes,
+e ecossistemas de desenvolvimento podendo ser criados e destruídos de forma automática.
+Deixar de utilizar ferramentas de auxílio para desenvolvimento é quase o equivalente a se tornar
+improdutivo e ineficiente.
+
+O mínimo que um programador moderno irá utilizar é uma IDE. Esta conta com sugestões para complementação
+de escrita e informações sobre o que funções fazem, o que objetos e estruturas de dados carregam, além
+de programas que sugerem estilística.
+A máxima é: você não escreve código para funcionar, você escreve código para que outros entendam,
+para que outros editem, melhorem, e não fiquem perdendo tempo decifrando o que foi feito.
+Ferramentas são adicionadas geralmente buscando esses princípios.
+
+Antes de haver o modelo de uma espécie de editor de código genérico, como é o vim e o vscode,
+em que você adiciona módulos para trabalhar com sua linguagem, todas as ferramentas eram
+inclusas no editor principal.
+Hoje sabemos que precisamos de um protocolo de servidor de linguagem para que nosso editor possa
+interagir com uma espécie de programa que sugere edições de forma inteligente.
+Esse servidor de linguagem pode te trazer informações sobre trechos obscuros, identificar erros grosseiros
+ou mesmo mostrar qual é o padrão adotado em determinado projeto.
+Não é um programa que está dentro do seu editor, mas que o complementa,
+e te ajuda a concluir sua tarefa mais rapidamente.
+
+Outro tipo de programa que é útil se especializa na estilística.
+Os chamados linters irão verificar inconsistências de uso de nomenclatura e
+estrutura geral de código. Podemos citar como exemplos a aplicação de quebras de linha, uso de parênteses,
+até mesmo a existência de comentários dentro das funções.
+De certa forma, é um programa que lê seu código, aponta onde podem ocorrer melhorias, e que segue apitando
+caso você não realize correções.
+Esta padronização pode acabar sendo uma dor de cabeça, mas é importante para que se tenha possa trabalhar em equipe,
+alcançando um padrão que facilite o entendimento rápido do código, que por sua vez acelera a implementação de melhorias
+contínuas, e evolução de projetos de software.
+\newpage
