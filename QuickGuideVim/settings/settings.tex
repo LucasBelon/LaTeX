@@ -1,4 +1,3 @@
-% TODO: Adicionar imagens. Vai ser trabalhoso
 \chapter{Settings}
 Apesar de termos criado um arquivo de configuração mínimo,
 e termos a capacidade de nos manter com um único arquivo para tudo, não é a melhor das ideias.
@@ -12,10 +11,15 @@ um seja responsável por um aspecto das alterações que fizermos.
 Alguns plugins precisam definir como lidar com a alteração de cor baseada na sintaxe,
 para adequar um tema para este arquvo, destacar palavras chave sempre com um certo padrão,
 e estruturas de texto concisas em sua apresentação.
-E certas configurações podem acabar por tornar nosso editor lento caso sejam implementadas de qualquer forma.
+Certas configurações podem acabar por tornar nosso editor lento caso sejam implementadas de qualquer forma.
 Basicamente, não queremos que um conjunto de configurações que são otimizadas para escrever texto seja usada 
 quando estamos editando código.
 Manter-se leve também significa manter o programa rodando com boa velocidade e tempo de resposta baixo.
+
+Apenas para recordarmos, estas eram as confiurações definidas até então, para termos o mínimo de ergonomia para o uso simples do vim.
+
+\insertfigure{scale=1.00}{settings/settings_basico.jpg}{Nossa conhecida configuração mínima.}
+
 
 \section{Onde Estão Minhas Configurações}
 O vim percorre o computador atrás de arquivos de configuração.
@@ -38,12 +42,17 @@ quais os diretórios procurados por arquivos de configuração.
 \end{enumerate}
 \end{multicols}
 
+\insertfigure{scale=1.30}{settings/etc_vim.jpg}{Os arquivos de configuração iniciais estão nesta pasta.}
+
 Verificando o arquivo \vimkeys{/etc/vim/vimrc} encontramos um arquivo que possuem algumas
 recomendações de alterações a serem feitas.
 Podemos ver neste arquivo a possibiliade de reverter o modo de compatibilidade com \vimcommand{set nocompatible}.
 Ele nos mostra a possibilidade de ligar o \emph{syntax highlighting}, se este puder ser ativado.
 Algumas outras opções encontradas são, por exemplo, garantir que o background será sempre de tema escuro,
 a opção de abrir o arquivo na mesma posição que da última vez aberto.
+
+\insertfigure{scale=0.90}{settings/explorando_arquivos.jpg}{Existem sugestões de configurações simples nos arquivos padrão de qualquer instalação.}
+
 Logo abaixo destas, vemos as seguintes opções:
 \begin{multicols}{3}
 \begin{itemize}
@@ -57,6 +66,8 @@ Logo abaixo destas, vemos as seguintes opções:
 	\item \vimcommand{set mouse=a}
 \end{itemize}
 \end{multicols}
+
+\insertfigure{scale=0.90}{settings/outras_configs.jpg}{Os comentários em vimscript são os sinais de $"$}
 
 As duas primeiras opções nós já vimos.
 A opção autowrite executa um salvamento automático quando muda-se de buffer,
@@ -73,6 +84,8 @@ Dois conjuntos de arquivos interessantes são, o conjunto dentro do diretório \
 alguns dos arquivos que são acessados quando pressionamos \vimcommand{:help}.
 O outro conjunto interessante reside em \vimkeys{ftplugin}.
 Trata-se dos arquivos que configuram o vim de acordo com determinados tipos de arquivos.
+
+\insertfigure{scale=0.90}{settings/runtimepathfiles.jpg}{Existem mais arquivos nos subdiretórios, muitos mais.}
 
 \section{Abreviações}
 Abreviações funcionam da seguinte forma.
@@ -118,6 +131,8 @@ No meio tempo que aprendi a programar em C, usava muito o template padrão do ar
 Por conta disso, gravei uma macro que escreve o template padrão.
 Hoje percebo que salvar como abreviação teria sido mais efetivo.
 
+\insertfigure{scale=0.85}{settings/minhas_macros.jpg}{Entender apenas lendo é realmente difícil.}
+
 \section{Olhando um arquivo vimrc pré-pronto}
 Um arquivo vimrc é um arquivo que precisa ser alimentado, e mantido.
 Isso significa reescrever do zero de vez em quando.
@@ -131,42 +146,55 @@ Mas no caso de estarmos em nosso computador pessoal, com liberdade para instalar
 de qualquer fonte, então apoio completamente essas configurações.
 Vamos verificar o que existe no meu vimrc sem plugins.
 
+\insertfigure{scale=0.85}{settings/vimrc.jpg}{Vamos começar a moldar nosso vim.}
+
 \subsection{Configurações set}
 
-A primeira parte força o vim à procurar pelo próprio arquivo.
-Uma medida de segurança.
+A primeira parte força o vim à procurar pelo próprio arquivo,
+uma medida de segurança.
 Em seguida adiciono o processamento baseado em syntaxe.
 Faço com que o vim seja capaz de lidar com arquivos de configuração por tipo de arquivo.
 E adiciono a possibilidade de plugins sobrescreverem essas configurações.
 
+\insertfigure{scale=0.85}{settings/set01.jpg}{Tomando contato com o arquivo de configuração.}
+
 A depender da versão de vim podemos ativar o uso do mouse.
 Além disso, existem versões que permitem que um registro do vim interaja com o clipboard do sistema.
+
+\insertfigure{scale=0.95}{settings/set02.jpg}{Existem condicionais no vimscript.}
 
 Em sequência, ativo a barra inferior do vim como vimos no capítulo sobre qualidade de vida.
 Além de ativar, faço uma pequena estilização.
 
+\insertfigure{scale=0.90}{settings/set03.jpg}{Essas opções possuem sintaxe própria.}
+
 Então adiciono uma configuração para garantir que a tecla backspace irá se comportar como o esperado.
 Adiciono a opção number, nocompatible, ignorecase, smarcase, showmatch, hlsearch e incsearch.
+
+\insertfigure{scale=0.85}{settings/set04.jpg}{Lembrando que configuramos e esquecemos. Por isso comentamos.}
 
 Permito que linhas sejam dobradas, limitando o número de níveis que a dobra pode ter.
 Também mantenho alguns comandos inativos.
 Manter comandos inativos pode ser útil para caso você não seja bom de memória.
 É melhor o ter no arquivo, desativado, do que ficar pesquisando por aí.
 
+\insertfigure{scale=0.83}{settings/set05.jpg}{Como esquecemos, é melhor ter a configuração desativada do que não a ter.}
+
 Altero a quantidade de comandos que são salvos na memória do vim, para que eu possa entrar no modo comando e pressionar cima até encontrar um comando interessante.
 Em seguida aciono o showcmd e o wildmenu para ter qualidade de vida.
 
 A opção lazyredraw faz com que o vim ganhe um pouco de performance caso exista algo tentando alterar o layout muitas vezes por segundo.
 A opção noerrorbells inibe o som que o vim faz quando avançamos ao fim da linha, entre outras ações.
-O sim é realmente muito chato.
+O som é realmente muito chato.
+
+\insertfigure{scale=0.80}{settings/set06.jpg}{Haja configuração.}
 
 Na sequência temos as opções que alteram o caractere tab.
 Hoje prefiro que plugins, ou o próprio vim, cuide disso de acordo com cada arquivo.
 Portanto, mantenho apenas smartindent ativo.
 
-% TODO: VERIFICAR UMA CONFIGURAÇÃO COM BACKUPDIR E UNDODIR QUE SEJA VÁLIDA.
 Na sequência, desativo arquivos swap, que são criados, mas raramente apagados, gerando uma bagunça nos diretórios.
-Sleeciono uma pasta para serem armazenados arquivos de backup e arquivos que salvam as ações de desfazer do vim.
+Seleciono uma pasta para serem armazenados arquivos de backup e arquivos que salvam as ações de desfazer do vim.
 
 Então adiciono todos os subdiretórios ao caminho de busca do vim.
 Essa opção faz com que eu tenha algumas sugestões mais interessantes quando teclo tab.
@@ -185,14 +213,17 @@ Por fim, altero o esquema de cores para um esquema que é comum em qualquer vim.
 Não é exatamente o tema mais bonito, mas dos que estão pré-instalados, é o que mais me agrada.
 Pesquise por aí sobre temas, existem muitos, e certamente um vai te agradar mais do que o default.
 
+\insertfigure{scale=0.98}{settings/set07.jpg}{Terminamos. Mas agora que está pronto teremos uma ótima experiência.}
 
 \subsection{Criando e substituindo atalhos}
-Existem atalhos que funcionam no modo normal, no modo de inserção, e no modo normal, ou modo de \emph{comando}.
-Há como tentar mapear uma tecla, mas não o fazer se já houver algum mapeamento feito.
-E há como mapear combinações de teclas para praticamente qualquer coisa.
+Existem atalhos que funcionam no modo normal, no modo de inserção, e no modo ex, ou modo de \emph{comando}.
+Há como tentar mapear uma tecla, mas não concluir a ação caso houver algum mapeamento pré-existente.
+E, por fim, há como mapear combinações de teclas para praticamente qualquer coisa.
 
 Em meu vimrc eu apenas remapeio um básico de funções, para facilitar meus movimentos,
 para redimensionar as janelas, e para lidar com busca e as famosas folds.
+
+\insertfigure{scale=0.80}{settings/key_binding01.jpg}{Criar atalhos é o que faz o vim ficar na ponta dos seus dedos.}
 
 Meu primeiro mapeamento \vimcommand{nnoremap $<$space$>$ za} me permite
 abrir e fechar uma dobra qualquer.
@@ -204,27 +235,10 @@ Quando eu abro múltiplas janelas e quero ser capaz de redimensioná-las, não f
 Deixo quatro atalhos para alterar, em uma unidade por vez, cada uma das dimensões da janela.
 Diria que ter algum mapeamento para estas funções seja quase obrigatório.
 
+\insertfigure{scale=0.80}{settings/key_binding02.jpg}{Atalhos úteis aumentam o amor pela ferramenta.}
+
 Ao final, mapeamentos para navegar por abas.
 Como existem muitos comandos úteis para mexer com tabs, eu deixo muitos
 atalhos configurados.
-
-\subsection{Macros Salvas}
-Macros são o tal assunto.
-Se elas são tão potentes, então eu quero ter essa potência disponível em arquivo.
-
-Minha primeira macro é para número relativo, que é útil para tomar ações com a lógica número-ação-movimento.
-Eu mantenho salvo em "R" por ser mais fácil de se lembrar.
-
-A próxima macro, eu crio um layout.
-Acho importante salvar esse layout por ele poder ser útil a qualquer momento, para qualquer tipo de arquivo e atividade.
-
-A próxima macro abre um terminal e substitui sua linha para um único caractere, para que o shell
-não mostre informações de caminho que podem ser inúteis.
-
-Minhas últimas macros são um resquício de quando estava aprendendo a programar.
-A primeira para criar um arquivo index.html, e outro para criar um template de C.
-
-Minhas macros não são nada emocionantes, mas são parte da minha memória muscular.
-Sou capaz de mexer tranquilamente sem elas, mas é um conforto que eu me permito na minha máquina.
 
 \newpage
