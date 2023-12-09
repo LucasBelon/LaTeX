@@ -4,14 +4,19 @@ Um gerenciador de plugins não é necessário, já que o vim possui uma forma de
 No entanto, já estamos utilizando um vim completo, com modificações, com atualizações,
 além de que não faz sentido esforçar-se para fazer algo que um programa faz por você.
 
-\begin{figure}
-\end{figure}
-
+\insertfigure{scale=1.20}{plugins/vundle_github.jpg}{A maior parte dos plugins estão alojados no github.}
 
 Temos plugins que gerenciam plugins.
 É um meta-plugin, que irá tirar de você a responsabilidade por manter os plugins atualizados,
 as pastas organizadas, e eventualmente irá disponibilizar um arquivo para verificar quais foram
 as mudanças entre uma atualização ou outra.
+
+\insertfigure{scale=1.20}{plugins/vundle_in_vimrc.jpg}{O Vundle atualiza e organiza os plugins.}
+
+Temos dentre nossas opções: \emph{vim-plug}, \emph{pathogen}, \emph{dein}, dentre outros.
+Neste tutorial vamos utilizar o \emph{vundle}.
+
+\insertfigure{scale=1.00}{plugins/vimfiles.jpg}{No diretório Bundle estão os plugins do autor.}
 
 \section{O Caso do desenvolvedor de software}
 Hoje em dia, para desenvolvimento temos sugestões geradas por inteligência artificial,
@@ -20,16 +25,27 @@ e ecossistemas de desenvolvimento podendo ser criados e destruídos de forma aut
 Deixar de utilizar ferramentas de auxílio para desenvolvimento é quase o equivalente a se tornar
 improdutivo e ineficiente.
 
-O mínimo que um programador moderno irá utilizar é uma IDE. Esta conta com sugestões para complementação
-de escrita e informações sobre o que funções fazem, o que objetos e estruturas de dados carregam, além
-de programas que sugerem estilística.
+O mínimo que um programador moderno irá utilizar é uma IDE.
+Esta conta com sugestões para complementação de escrita e informações sobre o
+que funções fazem, o que objetos e estruturas de dados carregam, além de
+programas que sugerem estilística.
 A máxima é: você não escreve código para funcionar, você escreve código para que outros entendam,
-para que outros editem, melhorem, e não fiquem perdendo tempo decifrando o que foi feito.
+editem, melhorem, e não fiquem perdendo tempo decifrando o que foi feito.
 Ferramentas são adicionadas geralmente buscando esses princípios.
 
-Antes de haver o modelo de uma espécie de editor de código genérico, como é o vim e o vscode,
-em que você adiciona módulos para trabalhar com sua linguagem, todas as ferramentas eram
-inclusas no editor principal.
+Para nosso exemplo, precisaremos de um plugin que simplifica as configurações dos tais servidores.
+Na página de cada plugin existem sugestões de configurações, e até mesmo
+algum manual ou tutorial. 
+
+\insertfigure{scale=0.75}{plugins/lsp_vimrc.jpg}{Adição de dois plugins e definição de uma função que remapeia atalhos.}
+
+Perceba que existem remapeamento de teclas para que o plugin tome conta de tarefas no lugar do próprio vim.
+Como dito anteriormente, é um programa separado, mas integrado ao nosso editor.
+
+Existe um contraste entre um editor genérico, como é o vim e o vscode,
+em que você adiciona módulos para trabalhar com sua linguagem, e IDE's,
+nas quais todas as ferramentas de auxílio são inclusas no editor principal.
+
 Hoje sabemos que precisamos de um protocolo de servidor de linguagem \vimkeys{(language server protocol - lsp)}
 para que nosso editor possa
 interagir com uma espécie de programa que sugere edições de forma inteligente.
@@ -37,6 +53,12 @@ Esse servidor de linguagem pode te trazer informações sobre trechos obscuros, 
 ou mesmo mostrar qual é o padrão adotado em determinado projeto.
 Não é um programa que está dentro do seu editor, mas que o complementa,
 e te ajuda a concluir sua tarefa mais rapidamente.
+
+Outros plugins auxiliam nosso lsp. Um plugin cria uma janela em pop-up para escolhermos dentre sugestões geradas pelo lsp,
+outro traz sugestões pré-definidas genéricas, e outro pode trazer sugestões de acordo com o tipo de arquivo.
+Modularidade é a palavra-chave.
+
+\insertfigure{scale=0.75}{plugins/modulos_lsp.jpg}{Podemos adicionar diversos componentes com diversas finalidades.}
 
 Outro tipo de programa que é útil se especializa na estilística.
 Os chamados linters irão verificar inconsistências de uso de nomenclatura e
@@ -49,10 +71,13 @@ alcançando um padrão que facilite o entendimento rápido do código, que por s
 contínuas, e evolução de projetos de software.
 
 \subsection{Utilizando um LSP para python}
-Por se tratar de uma linguagem muito simples, tanto para escrita como para leitura, vamos ter nossos exemplos em python.
+Por se tratar de uma linguagem muito simples do ponto de vista da escrita e leitura,
+vamos ter nossos exemplos simples em python.
 Python é principalmente composto por módulos e bibliotecas.
 Para quase tudo que se deseja realizar, há uma biblioteca que faça o serviço.
 Vamos explorar como um \vimkeys{lsp} pode nos ajudar a utilizar algum módulo simples.
+
+\insertfigure{scale=0.95}{plugins/python_popups.jpg}{O plugin nos traz um popup com a docstring da função chamada.}
 
 \subsection{Um exemplo de linter para python}
 Python também é um bom exemplo por haver uma espécie de etiqueta para a escrita.
@@ -60,6 +85,9 @@ Recomenda-se uma extensão máxima para itens, além de a linguagem se basear na
 para que sua sintaxe seja corretamente interpretada pelo interpretador.
 Portanto, um linter é mais que bem vindo.
 
-Explicando melhor, um linter é \ldots 
+\insertfigure{scale=1.25}{plugins/python_teste.jpg}{Temos nossos plugins funcionando já apontando erros de estilo.}
+
+Explicando melhor, um linter é um dedo-duro que analisa o código estático (de certa forma, o texto do código),
+à procura de bugs, construções suspeitas, entre outros erros.
 
 \newpage
