@@ -13,13 +13,25 @@ as mudanças entre uma atualização ou outra.
 
 \insertfigure{scale=1.20}{plugins/vundle_in_vimrc.jpg}{O Vundle atualiza e organiza os plugins.}
 
-Temos dentre nossas opções: \emph{vim-plug}, \emph{pathogen}, \emph{dein}, dentre outros.
+Temos dentre nossas opções:
+\begin{multicols}{2}
+\begin{itemize}
+	\item \emph{vim-plug};
+	\item \emph{pathogen};
+	\item \emph{dein};
+	\item outros.
+\end{itemize}
+\end{multicols}
 Neste tutorial vamos utilizar o \emph{vundle}.
 
 \insertfigure{scale=1.00}{plugins/vimfiles.jpg}{No diretório Bundle estão os plugins do autor.}
 
-\section{O Caso do desenvolvedor de software}
-Hoje em dia, para desenvolvimento temos sugestões geradas por inteligência artificial,
+Bastou adicionar os repositórios dos plugins no arquivo vimrc com a sintaxe certa que o próprio gerenciador
+realizou o download, a atualização, e organizou na pasta correta.
+Cada gerenciador possui uma sintaxe própria.
+
+\section{O Caso Do Desenvolvedor De Software}
+Hoje em dia, para desenvolvimento, temos sugestões geradas por inteligência artificial,
 auxílio de compiladores mais inteligentes,
 e ecossistemas de desenvolvimento podendo ser criados e destruídos de forma automática.
 Deixar de utilizar ferramentas de auxílio para desenvolvimento é quase o equivalente a se tornar
@@ -31,6 +43,9 @@ que funções fazem, o que objetos e estruturas de dados carregam, além de
 programas que sugerem estilística.
 A máxima é: você não escreve código para funcionar, você escreve código para que outros entendam,
 editem, melhorem, e não fiquem perdendo tempo decifrando o que foi feito.
+Se seu código não funciona você ainda pode deixar na mão de um colega que irá ajudar,
+mas um código mal formatado acaba tomando tempo, e ninguém quer ser responsável por tomar
+tempo de um colega.
 Ferramentas são adicionadas geralmente buscando esses princípios.
 
 Para nosso exemplo, precisaremos de um plugin que simplifica as configurações dos tais servidores.
@@ -70,16 +85,16 @@ Esta padronização pode acabar sendo uma dor de cabeça, mas é importante para
 alcançando um padrão que facilite o entendimento rápido do código, que por sua vez acelera a implementação de melhorias
 contínuas, e evolução de projetos de software.
 
-\subsection{Utilizando um LSP para python}
+\subsection{Utilizando Um LSP Para Python}
 Por se tratar de uma linguagem muito simples do ponto de vista da escrita e leitura,
 vamos ter nossos exemplos simples em python.
 Python é principalmente composto por módulos e bibliotecas.
 Para quase tudo que se deseja realizar, há uma biblioteca que faça o serviço.
 Vamos explorar como um \vimkeys{lsp} pode nos ajudar a utilizar algum módulo simples.
 
-\insertfigure{scale=0.95}{plugins/python_popups.jpg}{O plugin nos traz um popup com a docstring da função chamada.}
+\insertfigure{scale=0.85}{plugins/python_popups.jpg}{O plugin nos traz um popup com a docstring da função chamada.}
 
-\subsection{Um exemplo de linter para python}
+\subsection{Um Exemplo De Linter Para Python}
 Python também é um bom exemplo por haver uma espécie de etiqueta para a escrita.
 Recomenda-se uma extensão máxima para itens, além de a linguagem se basear na identação
 para que sua sintaxe seja corretamente interpretada pelo interpretador.

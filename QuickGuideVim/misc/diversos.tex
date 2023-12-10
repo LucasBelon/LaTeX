@@ -1,0 +1,60 @@
+\chapter{Usos Diversos}
+
+\section{Editando Arquivos Remotamente Com Meu Vim}
+Se você criou um arquivo de configuração rebuscado, cheio de estilizações de aparência, e deseja aproveitar essa aparência
+ao editar arquivos remotamente, saiba que pode utilizar o seu vim para navegar e editar código remotamente através de uma
+conexão ssh, usando o comando \vimkeys{\$ vim scp://192.168.0.55/home/user/file.txt}.
+Se você pretende navegar e abrir outros arquivos, é recomendável utilizar autenticação via chave ssh.
+Se esta não for configurada, a conexão irá pedir a senha a cada interação com os arquivos.
+Você não deixará de se autenticar nas vezes que o sistema ssh requisitar, mas ao menos será
+automático e praticamente invisível.
+
+Verifique no manual com \vimcommand{:help ssh}.
+Também é aconselhável verificar o manual para detalhes mais interessantes sobre o netrw. \vimcommand{:help netrw}.
+
+\section{PairProgramming Com Tmux}
+A prática de PairProgramming é o ato de dois desenvolvedores se revezarem na escrita do código.
+Teoricamente, haveria um entendimento maior do que está acontecendo, podendo um ajudar o outro,
+pesquisando, escrevendo, alternando entre duas ações de duas tarefas diferentes, ou qualquer coisa assim.
+
+Pensando de uma forma mais imediata, bastaria ambos estarem juntos para fazer acontecer.
+Mas estamos num mundo conectado.
+Se dois desenvolvedores souberem utilizar o vim, pode-se praticar o pair programming a partir de uma conexão ssh.
+Utilizando o tmux obtém-se o efeito de ambos controlarem o teclado ao mesmo tempo.
+
+A ferramenta que possibilita essa edição simultânea, dividindo o teclado, é o tmux.
+Há quem o utilize para dividir a tela, e até sobrescrevem os atalhos do tmux para que as ações de criar novas janelas
+seja semelhante ao do vim.
+E ainda há quem diga que o setup de terminal supremo seja o uso do vim com o tmux.
+
+Para nós que sabemos como utilizar o vim para invocar janelas ao nosso gosto e prazer, não precisamos
+das funcionalidades avançadas do tmux.
+Mas pense bem.
+Se alguém começar a usar essas funcionalidades,
+e você estiver no contexto do pair-programming, não vai querer ficar para trás.
+Aprender coisas novas nunca é um desperdício.
+
+Uma explicação rápida:
+O tmux é um multiplexador de terminais. O que significa que a partir de uma única sessão
+podemos invocar diversos terminais individuais.
+A partir de cada um destes terminais podemos executar diferentes tarefas.
+Fazendo desta forma acabamos por criar uma instância de terminal que é resistente à quedas de conexão,
+uma vez que estes terminais não são vinculados ao terminal.
+Esta característica é o que permite duas pessoas utilizarem, virtualmente, o mesmo terminal ou terminais.
+
+\section{Escrevendo Um Tutorial}
+Bom, não deve ser surpresa, mas eu usei o vim para escrever esse pequeno manuél (quem fala manual não é maneiro).
+Eu utilizei uma linguagem de marcação, o \LaTeX\ para poder formatar e gerar este pdf.
+Em suma, esse texto inteiro foi escrito dentro de um aplicativo de terminal, o vim, com o plugin vimtex.
+Se eu fosse experiente poderia ter escrito tudo sem precisar compilar, mas como estou aprendendo,
+utilizei um pseudo-terminal, numa interface gráfica, para poder gerar o pdf incrementalmente.
+Creio que posso dizer que foi um sucesso.
+
+Como estou chegando ao fim, vou deixar aqui minhas impressões.
+Das vantagens de ter utilizado um editor baseado em terminal, se destacou o controle de organização dos arquivos.
+Eu gosto de me manter leve, o que significa que eu gosto de guardar apenas os arquivos que são extritamente necessários.
+A organização de diretórios facilitou a navegação.
+A navegação acelerou as diversas correções que foram necessárias.
+E nem a navegação, nem as correções, seriam assim tão fáceis sem o vim.
+
+

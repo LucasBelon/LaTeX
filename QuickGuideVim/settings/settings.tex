@@ -133,7 +133,7 @@ Hoje percebo que salvar como abreviação teria sido mais efetivo.
 
 \insertfigure{scale=0.85}{settings/minhas_macros.jpg}{Entender apenas lendo é realmente difícil.}
 
-\section{Olhando um arquivo vimrc pré-pronto}
+\section{Olhando Um Arquivo Vimrc Pré-Pronto}
 Um arquivo vimrc é um arquivo que precisa ser alimentado, e mantido.
 Isso significa reescrever do zero de vez em quando.
 Dicas importantes é deixar anotado o que cada comando faz.
@@ -148,7 +148,7 @@ Vamos verificar o que existe no meu vimrc sem plugins.
 
 \insertfigure{scale=0.85}{settings/vimrc.jpg}{Vamos começar a moldar nosso vim.}
 
-\subsection{Configurações set}
+\subsection{Configurações Set}
 
 A primeira parte força o vim à procurar pelo próprio arquivo,
 uma medida de segurança.
@@ -215,7 +215,19 @@ Pesquise por aí sobre temas, existem muitos, e certamente um vai te agradar mai
 
 \insertfigure{scale=0.98}{settings/set07.jpg}{Terminamos. Mas agora que está pronto teremos uma ótima experiência.}
 
-\subsection{Criando e substituindo atalhos}
+Falamos no capítulo sobre sessions que, por não termos a capacidade de usar caminhos relativos,
+não tínhamos como aproveitar ao máximo as sessions.
+Agora isso muda, já que podemos escrever uma função e guardar em
+nosso arquivo de configuração de forma que todos os caminhos se tornem
+caminhos relativos.
+
+Em outras palavras, iremos usar um \emph{savesession} estilizado para que,
+quando o criarmos dentro de uma pasta, possamos mover a tal pasta entre
+computadores sem perder o trabalho salvo na session.
+
+\insertfigure{scale=0.98}{settings/savesession.jpg}{Criamos uma função e a atribuímos à um atalho.}
+
+\subsection{Criando E Substituindo Atalhos}
 Existem atalhos que funcionam no modo normal, no modo de inserção, e no modo ex, ou modo de \emph{comando}.
 Há como tentar mapear uma tecla, mas não concluir a ação caso houver algum mapeamento pré-existente.
 E, por fim, há como mapear combinações de teclas para praticamente qualquer coisa.
@@ -223,7 +235,7 @@ E, por fim, há como mapear combinações de teclas para praticamente qualquer c
 Em meu vimrc eu apenas remapeio um básico de funções, para facilitar meus movimentos,
 para redimensionar as janelas, e para lidar com busca e as famosas folds.
 
-\insertfigure{scale=0.80}{settings/key_binding01.jpg}{Criar atalhos é o que faz o vim ficar na ponta dos seus dedos.}
+\insertfigure{scale=1.00}{settings/key_binding01.jpg}{Criar atalhos é o que faz o vim ficar na ponta dos seus dedos.}
 
 Meu primeiro mapeamento \vimcommand{nnoremap $<$space$>$ za} me permite
 abrir e fechar uma dobra qualquer.
@@ -235,7 +247,7 @@ Quando eu abro múltiplas janelas e quero ser capaz de redimensioná-las, não f
 Deixo quatro atalhos para alterar, em uma unidade por vez, cada uma das dimensões da janela.
 Diria que ter algum mapeamento para estas funções seja quase obrigatório.
 
-\insertfigure{scale=0.80}{settings/key_binding02.jpg}{Atalhos úteis aumentam o amor pela ferramenta.}
+\insertfigure{scale=1.00}{settings/key_binding02.jpg}{Atalhos úteis aumentam o amor pela ferramenta.}
 
 Ao final, mapeamentos para navegar por abas.
 Como existem muitos comandos úteis para mexer com tabs, eu deixo muitos
