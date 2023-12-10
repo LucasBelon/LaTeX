@@ -9,14 +9,14 @@ com o momento de ser carregado, e podemos criar diversos arquivos para que cada
 um seja responsável por um aspecto das alterações que fizermos.
 
 Alguns plugins precisam definir como lidar com a alteração de cor baseada na sintaxe,
-para adequar um tema para este arquvo, destacar palavras chave sempre com um certo padrão,
+para adequar um tema para este arquivo, destacar palavras chave sempre com um certo padrão,
 e estruturas de texto concisas em sua apresentação.
 Certas configurações podem acabar por tornar nosso editor lento caso sejam implementadas de qualquer forma.
 Basicamente, não queremos que um conjunto de configurações que são otimizadas para escrever texto seja usada 
 quando estamos editando código.
 Manter-se leve também significa manter o programa rodando com boa velocidade e tempo de resposta baixo.
 
-Apenas para recordarmos, estas eram as confiurações definidas até então, para termos o mínimo de ergonomia para o uso simples do vim.
+Apenas para recordarmos, estas eram as configurações definidas até então, para termos o mínimo de ergonomia para o uso simples do vim.
 
 \insertfigure{scale=1.00}{settings/settings_basico.jpg}{Nossa conhecida configuração mínima.}
 
@@ -46,7 +46,7 @@ quais os diretórios procurados por arquivos de configuração.
 
 Verificando o arquivo \vimkeys{/etc/vim/vimrc} encontramos um arquivo que possuem algumas
 recomendações de alterações a serem feitas.
-Podemos ver neste arquivo a possibiliade de reverter o modo de compatibilidade com \vimcommand{set nocompatible}.
+Podemos ver neste arquivo a possibilidade de reverter o modo de compatibilidade com \vimcommand{set nocompatible}.
 Ele nos mostra a possibilidade de ligar o \emph{syntax highlighting}, se este puder ser ativado.
 Algumas outras opções encontradas são, por exemplo, garantir que o background será sempre de tema escuro,
 a opção de abrir o arquivo na mesma posição que da última vez aberto.
@@ -152,7 +152,7 @@ Vamos verificar o que existe no meu vimrc sem plugins.
 
 A primeira parte força o vim à procurar pelo próprio arquivo,
 uma medida de segurança.
-Em seguida adiciono o processamento baseado em syntaxe.
+Em seguida adiciono o processamento baseado em sintaxe.
 Faço com que o vim seja capaz de lidar com arquivos de configuração por tipo de arquivo.
 E adiciono a possibilidade de plugins sobrescreverem essas configurações.
 
@@ -201,7 +201,7 @@ Essa opção faz com que eu tenha algumas sugestões mais interessantes quando t
 Além disso, permito que o plugin built-in do vim se ative.
 Ele também funciona sugerindo palavras já utilizadas nos arquivos dos buffers ativos, e outros arquivos.
 
-Matenho algumas configurações desativadas.
+Mantenho algumas configurações desativadas.
 Perceba que todas as opções possuem uma breve explicação, mesmo as desativadas.
 A partir de então começo a modificar os atalhos do vim para o meu gosto.
 
@@ -229,7 +229,7 @@ computadores sem perder o trabalho salvo na session.
 
 \subsection{Criando E Substituindo Atalhos}
 Existem atalhos que funcionam no modo normal, no modo de inserção, e no modo ex, ou modo de \emph{comando}.
-Há como tentar mapear uma tecla, mas não concluir a ação caso houver algum mapeamento pré-existente.
+Há como tentar mapear uma tecla, mas não concluir a ação caso houver algum mapeamento preexistente.
 E, por fim, há como mapear combinações de teclas para praticamente qualquer coisa.
 
 Em meu vimrc eu apenas remapeio um básico de funções, para facilitar meus movimentos,
@@ -252,5 +252,9 @@ Diria que ter algum mapeamento para estas funções seja quase obrigatório.
 Ao final, mapeamentos para navegar por abas.
 Como existem muitos comandos úteis para mexer com tabs, eu deixo muitos
 atalhos configurados.
+
+Caso você deseje verificar todas as opções que podem ser aplicadas com "set" no vim, use o comando \vimcommand{:options}.
+Este comando irá mostrar um arquivo com mil linhas sobre as opções disponíveis e um breve descrição.
+Se a descrição não o satisfazer é aconselhável buscar mais informações no manual. 
 
 \newpage

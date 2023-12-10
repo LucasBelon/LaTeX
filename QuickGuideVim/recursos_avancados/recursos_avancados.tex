@@ -36,10 +36,10 @@ Caso você queira buscar um termo que esteja sob o cursor, pode-se utilizar \vim
 que o mesmo efeito de se utilizar a busca com \vimcommand{/} ocorrerá. 
 Para se buscar o termo sob o cursor, mas no sentido inverso, vale o comando \vimcommand{*}\ .
 
-Se você realizou uma busca e deseja repetí-la, \vimcommand{//}, e o mesmo vale para \vimcommand{??}.
+Se você realizou uma busca e deseja repeti-la, \vimcommand{//}, e o mesmo vale para \vimcommand{??}.
 
 O mecanismo de busca funciona normalmente no vim tiny, mas sem esse destaque.
-Isso pode tornar difícil realizar uma busca válida, já que você pode nãoperceber com antecedência
+Isso pode tornar difícil realizar uma busca válida, já que você pode não perceber com antecedência
 que está escrevendo errado no campo de busca.
 
 \insertfigure{scale=0.70}{recursos_avancados/Busca_No_Arquivo_vimtiny.jpg}{No vimtiny temos a mesma potência, mas não a mesma elegância.}
@@ -94,7 +94,7 @@ O termo \% simboliza o próprio arquivo no vim.
 
 \insertfigure{scale=1.20}{recursos_avancados/Substituicao_global_realizada.jpg}{Na barra inferior vemos quantas ocorrências foram afetadas.}
 
-Para terminarmos sobre substuições, para que sejamos perguntados se queremos ou não substituir o termo de ocorrência:
+Para terminarmos sobre substituições, para que sejamos perguntados se queremos ou não substituir o termo de ocorrência:
 \vimcommand{:\%s/ocorr/subst/gc}, o termo \vimcommand{c} adicionado é quem faz o serviço.
 
 \section{Folds}
@@ -208,7 +208,7 @@ E o mais importante, ninguém disse que não poderiam haver mais de um buffer.
 Ou seja, vamos começar a abrir e editar mais de um arquivo por vez!
 
 \section{Operando Com Múltiplos Arquivos}
-Quando iniciamos o vim, podemos abrí-lo com um arquivo, como em \vimcommand{\$vim arquivo01.txt}.
+Quando iniciamos o vim, podemos abri-lo com um arquivo, como em \vimcommand{\$vim arquivo01.txt}.
 Mas nada nos impede de abrir múltiplos, como em \vimcommand{\$vim arquivo01.txt arquivo02.txt}.
 Quando abrimos dessa forma, imediatamente nos deparamos com o arquivo01.txt, mostrado em tela cheia,
 sem indicações de que de fato abrimos o tal arquivo02.txt.
@@ -297,7 +297,7 @@ Existe uma diferença entre fechar com \vimcommand{:q} e deletar o buffer da pil
 A diferença é que, com o comando \vimcommand{:q}, estamos fechando a janela em que o buffer se encontra,
 mas se olharmos a lista de buffers com \vimcommand{:ls}, veremos que ele ainda está na pilha, e que,
 portanto, pode ser novamente acessado.
-Com \vimcommand{:bd} estamos descaregando da memória o arquivo, garantindo que as gravações foram ou feitas ou descartadas,
+Com \vimcommand{:bd} estamos descarregando da memória o arquivo, garantindo que as gravações foram ou feitas ou descartadas,
 e liberando memória do editor.
 
 \subsection{Invocando Janelas}
@@ -457,7 +457,7 @@ Resumindo os comandos temos:
 Para mais informações, leia o manual com \vimcommand{:h tabpage}.
 Usar abas é interessante para mover-se rapidamente entre arquivos que você sabe que utilizará.
 Utilizar atalhos com estes comandos é uma grande vantagem.
-Vreremos como configurar no vimrc.
+Veremos como configurar no vimrc.
 
 \section{Save View}
 Existem sessions e views como tentativas de salvar as configurações e layouts atuais.
@@ -499,7 +499,7 @@ que podem trazer um conforto sem igual à edição de textos por linha de comand
 seja código fonte para programadores, seja para a criação de manuais.
 
 \section{Terminal}
-Óbviamente, não poderia faltar.
+Obviamente, não poderia faltar.
 Quando estamos programando, certamente iremos querer mexer aqui e acolá no terminal.
 Vamos querer invocar o interpretador do código, compilar, ou mesmo rodar um comando simples.
 A primeira opção é usar o que se chama de \emph{comando externo}.
@@ -539,7 +539,7 @@ retrabalhos.
 O vim te permite salvar o layout geral da seção.
 No fundo, ele re-executa todos os comandos necessários para abrir as janelas,
 na ordem e disposição que estavam da última vez.
-Trata-se de um um arquivo em texto plano, ou seja, é possível abrí-lo com seu editor de textos favorito.
+Trata-se de um um arquivo em texto plano, ou seja, é possível abri-lo com seu editor de textos favorito.
 
 Acontece que, para conseguir esse armazenamento, acabamos com um arquivo relativamente grande,
 mesmo para o layout mais simples.
@@ -572,7 +572,7 @@ Para, por exemplo, pesquisar sobre o termo \vimkeys{Hello} que pode estar em qua
 arquivo do código fonte escrito em C, fazemos o seguinte: \vimcommand{:vimgrep ''Hello'' **.\{sh,py,c\}}.
 O que fizemos foi procurar o termo "Hello" em qualquer subdiretório (**), em arquivos com um nome qualquer (*)
 que terminem em ".c".
-É razoável evitar buscas em diretorios muito profundos, já que o vim não consegue interromper a busca.
+É razoável evitar buscas em diretórios muito profundos, já que o vim não consegue interromper a busca.
 O padrão de busca por termo aceita REGEX, e a especificação por diretório aceita a sintaxe de comandos do shell.
 A forma abreviada do comando \vimcommand{:vimgrep} é \vimcommand{:vim}.
 Caso o programa "grep" esteja disponível em seu ambiente, \vimcommand{:grep} pode fazer o serviço.
@@ -609,7 +609,7 @@ Para o manual: \vimcommand{:h lvimgrep} \vimcommand{:h lgrep} e \vimcommand{:h l
 
 \section{Usando Arquivos De Tag}
 O contexto da programação acaba gerando ferramentas interessantes para programadores.
-Digamos que existe uma função a qual você ddseja inspecionar.
+Digamos que existe uma função a qual você deseja inspecionar.
 Certamente iria querer ver sua declaração, sua implementação, ou sua ordem de chamadas.
 Arquivos tag criam um índice do qual o vim pode fazer uso para se locomover.
 Existem plugins que gerenciam a criação e atualização das tags,
@@ -617,7 +617,7 @@ mas para um primeiro momento é mais interessante fazer as coisas manualmente.
 
 Muitas vezes o programa que cria tags é instalado juntamente ao vim pelo gerenciador de pacotes.
 Caso não esteja disponível, use seu gerenciador para instalar o ctags.
-Para utilizar esses saltos é necessária a criacão de um  arquivo índice,
+Para utilizar esses saltos é necessária a criação de um  arquivo índice,
 este terá como função especificar a estrutura de projeto,
 e onde as palavras chave se encontram.
 
@@ -626,7 +626,7 @@ Esse comando buscou todos os arquivos recursivamente em todos os subdiretórios.
 O tal índice será salvo num arquivo em texto plano. Se quiser, inspecione-o.
 Não se recomenda utilizar buscas recursivas em um diretório muito profundo.
 
-Abra seu vim normalmente, de preferência em um arquivo de programção.
+Abra seu vim normalmente, de preferência em um arquivo de programação.
 Em seguida, posicione o cursor em uma função que está sendo chamada,
 para finalmente pressionar \vimcommand{CTRL ]}.
 Supostamente você será jogado para a declaração da função.
