@@ -26,6 +26,10 @@
 *.jpg
 *.png
 *tags*
+.vim
+*.Session
+*.session
+
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
