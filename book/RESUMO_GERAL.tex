@@ -5,6 +5,9 @@
 \input{./sumario.tex}
 % Escrita começa de fato aqui ------------------------
 \chapter{Início}
+Este texto se trata de um resumo e tradução do livro Latex begginer's guide de Stefan Kottwitz.
+
+\section{Caracteres Especiais}
 Existem muitos caracteres que são usados na sintaxe do \LaTeX.
 Por conta disso, existem formas específicas de escrevê-los:
 \begin{itemize}
@@ -15,20 +18,136 @@ Por conta disso, existem formas específicas de escrevê-los:
 	\item \textbackslash \& para obter \& ;
 	\item \textbackslash \{ para obter \{ ;
 	\item \textbackslash \} para obter \} ;
-	\item \textbackslash textbackslash para obter \textbackslash ;
+	\item \textbackslash textbackslash para obter \textbackslash\ ;
 \end{itemize}
 
+\section{Itálico, negrito e outros}
 Existem algumas formas de alterar o texto.
-É um pouco ruim escrever \textbackslash textit\{texto_italizado\},
+Escrever \textbackslash textit\{texto italizado\} é um tanto ruim,
 mas depois de feito, ao menos é mais fácil encontrar o texto enfatizado.
-\textit{Texto em itálico}.
 
-Inclusive, podemos enfatizar com \textbackslash emph\{texto_enfatizado\}.
+\textit{italizado: abcdefghijklmnopqrstuvwxyz}
+
+\textit{ITALIZADO: ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+Inclusive, podemos enfatizar com \textbackslash emph\{texto enfatizado\}.
 O efeito se parece com \emph{Texto enfatizado}.
+A depender de certas configurações, o texto enfatizado é idêntico ao italizado.
 
-Também temos com \textbackslash emph\{texto_enfatizado\} como deixar em negrito.
+\emph{enfatizado: abcdefghijklmnopqrstuvwxyz}
+
+\emph{ENFATIZADO: ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+Também temos com \textbackslash textbf\{texto em negrito\} como deixar em negrito.
+\textbf{Texto em negrito}.
+
+\textbf{negrito: abcdefghijklmnopqrstuvwxyz}
+
+\textbf{NEGRITO: ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+Temos por fim um efeito chamado slanted. \textbackslash textsl\{texto slanted\}.
+\textsl{Texto slanted}. É como um itálico, mas com outra fonte:
+
+\textsl{abcdefghijklmnopqrstuvwxyz}
+
+\textsl{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+
+\section{Ambientes, fontes e famílias}
+Dois conceitos importantes no \LaTeX\ são os environments,
+em que se aplicam efeitos, e a dupla, declarações e funções.
+Ambientes delimitam os efeitos de declarações.
+Quando escrevemos \{ \}, estamos criando um ambiente.
+Temos ambientes pré-definidos com \textbackslash begin\{efeito\} terminando com \textbackslash end.
+
+Declarações são efeitos que queremos aplicar no texto, podendo ter um início mas não obrigatoriamente tendo um fim.
+Funções geralmente definem um ambiente para seus efeitos, já ditando o fim na aplicação.
+
+Uma aplicabilidade desses conceitos é a mudança de fonte.
+Podemos mudar a fonte de um pequeno trecho de texto, assim como podemos alterá-la sem previsão de voltar à fonte padrão.
+
+Para usarmos uma família de fontes usando uma declaração num ambiente, utilizamos a seguinte sintaxe:
+\{ \textbackslash itshape \textbackslash bfseries Texto de exemplo\}.
+O efeito é de {\itshape \bfseries Texto de exemplo}.
+Este tipo de aplicação é útil quando desejamos utilizar uma declaração que não possui função associada,
+ou mesmo quando desejamos misturar e aninhar efeitos, ficando geralmente mais claro quais são os efeitos aplicados.
+Como o texto se mistura com pequenas palavras chave, como em código, é bom manter uma conduta de escrita que auxilie a legibilidade.
+
+Eu não sabia antes de procurar sobre tópicos de \LaTeX\, mas existem famílias de fontes.
+As mais comuns são a família roman, a família sans-serif, e tipewriter.
+
+Abaixo segue uma tabela de quais os comandos e declarações para diferentes fontes e famílias.
+
+\begin{center}
+\begin{tabular}{ c c c }
+Comando & Declaração & Significado \\
+\textbackslash textrm\{...\}&\textbackslash rmfamily&roman family\\
+\textbackslash textsf\{...\}&\textbackslash sffamily&sans-serif family\\
+\textbackslash texttt\{...\}&\textbackslash ttfamily&tipewriter family\\
+\textbackslash textbf\{...\}&\textbackslash bfseries&bold-face\\
+\textbackslash textmd\{...\}&\textbackslash mdseries&medium\\
+\textbackslash textit\{...\}&\textbackslash itshape&italic shape\\
+\textbackslash textsl\{...\}&\textbackslash slshape&slanted shape\\
+\textbackslash textsc\{...\}&\textbackslash scshape&Small Caps Shape\\
+\textbackslash textup\{...\}&\textbackslash upshape&Upright Shape\\
+\textbackslash textnormal\{...\} & \textbackslash normalfont & Default font\\
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+
+Agora, experimentando cada tipo de fonte:
+
+\subsection{Roman Family}
+\textrm{abcdefghijklmnopqrstuvwxyz}
+
+\textrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{Sans-serif Family}
+\textsf{abcdefghijklmnopqrstuvwxyz}
+
+\textsf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{Tipewriter Family}
+\textrm{abcdefghijklmnopqrstuvwxyz}
+
+\textrm{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{Bold-Face}
+\textbf{abcdefghijklmnopqrstuvwxyz}
+
+\textbf{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{Medium}
+\textmd{abcdefghijklmnopqrstuvwxyz}
+
+\textmd{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{Italic Shape}
+\textit{abcdefghijklmnopqrstuvwxyz}
+
+\textit{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{slanted shape}
+\textsl{abcdefghijklmnopqrstuvwxyz}
+
+\textsl{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{Small Caps Shape}
+\textsc{abcdefghijklmnopqrstuvwxyz}
+
+\textsc{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{Upright Shape}
+\textup{abcdefghijklmnopqrstuvwxyz}
+
+\textup{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
+\subsection{Default Font}
+\textnormal{abcdefghijklmnopqrstuvwxyz}
+
+\textnormal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+
 
 
 \end{document}
-
-
