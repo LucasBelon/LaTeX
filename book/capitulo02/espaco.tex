@@ -1,4 +1,5 @@
-\chapter{Manipulando mais o espaço}
+%TexFile
+\chapter{Manipulando o espaço}
 No capítulo anterior vimos como manipular o formato, tamanho, fonte e família do texto,
 além de vermos usabilidade e sintaxe da linguagem de marcação.
 Ao final, vimos manipulações de espaço em que o texto é confinado.
@@ -12,10 +13,92 @@ Com isso em mente, pense também no espaço entre as linhas,
 e como as palavras são quebradas ao fim das linhas, com hífens.
 Reflita sobre o espaçamento entre uma linha e outra.
 
+\section{Estilizando espaços}
+Vamos iniciar o assunto.
+Existe um comando chamado parbox.
+Este cria uma caixa que abriga um parágrafo.
+O uso é dado da seguinte forma:\\
+\textbackslash parbox [alinhamento]\{largura\}\{Texto.\}
+\\
+
+Temos aqui uma linha.
+\quad\parbox[b]{2.5cm}{Este parbox está alinhado à base}
+\quad\parbox{2.5cm}{Este está alinhado ao centro}
+\quad\parbox[t]{2.5cm}{Alinhado ao topo da linha}
+
+\fbox{\parbox[b]{6cm}{Parbox padrão, dentro de uma framebox} }
+
+O \textbackslash parbox delimita e altera o espaço que um parágrafo é confinado.
+Vimos nas linhas acima o uso de quatro \textbackslash parbox diferentes.
+Nos primeiros três foram exemplificados os diferentes alinhamentos que a uma \textbackslash parbox pode ter em relação à linha guia.
+
+No mais abaixo, foi adicionado o comando \textbackslash fbox\{\}
+para poder visualizar os limites que \textbackslash parbox\{\} cria.
+Não é exatamente um uso que se vê uma utilidade imediata,
+mas com certeza traz mais liberdade e possibilidade de expressão.
+
 \section{Terminando o assunto}
 Quando usamos o \textbackslash parbox\{\}, usamos algo que cria uma espécie de contêiner para um parágrafo.
 Vejamos um tipo de ambiente com declaração, um ambiente pré-definido interessante.
+Nosso exemplo, dentro do arquivo tex é:
 
 \textbackslash begin\{minipage\}\{3cm\}
+
+\textbackslash hyphenation\{Signi-fica\}
+
+TUG é um acrônimo. Significa \textbackslash TeX\textbackslash Users Grupo. Largura de 3cm.
+
+\textbackslash end\{minipage\}
+
+\vspace{0.3cm}
+Ilustrando o exemplo temos:
+\vspace{0.3cm}
+
+\begin{minipage}{3cm}
+\hyphenation{Signi-fica}
+TUG é um acrônimo. Significa \TeX\ Users Grupo. Largura de 3cm.
+\end{minipage}
+
+\vspace{0.3cm}
+
+O ambiente minipage causa um efeito semelhante ao parbox, no entanto, este possui sintaxe que é aplicável à páginas.
+Isso significa que esta poderia, em tese, possuir um cabeçalho, rodapé, e até mesmo algum tipo de título de capítulo.
+No entanto, não é exatamente muito útil querer desenhar em uma minipage tantas coisas.
+O mais eficiente é aprender a mexer em páginas normais e eventualmente se aprofundar em tópicos que interessem.
+
+\section{Unindo e fragmentando palavras}
+No exemplo anterior vimos o uso de uma função \textbackslash hyphenation\{\}.
+Em palavras simples, ela força que o hífen, separador quando uma palavra atinge o limite da página,
+apareça dividindo a palavra em um certo trecho.
+Normalmente damos preferência para separação silábica, mas não precisamos nos limitar a isso.
+
+Esta discussão sobre separação silábica nos dá uma reflexão importante.
+Só faz sentido falar sobre palavras hifenizadas quando estamos no formato justificado de texto.
+Esse formato nasceu da necessidade de se utilizar ao máximo o espaço escaço do papel.
+Mesmo papel sendo barato, uma gráfica de jornais não se pode dar ao luxo de gastar várias linhas de espaço,
+quando pode condensar mais o texto.
+
+Na visualização em internet, como não temos a limitação do papel, a palavra inteira pode ser jogada para a linha debaixo.
+Com isso temos o efeito de que cada linha possui um comprimento diferente, e em certos casos, a leitura fica mais fluida.
+
+Para inibirmos a hifenização de pequenos trechos podemos aplicar \textbackslash nohyphens\{\}.
+Enfim, para aumentarmos as possibilidades de customização, podemos importar e ler a documentação do pacote hyphenat.
+
+\section{Espaçando palavras}
+Deixando apenas como citação, para futura busca e pequisa.
+O pacote microtype trata dos espaçamentos entre letras.
+Por isso, também pode ser capaz de solucionar um problema envolvendo palavras quebrando ao chegar no fim do espaço da linha.
+
+\section{Quebras de linha}
+Quebras de linha são especialmente delicadas.
+Estão presentes quando uma frase continua para a linha debaixo,
+se apresentam quando estamos indo de um parágrafo a outro,
+e quando estamos declarando o título de um capítulo.
+O espaço vertical entre uma linha e outra pode nos trazer facilidade visual na leitura,
+como pode transformar esse exercício em tortura.
+
+Vejamos um espaçamento manual de um poema de Poe.
+
+CONTINUA NA LINHA 29 DO INFOS\_DO\_LIVRO02.
 
 \newpage
