@@ -7,18 +7,56 @@
 \chapter{Início}
 Este texto se trata de um resumo e tradução do livro Latex begginer's guide de Stefan Kottwitz.
 
+\section{Onde encontrar recursos}
+Um dos melhores lugares para encontrar conteúdo sobre \LaTeX\ é no site CTAN:\\
+\indent \url{https://www.ctan.org}
+
+É interessante buscar por templates em\\
+\indent \url{https://www.latextemplates.com}
+
+Também é interessante buscar no github em\\
+\indent \url{https://github.com/topics/latex-template}
+
+Além de o projeto overleaf possuir alguns templates\\
+\indent \url{https://www.overleaf.com/latex/templates}
+
+\section{Preâmbulo}
+No preambulo, trecho encontrado antes do \textbackslash begin\{document\},
+é onde declaramos qual o tipo de texto, o formato, e qual o tamanho da fonte.
+Utilizamos para isso a função \textbackslash documentclass.
+Além disso, é onde deixamos as declarações \textbackslash usepackage.
+
+Temos pacotes para adição de controle fino da geometria do documento,
+para adição de símbolos e funções matemáticas,
+para controle de cores, cabeçalhos e rodapés, entre outras funcionalidades.
+
+O formato mínimo para um texto \LaTeX\ é:
+\\
+\\
+\noindent \textbackslash documentclass[a4paper]\{article\}
+
+\noindent \textbackslash usepackage[utf8]\{inputenc\}
+
+\noindent \textbackslash begin\{document\}
+\\
+\\
+\noindent texto texto texto.
+\\
+
+\noindent \textbackslash end\{document\}
+
 \section{Caracteres Especiais}
 Existem muitos caracteres que são usados na sintaxe do \LaTeX.
 Por conta disso, existem formas específicas de escrevê-los:
 \begin{itemize}
-	\item \textbackslash \# para obter \# ;
-	\item \textbackslash \% para obter \% ;
-	\item \textbackslash \$ para obter \$ ;
-	\item \textbackslash \_ para obter \_ ;
-	\item \textbackslash \& para obter \& ;
-	\item \textbackslash \{ para obter \{ ;
-	\item \textbackslash \} para obter \} ;
-	\item \textbackslash textbackslash para obter \textbackslash\ ;
+\item \textbackslash \# para obter \# ;
+\item \textbackslash \% para obter \% ;
+\item \textbackslash \$ para obter \$ ;
+\item \textbackslash \_ para obter \_ ;
+\item \textbackslash \& para obter \& ;
+\item \textbackslash \{ para obter \{ ;
+\item \textbackslash \} para obter \} ;
+\item \textbackslash textbackslash para obter \textbackslash\ ;
 \end{itemize}
 
 \section{Itálico, negrito e outros}
@@ -67,7 +105,7 @@ Uma aplicabilidade desses conceitos é a mudança de fonte.
 Podemos mudar a fonte de um pequeno trecho de texto, assim como podemos alterá-la sem previsão de voltar à fonte padrão.
 
 Para usarmos uma família de fontes usando uma declaração num ambiente, utilizamos a seguinte sintaxe:
-\{ \textbackslash itshape \textbackslash bfseries Texto de exemplo\}.
+\{\textbackslash itshape \textbackslash bfseries Texto de exemplo\}.
 O efeito é de {\itshape \bfseries Texto de exemplo}.
 Este tipo de aplicação é útil quando desejamos utilizar uma declaração que não possui função associada,
 ou mesmo quando desejamos misturar e aninhar efeitos, ficando geralmente mais claro quais são os efeitos aplicados.
@@ -148,6 +186,56 @@ Agora, experimentando cada tipo de fonte:
 
 \textnormal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
 
+\section{Tamanho de fontes}
+O \LaTeX\ possui uma forma de trabalhar que praticamente te força a ignorar os detalhes menores da formatação.
+O tamanho da fonte é um desses.
+Você só precisa focar em decidir se a fonte é normal, grande, muito grande, e assim em diante.
+É possível controlar diretamente o tamanho usando a notação de 10 pontos, 12 pontos, mas não é o fluxo que o programa te oferece.
 
+Temos as seguintes declarações para alterar o tamanho da fonte:
+\begin{multicols}{5}
+\begin{itemize}
+\noindent
+\item \textbackslash tiny
+\item \textbackslash scriptsize
+\item \textbackslash footnotesize
+\item \textbackslash small
+\item \textbackslash normalsize
+\item \textbackslash large
+\item \textbackslash Large
+\item \textbackslash LARGE
+\item \textbackslash huge
+\item \textbackslash Huge
+\end{itemize}
+\end{multicols}
+
+Exemplificando:
+
+{\tiny Texto usando a declaração \textbackslash tiny}
+
+{\scriptsize Texto usando a declaração \textbackslash scriptsize}
+
+{\footnotesize Texto usando a declaração \textbackslash footnotesize}
+
+{\small Texto usando a declaração \textbackslash small}
+
+{\normalsize Texto usando a declaração \textbackslash normalsize}
+
+{\large Texto usando a declaração \textbackslash large}
+
+{\Large Texto usando a declaração \textbackslash Large}
+
+{\LARGE Texto usando a declaração \textbackslash LARGE}
+
+{\huge Texto usando a declaração \textbackslash huge}
+
+{\Huge Texto usando a declaração \textbackslash Huge}
+
+Algo que deve sempre ser levado em consideração é o tamanho de linhas vazias, saltos de linha, quebras de linha.
+Quando alteramos o tamanho da fonte, também alteramos o tamanho destes elementos, que podem acabar se tornando maiores do que o desejado por descuido.
+Não seja descuidado.
+
+\section{Condensando em comandos}
+CONTINUAR ESCREVENDO NA LINHA 174 DO INFOS LIVRO 01. VAMOS DAR UMA OLHADA EM NEW COMMAND.
 
 \end{document}
