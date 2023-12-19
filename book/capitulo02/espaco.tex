@@ -10,7 +10,7 @@ Imagine também uma revista com dupla coluna,
 ou um jornal que possui caixas de texto menores.
 
 Com isso em mente, pense também no espaço entre as linhas,
-e como as palavras são quebradas ao fim das linhas, com hífens.
+e como as palavras são quebradas ao fim das linhas, com hifens.
 Reflita sobre o espaçamento entre uma linha e outra.
 
 \section{Estilizando espaços}
@@ -98,7 +98,224 @@ O espaço vertical entre uma linha e outra pode nos trazer facilidade visual na 
 como pode transformar esse exercício em tortura.
 
 Vejamos um espaçamento manual de um poema de Poe.
+\newline
 
-CONTINUA NA LINHA 29 DO INFOS\_DO\_LIVRO02.
+\emph{Annabel Lee} \\[3mm]
+It was many and many years ago, \\
+In a kingdom by the sea. \\
+That a maiden there lived whom you may know \\
+By the name of Annabel Lee
+\newline
+\newline
+Foi utilizado um argumento após \textbackslash \textbackslash\ (para quebra de linha), da seguinte forma [3mm].
+Testando com outro espaçamento:\newline
+\newline
+\emph{Annabel Lee} \\[5mm]
+It was many and many years ago, \\[3mm]
+In a kingdom by the sea. \\[10mm]
+That a maiden there lived whom you may know \\[15mm]
+By the name of Annabel Lee
+\newline
+\newline
+\textbackslash \textbackslash\ Possui o mesmo efeito de \textbackslash newline.
+No entanto, apenas o primeiro aceita o argumento para personalização de comprimento vertical.
+
+O comando para nova linha, mantendo a justificação do texto é \textbackslash linebreak.
+Pode causar alongamento na distância entre palavras, por isso, raramente é usado.
+
+Utilizar \textbackslash\textbackslash*[5mm] por exemplo, impede a quebra de página antes da próxima linha.
+
+Em \textbackslash linebreak[number], o parâmetro number indica a prioridade quanto à intenção de quebra de linha.
+Quando o número é zero, a quebra de linha é permitida.
+Número 1 indica que a quebra é desejada.
+2 ou 3 indicam requisição de insistência, e 4 força a quebra de linha.
+Quando usado sem o parâmetro, o valor 4 é utilizado por padrão.
+
+Podemos prevenir quebras de linha com \textbackslash nolinebreak[number].
+A lógica do parâmetro number é idêntica ao \textbackslash linebreak, mas indicando o inverso.
+
+Caso seja nossa intenção manter o texto sem hifens e quebra de linha, podemos nos utilizar do comando \textbackslash mbox[texto].
+
+\section{Espaço entre letras e palavras}
+Em títulos pessoais, desejamos que estes sejam mantidos na mesma linha, em "Dr. Watson" vemos um exemplo claro.
+
+Em títulos pessoais, desejamos que estes sejam mantidos na mesma linha, em "Dr.~Watson" vemos um exemplo claro.
+
+Aplicamos no exemplo acima "Dr.\~\ Watson"
+\footnote{O til deve ficar imediatamente entre o . e o W para surtir efeito.}, desta forma, o começo do nome se vinculou ao caractere anterior.
+
+\subsection{Explorando Ligaduras}
+Ligaduras são um elemento da caligrafia, referentes à como duas letras se encontram.
+No exemplo abaixo percebemos as ligaduras entre as letras f, i e l.
+
+ff fi fl flffifl -- ---
+
+f\/f f\/i f\/l f\/l\/f\/f\/l\/f\/l -\/- -\/-\/-
+
+f\textbackslash/f f\textbackslash/i f\textbackslash/l
+f\textbackslash/l\textbackslash/f\textbackslash/f\textbackslash/l\textbackslash/f\textbackslash/l
+-\textbackslash/-
+-\textbackslash/-\textbackslash/-
+
+O comando \textbackslash/ está impedindo ligaduras de acontecerem.
+
+O mesmo efeito pode ser alcançado usando \{\},
+pois os espaços devem respeitar os limites do ambiente.
+
+Para desligar as ligaduras de letras, pode-se passar o argumento noligature para o pacote microtype.
+\textbackslash usepackage[noligatures]\{microtype\}
+
+\subsection{Expressando hifens}
+Cada quantidade de hifens utilizados servem a um propósito.
+
+Um único hífen serve para dividir palavras ou para palavras compostas.
+Vejamos o exemplo guarda-chuva, para-raios.
+
+Dois hifens seguidos servem como separador de intervalo, como
+"Das 9--10hrs da manhã".
+A largura deste hífen é equivalente a um dígito.
+
+
+Três hifens são convertidos para o travessão, usados principalmente no início de falas de personagens em livros.
+
+--- Vim aqui falar sobre minhas intenções.
+
+\subsection{Expressando pontos}
+Algo semelhante ocorre com pontos.
+Reticências são menos espaçadas entre si do que um ponto 
+e o caractere subsequente.
+
+Usar \textbackslash @. indica ao LaTeX que o ponto se situa no fim da frase.
+Vamos ilustrar com \@.
+
+Donald E. Knuth foi o criador do \TeX. Consegue perceber a diferença?
+
+Donald E. Knuth foi o criador do \TeX\@. Consegue perceber a diferença?
+
+Para inserir reticências, use \textbackslash ldots \ldots
+
+Veja a diferença entre três pontos seguidos: ...
+
+\subsection{Espaçamento por pacote}
+Outra forma de se alterar os espaçamentos é com a utilização de pacotes.
+Como já explicado, adiciona-se ao preâmbulo, e utiliza-se parâmetros para definição.
+
+Não é exatamente o assunto mais emocionante, e geralmente o espaçamento padrão é suficientemente bom para utilização em textos.
+Por conta disso, utilize as fontes citadas no começo para fazer uma pesquisa.
+
+
+\section{Alinhado à esquerda, direita, centro}
+Em textos de direito, citações ficam alinhadas à direita.
+Em sites de internet, o texto se alinha à esquerda, nunca quebrando palavras.
+Em trabalhos maiores como livros, publicações em revistas,
+jornais e afins, procura-se usar o espaço da maneira mais eficiente possível.
+
+Existem variações de sintaxe para justificação de texto.
+Geralmente adiciona-se esse detalhe de justificação no preâmbulo.
+Vejamos cada um deles.
+
+\fbox{\parbox{3cm}{\raggedright
+	TUG é um acrônimo. Significa \TeX\ user's group.
+}}
+\fbox{\parbox{3cm}{\raggedleft
+	TUG é um acrônimo. Significa \TeX\ user's group.
+}}
+\fbox{\parbox{3cm}{\centering
+	TUG é um acrônimo. Significa \TeX\ user's group.
+}}
+
+Criamos uma parbox, com um framebox para percebermos onde o texto se alinha.
+Outro exemplo pode ser entendido forçando um ambiente a ser centralizado com diferentes linhas.
+
+{\centering
+	texto \\
+	que eu mesmo\\
+	escrevi\\
+	e espero\\
+	que fique\\
+	centralizado\\
+}
+
+{\raggedright
+	texto \\
+	que eu mesmo\\
+	escrevi\\
+	e espero\\
+	que fique\\
+	Alinhado à esquerda\\
+}
+
+{\raggedleft
+	texto \\
+	que eu mesmo\\
+	escrevi\\
+	e espero\\
+	que fique\\
+	Alinhado à direita\\
+}
+
+Podemos também utilizar declarações de ambiente com \textbackslash begin e \textbackslash end.
+Testamos os seguintes ambientes: flushright, center, flushleft, respectivamente.
+
+\begin{flushright}
+\fbox{Mais textos experimentando com alinhamentos}
+\end{flushright}
+
+\begin{center}
+\fbox{Experimentando mais uma vez}
+\end{center}
+
+\begin{flushleft}
+\fbox{Última tentativa}
+\end{flushleft}
+
+A diferença entre usar os ragged/centering,
+e usar flush/center não está muito clara,
+mas ter opção é melhor do que não ter.
+
+\section{Citações}
+% AINDA PRECISO CORRIGIR ESTE TRECHO. NÃO ESTÁ COMPLETO, E ESTÁ FEIO.
+% TODO: Corrigir aqui
+Citações geralmente alteram fonte, tamanho, às vezes família, e disposição do texto.
+
+Exemplo de citação:
+
+Niels Bohr said: ``An expert is a person who has made
+all the mistakes that can be made in a very narrow field.''
+
+Albert Einstein said:
+
+\begin{quote}
+    Anyone who has never made a mistake has never tried anything new.
+\end{quote}
+Errors are inevitable. So, let's be brave trying something new.
+
+
+Exemplo de citação longa:
+
+The authors of the CTAN team listed ten good reasons
+for using \TeX. Among them are:
+\begin{quotation}
+ \TeX\ has the best output. What you end with,
+the symbols on the page, is as useable, and beautiful,
+as a non-professional can produce.
+ \TeX\ knows typesetting. As those plain text samples
+show, \TeX's has more sophisticated typographical algorithms
+such as those for making paragraphs and for hyphenating.
+ \TeX\ is fast. On today's machines \TeX\ is very fast.
+ It is easy on memory and disk space, too.
+ \TeX\ is stable. It is in wide use, with a long history.
+ It has been tested by millions of users, on demanding input.
+ It will never eat your document. Never.
+\end{quotation}
+The original text can be found on
+\textbackslash url\{http://www.ctan.org/what\_is\_tex.html\}.
+
+Adicionar o pacote parskip irá adicionar um espaço entre os parágrafos.
+Existem duas formas de se distinguir parágrafos.
+Uma, a padrão, é indentar o começo de cada parágrafo.
+A segunda é adicionando um espaço vertical entre parágrafos.
+pode ser útil no caso de colunas estreitas, em que a indentação seria custosa ou anti-estilística.
+
 
 \newpage
