@@ -5,7 +5,7 @@
 \input{./sumario.tex}
 % Escrita começa de fato aqui ------------------------
 \chapter{Início}
-Este texto se trata de um resumo e tradução do livro Latex begginer's guide de Stefan Kottwitz.
+Este texto se trata de um resumo e tradução de partes do livro Latex Begginer's Guide de Stefan Kottwitz.
 
 \section{Onde encontrar recursos}
 Um dos melhores lugares para encontrar conteúdo sobre \LaTeX\ é no site CTAN:\\
@@ -31,19 +31,19 @@ para adição de símbolos e funções matemáticas,
 para controle de cores, cabeçalhos e rodapés, entre outras funcionalidades.
 
 O formato mínimo para um texto \LaTeX\ é:
-\\
-\\
-\noindent \textbackslash documentclass[a4paper]\{article\}
 
-\noindent \textbackslash usepackage[utf8]\{inputenc\}
+\indent \textbackslash documentclass[a4paper]\{article\}
 
-\noindent \textbackslash begin\{document\}
-\\
-\\
-\noindent texto texto texto.
-\\
+\textbackslash usepackage[utf8]\{inputenc\}
 
-\noindent \textbackslash end\{document\}
+\textbackslash begin\{document\}
+
+texto texto texto.
+
+Outro parágrafo com texto.
+Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
+
+\textbackslash end\{document\}
 
 \section{Caracteres Especiais}
 Existem muitos caracteres que são usados na sintaxe do \LaTeX.
@@ -193,19 +193,18 @@ Você só precisa focar em decidir se a fonte é normal, grande, muito grande, e
 É possível controlar diretamente o tamanho usando a notação de 10 pontos, 12 pontos, mas não é o fluxo que o programa te oferece.
 
 Temos as seguintes declarações para alterar o tamanho da fonte:
-\begin{multicols}{5}
+\begin{multicols}{2}
 \begin{itemize}
-\noindent
-\item \textbackslash tiny
-\item \textbackslash scriptsize
-\item \textbackslash footnotesize
-\item \textbackslash small
-\item \textbackslash normalsize
-\item \textbackslash large
-\item \textbackslash Large
-\item \textbackslash LARGE
-\item \textbackslash huge
-\item \textbackslash Huge
+	\item \textbackslash tiny
+	\item \textbackslash scriptsize
+	\item \textbackslash footnotesize
+	\item \textbackslash small
+	\item \textbackslash normalsize
+	\item \textbackslash large
+	\item \textbackslash Large
+	\item \textbackslash LARGE
+	\item \textbackslash huge
+	\item \textbackslash Huge
 \end{itemize}
 \end{multicols}
 
@@ -236,6 +235,29 @@ Quando alteramos o tamanho da fonte, também alteramos o tamanho destes elemento
 Não seja descuidado.
 
 \section{Condensando em comandos}
-CONTINUAR ESCREVENDO NA LINHA 174 DO INFOS LIVRO 01. VAMOS DAR UMA OLHADA EM NEW COMMAND.
+Existem comandos que imprimem símbolos.
+Esse é o caso do comando \textbackslash LaTeX, que gera  \LaTeX, \textbackslash TeX, gerador de \TeX\ e \$\textbackslash pi\$, $\pi$.
+Ainda não foi discutido, mas uma das maiores potencialidades do tex é seu ambiente de fórmulas.
+O caso de \$\textbackslash pi\$ é um exemplo da aplicação do ambiente de fórmulas.
+Nesse ambiente, certos símbolos e comandos funcionam de forma diferente.
+
+Até mesmo a fonte das letras é diferentes.
+O uso do ambiente matemático será visto mais à frente, mas por enquanto, perceba o que \$\$ cos ; \textbackslash cos \$\$ gera:
+
+$$cos ; \cos$$
+
+Indo ao que interessa neste capítulo.
+É possível estilizar estes comandos.
+Utilizando \textbackslash newcommand\{\textbackslash keyword\}[1]\{\textbackslash textbf\{\#1\}\} acabamos por gerar um novo comando, chamado \textbackslash keyword.
+Em resumo, este comando cria um comando que irá mimetizar o comando \textbackslash textbf\{\}.
+
+Podemos assim, por exemplo, criar um comando que irá tornar itálico e negrito ao mesmo tempo.
+\textbackslash newcommand\{\textbackslash italicBold\}[1]\{\textbackslash textit \textbackslash textbf\{\#1\}\}.
+A sintaxe é ruim de entender, mas o número 1 se refere ao número de argumentos.
+Um comando com muitos argumentos seria usado da seguinte forma: \textbackslash keyword\{arg1\}\{arg2\}\{arg3\}\ldots
+
+
+
+
 
 \end{document}
