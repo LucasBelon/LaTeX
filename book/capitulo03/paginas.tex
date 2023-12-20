@@ -1,5 +1,4 @@
-\begin{landscape}
-\chapter{Design de página}
+\chapter[Design de página]{Design de página - Entendendo estruturas de texto}
 Já falamos sobre fontes das letras, já falamos sobre ligaduras entre palavras, e já discorremos sobre espaçamentos entre frases e parágrafos.
 Vamos agora subir na hierarquia da estrutura de um texto.
 Nos interessa de agora em diante qual o tipo de texto irá ser adotado, para que a devida estrutura seja adotada.
@@ -21,8 +20,8 @@ A margem direita é a margem externa, já que capítulos começam sempre na pág
 A margem esquerda é a margem interna, sempre maior por causa da colagem das folhas do livro impresso.
 A margem inferior comumente contém a numeração de páginas e a margem superior possui um espaçamento maior em páginas de início de capítulo.
 
-\end{landscape}
 
+\begin{landscape}
 \section{Pacote geometry}
 Para customizar páginas além do que o \LaTeX\ entrega por padrão, usamos o pacote \textbackslash geometry. 
 Exemplificamos com 
@@ -34,6 +33,7 @@ O pacote geometry resolve este problema, tornando automático o layout do texto.
 
 O pacote geometry nos oferece uma quantidade de opções para o tamanho do papel a ser utilizado.
 
+\begin{multicols}{2}
 \begin{itemize}
     \item \emph{paper=name} - letterpaper, executivepaper, legalpaper, a0paper, \ldots ,a6paper, b0paper, \ldots ,b6paper;
     \item \emph{paperwidth} - paperwidth=10in;
@@ -42,8 +42,10 @@ O pacote geometry nos oferece uma quantidade de opções para o tamanho do papel
     \item \emph{landscape} - ;
     \item \emph{portrait} - modo padrão;
 \end{itemize}
+\end{multicols}
 
 Outras opções como largura, altura, orientação da página, utilização de espaço para cabeçalho e rodapé, são exemplificadas a seguir:
+\begin{multicols}{2}
 \begin{itemize}
     \item \emph{textwidth} Delimita a largura que o texto ocupará na página, por exemplo \emph{textwidth=140mm};
     \item \emph{textheight} Delimita a altura que o texto ocupará na página, por exemplo \emph{textheight=180mm} ;
@@ -56,6 +58,9 @@ Outras opções como largura, altura, orientação da página, utilização de e
     \item \emph{twosides} Força o documento a adotar página esquerda e direita. Nas páginas verso os valores das margens esquerda e direita serão invertidos;
     \item \emph{bindingoffset} Separa um espaço para a união de folhas. Será aplicado à margem interna;
 \end{itemize}
+\end{multicols}
+
+\end{landscape}
 
 De vez em quando precisamos preparar um documento com uma página que contém uma imagem.
 Este tipo de página, geralmente, convém ser posicionada em paisagem.
@@ -69,10 +74,6 @@ Um exemplo é alterar a altura e largura do layout, e opções de offset.
 Também podem ser alteradas opções referentes ao cabeçalho e rodapé, assim como ao corpo do texto.
 Após realizada a alteração, pode-se retornar à geometria original com o comando \textbackslash restoregeometry.
 
-No livro, a esta altura, foram citadas algumas vezes o chamado KOMA-script.
-Supostamente, é uma espécie de pacote que permite alterações usando outra lógica.
-Vale pesquisar (provavelmente ao terminar este livro).
-
 \section{Pacote setspace}
 Este pacote se concentra no espaçamento das linhas.
 Suas opções de uso são:
@@ -82,8 +83,19 @@ Suas opções de uso são:
     \item \textbackslash usepackage[doublespacing]\{setspace\}
 \end{itemize}
 
-%TODO: Consertar aqui
-NÃO CONSIGO USAR SPACING AAAAAAA
+\begin{spacing}{2.4}
+    Este texto está esticado em uma razão de 2,4. Lorem ipsum dolor sit amet,
+    officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi
+    Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat
+    excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip
+    amet voluptate voluptate dolor minim nulla est proident. Nostrud officia
+    pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat
+    reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia
+    voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem
+    sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur
+    duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea
+    consectetur et est culpa et culpa duis.
+\end{spacing}
 
 \section{Especificações do DocumentClass}
 As classes base do LaTeX são book, article, report, slides, e letter.
@@ -101,18 +113,132 @@ Vamos verificar as opções de documentclass:
     \item openright ou openany. Permite capitulos comecarem na direita ou em qualquer página.
     \item titlepage ou notitlepage. Cria uma página de título separada.
     \item final ou draft. Quando draft é selecionado o documento fica com uma caixa preta não sei onde, pra ajudar a revisão
-    \item openbib. Faz os arquivos bib serem salvos em formato aberto ao invés de compriimido.
+    \item openbib. Faz os arquivos bib serem salvos em formato aberto ao invés de comprimido.
     \item fleqn. Faz fórmulas serem alinhadas à esquerda.
     \item leqno. Para fórmulas numeradas, coloca o número à esquerda.
 \end{itemize}
 \end{multicols}
 
-Existe um negócio que eu realmente não tenho certeza do que é, mas chama KOMA-Script.
+Existe uma família de pacotes que chama KOMA-Script.
 Ele permite usar classes com maior flexibilidade, com mais opções e recursos.
 No entanto, também parece que é uma outra coleção de coisas para aprender.
 
 Pacotes que permitem uso de fontes arbitrárias:
 extarticle, extbook, extreport, extletter.
 
+\section{TOC - Table of Contents}
+O sumário, ou tabela de conteúdos (traduzindo diretamente), é definida no início do documento.
+
+\noindent \textbackslash begin\{document\}
+
+\noindent \textbackslash tableofcontents
+
+O sumário é gerado a partir do arquivo auxiliar.
+Ao utilizar uma ferramenta em que a compilação não é automática é possível que seja necessária a repetição da compilação.
+Nestes casos, a primeira compilação irá criar os arquivos auxiliares, e a segunda irá criar corretamente o sumário.
+
+No sumário podemos colocar um nome diferente do colocado no capítulo com \\
+\textbackslash chapter[nome sumario]\{Nome capitulo\} \\
+A utilidade é adicionar um nome menor no sumário.
+O nome deste capítulo é um exemplo.
+No sumário aparece apenas uma parte do nome completo.
+
+O comando \textbackslash tableofcontents está vinculado aos comandos que definem camadas de texto.
+As "camadas" de níveis que as bases geralmente aceitam são:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item part
+    \item chapter
+    \item section
+    \item subsection
+    \item subsubsection
+    \item paragraph
+    \item subparagraph
+\end{enumerate}
+\end{multicols}
+
+Todos os comandos que seccionam o texto possuem a forma
+com asterisco, como \textbackslash section*, que afeta a exibição
+da numeração no corpo, mas não no sumário.
+
+\section{Cabeçalho}
+Customizando cabeçalho com pacote fancyhdr (fancy header)
+
+\noindent \textbackslash usepackage\{fancyhdr\}\\
+\textbackslash fancyhdr\{\} \\
+\textbackslash fancyhead[LE]\{\textbackslash leftmark\} \\
+\textbackslash fancyhead[RO]\{\textbackslash nouppercase\{\textbackslash rightmark\}\} \\
+\textbackslash fancyfoot[LE,RO]\{\textbackslash thepage\} \\
+\textbackslash pagestyle\{fancy\} 
+
+Deve ser aplicado no preambulo.
+
+Fancyhdr limpa os estilos do cabecalho e rodapé.
+
+Leftmark e Rightmark trazem informações sobre o capítulo e seção atuais.
+
+LE se refere ao lado esquerdo de páginas pares. Ou seja, Left Even.
+Por padrão são utilizadas letras maiúsculas, por isso
+é adicionado o nouppercase.
+
+As funcionalidades do fancyhdr são parte de um estilo de página chamafo fancy.
+Portanto, é preciso declarar o estilo de página como pagestyle fancy.
+
+O LaTeX padrão possui quatro estilos de página.
+\begin{itemize}
+    \item empty
+    \item plain
+    \item headings
+    \item myheadings
+\end{itemize}
+
+Para definir o estilo de uma página específica thispagestyle pode ser usado.
+
+O cabeçalho e rodapé podem ser divididos cada um em 3 partes.
+left, center, right (l, c, r).
+Os comandos para editar essas áreas são:
+\textbackslash lhead \textbackslash chead \textbackslash rhead 
+\textbackslash lfoot \textbackslash lfoot \textbackslash lfoot 
+
+Cada um desses comandos requer um argumento (um texto) que será adicionado
+na localização referida, como por exemplo thepage ou rightmark.
+
+Alternativamente podemos utilizar \textbackslash fancyhead[code]\{text\} e
+\textbackslash fancyfoot[code]\{text\}.
+Em code, podemos ter a combinação das lerras:
+L(eft) R(ight) C(enter) O(dd) E(ven) H(ead) F(oot)
+
+Podemos adicionar linhas decorativas tanto no cabeçalho como no rodapé com\\
+\textbackslash renewcommand\{\\headrulewidth\}{width}\\
+\textbackslash renewcommand\{\\footrulewidth\}{width}
+
+Com renewcommand estamos sobrescrevendo o valor que o objeto headrulewidth possui.
+É semelhante à newcommand.
+Aparentemente vamos utilizar bastante de agora em diante.
+
+Quando usamos chapter*, não é produzido cabeçalho.
+Por isso, vamos usar \\
+markright\{right head\} e markboth\{left head \}\{right head\}
+
+Uma alternativa para o pacote fanyhdr é o scrpage2.
+Pertence ao Koma-script.
+
+AQUI TEM ASSUNTOS QUE FAZEM PARTE DE OUTRO CAPÍTULO.
+NÃO SEI EXATAMENTE O QUE FAZER, MAS VOU DAR UM JEITO.
+
+\textbackslash pagebreak é diferente de newpage. Ele altera os espacos entre parágrafos.
+Existem mais duas variantes: clearpage e cleardoublepage iniciarão
+em uma página em branco, mesmo que no modo twosides.
+
+Caso você perceba um espaçamento entre título e parágrafo,
+atenção, pode ter sido causado por uma quebra de página ruim.
+Para consertar, desligue a justificação com raggedbottom.
+Para religar flushbottom.
+
+Podemos aumentar o tamanho de nossa página com 
+
+DESCOBRIR EM QUAL PÁGINA CONTINUAR
+% TODO: Adicionar um fbox nos trechos que me refiro ao latex em código.
+% Centralizar é uma boa ideia
 
 \newpage

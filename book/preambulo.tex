@@ -1,58 +1,100 @@
-%---------Pacotes Usados-----------------+
-\usepackage{amsmath,                    %|
-            amssymb,                    %|
-            amsfonts,                   %|
-            latexsym,                   %|
-            mathrsfs,                   %|
-            amsthm,                     %|
-            amstext,                    %|
-            bezier,                     %|
-            amscd}                      %|
-                                        %|
-\usepackage[top=2cm,                    %|
-            bottom=2cm,                 %|
-            left=2.5cm,                 %|
-            right=2.5cm]                %|
-            {geometry}                  %|
-                                        %|
-\usepackage{lscape}
-\usepackage{xcolor}                     %|
-                                        %|
-\usepackage{color}                      %|
-\usepackage{hyperref}                   %|
-\hypersetup{                            %|
-    colorlinks=true,                    %|
-    linktoc=all,                        %|
-    linkcolor=black,                    %|
-}                                       %|
-                                        %|
-                                        %|
-\usepackage{soul}                       %|
-                                        %|
-\usepackage[utf8]{inputenc}             %|
-                                        %|
-\usepackage{indentfirst}                %|
-                                        %|
-\usepackage{graphicx}                   %|
-                                        %|
-\usepackage[portuguese]{babel}          %|
-                                        %|
-% Embelezando o cabeçalho e o rodapé    %|
-\usepackage{fancyhdr}                   %|
-\pagestyle{fancy}                       %|
-\setlength{\headheight}{16pt}           %|
-\addtolength{\topmargin}{-4pt}          %|
-\fancyhf{}                              %|
-\fancyhead[L]{\nouppercase{\leftmark}}  %|
-\fancyhead[R]{\nouppercase{\rightmark}} %|
-\fancyfoot[C]{\thepage}                 %|
-\pagestyle{fancy}                       %|
+%---------Preâmbulo-----------------+
+% Define as características gerais do documento
+% e adiciona pacotes para nos dar mais funcionalidades
+% para escrita e expressão.
 
-% Configurando fbox para usar de moldura%|
+% DocumentClass, define o tipo de papel, e tipo
+% de texto que será elaborado.
+\documentclass[a4paper, 12pt, oneside, final]{book}
+
+% Pacotes de matemática, pacotes matemáticos,
+% ambientes, funções e declarações, símbolos,
+% e fontes.
+\usepackage{
+	amsmath,
+	amssymb,
+	amsfonts,
+	latexsym,
+	mathrsfs,
+	amsthm,
+	amstext,
+	bezier,
+	amscd
+    }
+
+% Pacote Geometry, definindo espaçamento
+% do corpo do texto. Deixar depois um
+% uso genérico, com as opções.
+\usepackage[top=2cm,
+            bottom=2cm,
+            left=2.5cm,
+            right=2.5cm]
+            {geometry}
+
+% Pacote Landscape, responsável pela
+% vista em paisagem.
+\usepackage{lscape}
+
+% Pacote Setspace lida com o espaçamento
+% entre as linhas do texto. Dá um efeito
+% Interessante
+\usepackage{setspace}
+
+% Pacote X color lida com certas cores
+\usepackage{xcolor}
+
+% Pacote color lida com colorização, age
+% junto dos hiperlinks.
+\usepackage{color}
+
+% Pacote Hyperref que transforma os
+% títulos do sumário em links que nos
+% jogam para o capítulo clicado.
+\usepackage{hyperref}
+% Configurando o hyperref
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=black,
+}
+
+
+% Mais um pacote relacionado à cores.
+% Se não me engano, este faz algo em
+% relação à cor de fundo.
+\usepackage{soul}
+
+% Pacote Inputenc, lida com codificação
+% do input, geralmente tornando em utf8
+\usepackage[utf8]{inputenc}
+
+% Pacote que faz com que o começo de
+% parágrafo seja indentado.
+\usepackage{indentfirst}
+
+% Pacote que permite inserção de imagens
+% no texto
+\usepackage{graphicx}
+
+% Pacote que adiciona manipulações relacionadas
+% à língua, como hifenização e talvez certos acentos.
+\usepackage[portuguese]{babel}
+
+% Embelezando o cabeçalho e o rodapé
+\usepackage{fancyhdr}
+\setlength{\headheight}{16pt}
+\addtolength{\topmargin}{-4pt}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+\pagestyle{fancy}
+
+% Configurando fbox para usar de moldura
 % para imagens.
 \setlength{\fboxrule}{1.2pt}
 
-% Adicionando a capacidade de mostrar
-% listas com duas colunas
+% Pacote Multicol adiciona a capacidade de
+% mostrar listas com duas colunas
 \usepackage{multicol}
 %----------------------------------------+
