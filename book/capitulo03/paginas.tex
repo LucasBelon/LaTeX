@@ -7,10 +7,13 @@ Nos interessa de agora em diante qual o tipo de texto irá ser adotado, para que
 A maior parte dos formatos de textos assumem os comandos \emph{chapter}, \emph{section}, \emph{subsection} e \emph{subsubsection}.
 Estas entradas interagem com o sumário, adicionam numeração, e alteram a fonte do título de suas partes.
 
-O comando \textbackslash chapter irá sempre começar uma nova página. O \textbackslash section será aninhado ao \textbackslash chapter anterior. Os \textbackslash subsection e \textbackslash subsubsection seguirão a mesma lógica.
+O comando \textbackslash chapter irá sempre começar uma nova página.
+O \textbackslash section será aninhado ao \textbackslash chapter anterior.
+Os \textbackslash subsection e \textbackslash subsubsection seguirão a mesma lógica.
 
 A estrela do capítulo será o \textbackslash documentclass[a4paper,12pt]\{book\}.
-Este possui a estrutura mais interessante. Geralmente livros são compostos por páginas e contrapáginas.
+Este possui a estrutura mais interessante.
+Geralmente livros são compostos por páginas e contrapáginas.
 Os distanciamentos entre as bordas ficam refletidos entre páginas pares e ímpares.
 Por conta disso, adotamos a página esquerda para referenciar estas bordas.
 
@@ -18,6 +21,9 @@ A margem direita é a margem externa, já que capítulos começam sempre na pág
 A margem esquerda é a margem interna, sempre maior por causa da colagem das folhas do livro impresso.
 A margem inferior comumente contém a numeração de páginas e a margem superior possui um espaçamento maior em páginas de início de capítulo.
 
+\end{landscape}
+
+\section{Pacote geometry}
 Para customizar páginas além do que o \LaTeX\ entrega por padrão, usamos o pacote \textbackslash geometry. 
 Exemplificamos com 
 \textbackslash usepackage[a4paper, inner=1.5cm, outer=3cm, top=2cm, bottom=3cm, bindingoffset=1cm]\{geometry\}
@@ -27,7 +33,7 @@ O tamanho de margem esquerda + direita + comprimento do texto com frequência er
 O pacote geometry resolve este problema, tornando automático o layout do texto.
 
 O pacote geometry nos oferece uma quantidade de opções para o tamanho do papel a ser utilizado.
-\end{landscape}
+
 \begin{itemize}
     \item \emph{paper=name} - letterpaper, executivepaper, legalpaper, a0paper, \ldots ,a6paper, b0paper, \ldots ,b6paper;
     \item \emph{paperwidth} - paperwidth=10in;
@@ -53,11 +59,60 @@ Outras opções como largura, altura, orientação da página, utilização de e
 
 De vez em quando precisamos preparar um documento com uma página que contém uma imagem.
 Este tipo de página, geralmente, convém ser posicionada em paisagem.
-O pacote é definido no preâmbulo, mas podemos definir uma nova geometria com \textbackslash newgeometry\{lista de argumentos\}.
-Não se engane, só podemos redefinir o layout sem alterar o tamanho do papel, e não podemos alterar de retrato para paisagem.
-
+Infelizmente não é o pacote geometry que resolve esse tipo de problema.
 Para alterar para paisagem utilizamos um outro pacote, chamado lscape.
+Simplesmente começamos um ambiente novo, com \textbackslash begin\{landscape\} e \textbackslash end\{landscape\}.
 
+O pacote geometry é definido no preâmbulo, mas podemos definir uma nova geometria com \textbackslash newgeometry\{lista de argumentos\}.
+Não se engane, só podemos redefinir o layout sem alterar o tamanho do papel, e não podemos alterar de retrato para paisagem.
+Um exemplo é alterar a altura e largura do layout, e opções de offset.
+Também podem ser alteradas opções referentes ao cabeçalho e rodapé, assim como ao corpo do texto.
 Após realizada a alteração, pode-se retornar à geometria original com o comando \textbackslash restoregeometry.
+
+No livro, a esta altura, foram citadas algumas vezes o chamado KOMA-script.
+Supostamente, é uma espécie de pacote que permite alterações usando outra lógica.
+Vale pesquisar (provavelmente ao terminar este livro).
+
+\section{Pacote setspace}
+Este pacote se concentra no espaçamento das linhas.
+Suas opções de uso são:
+\begin{itemize}
+    \item \textbackslash usepackage[onehalfspacing]\{setspace\}
+    \item \textbackslash usepackage[singlespacing]\{setspace\}- Opção padrão.
+    \item \textbackslash usepackage[doublespacing]\{setspace\}
+\end{itemize}
+
+%TODO: Consertar aqui
+NÃO CONSIGO USAR SPACING AAAAAAA
+
+\section{Especificações do DocumentClass}
+As classes base do LaTeX são book, article, report, slides, e letter.
+Existe uma classe de documento melhor que letter, scrlttr2.
+Slides é velho e ruim, usar beamer ou powerdot.
+
+Vamos verificar as opções de documentclass:
+\begin{multicols}{2}
+\begin{itemize}
+    \item a4paper, b2paper, letterpaper, legalpaper, executivepaper.
+    \item 10pt, 11pt ou 12pt. 
+    \item landscape.
+    \item onecolumn ou twocolumn.
+    \item oneside ou twoside. Não se usa twoside com slides e letter.
+    \item openright ou openany. Permite capitulos comecarem na direita ou em qualquer página.
+    \item titlepage ou notitlepage. Cria uma página de título separada.
+    \item final ou draft. Quando draft é selecionado o documento fica com uma caixa preta não sei onde, pra ajudar a revisão
+    \item openbib. Faz os arquivos bib serem salvos em formato aberto ao invés de compriimido.
+    \item fleqn. Faz fórmulas serem alinhadas à esquerda.
+    \item leqno. Para fórmulas numeradas, coloca o número à esquerda.
+\end{itemize}
+\end{multicols}
+
+Existe um negócio que eu realmente não tenho certeza do que é, mas chama KOMA-Script.
+Ele permite usar classes com maior flexibilidade, com mais opções e recursos.
+No entanto, também parece que é uma outra coleção de coisas para aprender.
+
+Pacotes que permitem uso de fontes arbitrárias:
+extarticle, extbook, extreport, extletter.
+
 
 \newpage
