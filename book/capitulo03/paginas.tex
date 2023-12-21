@@ -249,9 +249,70 @@ Podemos usar também \textbackslash enlargethispage\{2\textbackslash baselineski
 adicionar somente duas linhas ao texto.
 
 \section{Notas de Rodapé}
-É o último assunto do capítulo 3.
-Até agora está tudo muito mal formatado, com uma ordem extremamente porcaria.
-Vou precisar relocar muito do texto até ficar satisfeito.
-Esse livro é muito bom em conteúdo e exemplos, mas muito ruim em expressar a ideia.
+O uso de notas de rodapé é muito comum para esclarecer algo sobre o texto, ou
+para uma referência bibliográfica. Em livros traduzidos o uso de notas de
+rodapé é extenso, já que a tradução precisa levar em consideração questões
+culturais, jogos de palavras, e às vezes considerações sobre a fonética, como
+em rimas.
+
+Para adicionar uma nota de rodapé, basta escrever \textbackslash
+footnote\{texto a ser adicionado como nota de rodapé\}.
+
+Texto qualquer para exemplificação \footnote{Aqui está uma nota de rodapé.} de
+posicionamento e numeração de uma nota de rodapé. A visualização no código
+fonte é prejudicada, mas o resultado compensa. Notas de rodapé geralmente são
+complicadas de se formatar, e num trabalho com muitas referências, pode acabar
+sendo um gasto de energia considerável.
+
+Quando estamos estamos usando o comando footnote dentro de outro comando,
+precisamos indicar que o comando se refere à um texto global.
+Vejamos um caso em que define-se um subsubsection, e no título, adiciona-se uma
+nota destas.
+
+\subsubsection{Exemplo de título\protect\footnote{nota de rodapé do título da subsubseção.}}
+Para garantir que a nota de rodapé seja compreendida pelo programa
+corretamente, foi preciso adicionar o comando \textbackslash protect logo antes.
+Assim, para declarar este item foi preciso escrever \textbackslash
+subsubsection\{Exemplo de título\textbackslash protect\textbackslash
+footnote\{nota de rodapé do título da subsubseção.\}\}
+
+A não inclusão deste comando irá ocasionar erro imediatamente.  É incomum usar
+notas de rodapé em títulos, pois é possível que esta apareça no sumário. Para
+evitar que algo assim aconteça, é razoável utilizar o formato já discutido:
+\textbackslash chapter[nome de sumário]\{nome de texto\}. Desta forma, evitamos
+bagunça.
+
+O comando \textbackslash protect ajuda também em erros de comandos dentro de
+comandos. Não apenas em notas de rodapé, mas em outros comandos. Se algum erro
+ocorrer, usar o protect pode solucionar o problema. Raramente irá causar mais
+problema.
+
+A definição completa de footnote é \textbackslash footnote[number]\{texto\}.
+Geralmente deixa-se o número para ser automaticamente incrementado.
+
+No caso de se referir à uma mesma nota de rodapé em diferentes partes do texto,
+é interessante poder indicar um número sobrescrito, mas não o texto, e o
+contrário também, uma nota não numerada.
+
+Para criar uma indicação puramente numérica\footnotemark[42] \textbackslash footnotemark[number].
+Para criar uma indicação em texto puro \textbackslash footnotetext[number].
+\footnotetext[99]{Nota de rodapé sem referência no texto.} 
+
+\subsection{Modificando padrões}
+Para alterarmos a linha que divide o texto podemos modificar o objeto \textbackslash footnoterule.
+
+\textbackslash renewcommand\{\textbackslash footnoterule\}\{\textbackslash noindent\textbackslash smash\{\textbackslash rule[3pt]\{\textbackslash textwidth\}\{0.4pt\}\}\}
+
+O comando acima irá tornar a linha mais grossa, e a fará comprida a ponto de
+separar as notas de rodapé do texto principal.
+
+Os pacotes para expandir as capacidades das notas de rodapé são:
+\begin{enumerate}
+	\item endnotes: Adiciona notas de rodapé no fim do documento.
+	\item manyfoot: Permite notas de rodapé aninhadas.
+	\item bigfoot: Substitui e expande manyfoot.
+	\item savefnmark: Útil quando se usa notas de rodapé muitas vezes.
+	\item footmisc: Pacote pau pra toda obra. Traz opções avançadas.
+\end{enumerate}
 
 \newpage
