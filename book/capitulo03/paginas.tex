@@ -221,27 +221,37 @@ Quando usamos chapter*, não é produzido cabeçalho.
 Por isso, vamos usar \\
 markright\{right head\} e markboth\{left head \}\{right head\}
 
-Uma alternativa para o pacote fanyhdr é o scrpage2.
+Uma alternativa para o pacote fancyhdr é o scrpage2.
 Pertence ao Koma-script.
 
-% Abrir o documento com o visualizador zathura e entrar na página 110
-Comparar pagebreak e newpage.
-AQUI TEM ASSUNTOS QUE FAZEM PARTE DE OUTRO CAPÍTULO.
-NÃO SEI EXATAMENTE O QUE FAZER, MAS VOU DAR UM JEITO.
+\section[Pulando páginas]{Pulando páginas}
+O comando \textbackslash pagebreak, geralmente cria uma nova página,
+assim como \textbackslash newpage.
+No entanto, a formatação de títulos de seções e subseções pode acabar bagunçada.
+Evitar usar pagebreak quando houver títulos por perto.
 
-\textbackslash pagebreak é diferente de newpage. Ele altera os espacos entre parágrafos.
-Existem mais duas variantes: clearpage e cleardoublepage.
+Existem mais duas variantes deste espaçamento: 
+\textbackslash clearpage e \textbackslash cleardoublepage.
 Estes iniciarão em uma página em branco, mesmo que no modo twosides.
 
 Caso você perceba um espaçamento entre título e parágrafo,
 atenção, pode ter sido causado por uma quebra de página ruim.
-Para consertar, desligue a justificação com raggedbottom.
-Para religar flushbottom.
+Para consertar, desligue a justificação com \textbackslash raggedbottom.
+Para religar \textbackslash flushbottom.
 
-Podemos aumentar o tamanho de nossa página com 
+\section{Forçando texto}
+Caso queiramos que, mesmo que o texto fique um tanto apertado no layout da
+página, podemos utilizar um comando para aumentar o espaço disponível.
 
-DESCOBRIR EM QUAL PÁGINA CONTINUAR
-% TODO: Adicionar um fbox nos trechos que me refiro ao latex em código.
-% Centralizar é uma boa ideia
+O comando é \textbackslash enlargethispage.  Este comando encontra o número de
+linhas necessárias e as adiciona à geometria do layout do corpo do texto.
+Podemos usar também \textbackslash enlargethispage\{2\textbackslash baselineskip\} para
+adicionar somente duas linhas ao texto.
+
+\section{Notas de Rodapé}
+É o último assunto do capítulo 3.
+Até agora está tudo muito mal formatado, com uma ordem extremamente porcaria.
+Vou precisar relocar muito do texto até ficar satisfeito.
+Esse livro é muito bom em conteúdo e exemplos, mas muito ruim em expressar a ideia.
 
 \newpage

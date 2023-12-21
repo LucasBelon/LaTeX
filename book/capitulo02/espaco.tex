@@ -14,25 +14,22 @@ e como as palavras são quebradas ao fim das linhas, com hifens.
 Reflita sobre o espaçamento entre uma linha e outra.
 
 \section{Estilizando espaços}
-Vamos iniciar o assunto.
-Existe um comando chamado parbox.
-Este cria uma caixa que abriga um parágrafo.
-O uso é dado da seguinte forma:\\
-\textbackslash parbox [alinhamento]\{largura\}\{Texto.\}
-\\
-
+Vamos iniciar o assunto. Existe um comando chamado parbox. Este cria uma caixa que abriga um parágrafo. O uso é dado da seguinte forma:
+\newline
+\noindent \textbackslash parbox [alinhamento]\{largura\}\{Texto.\}
+\newline
 Temos aqui uma linha.
-\quad\parbox[b]{2.5cm}{Este parbox está alinhado à base}
-\quad\parbox{2.5cm}{Este está alinhado ao centro}
-\quad\parbox[t]{2.5cm}{Alinhado ao topo da linha}
-
-\fbox{\parbox[b]{6cm}{Parbox padrão, dentro de uma framebox} }
+\fbox{
+\quad\parbox[b]{2.5cm}{Este parbox está alinhado à base}}
+\fbox{\quad\parbox{2.5cm}{Este está alinhado ao centro}}
+\fbox{\quad\parbox[t]{2.5cm}{Alinhado ao topo da linha}}
+que em seguida volta ao normal. Perceba o espaçamento acima e abaixo.
 
 O \textbackslash parbox delimita e altera o espaço que um parágrafo é confinado.
 Vimos nas linhas acima o uso de quatro \textbackslash parbox diferentes.
 Nos primeiros três foram exemplificados os diferentes alinhamentos que a uma \textbackslash parbox pode ter em relação à linha guia.
 
-No mais abaixo, foi adicionado o comando \textbackslash fbox\{\}
+Em todos foi adicionado o comando \textbackslash fbox\{\}
 para poder visualizar os limites que \textbackslash parbox\{\} cria.
 Não é exatamente um uso que se vê uma utilidade imediata,
 mas com certeza traz mais liberdade e possibilidade de expressão.
