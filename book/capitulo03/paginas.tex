@@ -171,18 +171,17 @@ Customizando cabeçalho com pacote fancyhdr (fancy header)
 \textbackslash fancyfoot[LE,RO]\{\textbackslash thepage\} \\
 \textbackslash pagestyle\{fancy\} 
 
-Deve ser aplicado no preambulo.
-
-Fancyhdr limpa os estilos do cabecalho e rodapé.
-
+Estes comandos e configurações devem ser aplicados no preambulo.
+O comando fancyhdr limpa os estilos do cabecalho e rodapé.
 Leftmark e Rightmark trazem informações sobre o capítulo e seção atuais.
 
-LE se refere ao lado esquerdo de páginas pares. Ou seja, Left Even.
-Por padrão são utilizadas letras maiúsculas, por isso
-é adicionado o nouppercase.
+LE se refere ao lado esquerdo de páginas pares.
+Ou seja, Left Even.
+Por padrão são utilizadas letras maiúsculas, por isso é adicionado o nouppercase.
 
-As funcionalidades do fancyhdr são parte de um estilo de página chamafo fancy.
+As funcionalidades do fancyhdr são parte de um estilo de página chamado fancy.
 Portanto, é preciso declarar o estilo de página como pagestyle fancy.
+Sem isto, não podemos adicionar as opções de cabeçalho e rodapé estilizados.
 
 O LaTeX padrão possui quatro estilos de página.
 \begin{itemize}
@@ -214,6 +213,8 @@ Podemos adicionar linhas decorativas tanto no cabeçalho como no rodapé com\\
 
 Com renewcommand estamos sobrescrevendo o valor que o objeto headrulewidth possui.
 É semelhante à newcommand.
+Mas o que ele faz não é criar um comando, mas sobrescrever valores que um comando assume.
+A melhor forma de pensar é que estamos renovando os parâmetros default de algum objeto.
 Aparentemente vamos utilizar bastante de agora em diante.
 
 Quando usamos chapter*, não é produzido cabeçalho.
@@ -223,12 +224,14 @@ markright\{right head\} e markboth\{left head \}\{right head\}
 Uma alternativa para o pacote fanyhdr é o scrpage2.
 Pertence ao Koma-script.
 
+% Abrir o documento com o visualizador zathura e entrar na página 110
+Comparar pagebreak e newpage.
 AQUI TEM ASSUNTOS QUE FAZEM PARTE DE OUTRO CAPÍTULO.
 NÃO SEI EXATAMENTE O QUE FAZER, MAS VOU DAR UM JEITO.
 
 \textbackslash pagebreak é diferente de newpage. Ele altera os espacos entre parágrafos.
-Existem mais duas variantes: clearpage e cleardoublepage iniciarão
-em uma página em branco, mesmo que no modo twosides.
+Existem mais duas variantes: clearpage e cleardoublepage.
+Estes iniciarão em uma página em branco, mesmo que no modo twosides.
 
 Caso você perceba um espaçamento entre título e parágrafo,
 atenção, pode ter sido causado por uma quebra de página ruim.
