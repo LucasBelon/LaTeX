@@ -1,10 +1,189 @@
 \chapter{Listas}
+A partir de agora não teremos arquivos de rascunho.
+Mas a partir de agora, o grosso das funcionalidades devem ser familiares.
+O que significa que será muito mais expositivo do que explicativo.
+
+Iremos introduzir um tipo de listas e explicar um pouco da mecãnica.
+Esta mecânica servirá para outros tipos de lista, mostradas mais ao fim.
+
+\section{Listas simples}
+Em inglês, bulleted lists, são listas compostas de pontos.
+Geralmente indicam itens que não possuem exatamente uma ordem expressa.
+Uma lista de compras, uma lista de tarefas sem prioridade definida,
+uma lista de desejos de natal.
+
+A sintaxe é a partir de um ambiente pré-definido:\newline
+\textbackslash begin\{itemize\}\newline
+\indent \textbackslash item texto do item quadrado\newline
+\indent \textbackslash item texto do item círculo\newline
+\indent \textbackslash item texto do item triângulo\newline
+\textbackslash end\{itemize\}\newline
+
+O efeito é:
+\begin{itemize}
+	\item texto do item quadrado
+	\item texto do item círculo
+	\item texto do item triângulo
+\end{itemize}
+
+\subsection{Aninhando listas}
+Podemos criar itens que agregam subitens.
+
+\noindent\textbackslash begin\{itemize\}\newline
+\textbackslash item texto do item quadrado\newline
+\textbackslash item texto do item círculo\newline
+\textbf{
+\textbackslash begin\{itemize\}\newline
+\textbackslash item texto do item semicírculo\newline
+\textbackslash item texto do item $\pi$\newline
+\textbackslash item texto do item circunferência\newline
+\textbackslash end\{itemize\}\newline
+}
+\textbackslash item texto do item triângulo\newline
+\textbackslash end\{itemize\}\newline
+
+E o efeito será:
+
+\begin{itemize}
+	\item texto do item quadrado
+	\item texto do item círculo
+	\begin{itemize}
+		\item texto do item semicírculo
+		\item texto do item $\pi$
+		\begin{itemize}
+			\item números irracionais
+			\begin{itemize}
+				\item números infinitos
+			\end{itemize}
+		\end{itemize}
+		\item texto do item circunferência
+	\end{itemize}
+	\item texto do item triângulo
+\end{itemize}
+
+O exemplo mostra uma menor quantidade de listas aninhadas, pelo bem da legibilidade.
+Acima de 4 níveis neste aninhamento, não são geradas sublistas.
+Raramente se utiliza uma sublista com ícones que seja tão profunda.
+Quando se alcança tamanha profundidade, altera-se para numeração do tipo, 1.1, 1.2, 1.2.1, e assim em diante.
+
+\section{Listas numeradas}
+Podemos aninhar listas simples em listas numeradas. Veremos o exemplo:\newline
+
+\noindent\textbackslash begin\{enumerate\}\newline
+\textbackslash item item um\newline
+\textbackslash item item dois\newline
+\textbackslash begin\{enumerate\}\newline
+\textbackslash item item a\newline
+\textbackslash end\{enumerate\}\newline
+\textbackslash item item um\newline
+\textbackslash end\{enumerate\}\newline
+
+\noindent\begin{enumerate}
+\item item um
+\item item dois
 \begin{enumerate}
-\item Começamos
-\item com
-\item itens pequenos
+\item item a
+\item item b
+\item item c
+\begin{enumerate}
+\item item i
+\begin{enumerate}
+\item item A
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\item item um
 \end{enumerate}
 
-CONTINUAR NA PÁGINA 124
-\newpage
+Temos mais uma vez o efeito de quatro níveis de aninhamento.
+O comando \textbackslash item aceita o formato \textbackslash item[text], que
+irá fazer com que qualquer coisa apareça como marcador.
 
+\section{Customizando listas}
+Vamos ver outros ambientes de listagem.
+Estes podem ser utilizados carregando um pacote chamado \emph{paralist}.
+
+\noindent \emph{No preâmbulo adicionar:\newline
+\noindent\textbackslash usepackage\{paralist\}\newline}
+\textbackslash begin\{compactenum\}\newline
+\textbackslash item Abra o terminal.\newline
+\textbackslash item Invoque o vim.\newline
+\textbackslash begin\{compactitem\}\newline
+\textbackslash item Salve seu arquivo com o nome e extensão corretos.\newline
+\textbackslash item Escreva seu texto.\newline
+\textbackslash end\{compactitem\}\newline
+\textbackslash item Salve o arquivo e saia.\newline
+\textbackslash end\{compactenum\}\newline
+
+Perceba no resultado o espaçamento menor, graças ao estilo compacto que o
+pacote nos traz.
+
+\begin{compactenum}
+\item Abra o terminal.
+\item Invoque o vim.
+\begin{compactitem}
+\item Salve seu arquivo com o nome e extensão corretos.
+\item Escreva seu texto.
+\end{compactitem}
+\item Salve o arquivo e saia.
+\end{compactenum}
+
+\subsection{Listas alinhadas}
+Ao invés de serem itens colocados um abaixo do outro, serão itens escritos na
+mesma linha.
+
+\noindent \emph{No preâmbulo adicionar:\newline
+\noindent\textbackslash usepackage\{paralist\}\newline}
+\textbackslash begin\{compactenum\}\newline
+\textbackslash item Abra o terminal.\newline
+\textbackslash item Invoque o vim:\newline
+\textbackslash begin\{\textbf{inparaenum}\}\newline
+\textbackslash item Salve seu arquivo com o nome e extensão corretos.\newline
+\textbackslash item Escreva seu texto.\newline
+\textbackslash item Refatore seu texto.\newline
+\textbackslash end\{\textbf{inparaenum}\}\newline
+\textbackslash item Salve o arquivo e saia.\newline
+\textbackslash end\{compactenum\}\newline
+
+Desta vez estamos colocando uma lista que reside em um parágrafo ao invés de uma sucessão de linhas.
+
+\begin{compactenum}
+\item Abra o terminal.
+\item Invoque o vim:
+\begin{inparaenum}
+\item Salve seu arquivo com o nome e extensão corretos.
+\item Escreva seu texto.
+\item Refatore seu texto.
+\end{inparaenum}
+\item Salve o arquivo e saia.
+\end{compactenum}
+
+\begin{compactenum}
+\item Abra o terminal.
+\item Invoque o vim:
+\begin{asparaenum}
+\item Salve seu arquivo com o nome e extensão corretos.
+\item Escreva seu texto.
+\item Refatore seu texto.
+\end{asparaenum}
+\item Salve o arquivo e saia.
+\end{compactenum}
+
+Para cada ambiente padrão, o pacote paralist adiciona três ambientes correspondentes:
+
+Listas numeradas:
+\begin{itemize}
+	\item compactenum: Já visto
+	\item inparaenum: Já visto
+	\item asparaenum: Supostamente cada item é tratado como um parágrafo do LaTeX.
+\end{itemize}
+
+Listas simples:
+\begin{itemize}
+	\item compactitem
+	\item inparaitem
+	\item asparaitem
+\end{itemize}
+
+
+\newpage
