@@ -66,6 +66,8 @@ Acima de 4 níveis neste aninhamento, não são geradas sublistas.
 Raramente se utiliza uma sublista com ícones que seja tão profunda.
 Quando se alcança tamanha profundidade, altera-se para numeração do tipo, 1.1, 1.2, 1.2.1, e assim em diante.
 
+% TODO: Descobrir como usar esse tipo de lista de numeração infinita.
+
 \section{Listas numeradas}
 Podemos aninhar listas simples em listas numeradas. Veremos o exemplo:\newline
 
@@ -158,32 +160,75 @@ Desta vez estamos colocando uma lista que reside em um parágrafo ao invés de u
 \item Salve o arquivo e saia.
 \end{compactenum}
 
-\begin{compactenum}
-\item Abra o terminal.
-\item Invoque o vim:
-\begin{asparaenum}
-\item Salve seu arquivo com o nome e extensão corretos.
-\item Escreva seu texto.
-\item Refatore seu texto.
-\end{asparaenum}
-\item Salve o arquivo e saia.
-\end{compactenum}
-
 Para cada ambiente padrão, o pacote paralist adiciona três ambientes correspondentes:
 
 Listas numeradas:
 \begin{itemize}
-	\item compactenum: Já visto
-	\item inparaenum: Já visto
+	\item compactenum: Já visto.
+	\item inparaenum: Já visto.
 	\item asparaenum: Supostamente cada item é tratado como um parágrafo do LaTeX.
 \end{itemize}
 
 Listas simples:
 \begin{itemize}
-	\item compactitem
-	\item inparaitem
-	\item asparaitem
+	\item compactitem: Já visto.
+	\item inparaitem: Fácil de entender.
+	\item asparaitem: Supostamente o mesmo que asparaenum.
 \end{itemize}
 
+\section{Escolhendo estilos de números e itens}
+Vamos trocar essas bolinhas chatas e esses números sem personalidade.
+Vamos usar o pacote enumitem.
+
+No sumário precisamos adicionar:
+\textbackslash usepackage\{enumitem\}
+
+Então, escrevemos um pouco de configurações que podem ficar em qualquer lugar. Deixar no preâmbulo é bom para manter a organização.
+
+\noindent\textbackslash setlist\{nolistsep\}\newline
+\textbackslash setitemize[1]\{label=---\}\newline
+\textbackslash setitemize[2]\{label=1.1\}\newline
+\textbackslash setenumerate[1]\{label=\textbackslash textcircled\{\textbackslash scriptsize\textbackslash Alph*\},font=\textbackslash sffamily\}\newline
+\newline
+Por fim, adicionamos nossa lista normalmente.\newline
+\textbackslash begin\{enumerate\}\newline
+\textbackslash item Item um, item dois.\newline
+\textbackslash item Item três e quatro.\newline
+\textbackslash begin\{itemize\}\newline
+\textbackslash item geometria.\newline
+\textbackslash item matemática.\newline
+\textbackslash begin\{itemize\}\newline
+\textbackslash item alguma coisa\newline
+\textbackslash end\{itemize\}\newline
+\textbackslash end\{itemize\}\newline
+\textbackslash item Item cinco e seis.\newline
+\textbackslash end\{enumerate\}\newline
+
+
+\setlist{nolistsep}
+\setitemize[1]{label=---}
+\setitemize[2]{label=1.1}
+\setenumerate[1]{label=\textcircled{\scriptsize\Alph*},font=\sffamily}
+
+\begin{enumerate}
+\item Item um, item dois.
+\item Item três e quatro.
+\begin{itemize}
+\item geometria.
+\item matemática.
+	\begin{itemize}
+		\item alguma coisa
+	\end{itemize}
+\end{itemize}
+\item Item cinco e seis.
+\end{enumerate}
+
+Para ser 100\% sincero, não espero dominar esse tipo de customização, apenas
+saber que existe para poder pesquisar depois à medida que preciso.
+
+Se ao terminar uma listagem, chamarmos novamente o \textbackslash begin\{item\}[resume*], continuamos a partir da contagem da última lista do mesmo tipo iniciada.
+
+Vimos nas configurações que o \textbackslash setenumerate aceita argumentos no formato chave=valor. 
+PRECISO PEGAR A PARTIR DAQUI PRA TRANSCREVER DA TABELA DA PÁGINA 133.
 
 \newpage
