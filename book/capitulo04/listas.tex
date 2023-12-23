@@ -53,7 +53,7 @@ E o efeito será:
 		\begin{itemize}
 			\item números irracionais
 			\begin{itemize}
-				\item números infinitos
+			\item números infinitos
 			\end{itemize}
 		\end{itemize}
 		\item texto do item circunferência
@@ -229,6 +229,55 @@ saber que existe para poder pesquisar depois à medida que preciso.
 Se ao terminar uma listagem, chamarmos novamente o \textbackslash begin\{item\}[resume*], continuamos a partir da contagem da última lista do mesmo tipo iniciada.
 
 Vimos nas configurações que o \textbackslash setenumerate aceita argumentos no formato chave=valor. 
-PRECISO PEGAR A PARTIR DAQUI PRA TRANSCREVER DA TABELA DA PÁGINA 133.
+
+EU AINDA NÃO SEI USAR TABELAS DIREITO, MAS QUE EU SAIBA O FORMATO É MAIS OU MENOS ESSE.
+NÃO ESTÁ PRONTA AINDA, MAS PELO MENOS ESTÁ MEIO FORMATADO.
+
+%\begin{tabular}
+%	Parametro & Significado & Valores & Exemplo \\
+%	font & Modifica o rótulo da fonte & Qualquer comando de fonte & font=\textbackslash bfseries \\
+%	label & Configura o rótulo para o nível corrente & Pode conter: \textbf{\textbackslash arabic*, \textbackslash alph*, \textbackslash Alph*,  \textbackslash roman, \textbackslash Roman*} & label=\textbackslash emph \textbackslash alph* \\
+%	label* & Como label normal, mas adicionado ao nível corrente. & Semelhante ao label & label*=\textbackslash arabic \\
+%	align & Alinhamento do rótulo & left ou right & align=right \\
+%	start & Número do primeiro item & Integer & start=10 \\
+%	resume, resume* & Permite que o contador siga a partir da última contagem &  & resume \\
+%	noitemsep & Sem espaço extra entre os itens e parágrafos &  & noitemsep \\
+%	nolistsep & Sem espaço extra em qualquer lugar &  & nolistsep \\
+%\end{tabular}
+
+Essas opções podem ser configuradas globalmente com \textbackslash
+setenumerate[level]{chave=valor lista}. Se a variável level não for definida,
+será aplicado a todos os níveis.
+
+Para retomar uma contagem basta usar \textbackslash begin\{enumerate\}[resume*].
+
+\section{Listas de definição}
+Listas de definição são listas com o primeiro termo sendo um título.
+
+\noindent\textbackslash begin\{description\textbackslash \}\\
+	\textbackslash item[paralist] provém listas compactas e versões de listas que podem ser utilizadas em parágrafos, além de ajudar a customizar rótulos e layout.\\
+	\textbackslash item[enumitem] dá controle sobre rótulos e comprimentos de todos os tipos de lista.\\
+	\textbackslash item[mdwlist] é útil para customizar listas de descrição. Permite até mesmo rótulos multi-linha. Entrega listas compactas e a capacidade de suspender e retomar a contagem.\\
+	\textbackslash item[desclist] oferece mais flexibilidade à listas de definição.\\
+	\textbackslash item[multenum] produz uma lista enumerada vertical em múltiplas colunas.\\
+\textbackslash end\{description\textbackslash \}\\
+
+\begin{description}
+	\item[paralist] provém listas compactas e versões de listas que podem ser utilizadas em parágrafos, além de ajudar a customizar rótulos e layout.
+	\item[enumitem] dá controle sobre rótulos e comprimentos de todos os tipos de lista.
+	\item[mdwlist] é útil para customizar listas de descrição. Permite até mesmo rótulos multi-linha. Entrega listas compactas e a capacidade de suspender e retomar a contagem.
+	\item[desclist] oferece mais flexibilidade à listas de definição.
+	\item[multenum] produz uma lista enumerada vertical em múltiplas colunas.
+\end{description}
+
+O pacote paralist também admite listas de descrições compactas com compactdesc e outras versões.
+
+\section{Alterando algumas dimensões}
+Podemos adicionar o pacote layouts, e utilizar um comando para visualizar o
+layout de páginas. Este pacote é capaz de mais coisas além de controlar listas,
+mas por enquanto vamos nos manter no tópico. 
+O comando é \textbackslash listdiagram.
+
+\listdiagram
 
 \newpage
