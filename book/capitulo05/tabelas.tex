@@ -1,8 +1,113 @@
-\chapter{Listas e imagens}
+\chapter{Tabelas e imagens}
+Tabelas e imagens são elementos que não fazem exatamente parte da lógica de um
+texto corrido. Não existe parágrafo e linha do jeito que existe no texto. Por
+conta disso, devemos encarar como uma inserção de um elemento geralmente
+retangular, com certas dimensões, e que deve se comportar de uma ou outra
+maneira diferente. 
 
+
+
+\section{Tabelas}
+Tabelas no \LaTeX\ são entidades que precisam se entendidas em duas etapas.
+Existe o formato de tabela, que se refere a um frame, com certo espaçamento
+entre as células, com certa disposição no corpo do texto, e seu número de
+linhas e colunas. Uma tabela propriamente dita possui contorno entre os
+elementos, geralmente um título, e eventualmente uma legenda.
+
+Tabelas são uma forma de se expressar informação. Sua principal virtude é
+organizar, categorizar, e exibir, de forma sucinta, dados. Uma boa tabela deve
+conter um bom relacionamento lógico entre os itens, em seu ordenamento e sua
+apresentação.
+
+\subsection{tabbing}
+Para alinhar texto em colunas no tempo das máquinas de escrever era usado o que
+se chama de tabstop. Por causa disso, temos no LaTeX um ambiente chamado
+"tabbing".
+
+\noindent\textbackslash begin\{tabbing\}\\
+	\textbackslash emph\{info: \} \textbackslash = Software \textbackslash = : \textbackslash = \textbackslash LaTeX \textbackslash \textbackslash \\
+	\textbackslash $>$ Author \textbackslash $>$ : \textbackslash $>$ Leslie Lamport \textbackslash \textbackslash \\
+	\textbackslash $>$ Website \textbackslash $>$ : \textbackslash $>$ www.latex-project.org \textbackslash \textbackslash \\
+\textbackslash end\{tabbing\}\\
+
+O Código acima irá gerar o seguinte texto:
+
+\begin{tabbing}
+	\emph{info: } \= Software \= : \= \LaTeX \\
+	\> Author \> : \> Leslie Lamport \\
+	\> Website \> : \> www.latex-project.org \\
+\end{tabbing}
+
+Fica visível a organização entre colunas.
+Na primeira linha são usados os caracteres "\textbackslash = ", que servem para
+definir um tabstop. Basicamente, é criada uma linha vertical imaginária que irá
+ditar qual a distância deve ser pulada num pressionar da tecla tab.
+
+Como estamos em \LaTeX, precisamos inserir um caractere como o tab com um
+comando. Na segunda e terceira linha de nossa tabela temos o uso do next tab
+stop, próximo tabstop, que basicamente avança o texto na distância definida na
+primeira linha.
+
+Por fim, pulamos a linha usando \textbackslash \textbackslash. Essa é uma
+sintaxe já conhecida. O que criamos ainda não se trata de uma tabela, mas sim
+um texto tabularizado. No entanto, a lógica já começa a se expressar. É preciso
+pensar em como os espaços são definidos, e como podem ser definidos.
+
+Esse formato de texto nos permite criar colunas com texto alinhado à esquerda.
+Mas e se o texto alcançar os limites da página, tanto para a borda externa
+quanto para a base da página? É o que veremos, e como consertar caso algo dê
+errado.
+
+\noindent\textbackslash newcommand\{\textbackslash head\}[1]\{\textbackslash textbf\{\#1\}\}\\
+\\
+\textbackslash begin\{tabbing\}\\
+	Family \textbackslash = \textbackslash verb$|$\textbackslash textrm\{...\}$|$ \textbackslash = \textbackslash head\{Declaration\} \textbackslash = \textbackslash kill\\
+	\textbackslash head\{Type\} \textbackslash $>$ \textbackslash head\{Command\} \textbackslash $>$ \textbackslash head\{Declaration\} \textbackslash $>$ \textbackslash head\{Example\} \textbackslash \textbackslash \\
+	Family \textbackslash $>$ \textbackslash verb$|$\textbackslash textrm\{...\}$|$ \textbackslash $>$ \textbackslash verb$|$\textbackslash rmfamily$|$\\
+	\textbackslash $>$ \textbackslash rmfamily Example text \textbackslash \textbackslash \\
+	\textbackslash $>$ \textbackslash verb$|$\textbackslash textsf\{...\}$|$ \textbackslash $>$ \textbackslash verb$|$\textbackslash sffamily$|$\\
+	\textbackslash $>$ \textbackslash sffamily Example text \textbackslash \textbackslash \\
+\textbackslash end\{tabbing\}\\
+
+% Novo comando que serve apenas pra melhorar a sintaxe.
+\newcommand{\head}[1]{\textbf{#1}}
+
+\begin{tabbing}
+	Family \= \verb|\textrm{...}| \= \head{Declaration} \= \kill
+	\head{Type}\> \head{Command} \> \head{Declaration} \> \head{Example} \\
+	Family \> \verb|\textrm{...}| \> \verb|\rmfamily|
+	\> \rmfamily Example text \\
+	\> \verb|\textsf{...}| \> \verb|\sffamily|
+	\> \sffamily Example text \\
+\end{tabbing}
+
+Este é mais difícil de compreender. A primeira linha cria o espaçamento, e o
+comando kill apaga a linha. No entanto, o espaçamento segue definido. Na
+segunda linha estamos criando já os títulos das colunas. Na terceira e quarta
+linha estamos criando a primeira linha da tabela. Na quinta e sexta linha
+estamos criando a última. O segredo está em entender o que está acontecendo nas
+duas primeiras linhas e como funciona a lógica do espaçamento.
+
+Detalhe: usamos o comando \textbackslash verb$|$\textbackslash textsf\{...\}$|$
+que faz com que o LaTeX escreva o que tiver entre os $|$ de forma como é,
+desabilitando qualquer função que possa ser escrita ali.
+O nome disso é verbatim. Para uso mais extenso, usar o ambiente \emph{verbatim}. 
+
+
+Outros comandos úteis são:
 \begin{itemize}
-	\item Apenas pra adicionar algo ao documento.
+	\item \textbackslash + no fim da linha faz a linha subsequente começar na primeira tabulação.
+	\item \textbackslash - cancela um \textbackslash + anterior. O uso de múltiplos desses é cumulativo.
+	\item \textbackslash $<$ no começo da linha cancela o efeito de um \textbackslash + anterior nesta linha.
 \end{itemize}
 
+CONTINUA NA PÁGINA 144!!!!
+
+\subsection{tabular}
+
+\subsection{table e legendas}
+
+
+\section{Imagens}
 
 \newpage
