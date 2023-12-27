@@ -6,7 +6,6 @@ retangular, com certas dimensões, e que deve se comportar de uma ou outra
 maneira diferente. 
 
 
-
 \section{Tabelas}
 Tabelas no \LaTeX\ são entidades que precisam se entendidas em duas etapas.
 Existe o formato de tabela, que se refere a um frame, com certo espaçamento
@@ -18,6 +17,7 @@ Tabelas são uma forma de se expressar informação. Sua principal virtude é
 organizar, categorizar, e exibir, de forma sucinta, dados. Uma boa tabela deve
 conter um bom relacionamento lógico entre os itens, em seu ordenamento e sua
 apresentação.
+
 
 \subsection{tabbing}
 Para alinhar texto em colunas no tempo das máquinas de escrever era usado o que
@@ -101,9 +101,139 @@ Outros comandos úteis são:
 	\item \textbackslash $<$ no começo da linha cancela o efeito de um \textbackslash + anterior nesta linha.
 \end{itemize}
 
-CONTINUA NA PÁGINA 144!!!!
 
 \subsection{tabular}
+Para o caso de precisarmos de estruturas com mais opções, como centralizar na
+célula, dividir linhas, e outras opções que só imagino, vamos subir o degrau da
+complexidade e usar um novo ambiente.
+
+O ambiente tabular permite exibir tabelas propriamente ditas, inclusive podendo
+aninhá-las, para obtermos mais liberdade de configuração.
+
+Uma nova sintaxe precisa ser usada, e os comandos possuem uma certa
+individualidade que precisa ser respeitada. Ao definir o ambiente usamos um
+argumento a mais, para dizer se os elementos das colunas serão alinhados à
+esquerda, direita, ou centralizados. E iremos separar os elementos das colunas
+com o símbolo \&. Veja o código que gera uma tabela, e seu respectivo
+resultado:
+
+\noindent\textbackslash begin\{tabular\}\{ccc\} \\
+	\textbackslash hline \%Adiciona linhas horizontais\\
+	\textbackslash head\{Command\} \& \textbackslash head\{Declaration\} \& \textbackslash head\{Output\} \textbackslash \textbackslash \\
+	\textbackslash hline\\
+	\textbackslash verb$|$\textbackslash textrm$|$ \& \textbackslash verb$|$\textbackslash rmfamily$|$ \& \textbackslash rmfamily Example text \textbackslash \textbackslash \\
+	\textbackslash verb$|$\textbackslash textsf$|$ \& \textbackslash verb$|$\textbackslash sffamily$|$ \& \textbackslash sffamily Example text \textbackslash \textbackslash \\
+	\textbackslash verb$|$\textbackslash texttt$|$ \& \textbackslash verb$|$\textbackslash ttfamily$|$ \& \textbackslash ttfamily Example text \textbackslash \textbackslash \\
+	\textbackslash hline\\
+\textbackslash end\{tabular\}\\
+
+\begin{tabular}{ccc}
+	\hline %Adiciona linhas horizontais
+	\head{Command} & \head{Declaration} & \head{Output} \\
+	\hline
+	\verb|\textrm| & \verb|\rmfamily| & \rmfamily Example text \\
+	\verb|\textsf| & \verb|\sffamily| & \sffamily Example text \\
+	\verb|\texttt| & \verb|\ttfamily| & \ttfamily Example text \\
+	\hline
+\end{tabular}
+
+O comando \{ccc\} nos diz que haverão três colunas, todas centralizadas. As
+linhas são separadas como no ambiente tabbing. Não devemos criar uma nova linha
+no último elemento (hline), isso causa problemas de alinhamento para a coluna.
+
+Assim como o minipage, o tabular possui outro argumento, que diz respeito à
+posição da tabela. A definição completa do ambiente é: \newline
+\noindent\textbackslash begin\{tabular\}[posição]\{especificadores de coluna\} \\\indent
+No argumento de posição, refere-se ao alinhamento em relação ao topo do texto que circunda a tabela
+célula, em relação à base, ou centralizadas. O padrão é centralizado. As opções
+são, portanto [tbc].
+
+É possível desenhar três tipos de linhas em tabelas:
+
+\begin{itemize}
+\item\textbf{\textbackslash hline} - desenha uma linha horizontal.
+\item\textbf{\textbackslash cline[m-n]} - desenha uma linha no topo, nas colunas selecionadas.
+\item\textbf{\textbackslash vline} - desenha uma linha vertical.
+\end{itemize}
+
+Vejamos uma aplicação descuidada dessas linhas:
+
+\noindent\textbackslash begin\{center\}\\
+\textbackslash begin\{tabular\}\{ccc\}\\
+	\textbackslash hline \\
+	\textbackslash vline \textbackslash head\{Animal\}\textbackslash vline \& \textbackslash vline\textbackslash head\{Late?\}\textbackslash vline \& \textbackslash head\{Mia?\} \textbackslash \textbackslash \\
+	\textbackslash hline\\
+	Cachorro \& sim \&     \textbackslash \textbackslash \\
+	Gato     \&     \& não \textbackslash \textbackslash \\
+	\textbackslash cline\{2-3\} Peixe    \&     \&     \textbackslash \textbackslash \\
+	\textbackslash hline\\
+\textbackslash end\{tabular\}\\
+\textbackslash end\{center\}\\
+
+\begin{center}
+\begin{tabular}{ccc}
+	\hline %Adiciona linhas horizontais
+	\vline \head{Animal}\vline & \vline\head{Late?}\vline & \head{Mia?} \\
+	\hline
+	Cachorro & sim &     \\
+	Gato     &     & não \\
+	\cline{2-3} Peixe    &     &     \\
+	\hline
+\end{tabular}
+\end{center}
+
+Nos especificadores de coluna podemos aplicar um pouco mais de formatação do
+que explicamos anteriormente. Podemos desenhar linhas verticais melhores, que
+encaixam de forma mais graciosa, criando uma tabela com células bem
+delimitadas. Vamos ver essas formatações.
+
+\noindent\textbackslash begin\{center\}\\
+\textbackslash begin\{tabular\}\{$|$l$|$c$|$r$|$p\{1.9cm\}$|$\}\\
+	\textbackslash hline\\
+	Left \& Center \& Right \& A fully Justified Paragraph cell \textbackslash \textbackslash \\
+	\textbackslash hline\\
+	l \& c \& r \& p \textbackslash \textbackslash \\
+	\textbackslash hline\\
+\textbackslash end\{tabular\}\\
+\textbackslash end\{center\}\\
+
+\begin{center}
+\begin{tabular}{|l|c|r|p{1.9cm}|}
+	\hline
+	Left & Center & Right & A fully Justified Paragraph cell \\
+	\hline
+	l & c & r & p \\
+	\hline
+\end{tabular}
+\end{center}
+
+As opções que a formatação que os especificadores de coluna aceitam são:
+
+\begin{itemize}
+	\item l para alinhamento à esquerda (left).
+	\item r para alinhamento à direita (right).
+	\item c para alinhamento ao centro (center).
+	\item p\{tamanho\} para uma linha formatada como parágrafo, com uma
+		certa largura. Se várias forem usadas sequencialmente, estas
+		serão alinhadas ao topo. é o equivalente a usar \textbackslash
+		parbox[t]\{tamanho\} dentro da célula.  \item @\{código\}
+		insere código ao invés de um espaço vazio antes ou depois de
+		uma coluna. Pode ser também algum texto, ou deixado vazio para
+		evitar esse espaço.
+	\item $|$ significa linha vertical.
+	\item *\{n\}\{opções\} é o equivalente a n cópias de "opções", em que n
+		é um inteiro positivo, e options consiste em uma ou mais
+		colunas, incluindo *.
+\end{itemize}
+
+Como sempre, podemos extender nossas opções usando pacotes. O pacote array irá
+nos dar estas opções extras:
+
+\begin{itemize}
+	\item item
+\end{itemize}
+
+
 
 \subsection{table e legendas}
 
