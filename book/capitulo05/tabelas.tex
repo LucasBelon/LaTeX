@@ -230,8 +230,83 @@ Como sempre, podemos extender nossas opções usando pacotes. O pacote array ir�
 nos dar estas opções extras:
 
 \begin{itemize}
-	\item item
+	\item m\{tamanho\} é similar a \textbackslash parbox\{tamanho\}: A linha base fica no meio.
+	\item b\{tamanho\} é similar a \textbackslash parbox[b]\{tamanho\}: A linha base fica na base.
+	\item !\{Código\} pode ser usado como $|$ mas insere algum código ao
+		invés de uma linha vertical. Em contraste com @\{...\}, o
+		espaço entre as colunas não é suprimido.
+	\item $>$\{Código\} Pode ser usado após um l,c,r,p,m ou b e insere
+		código ao começo da entrada desta coluna.
+	\item $<$\{Código\} Pode ser usado após um l,c,r,p,m ou b e insere
+		código ao fim da entrada desta coluna.
 \end{itemize}
+
+Veremos um exemplo com alguns usos do que foi mostrado acima:
+
+\noindent\textbackslash begin\{center\}\\
+\textbackslash begin\{tabular\}\{@\{\}lp\{1.2cm\}m\{1.2cm\}b\{1.2cm\}@\{\}\}\\
+	\textbackslash hline\\
+	baseline \& aligned at the top \& aligned at the middle \& aligned at the bottom \textbackslash \textbackslash \\
+	\textbackslash hline\\
+\textbackslash end\{tabular\}\\
+\textbackslash end\{center\}\\
+
+\begin{center}
+\begin{tabular}{@{}lp{1.2cm}m{1.2cm}b{1.2cm}@{}}
+	\hline
+	baseline & aligned at the top & aligned at the middle & aligned at the bottom \\
+	\hline
+\end{tabular}
+\end{center}
+
+Podemos aumentar a altura das linhas para caso o texto fique verticalmente apertado.
+
+\ttfamily
+\indent\textbackslash setlength\{\textbackslash extrarowheight\}\{4pt\}
+
+\textbackslash begin\{tabular\}\{@\{\}$>$\{\textbackslash itshape\}ll!\{:\}l$<$\{.\}@\{\}\}
+
+	\textbackslash hline
+
+	Info: \& Software \& \textbackslash LaTeX \textbackslash \textbackslash 
+
+	      \& Author \& Leslie Lamport\textbackslash \textbackslash 
+
+	      \& Website \& www.latex-project.org\textbackslash \textbackslash 
+
+	\textbackslash hline
+
+\textbackslash end\{tabular\}
+
+\sffamily
+
+\setlength{\extrarowheight}{4pt}
+\begin{tabular}{@{}>{\itshape}ll!{:}l<{.}@{}}
+	\hline
+	Info: & Software & \LaTeX \\
+	      & Author & Leslie Lamport\\
+	      & Website & www.latex-project.org\\
+	\hline
+\end{tabular}
+
+\setlength{\extrarowheight}{0pt} % Voltando ao padrão
+
+Existem problemas em usar $>$\{\textbackslash itshape\}. Esta declaração pode
+acabar mudando o significado de \textbackslash \textbackslash. Assim, caso seja
+necessário, utilize a seguinte declaração:
+
+\textbackslash begin\{tabular\}\{$>$\{\textbackslash centering \textbackslash arraybackslash\}p\{5cm\}\}
+
+Lembrando que pode-se também utilizar o \textbackslash \textbackslash [10pt] como argumento para alterar o tamanho da quebra de linha.
+
+Há uma macro para esticar a tabela inteira \textbackslash arraystretch. Para
+usá-la:\\
+\textbackslash renewcommand\{\textbackslash arraystretch\}\{1.5\}\\
+\indent Este comando irá esticar a tabela por 50 por cento.
+
+
+
+
 
 
 
