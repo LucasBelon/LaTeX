@@ -297,21 +297,102 @@ necessário, utilize a seguinte declaração:
 
 \textbackslash begin\{tabular\}\{$>$\{\textbackslash centering \textbackslash arraybackslash\}p\{5cm\}\}
 
-Lembrando que pode-se também utilizar o \textbackslash \textbackslash [10pt] como argumento para alterar o tamanho da quebra de linha.
+Lembrando que pode-se também utilizar o \textbackslash \textbackslash [10pt]
+como argumento para alterar o tamanho da quebra de linha.
 
 Há uma macro para esticar a tabela inteira \textbackslash arraystretch. Para
 usá-la:\\
 \textbackslash renewcommand\{\textbackslash arraystretch\}\{1.5\}\\
 \indent Este comando irá esticar a tabela por 50 por cento.
 
+Como sempre, podemos usar pacotes para obter mais funcionalidades. O pacote
+booktabs nos adiciona alguns comandos e substitui \textbackslash hline e
+\textbackslash cline.
+
+\ttfamily
+\noindent\textbackslash begin\{tabular\}\{ccc\}\\
+	\textbackslash toprule[1.5pt]\\
+	\textbackslash head\{Command\} \& \textbackslash head\{Declaration\} \& \textbackslash head\{Output\}\textbackslash \textbackslash \\
+	\textbackslash midrule\\
+	\textbackslash verb|\textbackslash textrm| \& \textbackslash verb|\textbackslash rmfamily| \& \textbackslash rmfamily Example text\textbackslash \textbackslash \\
+	\textbackslash hline\\
+	\textbackslash verb|\textbackslash textsf| \& \textbackslash verb|\textbackslash sffamily| \& \textbackslash sffamily Example text\textbackslash \textbackslash \\
+	\textbackslash verb|\textbackslash texttt| \& \textbackslash verb|\textbackslash ttfamily| \& \textbackslash ttfamily Example text\textbackslash \textbackslash \\
+	\textbackslash bottomrule[1.5pt]\\
+\textbackslash end\{tabular\}\\
+\sffamily
 
 
+\begin{tabular}{ccc}
+	\toprule[1.5pt]
+	\head{Command} & \head{Declaration} & \head{Output}\\
+	\midrule
+	\verb|\textrm| & \verb|\rmfamily| & \rmfamily Example text\\
+	\hline
+	\verb|\textsf| & \verb|\sffamily| & \sffamily Example text\\
+	\verb|\texttt| & \verb|\ttfamily| & \ttfamily Example text\\
+	\bottomrule[1.5pt]
+\end{tabular}
 
+Temos as seguintes opções:
+\begin{itemize}
+	\item \textbackslash toprule[espessura] - Pode ser usado para desenhar
+		uma linha no topo. A espessura pode ser expressa em pt ou em
+		mm.  \item \textbackslash midrule[espessura] - Desenha uma
+		linha horizontal que divide linhas de uma tabela.
+	\item \textbackslash bottomrule[espessura] - Desenha uma linha
+		horizontal que termina a tabela.
+	\item \textbackslash cmidrule[espessura](corte)\{m-n\} - Desenha uma
+		linha horizontal da coluna M até a coluna N. O argumento
+		"corte" é opcional assim como "espessura", e pode seer usado
+		"l" ou "r" para cortar a linha na extremidade esquerda ou à
+		direita. Usar "lr" corta em ambas as extremidades. É possível
+		definir a espessura do corte como (l\{10pt\}).
+\end{itemize}
 
+O pacote não traz linhas verticais. Elas não são exatamente necessárias de qualquer forma. O mesmo se aplica à linhas duplas. Estas não são recomendadas (se precisar eu coloco duas linhas consecutivas, e ninguém vai me impedir). O livro recomenda utilizar os comandos do pacote sem os argumentos opcionais, alterando apenas as propriedades dos objetos.
 
+% TODO: Descobrir qual o pacote que nos permite usar o setlenght
+
+Seria muito legal deixar configurado de uma vez por todas as espessuras ao
+invés de ficar alterando para cada tabela. Vamos usar o setlength. As
+propriedades que temos disponíveis são:
+
+\begin{itemize}
+	\item \textbackslash heavyrulewidth - Espessura das linhas de topo e base.
+	\item \textbackslash lightrulewidth - Espessura das linhas
+		intermediárias criadas pelo comando midrule.
+	\item \textbackslash cmidrulewidth - Espessura do comando cmidrule.
+	\item \textbackslash cmidrulekern - Alguma coisa do corte do
+		cmidrule(?).
+	\item \textbackslash abovetopsep - Espaço entre a linha superior e o
+		texto. O padrão é 0pt.
+	\item \textbackslash belowbottomsep - Espaço entre a linha inferior e o
+		texto. O padrão é 0pt.
+	\item \textbackslash aboverulesep - Espaço acima das linhas geradas pelos comandos midrule, cmidrule e bottomrule.
+	\item \textbackslash belowrulesep - Espaço abaixo das linhas geradas pelos comandos midrule, cmidrule e bottomrule.
+\end{itemize}
+
+Vamos mesclar células. O resultado é interessante.
+
+% TODO: Gerar o texto do código aqui
+
+\setlength{\abovetopsep}{10pt}
+\setlength{\belowbottomsep}{10pt}
+
+\begin{tabular}{@{}*3l@{}}
+	\toprule[1.5pt]
+	\multicolumn{2}{c}{\head{Input}} &
+	\multicolumn{1}{c}{\head{Output}}\\
+	\head{Command} & \head{Declaration} & \\
+	\cmidrule(r){1-2}\cmidrule(l){3-3}
+	\verb|\textrm| & \verb|\rmfamily| & \rmfamily Example text\\
+	\verb|\textsf| & \verb|\sffamily| & \sffamily Example text\\
+	\verb|\texttt| & \verb|\ttfamily| & \ttfamily Example text\\
+	\bottomrule[1.5pt]
+\end{tabular}
 
 \subsection{table e legendas}
-
 
 \section{Imagens}
 
