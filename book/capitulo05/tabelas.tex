@@ -392,6 +392,28 @@ Vamos mesclar células. O resultado é interessante.
 	\bottomrule[1.5pt]
 \end{tabular}
 
+A sintaxe é \textbackslash multicolumn\{Número de colunas\}\{Opções de formatação\}\{Texto\}.
+
+Inserindo código de acordo com colunas:
+
+\newcommand{\normal}[1]{\multicolumn{1}{l}{#1}}
+
+\begin{tabular}{@{}l*2{>{\textbackslash\ttfamily}l}l%
+    <{Example text}@{}}
+    \toprule[1.5pt]
+    & \multicolumn{2}{c}{\head{Input}}
+    & \multicolumn{1}{c}{\head{Output}}\\
+    & \normal{\head{Command}}
+    & \normal{\head{Declaration}}
+    & \normal{}\\
+    \cmidrule(lr){2-3} \cmidrule(l){4-4}
+    % Acima está o cabeçalho complicado.
+    Family & textrm & rmfamily & \rmfamily \\
+    & textsf & sffamily & \sffamily \\
+    & texttt & ttfamily & \ttfamily \\
+    \bottomrule[1.5pt]
+\end{tabular}
+
 \subsection{table e legendas}
 
 \section{Imagens}
