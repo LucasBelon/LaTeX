@@ -375,7 +375,23 @@ propriedades que temos disponíveis são:
 
 Vamos mesclar células. O resultado é interessante.
 
-% TODO: Gerar o texto do código aqui
+
+\ttfamily
+\noindent\textbackslash setlength\{\textbackslash abovetopsep\}\{10pt\}\\
+\textbackslash setlength\{\textbackslash belowbottomsep\}\{10pt\}\\
+\textbackslash begin\{tabular\}\{@\{\}*3l@\{\}\}\\
+	\textbackslash toprule[1.5pt]\\
+	\textbackslash multicolumn\{2\}\{c\}\{\textbackslash head\{Input\}\} \&\\
+	\textbackslash multicolumn\{1\}\{c\}\{\textbackslash head\{Output\}\}\textbackslash \textbackslash \\
+	\textbackslash head\{Command\} \& \textbackslash head\{Declaration\} \& \textbackslash \textbackslash \\
+	\textbackslash cmidrule(r)\{1-2\}\textbackslash cmidrule(l)\{3-3\}\\
+	\textbackslash verb$|$\textbackslash textrm$|$ \& \textbackslash verb$|$\textbackslash rmfamily$|$ \& \textbackslash rmfamily Example text\textbackslash \textbackslash \\
+	\textbackslash verb$|$\textbackslash textsf$|$ \& \textbackslash verb$|$\textbackslash sffamily$|$ \& \textbackslash sffamily Example text\textbackslash \textbackslash \\
+	\textbackslash verb$|$\textbackslash texttt$|$ \& \textbackslash verb$|$\textbackslash ttfamily$|$ \& \textbackslash ttfamily Example text\textbackslash \textbackslash \\
+	\textbackslash bottomrule[1.5pt]\\
+\textbackslash end\{tabular\}\\
+\sffamily
+
 
 \setlength{\abovetopsep}{10pt}
 \setlength{\belowbottomsep}{10pt}
@@ -391,10 +407,31 @@ Vamos mesclar células. O resultado é interessante.
 	\verb|\texttt| & \verb|\ttfamily| & \ttfamily Example text\\
 	\bottomrule[1.5pt]
 \end{tabular}
+\\
 
-A sintaxe é \textbackslash multicolumn\{Número de colunas\}\{Opções de formatação\}\{Texto\}.
+A sintaxe é \textbackslash multicolumn\{Número de colunas\}\{Opções de formatação\}\{Texto\}.\\
 
-Inserindo código de acordo com colunas:
+Inserindo código de acordo com colunas:\\
+
+\ttfamily
+\noindent\textbackslash newcommand\{\textbackslash normal\}[1]\{\textbackslash multicolumn\{1\}\{l\}\{\#1\}\}\\
+\textbackslash begin\{tabular\}\{@\{\}l*2\{>\{\textbackslash textbackslash\textbackslash ttfamily\}l\}l\%\\
+    <\{Example text\}@\{\}\}\\
+    \textbackslash toprule[1.5pt]\\
+    \& \textbackslash multicolumn\{2\}\{c\}\{\textbackslash head\{Input\}\}\\
+    \& \textbackslash multicolumn\{1\}\{c\}\{\textbackslash head\{Output\}\}\textbackslash \textbackslash \\
+    \& \textbackslash normal\{\textbackslash head\{Command\}\}\\
+    \& \textbackslash normal\{\textbackslash head\{Declaration\}\}\\
+    \& \textbackslash normal\{\}\textbackslash \textbackslash \\
+    \textbackslash cmidrule(lr)\{2-3\} \textbackslash cmidrule(l)\{4-4\}\\
+    % Acima está o cabeçalho complicado.\\
+    Family \& textrm \& rmfamily \& \textbackslash rmfamily \textbackslash \textbackslash \\
+    \& textsf \& sffamily \& \textbackslash sffamily \textbackslash \textbackslash \\
+    \& texttt \& ttfamily \& \textbackslash ttfamily \textbackslash \textbackslash \\
+    \textbackslash bottomrule[1.5pt]\\
+\textbackslash end\{tabular\}
+\\
+\sffamily
 
 \newcommand{\normal}[1]{\multicolumn{1}{l}{#1}}
 
@@ -413,6 +450,32 @@ Inserindo código de acordo com colunas:
     & texttt & ttfamily & \ttfamily \\
     \bottomrule[1.5pt]
 \end{tabular}
+\\
+
+No caso de termos um mesmo tipo de texto na coluna, precisaríamos ficar
+repetindo e repetindo o texto através das várias e várias colunas. Vamos
+economizar um pouco desse esforço.
+
+\begin{tabular}{@{}l*2{>{\textbackslash\ttfamily}l}l%
+    <{Example text}@{}}
+    \toprule[1.5pt]
+    & \multicolumn{2}{c}{\head{Input}}
+    & \multicolumn{1}{c}{\head{Output}}\\
+    & \normal{\head{Command}}
+    & \normal{\head{Declaration}}
+    & \normal{}\\
+    \cmidrule(lr){2-3} \cmidrule(l){4-4}
+    % Acima está o cabeçalho complicado.
+    \multirow{4}{*}{Family} & textrm & rmfamily & \rmfamily \\% Aqui está a mudança feita.
+    % Também foi carregado um novo pacote no preâmbulo, chamado multirow.
+    & textsf & sffamily & \sffamily \\
+    & texttt & ttfamily & \ttfamily \\
+    & textrm & rmfamily & \rmfamily \\
+    \bottomrule[1.5pt]
+\end{tabular}
+\\
+
+Agora preciso ler na página 153 o que foi que aconteceu pro comando funcionar.
 
 \subsection{table e legendas}
 
